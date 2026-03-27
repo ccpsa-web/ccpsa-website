@@ -37,35 +37,16 @@ export async function GET(request: NextRequest) {
 
   const html = `<!DOCTYPE html>
 <html>
-<head><title>Authorized</title></head>
+<head><title>Completing login...</title></head>
 <body>
-  <p>Completing authorization...</p>
+  <p>Completing login...</p>
   <script>
-    (function() {
-      var token = decodeURIComponent("${encodeURIComponent(token)}");
-      var data = JSON.stringify({ token: token, provider: "github" });
-      var authMsg = "authorization:github:success:" + data;
-      var sent = false;
-
-      // Method 1: try window.opener.postMessage
-      try {
-        if (window.opener) {
-          window.opener.postMessage(authMsg, "*");
-          sent = true;
-        }
-      } catch(e) {}
-
-      // Method 2: use localStorage as cross-tab relay
-      try {
-        localStorage.setItem("decap-cms-auth", data);
-      } catch(e) {}
-
-      if (sent) {
-        setTimeout(function() { window.close(); }, 500);
-      } else {
-        setTimeout(function() { window.close(); }, 1000);
-      }
-    })();
+    var data = JSON.stringify({
+      token: decodeURIComponent("${encodeURIComponent(token)}"),
+      provider: "github"
+    });
+    localStorage.setItem("decap-cms-auth", data);
+    window.location.href = "/admin/";
   </script>
 </body>
 </html>`;
