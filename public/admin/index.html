@@ -5,8 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>CCPSA Admin</title>
+  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
+  <script>
+    const config = {
+      backend: {
+        name: "github",
+        repo: "ccpsa-web/ccpsa-website",
+        branch: "main"
+      },
+      media_folder: "public/images",
+      public_folder: "/images",
+      collections: [
+        {
+          name: "providers",
+          label: "Providers",
+          label_singular: "Provider",
+          folder: "content/providers",
+          create: true,
+          delete: true,
+          extension: "json",
+          format: "json",
+          slug: "{{slug}}",
+          summary: "{{fields.name}} - {{fields.credentials}} ({{fields.category}})",
+          sortable_fields: ["order", "name", "category"],
+          fields: [
+            { label: "Name", name: "name", widget: "string", hint: "Full name (e.g. Darren Boe)" },
+            { label: "Credentials", name: "credentials", widget: "string", hint: "e.g. MD, PhD", required: false },
+            { label: "Title", name: "title", widget: "string", hint: "e.g. Attending Physician, Managing Partner" },
+            {
+              label: "Category", name: "category", widget: "select",
+              options: [
+                { label: "Critical Care", value: "critical-care" },
+                { label: "Interventional Pulmonology", value: "interventional-pulmonology" },
+                { label: "Outpatient Pulmonary & Sleep", value: "outpatient-pulmonary-sleep" },
+                { label: "Advanced Practice Provider", value: "app" },
+                { label: "Allied Health", value: "allied-health" },
+                { label: "Executive", value: "executive" }
+              ]
+            },
+            {
+              label: "Locations", name: "locations", widget: "list",
+              hint: "Service locations (e.g. West, South, North, Central, Multiple)",
+              field: { label: "Location", name: "location", widget: "string" }
+            },
+            { label: "Photo", name: "image", widget: "image", hint: "Upload provider headshot" },
+            { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" },
+            { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
+          ]
+        },
+        {
+          name: "jobs",
+          label: "Job Listings",
+          label_singular: "Job Listing",
+          folder: "content/jobs",
+          create: true,
+          delete: true,
+          extension: "json",
+          format: "json",
+          slug: "{{slug}}",
+          summary: "{{fields.title}} - {{fields.location}} ({{fields.status}})",
+          fields: [
+            { label: "Job Title", name: "title", widget: "string" },
+            { label: "Location", name: "location", widget: "string", hint: "e.g. Parker, CO" },
+            {
+              label: "Employment Type", name: "type", widget: "select",
+              options: ["Full-time", "Part-time", "Contract", "PRN"]
+            },
+            {
+              label: "Status", name: "status", widget: "select",
+              options: [
+                { label: "Open", value: "open" },
+                { label: "Closed", value: "closed" }
+              ]
+            },
+            { label: "Summary", name: "summary", widget: "text", hint: "Brief job description shown on the card" },
+            {
+              label: "Essential Responsibilities", name: "responsibilities", widget: "list",
+              hint: "One responsibility per item",
+              field: { label: "Responsibility", name: "item", widget: "string" }
+            },
+            {
+              label: "Skills & Education Requirements", name: "requirements", widget: "list",
+              hint: "One requirement per item",
+              field: { label: "Requirement", name: "item", widget: "string" }
+            },
+            {
+              label: "Physical Requirements", name: "physicalRequirements", widget: "list",
+              required: false, hint: "One requirement per item",
+              field: { label: "Requirement", name: "item", widget: "string" }
+            },
+            {
+              label: "Compensation & Benefits", name: "compensation", widget: "list",
+              hint: "One benefit per item",
+              field: { label: "Benefit", name: "item", widget: "string" }
+            },
+            { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
+          ]
+        },
+        {
+          name: "pages",
+          label: "Page Content",
+          files: [
+            {
+              label: "Homepage",
+              name: "homepage",
+              file: "content/pages/homepage.json",
+              fields: [
+                { label: "Hero Tagline", name: "heroTagline", widget: "string" },
+                { label: "Hero Title", name: "heroTitle", widget: "string" },
+                { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                { label: "Phone Number", name: "phone", widget: "string" },
+                { label: "Email", name: "email", widget: "string" },
+                { label: "Address", name: "address", widget: "string" },
+                { label: "Fax", name: "fax", widget: "string" }
+              ]
+            },
+            {
+              label: "Contact Page",
+              name: "contact",
+              file: "content/pages/contact.json",
+              fields: [
+                { label: "Page Title", name: "title", widget: "string" },
+                { label: "Phone", name: "phone", widget: "string" },
+                { label: "Fax", name: "fax", widget: "string" },
+                { label: "Email", name: "email", widget: "string" },
+                {
+                  label: "Locations", name: "locations", widget: "list",
+                  fields: [
+                    { label: "Name", name: "name", widget: "string" },
+                    { label: "Address", name: "address", widget: "string" },
+                    { label: "Phone", name: "phone", widget: "string" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    window.initCMS = function() {
+      const CMS = window.DecapCmsApp || window.CMS;
+      if (CMS && CMS.init) {
+        CMS.init({ config });
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      window.initCMS();
+    } else {
+      window.addEventListener('load', window.initCMS);
+    }
+  </script>
 </body>
 </html>
