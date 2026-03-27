@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Critical Care, Pulmonary & Sleep Associates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1A3050',
+            blue: '#4A6E91',
+            amber: '#AA9070',
+            'light-gray': '#F7F0E6',
+              sage: '#90B08A',
+              linen: '#E8D9C4',
+              driftwood: '#AA9070',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --navy: #1A3050;
+      --blue: #4A6E91;
+      --amber: #AA9070;
+      --light-gray: #F7F0E6;
+      --sage: #90B08A;
+      --linen: #E8D9C4;
+      --driftwood: #AA9070;
+    }
+
+    * {
+      --tw-ring-color: rgb(46 134 193 / 0.5);
+      --tw-border-color: rgb(213 216 220 / 1);
+    }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--navy);
+    }
+
+    .navy { background-color: var(--navy); }
+    .blue { background-color: var(--blue); }
+    .amber { background-color: var(--amber); }
+    .light-gray { background-color: var(--light-gray); }
+
+    .text-navy { color: var(--navy); }
+    .text-blue { color: var(--blue); }
+    .text-amber { color: var(--amber); }
+
+    .bg-navy { background-color: var(--navy); }
+    .bg-blue { background-color: var(--blue); }
+    .bg-amber { background-color: var(--amber); }
+    .bg-light-gray { background-color: var(--light-gray); }
+
+    .hover\:text-amber:hover { color: var(--amber); }
+    .hover\:text-blue:hover { color: var(--blue); }
+    .hover\:text-navy:hover { color: var(--navy); }
+
+    .hover\:bg-light-gray:hover { background-color: var(--light-gray); }
+
+    .border-border { border-color: rgb(213 216 220 / 1); }
+
+    .text-muted-foreground { color: rgb(93 109 126 / 1); }
+
+    .scroll-mt-24 { scroll-margin-top: 6rem; }
+
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .group:hover .group-hover\:text-amber {
+      color: var(--amber);
+    }
+
+    .group:hover .group-hover\:text-blue {
+      color: var(--blue);
+    }
+
+    .group:hover .group-hover\:text-navy {
+      color: var(--navy);
+    }
+
+    .group:hover .group-hover\:scale-110 {
+      transform: scale(1.1);
+    }
+
+    .group:hover .group-hover\:translate-x-1 {
+      transform: translateX(0.25rem);
+    }
+
+    .group:hover .group-hover\:-translate-y-2 {
+      transform: translateY(-0.5rem);
+    }
+
+    .group:hover .group-hover\:-translate-y-1 {
+      transform: translateY(-0.25rem);
+    }
+
+    .group:hover .group-hover\:shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .group:hover .group-hover\:shadow-2xl {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .group:hover .group-hover\:shadow-xl {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .group:hover .group-hover\:opacity-80 {
+      opacity: 0.8;
+    }
+
+    .group:hover .group-hover\:bg-amber/90 {
+      background-color: rgba(243, 156, 18, 0.9);
+    }
+
+    .group:hover .group-hover\:bg-white/90 {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .group:hover .group-hover\:bg-blue/90 {
+      background-color: rgba(74, 110, 145, 0.9);
+    }
+
+    .group:hover .group-hover\:bg-navy/90 {
+      background-color: rgba(26, 48, 80, 0.9);
+    }
+
+    .group:hover .group-hover\:scale-105 {
+      transform: scale(1.05);
+    }
+
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .hover\:shadow-xl:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .hover\:shadow-lg:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .hover\:shadow-2xl:hover {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .hover\:opacity-80:hover {
+      opacity: 0.8;
+    }
+
+    .hover\:-translate-y-2:hover {
+      transform: translateY(-0.5rem);
+    }
+
+    .hover\:bg-white/90:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .duration-200 { transition-duration: 200ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .duration-700 { transition-duration: 700ms; }
+    .duration-1000 { transition-duration: 1000ms; }
+
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-500 { transition-delay: 500ms; }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .backdrop-blur-sm {
+      backdrop-filter: blur(4px);
+    }
+
+    .group:hover .transition-transform {
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    .text-pretty {
+      text-wrap: pretty;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .sticky {
+      position: sticky;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .shadow-lg {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-xl {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .shadow-2xl {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .w-full { width: 100%; }
+    .w-10 { width: 2.5rem; }
+    .h-10 { height: 2.5rem; }
+    .h-5 { height: 1.25rem; }
+    .h-6 { height: 1.5rem; }
+
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .flex-row { flex-direction: row; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-center { justify-content: center; }
+    .justify-between { justify-content: space-between; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+  </style>
+</head>
+<body class="bg-light-gray">
+  <!-- Utility Bar -->
+  <div class="bg-navy text-white py-2">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-end items-center gap-6 text-sm">
+        <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Online Scheduling</span>
+        </a>
+        <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+            <path d="M16 3l-4 4-4-4"></path>
+          </svg>
+          <span>Online Bill Payment</span>
+        </a>
+        <a href="patient-forms.html" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="19" x2="12" y2="11"></line>
+            <line x1="9" y1="16" x2="15" y2="16"></line>
+          </svg>
+          <span>Patient Forms</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-lg border-b border-border">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center py-4">
+        <a href="index.html" class="group mb-3">
+          <img src="images/site/ccpsa-logo.png" alt="CCPSA Logo" class="h-20 w-auto group-hover:opacity-80 transition-opacity duration-200">
+        </a>
+
+        <div class="hidden lg:flex items-center gap-6 text-navy">
+          <a href="tel:3039510600" class="flex items-center gap-2 hover:text-blue transition-colors duration-200">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span class="font-medium">(303) 951-0600</span>
+          </a>
+          <a href="mailto:info@critcareMD.com" class="flex items-center gap-2 hover:text-blue transition-colors duration-200">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>info@critcareMD.com</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="hidden lg:block border-t border-border py-2">
+        <ul class="flex items-center justify-center gap-1">
+          <li><a href="index.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Home</a></li>
+          <li><a href="index.html#services" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Our Care</a></li>
+          <li><a href="our-team.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Our Team</a></li>
+          <li><a href="join-our-team.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Join Our Team</a></li>
+          <li><a href="for-patients.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">For Patients</a></li>
+          <li><a href="for-physicians.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">For Physicians</a></li>
+          <li><a href="#" class="block px-4 py-2 text-amber font-semibold transition-colors duration-200 rounded-md bg-light-gray">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-r from-navy to-blue text-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+        <p class="text-lg text-white/80">Reach out to our team for appointments, questions, or to learn more about our services</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="bg-white">
+    <!-- Contact Info Cards Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="grid md:grid-cols-4 gap-6 mb-20">
+            <!-- Phone Card -->
+            <div class="bg-white border-2 border-navy/10 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue/10 text-blue mb-4">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <h3 class="text-navy font-bold mb-2">Phone</h3>
+              <a href="tel:3039510600" class="text-blue hover:text-navy transition-colors font-semibold">(303) 951-0600</a>
+            </div>
+
+            <!-- Fax Card -->
+            <div class="bg-white border-2 border-navy/10 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up" style="transition-delay: 100ms;">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue/10 text-blue mb-4">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="17 1 21 5 21 19 5 19 1 15 1 5 5 1 17 1"></polyline>
+                  <polyline points="9 9 15 15"></polyline>
+                  <polyline points="15 9 9 15"></polyline>
+                </svg>
+              </div>
+              <h3 class="text-navy font-bold mb-2">Fax</h3>
+              <p class="text-navy font-semibold">(303) 951-0605</p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="bg-white border-2 border-navy/10 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up" style="transition-delay: 200ms;">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue/10 text-blue mb-4">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <h3 class="text-navy font-bold mb-2">Email</h3>
+              <a href="mailto:info@critcareMD.com" class="text-blue hover:text-navy transition-colors font-semibold">info@critcareMD.com</a>
+            </div>
+
+            <!-- Address Card -->
+            <div class="bg-white border-2 border-navy/10 rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 fade-in-up" style="transition-delay: 300ms;">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue/10 text-blue mb-4">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="text-navy font-bold mb-2">Main Office</h3>
+              <address class="not-italic text-navy text-sm leading-relaxed">
+                274 Union Blvd.<br>
+                Suite 200<br>
+                Lakewood, CO 80228
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clinic Locations Grid -->
+    <section class="py-20 bg-light-gray">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12 fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Our Locations</h2>
+            <p class="text-lg text-muted-foreground">Visit one of our convenient clinic locations throughout Colorado</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Lakewood -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Lakewood</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>274 Union Blvd.<br>Suite 200<br>Lakewood, CO 80228</p>
+                  <a href="tel:3039510600" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 951-0600
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Castle Rock -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 100ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Castle Rock</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>1000 Castleton Ct<br>Suite 100<br>Castle Rock, CO 80109</p>
+                  <a href="tel:3036885864" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 688-5864
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Parker -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 200ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Parker</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>9397 Crown Crest Blvd<br>Suite 431<br>Parker, CO 80138</p>
+                  <a href="tel:3038402000" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 840-2000
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Littleton -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 300ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Littleton</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>7720 S Broadway<br>Suite 580<br>Littleton, CO 80122</p>
+                  <a href="tel:3037952685" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 795-2685
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Wheat Ridge -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 400ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Wheat Ridge</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>3555 Lutheran Pkwy<br>Wheat Ridge, CO 80033</p>
+                  <a href="tel:3034036795" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 403-6795
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Westminster -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 500ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Westminster</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>1000 Westside Dr<br>Suite 203<br>Westminster, CO 80021</p>
+                  <a href="tel:3036572500" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 657-2500
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Thornton -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 600ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Thornton</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>500 E 128th Ave<br>Thornton, CO 80241</p>
+                  <a href="tel:3039254085" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 925-4085
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Brighton -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 700ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Brighton</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>1600 Prairie Center Pkwy<br>Suite 250<br>Brighton, CO 80601</p>
+                  <a href="tel:3036591537" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 659-1537
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- Longmont -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 800ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">Longmont</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>2030 Mountain View Ave<br>Suite 200<br>Longmont, CO 80501</p>
+                  <a href="tel:3037761234" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 776-1234
+                  </a>
+                </address>
+              </div>
+            </div>
+
+            <!-- North Denver -->
+            <div class="group bg-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden rounded-lg fade-in-up" style="transition-delay: 900ms;">
+              <div class="bg-gradient-to-r from-navy to-blue p-4 text-white h-1"></div>
+              <div class="p-6">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-amber/20 text-amber mb-3">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-navy mb-3">North Denver</h3>
+                <address class="not-italic text-muted-foreground text-sm space-y-2 mb-4">
+                  <p>2045 Franklin St<br>Denver, CO 80205</p>
+                  <a href="tel:3032972265" class="flex items-center gap-2 text-blue hover:text-navy transition-colors font-semibold">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    (303) 297-2265
+                  </a>
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-amber relative overflow-hidden fade-in-up">
+      <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute top-10 right-20 w-40 h-40 bg-white rounded-full"></div>
+        <div class="absolute bottom-10 left-20 w-60 h-60 bg-navy rounded-full"></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Need to Schedule?</h2>
+          <p class="text-lg text-navy/80 mb-8">Access our patient portal to schedule appointments, view results, and manage your care online</p>
+
+          <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" target="_blank" rel="noopener noreferrer" class="bg-navy hover:bg-navy/90 text-white font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-lg inline-flex items-center">
+            <svg class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Go to Patient Portal
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white">
+    <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-amber">CCPSA</h3>
+          <address class="not-italic space-y-4 text-white/80">
+            <div class="flex items-start gap-3">
+              <svg class="h-5 w-5 mt-0.5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>
+                274 Union Blvd. Suite 200<br>
+                Lakewood, CO 80228
+              </span>
+            </div>
+            <a href="tel:3039510600" class="flex items-center gap-3 hover:text-amber transition-colors">
+              <svg class="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>(303) 951-0600</span>
+            </a>
+            <div class="flex items-center gap-3">
+              <svg class="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="17 1 21 5 21 19 5 19 1 15 1 5 5 1 17 1"></polyline>
+                <polyline points="9 9 15 15"></polyline>
+                <polyline points="15 9 9 15"></polyline>
+              </svg>
+              <span>(303) 951-0605</span>
+            </div>
+            <a href="mailto:info@critcareMD.com" class="flex items-center gap-3 hover:text-amber transition-colors">
+              <svg class="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>info@critcareMD.com</span>
+            </a>
+          </address>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-amber">Our Care</h3>
+          <ul class="space-y-3">
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">Critical Care</a></li>
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">Pulmonary</a></li>
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">Interventional</a></li>
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">Sleep</a></li>
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">Neurocritical</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-amber">For Patients</h3>
+          <ul class="space-y-3">
+            <li><a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" target="_blank" rel="noopener noreferrer" class="text-white/80 hover:text-amber transition-colors">Patient Portal</a></li>
+            <li><a href="patient-forms.html" class="text-white/80 hover:text-amber transition-colors">Patient Forms</a></li>
+            <li><a href="#" class="text-white/80 hover:text-amber transition-colors">Privacy Practices</a></li>
+            <li><a href="#" class="text-white/80 hover:text-amber transition-colors">Clinical Research</a></li>
+            <li><a href="#" class="text-white/80 hover:text-amber transition-colors">Find a Location</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6 text-amber">About</h3>
+          <ul class="space-y-3">
+            <li><a href="our-team.html" class="text-white/80 hover:text-amber transition-colors">Our Team</a></li>
+            <li><a href="index.html" class="text-white/80 hover:text-amber transition-colors">For Physicians</a></li>
+            <li><a href="#" class="text-white/80 hover:text-amber transition-colors">Join Our Team</a></li>
+            <li><a href="#" class="text-white/80 hover:text-amber transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/20">
+        <p class="text-white/60 text-sm text-center mb-4">
+          CCPSA is committed to protecting your health information in accordance with HIPAA regulations. Your privacy is important to us, and we take all necessary measures to ensure the confidentiality and security of your medical information.
+        </p>
+        <p class="text-white/40 text-sm text-center">
+          © 2026 Critical Care, Pulmonary & Sleep Associates. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

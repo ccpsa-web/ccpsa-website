@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team - Critical Care, Pulmonary & Sleep Associates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1A3050',
+            blue: '#4A6E91',
+            amber: '#AA9070',
+            'light-gray': '#F7F0E6',
+              sage: '#90B08A',
+              linen: '#E8D9C4',
+              driftwood: '#AA9070',
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --navy: #1A3050;
+      --blue: #4A6E91;
+      --amber: #AA9070;
+      --light-gray: #F7F0E6;
+      --sage: #90B08A;
+      --linen: #E8D9C4;
+      --driftwood: #AA9070;
+    }
+
+    * {
+      --tw-ring-color: rgb(46 134 193 / 0.5);
+      --tw-border-color: rgb(213 216 220 / 1);
+    }
+
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      background-color: var(--light-gray);
+      color: var(--navy);
+    }
+
+    .navy { background-color: var(--navy); }
+    .blue { background-color: var(--blue); }
+    .amber { background-color: var(--amber); }
+    .light-gray { background-color: var(--light-gray); }
+
+    .text-navy { color: var(--navy); }
+    .text-blue { color: var(--blue); }
+    .text-amber { color: var(--amber); }
+
+    .bg-navy { background-color: var(--navy); }
+    .bg-blue { background-color: var(--blue); }
+    .bg-amber { background-color: var(--amber); }
+    .bg-light-gray { background-color: var(--light-gray); }
+
+    .hover\:text-amber:hover { color: var(--amber); }
+    .hover\:text-blue:hover { color: var(--blue); }
+    .hover\:text-navy:hover { color: var(--navy); }
+
+    .hover\:bg-light-gray:hover { background-color: var(--light-gray); }
+
+    .border-border { border-color: rgb(213 216 220 / 1); }
+    .text-muted-foreground { color: rgb(93 109 126 / 1); }
+    .scroll-mt-24 { scroll-margin-top: 6rem; }
+
+    .animate-pulse {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .group:hover .group-hover\:text-amber { color: var(--amber); }
+    .group:hover .group-hover\:text-blue { color: var(--blue); }
+    .group:hover .group-hover\:text-navy { color: var(--navy); }
+
+    .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
+    .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
+    .group:hover .group-hover\:-translate-y-2 { transform: translateY(-0.5rem); }
+    .group:hover .group-hover\:-translate-y-1 { transform: translateY(-0.25rem); }
+    .group:hover .group-hover\:shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .group:hover .group-hover\:shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .group:hover .group-hover\:shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    .group:hover .group-hover\:opacity-80 { opacity: 0.8; }
+    .group:hover .group-hover\:bg-amber/90 { background-color: rgba(243, 156, 18, 0.9); }
+    .group:hover .group-hover\:bg-white/90 { background-color: rgba(255, 255, 255, 0.9); }
+    .group:hover .group-hover\:bg-blue/90 { background-color: rgba(74, 110, 145, 0.9); }
+    .group:hover .group-hover\:bg-navy/90 { background-color: rgba(26, 48, 80, 0.9); }
+    .group:hover .group-hover\:scale-105 { transform: scale(1.05); }
+
+    .hover\:scale-105:hover { transform: scale(1.05); }
+    .hover\:shadow-xl:hover { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    .hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .hover\:shadow-2xl:hover { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .hover\:opacity-80:hover { opacity: 0.8; }
+    .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
+    .hover\:bg-white/90:hover { background-color: rgba(255, 255, 255, 0.9); }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .duration-200 { transition-duration: 200ms; }
+    .duration-300 { transition-duration: 300ms; }
+    .duration-700 { transition-duration: 700ms; }
+    .duration-1000 { transition-duration: 1000ms; }
+
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-500 { transition-delay: 500ms; }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+
+    .group:hover .transition-transform {
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 200ms;
+    }
+
+    .text-balance { text-wrap: balance; }
+    .text-pretty { text-wrap: pretty; }
+
+    nav a:hover { color: var(--blue); }
+
+    .sticky { position: sticky; }
+    .top-0 { top: 0; }
+    .z-50 { z-index: 50; }
+
+    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+
+    .rounded-full { border-radius: 9999px; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .rounded-lg { border-radius: 0.5rem; }
+
+    .border { border-width: 1px; }
+    .border-2 { border-width: 2px; }
+    .border-4 { border-width: 4px; }
+    .border-t { border-top-width: 1px; }
+    .border-b { border-bottom-width: 1px; }
+
+    .overflow-hidden { overflow: hidden; }
+
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+    .top-0 { top: 0; }
+    .bottom-0 { bottom: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+
+    .transform {
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .-translate-x-1\/2 { --tw-translate-x: -50%; }
+    .-translate-y-1\/2 { --tw-translate-y: -50%; }
+
+    .opacity-0 { opacity: 0; }
+    .opacity-5 { opacity: 0.05; }
+    .opacity-10 { opacity: 0.1; }
+    .opacity-20 { opacity: 0.2; }
+    .opacity-30 { opacity: 0.3; }
+    .opacity-100 { opacity: 1; }
+
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .min-h-\[300px\] { min-height: 300px; }
+
+    .mx-auto { margin-left: auto; margin-right: auto; }
+
+    .flex { display: flex; }
+    .grid { display: grid; }
+    .block { display: block; }
+    .hidden { display: none; }
+    .inline-flex { display: inline-flex; }
+
+    .flex-col { flex-direction: column; }
+    .flex-row { flex-direction: row; }
+
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .items-end { align-items: flex-end; }
+
+    .justify-center { justify-content: center; }
+    .justify-end { justify-content: flex-end; }
+    .justify-start { justify-content: flex-start; }
+    .justify-between { justify-content: space-between; }
+
+    .gap-1 { gap: 0.25rem; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .gap-12 { gap: 3rem; }
+
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+
+    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+
+    .p-2 { padding: 0.5rem; }
+    .p-3 { padding: 0.75rem; }
+    .p-4 { padding: 1rem; }
+    .p-5 { padding: 1.25rem; }
+    .p-6 { padding: 1.5rem; }
+    .p-8 { padding: 2rem; }
+
+    .p-0 { padding: 0; }
+
+    .pt-2 { padding-top: 0.5rem; }
+    .pt-4 { padding-top: 1rem; }
+    .pt-8 { padding-top: 2rem; }
+
+    .pb-3 { padding-bottom: 0.75rem; }
+    .pb-4 { padding-bottom: 1rem; }
+
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-10 { margin-bottom: 2.5rem; }
+    .mb-12 { margin-bottom: 3rem; }
+
+    .mt-1 { margin-top: 0.25rem; }
+    .mt-3 { margin-top: 0.75rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-12 { margin-top: 3rem; }
+
+    .ml-2 { margin-left: 0.5rem; }
+    .ml-4 { margin-left: 1rem; }
+
+    .mr-2 { margin-right: 0.5rem; }
+
+    .max-w-2xl { max-width: 42rem; }
+    .max-w-3xl { max-width: 48rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-w-5xl { max-width: 64rem; }
+    .max-w-6xl { max-width: 72rem; }
+    .max-w-7xl { max-width: 80rem; }
+
+    .space-y-1 > * + * { margin-top: 0.25rem; }
+    .space-y-2 > * + * { margin-top: 0.5rem; }
+    .space-y-3 > * + * { margin-top: 0.75rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+
+    .text-xs { font-size: 0.75rem; }
+    .text-sm { font-size: 0.875rem; }
+    .text-base { font-size: 1rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-2xl { font-size: 1.5rem; }
+    .text-3xl { font-size: 1.875rem; }
+    .text-4xl { font-size: 2.25rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-6xl { font-size: 3.75rem; }
+
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+
+    .leading-tight { line-height: 1.25; }
+    .leading-relaxed { line-height: 1.625; }
+
+    .text-white { color: white; }
+    .text-white\/20 { color: rgba(255, 255, 255, 0.2); }
+    .text-white\/60 { color: rgba(255, 255, 255, 0.6); }
+    .text-white\/70 { color: rgba(255, 255, 255, 0.7); }
+    .text-white\/80 { color: rgba(255, 255, 255, 0.8); }
+    .text-white\/90 { color: rgba(255, 255, 255, 0.9); }
+
+    .bg-white { background-color: white; }
+    .bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
+    .bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
+    .bg-white\/15 { background-color: rgba(255, 255, 255, 0.15); }
+    .bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+    .bg-white\/30 { background-color: rgba(255, 255, 255, 0.3); }
+
+    .bg-navy\/10 { background-color: rgba(26, 48, 80, 0.1); }
+    .bg-navy\/20 { background-color: rgba(26, 48, 80, 0.2); }
+    .bg-navy\/30 { background-color: rgba(26, 48, 80, 0.3); }
+    .text-navy\/20 { color: rgba(26, 48, 80, 0.2); }
+    .text-navy\/80 { color: rgba(26, 48, 80, 0.8); }
+
+    .bg-blue\/10 { background-color: rgba(74, 110, 145, 0.1); }
+    .bg-blue\/20 { background-color: rgba(74, 110, 145, 0.2); }
+
+    .bg-amber\/10 { background-color: rgba(243, 156, 18, 0.1); }
+    .bg-amber\/20 { background-color: rgba(243, 156, 18, 0.2); }
+
+    .bg-gradient-to-br { background-image: linear-gradient(135deg, var(--tw-gradient-stops)); }
+    .bg-gradient-to-r { background-image: linear-gradient(90deg, var(--tw-gradient-stops)); }
+    .bg-gradient-to-b { background-image: linear-gradient(180deg, var(--tw-gradient-stops)); }
+    .bg-gradient-to-t { background-image: linear-gradient(180deg, var(--tw-gradient-stops)); }
+
+    .from-navy { --tw-gradient-from: var(--navy); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(26, 48, 80, 0)); }
+    .via-navy { --tw-gradient-via: var(--navy); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, rgba(26, 48, 80, 0)); }
+    .to-blue { --tw-gradient-to: var(--blue); }
+    .to-navy { --tw-gradient-to: var(--navy); }
+    .to-transparent { --tw-gradient-to: transparent; }
+
+    .via-blue { --tw-gradient-via: var(--blue); --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to, rgba(74, 110, 145, 0)); }
+
+    .w-2 { width: 0.5rem; }
+    .h-2 { height: 0.5rem; }
+
+    .w-4 { width: 1rem; }
+    .h-4 { height: 1rem; }
+
+    .w-5 { width: 1.25rem; }
+    .h-5 { height: 1.25rem; }
+
+    .w-6 { width: 1.5rem; }
+    .h-6 { height: 1.5rem; }
+
+    .w-8 { width: 2rem; }
+    .h-8 { height: 2rem; }
+
+    .w-10 { width: 2.5rem; }
+    .h-10 { height: 2.5rem; }
+
+    .w-12 { width: 3rem; }
+    .h-12 { height: 3rem; }
+
+    .w-16 { width: 4rem; }
+    .h-16 { height: 4rem; }
+
+    .w-20 { width: 5rem; }
+    .h-20 { height: 5rem; }
+
+    .w-40 { width: 10rem; }
+    .h-40 { height: 10rem; }
+
+    .w-60 { width: 15rem; }
+    .h-60 { height: 15rem; }
+
+    .w-64 { width: 16rem; }
+    .h-64 { height: 16rem; }
+
+    .w-auto { width: auto; }
+
+    /* Provider card styles */
+    .provider-card {
+      background: white;
+      border-radius: 0.5rem;
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .provider-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .provider-photo {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      object-position: top;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+    }
+
+    .provider-photo-placeholder {
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .provider-photo-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, rgba(26, 48, 80, 0.8));
+    }
+
+    .provider-content {
+      padding: 1.5rem;
+    }
+
+    .specialty-badge {
+      display: inline-block;
+      background-color: rgba(243, 156, 18, 0.1);
+      color: var(--amber);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .location-badge {
+      display: inline-block;
+      background-color: rgba(74, 110, 145, 0.1);
+      color: var(--blue);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-view-profile {
+      display: inline-block;
+      background-color: var(--blue);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-view-profile:hover {
+      background-color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .bio-section {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .bio-text {
+      font-size: 0.875rem;
+      color: #374151;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .credentials-section {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .credentials-section p {
+      margin-bottom: 0.5rem;
+    }
+
+    .credentials-label {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* Filter tabs */
+    .filter-tab {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid transparent;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: var(--navy);
+      border-radius: 0.375rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 500;
+      font-size: 1.125rem;
+    }
+
+    .filter-tab:hover {
+      background-color: white;
+      border-color: var(--blue);
+    }
+
+    .filter-tab.active {
+      background-color: var(--amber);
+      color: var(--navy);
+      border-color: var(--amber);
+    }
+
+    /* Grid layout */
+    .provider-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .provider-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .provider-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Hero section */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      color: white;
+      padding: 0.75rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-banner {
+        padding: 0.75rem 2rem;
+      }
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 3.5rem;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 42rem;
+    }
+
+    /* Utility bar */
+    .utility-bar {
+      background-color: var(--navy);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+
+    .utility-bar a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .utility-bar a:hover {
+      color: var(--amber);
+    }
+
+    /* Header */
+    .main-header {
+      background-color: var(--navy);
+      color: white;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .header-container {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .header-container {
+        padding: 2rem;
+      }
+    }
+
+    .header-logo {
+      height: 60px;
+      background: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-contact {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .header-contact {
+        display: flex;
+        gap: 2rem;
+      }
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--amber);
+    }
+
+    .nav-bar {
+      display: none;
+      border-top: 1px solid #374151;
+      padding-top: 0.75rem;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-bar {
+        display: flex;
+        gap: 1.5rem;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--amber);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Footer */
+    .main-footer {
+      background-color: var(--navy);
+      color: white;
+      margin-top: 5rem;
+    }
+
+    .footer-container {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-container {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-container {
+        padding: 3rem 2rem;
+      }
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-section h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-section a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-section a:hover {
+      color: var(--amber);
+    }
+
+    .footer-contact-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-contact-icon {
+      color: var(--amber);
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #374151;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .footer-bottom p {
+      font-size: 0.875rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--amber);
+    }
+
+    /* Fade in animation */
+    .fade-in {
+      animation: fadeIn 0.7s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(1rem);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hidden-bio {
+      display: none;
+    }
+
+    .bio-expanded {
+      display: none;
+    }
+
+    .bio-expanded.bio-visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Utility Bar -->
+  <div class="bg-navy text-white py-2">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-end items-center gap-6 text-sm">
+        <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Online Scheduling</span>
+        </a>
+        <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+            <path d="M16 3l-4 4-4-4"></path>
+          </svg>
+          <span>Online Bill Payment</span>
+        </a>
+        <a href="patient-forms.html" class="flex items-center gap-1.5 hover:text-amber transition-colors duration-200">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="19" x2="12" y2="11"></line>
+            <line x1="9" y1="16" x2="15" y2="16"></line>
+          </svg>
+          <span>Patient Forms</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow-lg border-b border-border">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col items-center py-4">
+        <a href="index.html" class="group mb-3">
+          <img src="images/site/ccpsa-logo.png" alt="CCPSA Logo" class="h-20 w-auto group-hover:opacity-80 transition-opacity duration-200">
+        </a>
+
+        <div class="hidden lg:flex items-center gap-6 text-navy">
+          <a href="tel:3039510600" class="flex items-center gap-2 hover:text-blue transition-colors duration-200">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span class="font-medium">(303) 951-0600</span>
+          </a>
+          <a href="mailto:info@critcareMD.com" class="flex items-center gap-2 hover:text-blue transition-colors duration-200">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>info@critcareMD.com</span>
+          </a>
+        </div>
+      </div>
+
+      <nav class="hidden lg:block border-t border-border py-2">
+        <ul class="flex items-center justify-center gap-1">
+          <li><a href="index.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Home</a></li>
+          <li><a href="index.html#services" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Our Care</a></li>
+          <li><a href="#" class="block px-4 py-2 text-amber font-semibold transition-colors duration-200 rounded-md bg-light-gray">Our Team</a></li>
+          <li><a href="join-our-team.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Join Our Team</a></li>
+          <li><a href="for-patients.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">For Patients</a></li>
+          <li><a href="for-physicians.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">For Physicians</a></li>
+          <li><a href="contact.html" class="block px-4 py-2 text-navy font-medium hover:text-blue transition-colors duration-200 rounded-md hover:bg-light-gray">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="header-container">
+      <h1 class="hero-title">Our Team</h1>
+      <p class="hero-subtitle">Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="py-2 bg-white">
+    <div class="header-container">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-2 text-center">Find Your Provider</h2>
+
+      <!-- Main Category Filters -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <button class="filter-tab active" onclick="filterByCategory('All')">All</button>
+        <button class="filter-tab" onclick="filterByCategory('Critical Care')">Critical Care</button>
+        <button class="filter-tab" onclick="filterByCategory('Interventional Pulmonology')">Interventional Pulmonology</button>
+        <button class="filter-tab" onclick="filterByCategory('Outpatient Pulmonary & Sleep')">Outpatient Pulmonary & Sleep</button>
+        <button class="filter-tab" onclick="filterByCategory('APP')">APP</button>
+        <button class="filter-tab" onclick="filterByCategory('Allied Health')">Allied Health</button>
+        <button class="filter-tab" onclick="filterByCategory('Executive')">Executive</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Provider Grid -->
+  <section class="py-20 bg-light-gray">
+    <div class="header-container">
+      <div id="provider-grid" class="provider-grid">
+        <!-- Providers will be rendered here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-amber text-navy">
+    <div class="header-container text-center">
+      <h2 class="text-4xl font-bold mb-6">Schedule an Appointment</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Ready to work with one of our experienced providers? Book your appointment online or call us today.</p>
+      <div class="flex flex-col gap-4 sm:flex-row justify-center">
+        <a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" target="_blank" rel="noopener" class="btn-view-profile" style="background-color: var(--navy); display: inline-block;">Schedule Online</a>
+        <a href="tel:+13039510600" class="btn-view-profile" style="background-color: white; color: var(--navy); display: inline-block;">Call (303) 951-0600</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <h4>CCPSA</h4>
+          <div class="space-y-3">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📍</span>
+              <p>274 Union Blvd. Suite 200<br/>Lakewood, CO 80228</p>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📞</span>
+              <a href="tel:+13039510600">(303) 951-0600</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📠</span>
+              <a href="tel:+13039510605">(303) 951-0605 (Fax)</a>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">✉</span>
+              <a href="mailto:info@critcareMD.com">info@critcareMD.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Care -->
+        <div class="footer-section">
+          <h4>Our Care</h4>
+          <ul>
+            <li><a href="#">Critical Care</a></li>
+            <li><a href="#">Pulmonary Services</a></li>
+            <li><a href="#">Interventional Pulmonary</a></li>
+            <li><a href="#">Sleep Medicine</a></li>
+            <li><a href="#">Neurocritical Care</a></li>
+          </ul>
+        </div>
+
+        <!-- For Patients -->
+        <div class="footer-section">
+          <h4>For Patients</h4>
+          <ul>
+            <li><a href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?" target="_blank" rel="noopener">Patient Portal</a></li>
+            <li><a href="patient-forms.html">Patient Forms</a></li>
+            <li><a href="#">Privacy Practices</a></li>
+            <li><a href="#">Clinical Research</a></li>
+            <li><a href="#">Find a Location</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="footer-section">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Our Team</a></li>
+            <li><a href="#">For Physicians</a></li>
+            <li><a href="#">Join Our Team</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Critical Care, Pulmonary & Sleep Associates. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Local image base URL
+        const IMG = 'images/providers';
+
+        // Provider data - Real CCPSA provider list with image URLs
+        const providers = [
+            // Critical Care
+            { name: 'Brian Ahn', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West', imageUrl: `${IMG}/ahn-brian.jpg`, bio: 'Dr. Brian Ahn received his medical degree from the University of Pittsburgh School of Medicine. Subsequently, he completed his residency in internal medicine at UPMC and his fellowship in Pulmonary and Critical Care Medicine at the University of Colorado.', education: 'University of Pittsburgh, Pittsburgh, PA', residency: 'University of Pittsburgh, Pittsburgh, PA', fellowship: 'University of Colorado, Denver, CO', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care' },
+            { name: 'Kolene E. Bailey', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'South', imageUrl: `${IMG}/bailey-kolene.jpg`, bio: 'Dr. Kolene E. Bailey earned her medical degree at the Geisel School of Medicine at Dartmouth in Hanover, NH. She went on to complete her internship, residency, and chief year in internal medicine at Yale New Haven Hospital in New Haven, CT. She moved to Colorado to complete her fellowship training in pulmonary sciences and critical care medicine at the University of Colorado, Anschutz Medical Campus in Aurora, CO. In her spare time, she loves to exercise, bake, organize, ski and play with her three boys, two dogs, and one cat. She especially enjoys time with her wonderful husband.', education: 'Geisel School of Medicine at Dartmouth, Hanover, NH', residency: 'Yale New Haven Hospital, New Haven, CT', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care, Neurocritical Care' },
+            { name: 'Serena Barnhill', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West, Central', imageUrl: `${IMG}/barnhill-serena.jpg`, bio: 'Dr. Serena Barnhill earned her medical degree from Tulane University School of Medicine in New Orleans, Louisiana. She completed her internal medicine residency at Tulane and her Pulmonary and Critical Care Fellowship at the University of Colorado.', education: 'University of Washington School of Medicine', residency: 'University of Washington School of Medicine', fellowship: 'University of Washington School of Medicine', boardCertification: 'Internal Medicine, Critical Care' },
+            { name: 'Alexander Benson', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/benson-alexander.jpg`, bio: 'Dr. Alexander Benson received his medical degree from Northeast Ohio Medical University in Rootstown, OH. He went on to complete his internship and residency in internal medicine and his fellowship in pulmonary diseases and critical care medicine at the University of Colorado Anschutz Medical Campus in Aurora, CO.', education: 'Oregon Health & Science University, Portland, OR', residency: 'Massachusetts General Hospital, Boston, MA', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care, Neurocritical Care, Pulmonary Medicine' },
+            { name: 'Jason Biehl', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West', imageUrl: `${IMG}/biehl-jason.jpg`, bio: 'Dr. Jason Biehl received his medical degree from the University of Colorado Health Sciences Center. He completed both his internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at Baylor College of Medicine in Houston. He is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.', education: 'Georgetown University School of Medicine', residency: 'Northwestern University/Feinberg School of Medicine', fellowship: 'University of Colorado', boardCertification: 'Internal Medicine, Critical Care, Pulmonary Medicine' },
+            { name: 'Jacob Blount', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/blount-jacob.jpg`, bio: 'Dr. Jacob Blount earned his medical degree from the University of Colorado School of Medicine. He completed his internal medicine residency at the University of Colorado and his fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'University of South Florida Morsani College of Medicine, Tampa, FL', residency: 'University of Colorado Anschutz Medical Campus, Aurora, CO', fellowship: 'Pulmonary and Critical Care Medicine, University of California-Davis, Sacramento, CA', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+            { name: 'Darren Boé', credentials: 'MD, PhD', title: 'Attending Physician, Managing Partner', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/boe-darren.png`, bio: 'Dr. Boe earned his medical degree and PhD in microbiology at the University of Iowa, Iowa City, IA. He completed both his residency and fellowship at the University of Colorado, Denver. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.', education: 'Louisiana State University Health Sciences Center, New Orleans, LA', residency: 'Duke University Medical Center, Durham, NC', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Amelia Bowman', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/bowman-amelia.jpg`, bio: 'Dr. Amelia Bowman received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus in Aurora, CO.', education: 'University of Colorado', residency: 'University of Colorado', fellowship: 'University of Utah', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+            { name: 'Brendan Clark', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'South', bio: 'Dr. Brendan Clark earned his medical degree from the University of Colorado School of Medicine. He completed his internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at the University of Colorado.', education: 'Northwestern University Feinberg School of Medicine', residency: 'Massachusetts General Hospital', fellowship: 'University of Colorado', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease' },
+            { name: 'Matthew Dickinson', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West, Central', imageUrl: `${IMG}/dickinson-matthew.jpg`, bio: 'A native of Colorado, Dr. Dickinson received his medical degree from the University of Colorado Health Sciences Center in Denver. He served both his residency and fellowship there, as well. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care Medicine as well as Pulmonology. Married with two children, Dr. Dickinson is an avid backpacker and cyclist.', education: 'University of Colorado Health Sciences Center, Denver, CO', residency: 'University of Colorado Health Sciences Center, Denver, CO', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Jana Florian', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/florian-jana.jpg`, bio: 'Dr. Florian earned her medical degree at the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado, Anschutz Medical Campus. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.', education: 'Boston University School of Medicine', residency: 'University of California Irvine', fellowship: 'University of California Irvine' },
+            { name: 'Mia Gonzales', credentials: 'MD, MPH', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/gonzales-mia.jpg`, bio: 'Dr. Gonzales earned her Master of Public Health degree from the University of Michigan and her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and chief residency at the University of Colorado and went on to complete her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'The University of Texas Health Science Center- San Antonio', residency: 'ECU Health', fellowship: 'ECU Health', boardCertification: 'Emergency Medicine, Internal Medicine, Critical Care Medicine' },
+            { name: 'Margaret Hay', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/hay-margaret.jpg`, bio: 'Dr. Hay earned her medical degree at the University of Nebraska Medical Center in Omaha. She served her residency at the University of Colorado Health Sciences Center and her fellowship at the National Jewish Medical and Research Center. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.', education: 'The Ohio State University', residency: 'The Ohio State University', fellowship: 'Medical University of South Carolina', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+            { name: 'Emily Horn', credentials: 'MD, PharmD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/horn-emily.jpg`, bio: 'Dr. Horn earned both her PharmD and MD degrees at the University of Colorado. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.', education: 'University of Kansas, Kansas City', residency: 'University of Kansas, Kansas City in Internal Medicine', fellowship: 'University of New Mexico in Critical Care Medicine', boardCertification: 'Critical Care Medicine' },
+            { name: 'Anthony Khalifah', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'North', imageUrl: `${IMG}/khalifah-anthony.jpg`, bio: 'Dr. Khalifah earned his medical degree at the American University of Beirut, Faculty of Medicine in Beirut, Lebanon. He served his residency at Emory University in Atlanta and his fellowship at the University of Texas Health Sciences Center in San Antonio. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.', education: 'Vanderbilt University, Nashville, TN', residency: 'University of Texas-Southwestern, Dallas, TX', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Catherine Kim', credentials: 'DO', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/kim-catherine.jpg`, bio: 'Dr. Catherine Kim received her Doctor of Osteopathic Medicine from Kansas City University in Kansas City, MO. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'Philadelphia College of Osteopathic Medicine Georgia Campus', residency: 'University of Florida', fellowship: 'Virginia Commonwealth University', boardCertification: 'Pulmonary Medicine, Internal Medicine' },
+            { name: 'Josh Lee', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'North', imageUrl: `${IMG}/lee-josh.jpg`, bio: 'Dr. Josh Lee earned his medical degree from St. George\'s University School of Medicine. He completed his internal medicine residency at Tripler Army Medical Center in Honolulu and his Pulmonary and Critical Care Fellowship at Walter Reed National Military Medical Center in Bethesda, MD.', education: 'Northwestern University – Feinberg School of Medicine', residency: 'Duke University', fellowship: 'University of Washington', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care' },
+            { name: 'Nathaniel Little', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'North', imageUrl: `${IMG}/little-nathaniel.jpg`, bio: 'Dr. Nathaniel Little received his medical degree from the Virginia Commonwealth University School of Medicine in Richmond, VA. He completed his internal medicine residency and chief residency at the University of Colorado and his Pulmonary and Critical Care Fellowship at the University of Colorado Anschutz Medical Campus.', education: 'Loyola University Stritch School of Medicine, Chicago, IL', residency: 'Indiana University School of Medicine, Indianapolis, IN', fellowship: 'University of Colorado School of Medicine, Aurora, CO', boardCertification: 'Critical Care, Pulmonary Disease, Internal Medicine' },
+            { name: 'Madison Macht', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/macht-madison.jpg`, bio: 'Dr. Macht completed his medical degree and residency at the Oregon Health & Science University in Portland, Oregon. He then completed his pulmonary and critical care fellowship at the University of Colorado, Denver. He is board certified in Internal Medicine, Critical Care, Pulmonary and Neuro-Critical Care Medicine. Dr. Macht is married with two children and enjoys cycling, hiking, music, and spending time with his family.', education: 'Oregon Health & Science University, Portland, OR', residency: 'Oregon Health & Science University, Portland, OR', fellowship: 'University of Colorado, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Katie A. McPherson', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/mcpherson-katie.jpg`, bio: 'Dr. Katie McPherson attended Indiana University School of Medicine for her medical degree. She went on to complete her internship, residency, and chief residency in internal medicine at Indiana University. She moved to Colorado to complete her fellowship training in pulmonary sciences and critical care medicine at the University of Colorado.', education: 'Indiana University School of Medicine', residency: 'Indiana University Internal Medicine Residency', fellowship: 'University of Colorado Pulmonary and Critical Care Medicine Fellowship', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+            { name: 'Jen E Miller', credentials: 'DO', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/miller-jen.jpeg`, bio: 'Dr. Jennifer Miller was born in Colorado and has always considered it home. She graduated from Western University of Health Sciences for medical school and went on to complete her internal medicine residency and pulmonary/critical care fellowship at the University of Colorado.', education: 'ATSU – School of Osteopathic Medicine Arizona', residency: 'University of Washington', fellowship: 'University of California Davis', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care' },
+            { name: 'Andrea K Mytinger', credentials: 'DO', title: 'Attending Physician', specialty: 'Critical Care', locations: 'North', imageUrl: `${IMG}/mytinger-andrea.png`, bio: 'Dr. Andrea Mytinger earned her Doctor of Osteopathic Medicine from A.T. Still University-Kirksville College of Osteopathic Medicine. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'Western University of Health Sciences – COMP NW', residency: 'University of New Mexico', fellowship: 'Virginia Commonwealth University', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care' },
+            { name: 'Aaron Nadon', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/nadon-aaron.jpg`, bio: 'Dr. Nadon earned his medical degree at the University of Illinois College of Medicine in Chicago. He served his residency at Northwestern University in Chicago and his fellowship at the University of Colorado Health Sciences Center. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care and Pulmonary Medicine.', education: 'University of Colorado School of Medicine, Denver, CO', residency: 'Duke University Medical Center, Durham, NC', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Julia Newman', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/newman-julia.jpg`, bio: 'Dr. Julia Newman earned her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'University of Colorado School of Medicine', residency: 'Boston Medical Center', fellowship: 'Hospice and Palliative Care Fellowship at Beth Israel Deaconess Medical Center, Pulmonary and Critical Care at Boston Medical Center', boardCertification: 'Internal Medicine, Hospice and Palliative Care Medicine, and Pulmonary Medicine' },
+            { name: 'Ana Pacheco-Navarro', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/pacheco-navarro-ana.jpg`, bio: 'Dr. Ana Pacheco-Navarro earned her medical degree from the Ponce Health Sciences University School of Medicine in Ponce, Puerto Rico. She completed her internal medicine residency at the University of Connecticut and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'Weill Cornell Medical College, New York, NY', residency: 'Massachusetts General Hospital, Boston, MA', fellowship: 'Stanford University School of Medicine, Stanford, CA', boardCertification: 'Critical Care Medicine, Pulmonary Medicine, Internal Medicine' },
+            { name: 'Peter Riley', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West, North', imageUrl: `${IMG}/riley-peter.jpg`, bio: 'Dr. Riley earned his medical degree at Creighton University School of Medicine in Omaha, NE. He completed both his residency and fellowship at the University of Colorado. He is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.', education: 'University of Washington, Seattle, WA', residency: 'University of Colorado Health Sciences Center, Denver, CO', fellowship: 'University of Utah Health Sciences Center, Salt Lake City, UT', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care, Sleep Medicine' },
+            { name: 'Alexandra Smart', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West, Central', imageUrl: `${IMG}/smart-alexandra.jpg`, bio: 'Dr. Smart earned her medical degree at Tulane University School of Medicine in New Orleans. She served her residency at the University of Colorado Health Sciences Center and her fellowship at National Jewish Health. She is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.', education: 'University of Virginia School of Medicine, Charlottesville, VA', residency: 'Vanderbilt University, Nashville, TN', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease' },
+            { name: 'Eric Stramel', credentials: 'DO', title: 'Attending Physician', specialty: 'Critical Care', locations: 'South', imageUrl: `${IMG}/stramel-eric.jpg`, bio: 'Dr. Stramel earned his degree in osteopathic medicine at Des Moines University College of Osteopathic Medicine in Des Moines. His residency was served at Iowa Methodist Medical Center/University of Iowa and his fellowship at Creighton University Medical Center in Omaha, NE. Dr. Stramel is board certified in Internal Medicine, Pulmonary, Critical Care and Neuro-Critical Care.', education: 'Des Moines University College of Osteopathic Medicine, Des Moines, IA', residency: 'Iowa Methodist Medical Center, University of Iowa, Des Moines, IA', fellowship: 'Creighton University Medical Center, Omaha, NE', boardCertification: 'Critical Care, Neurocritical Care, Pulmonary Medicine' },
+            { name: 'Ryan Sullivan', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West', imageUrl: `${IMG}/sullivan-ryan.jpg`, bio: 'Dr. Ryan Sullivan grew up in New Hampshire. He received his medical degree from the University of Queensland in Australia and completed his internal medicine residency at the Hospital of the University of Pennsylvania in Philadelphia. He then moved to Denver for fellowship in Pulmonary and Critical Care Medicine at the University of Colorado.', education: 'University of Queensland, Australia', residency: 'Hospital of the University of Pennsylvania', fellowship: 'University of Colorado', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+            { name: 'Julie Sutarik', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/sutarik-julie.jpg`, bio: 'Dr. Sutarik earned her medical degree at the University of Washington School of Medicine in Seattle. Her residency and fellowship were completed at the University of Colorado. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.', education: 'University of Washington School of Medicine, Seattle, WA', residency: 'University of Colorado Health Sciences Center, Denver, CO', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Jennifer Taylor', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'South, Central', imageUrl: `${IMG}/taylor-jennifer.jpg`, bio: 'Dr. Jennifer Taylor earned her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'University of Michigan', residency: 'University of Michigan', fellowship: 'University of Colorado', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care' },
+            { name: 'Samantha Thomas-Nadler', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/thomas-nadler-samantha.jpg`, bio: 'Dr. Samantha Thomas-Nadler received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'American University of the Caribbean', residency: 'East Carolina University, Greenville, NC', fellowship: 'East Carolina University, Greenville, NC', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease' },
+            { name: 'Dominic Titone', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'West', imageUrl: `${IMG}/titone-dominic.jpg`, bio: 'Dr. Dominic Titone received his medical degree from the Loyola University Chicago Stritch School of Medicine. He completed his internal medicine residency at the University of Colorado and his Pulmonary and Critical Care fellowship at the University of Colorado Anschutz Medical Campus.', education: 'Oregon Health & Science University (OHSU) School of Medicine', residency: 'Internal Medicine/Pediatrics, University of Minnesota, MN', fellowship: 'Pulmonary/Critical Care, University of California, San Diego, CA', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Andrew Waas', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'South', imageUrl: `${IMG}/waas-andrew.jpg`, bio: 'Dr. Waas earned his medical degree at the Medical College of Georgia in Augusta, GA. His residency was served at Emory University in Atlanta and his fellowship at the University of Colorado, Denver. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.', education: 'University of Colorado, Denver, CO', residency: 'Duke University Hospital, Durham, NC', fellowship: 'University of Colorado, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'Jennifer Wink', credentials: 'MD', title: 'Attending Physician', specialty: 'Critical Care', locations: 'Multiple', imageUrl: `${IMG}/wink-jennifer.jpg`, bio: 'Dr. Jennifer Wink received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.', education: 'Chicago Medical School', residency: 'Madigan Army Medical Center', fellowship: 'Walter Reed Army Medical Center', boardCertification: 'Critical Care, Pulmonary, Sleep Medicine' },
+
+            // Interventional Pulmonology
+            { name: 'Mary Elmasri', credentials: 'MD', title: 'Attending Physician, Interventional Pulmonology', specialty: 'Interventional Pulmonology', locations: 'West', imageUrl: `${IMG}/elmasri-mary.jpg`, bio: 'Dr. Elmasri earned her medical degree at Washington University in St. Louis, MO. She served her residency in Internal Medicine and Fellowship in Pulmonary/Critical Care at the University of California, San Diego. She then went on to do her Interventional Pulmonary Fellowship at Duke University in Durham, NC. She is board certified in Internal Medicine, Pulmonary Medicine, and board eligible in Critical Care and Interventional Pulmonary Medicine. She has a special interest in Interventional Pulmonary Medicine.', education: 'Washington University in St. Louis, MO', residency: 'University of California, San Diego, CA', fellowship: 'Duke University in Durham, NC', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Interventional Pulmonary' },
+            { name: 'Anne Reihman', credentials: 'MD', title: 'Attending Physician, Interventional Pulmonology', specialty: 'Interventional Pulmonology', locations: 'South', imageUrl: `${IMG}/reihman-anne.jpg`, bio: 'Dr. Anne Reihman earned her medical degree from Oregon Health & Science University School of Medicine. She completed her internal medicine residency at the University of Washington and her Pulmonary and Critical Care Fellowship at the University of Colorado. She went on to complete her Interventional Pulmonology fellowship at the University of Colorado Anschutz Medical Campus.', education: 'Northwestern University Feinberg School of Medicine', residency: 'Duke University', fellowship: 'University of Colorado', boardCertification: 'Internal Medicine, Pulmonary Medicine, Critical Care Medicine' },
+
+            // Outpatient Pulmonary & Sleep
+            { name: 'Tom Bost', credentials: 'MD', title: 'Attending Physician', specialty: 'Outpatient Pulmonary & Sleep', locations: 'West', imageUrl: `${IMG}/bost-tom.jpg`, bio: 'Dr. Bost earned his medical degree at the University of Michigan Medical School in Ann Arbor, and served his residency and fellowship at the University of Colorado Health Sciences Center in Denver. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care Medicine as well as Pulmonology. Married with three children, Dr. Bost is a hockey player, hiker, reader and consumer of all things rhubarb.', education: 'University of Michigan Medical School, Ann Arbor, MI', residency: 'University of Colorado Health Sciences Center, Denver, CO', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease, Neurocritical Care' },
+            { name: 'James Metkus', credentials: 'MD', title: 'Attending Physician, Sleep Medicine', specialty: 'Outpatient Pulmonary & Sleep', locations: 'West, North', imageUrl: `${IMG}/metkus-james.jpg`, bio: 'Dr. Metkus earned his medical degree at the Sidney Kimmel Medical College in Philadelphia, PA. He went on to complete his Otolaryngology-head and neck surgery residency at Stony Brook University Hospital followed by his fellowship training in sleep medicine at the University of Colorado. In his free time he enjoys hiking, skiing and spending time with his wife and son.', education: 'Sidney Kimmel Medical College at Thomas Jefferson University', residency: 'Stony Brook University Hospital', fellowship: 'University of Colorado', boardCertification: 'Otolaryngology-Head and Neck Surgery and Sleep Medicine' },
+
+            // Advanced Practice Providers
+            { name: 'Amanda Anderson-Pleiss', credentials: 'MSN, APRN, ACNPC-AG', title: 'Advanced Practice Provider', specialty: 'APP', locations: 'Multiple', imageUrl: `${IMG}/anderson-pleiss-amanda.jpg`, bio: 'Amanda graduated with her Masters Degree in Adult-Gerontology Acute Care Nurse Practitioner in 2020. Prior to that she has 10 years experience as a RN, mostly in the ICU. Prior to joining CCPSA, Amanda has 2 years of experience in Pulmonary & Sleep Medicine both inpatient & outpatient. Amanda is married with one daughter. She enjoys gardening & traveling with her family in her free time.' },
+            { name: 'Rebecca Gartman', credentials: 'PA-C', title: 'Physician Assistant', specialty: 'APP', locations: 'Multiple', bio: 'Rebecca is Colorado Native who has been working in Internal Medicine for the past 17 years. She spent most of her career serving underserved populations locally in the Denver area. Her hobbies include playing hockey, camping, fishing, and almost any activity that gets her outdoors.' },
+            { name: 'Laura Ludlow', credentials: 'PA-C', title: 'Physician Assistant', specialty: 'APP', locations: 'Multiple', imageUrl: `${IMG}/ludlow-laura.jpg`, bio: 'Biography coming soon.' },
+            { name: 'Amanda Savolt', credentials: 'APRN, FNP-C', title: 'Advanced Practice Provider', specialty: 'APP', locations: 'Multiple', imageUrl: `${IMG}/savolt-amanda.jpg`, bio: 'Amanda graduated from the University of Kansas with a degree in Nursing. She then completed her Masters Degree and Family Nurse Practitioner at the University of Colorado. She has been working in Pulmonary medicine for 7 years. Amanda is married with two daughters. She enjoys hiking, travel, and spending time with family.' },
+            { name: 'Carly Strappini', credentials: 'FNP-C', title: 'Advanced Practice Provider', specialty: 'APP', locations: 'Multiple', imageUrl: `${IMG}/strappini-carly.jpg`, bio: 'Carly earned her degree from the University of Colorado in 2022. Prior to becoming a nurse practitioner, she worked as a registered nurse in the pulmonary department. She enjoys skiing, hiking, and spending time with her family.' },
+
+            // Allied Health
+            { name: 'Sarah Mateer', credentials: 'RN, BSN', title: 'Clinic Registered Nurse', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/mateer-sarah.jpg`, bio: 'Biography coming soon.' },
+            { name: 'Laura Reynolds', credentials: 'RN', title: 'Clinic Registered Nurse', specialty: 'Allied Health', locations: 'Multiple', bio: 'Biography coming soon.' },
+            { name: 'Emily Yount', credentials: 'BSN, RN', title: 'Clinic Registered Nurse', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/yount-emily.jpeg`, bio: 'Biography coming soon.' },
+            { name: 'Alisa Batton', credentials: 'RRT', title: 'Respiratory Therapist', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/batton-alisa.jpg`, bio: 'Front Range Community College, graduated 1991.' },
+            { name: 'Erica Brown', credentials: 'RRT', title: 'Respiratory Therapist', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/brown-erica.jpeg`, bio: 'Associates degree in Respiratory Therapy from Pickens Technical College, 2011.' },
+            { name: 'Cheri Hughes', credentials: 'RRT', title: 'Respiratory Therapist', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/hughes-cheri.jpg`, bio: 'Associates Degree of Science in Respiratory Care from Crafton Hills College, 2011.' },
+            { name: 'Carly Phares', credentials: 'RRT', title: 'Respiratory Therapist', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/phares-carly.jpg`, bio: 'Bachelor of Science in English-Journalism from Tennessee Technological University and an Associates in Respiratory Therapy from Pima (2013).' },
+            { name: 'Nicole Turnbaugh', credentials: 'RT', title: 'Respiratory Therapist', specialty: 'Allied Health', locations: 'Multiple', imageUrl: `${IMG}/turnbaugh-nicole.jpg`, bio: 'Applied Associate Degree in Science, Certified Respiratory Therapist (Certified by the National Board for Respiratory Care).' },
+
+            // Executive Team
+            { name: 'Paula Dennen', credentials: 'MD', title: 'Managing Partner Physician', specialty: 'Executive', locations: 'Multiple', imageUrl: `${IMG}/dennen-paula.jpg`, bio: 'Dr. Dennen earned her medical degree at the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.', education: 'University of Colorado Health Sciences Center, Denver, CO', residency: 'University of Colorado Health Sciences Center, Denver, CO', fellowship: 'University of Colorado Health Sciences Center, Denver, CO', boardCertification: 'Internal Medicine, Critical Care Medicine, Pulmonary Disease' },
+            { name: 'Danielle Greco', credentials: '', title: 'Director of Human Resources', specialty: 'Executive', locations: 'Multiple', imageUrl: `${IMG}/greco-danielle.jpg`, bio: 'Danielle Greco joined CCPSA in 2018. She received her BA from the University of Vermont in Burlington, VT and she is a certified human resources professional through The Society of Human Resource Management (SHRM-CP).' },
+            { name: 'Amber Schoenrock', credentials: '', title: 'Director of Clinic Operations', specialty: 'Executive', locations: 'Multiple', imageUrl: `${IMG}/schoenrock-amber.jpg`, bio: 'Amber Schoenrock has worked in healthcare management for over 20 years, bringing a deep commitment to improving care, supporting teams, and making a meaningful difference in people\'s lives. A proud Colorado native, Amber combines professional expertise with a genuine passion for helping others.' },
+        ];
+
+    let currentCategory = 'All';
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    function renderProviders() {
+      const grid = document.getElementById('provider-grid');
+      const filtered = providers.filter(p => currentCategory === 'All' || p.specialty === currentCategory);
+
+      grid.innerHTML = filtered.map((provider, index) => {
+        const cardId = `card-${index}`;
+        const initials = provider.name.split(' ').map(n => n[0]).join('');
+        const hasPhoto = provider.imageUrl && provider.imageUrl.trim() !== '';
+
+        return `
+          <div class="provider-card" id="${cardId}">
+            <div class="relative overflow-hidden">
+              ${hasPhoto ? `
+                <img src="${provider.imageUrl}" alt="${provider.name}" class="provider-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="provider-photo-placeholder hidden-bio" style="display: none;">${initials}</div>
+              ` : `
+                <div class="provider-photo-placeholder">${initials}</div>
+              `}
+              <div class="provider-photo-gradient"></div>
+            </div>
+            <div class="provider-content">
+              <div class="specialty-badge">${provider.specialty}</div>
+              <h3 class="text-lg font-bold text-navy mb-1">${provider.name}</h3>
+              <p class="text-sm text-gray-600 mb-2">${provider.credentials} • ${provider.title}</p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                ${provider.locations.split(',').map(loc => `<span class="location-badge">${loc.trim()}</span>`).join('')}
+              </div>
+              <div id="bio-short-${cardId}" class="bio-section">
+                <button onclick="toggleBio('${cardId}')" class="btn-view-profile" style="width: 100%;">View Profile</button>
+              </div>
+              <div id="bio-full-${cardId}" class="bio-expanded">
+                ${provider.bio ? `<p class="bio-text">${provider.bio}</p>` : ''}
+                ${provider.bio ? `
+                  <div class="credentials-section">
+                    <p><span class="credentials-label">Medical School:</span> ${provider.education}</p>
+                    <p><span class="credentials-label">Residency:</span> ${provider.residency}</p>
+                    <p><span class="credentials-label">Fellowship:</span> ${provider.fellowship}</p>
+                    <p><span class="credentials-label">Board Certification:</span> ${provider.boardCertification}</p>
+                  </div>
+                ` : '<p class="text-xs text-gray-500 italic">Full biography coming soon.</p>'}
+                <button onclick="toggleBio('${cardId}')" class="btn-view-profile" style="width: 100%; margin-top: 1rem;">Hide Profile</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Observe fade-in elements (not provider cards)
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    function toggleBio(cardId) {
+      const shortBio = document.getElementById(`bio-short-${cardId}`);
+      const fullBio = document.getElementById(`bio-full-${cardId}`);
+
+      if (fullBio.classList.contains('bio-visible')) {
+        // Close: hide full bio, show button
+        fullBio.classList.remove('bio-visible');
+        shortBio.style.display = 'block';
+      } else {
+        // Open: show full bio, hide button
+        fullBio.classList.add('bio-visible');
+        shortBio.style.display = 'none';
+      }
+    }
+
+    function filterByCategory(category) {
+      currentCategory = category;
+
+      // Update active button
+      document.querySelectorAll('.filter-tab').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      renderProviders();
+    }
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', renderProviders);
+  </script>
+</body>
+</html>
