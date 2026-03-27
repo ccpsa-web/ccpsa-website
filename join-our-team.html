@@ -304,6 +304,38 @@
     .bottom-0 { bottom: 0; }
     .left-0 { left: 0; }
     .right-0 { right: 0; }
+
+    /* Job Details Expand/Collapse Styles */
+    .job-details {
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+    }
+
+    .job-details.expanded {
+      max-height: 2000px;
+    }
+
+    .toggle-icon {
+      transform: rotate(0deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .job-details.expanded ~ div .toggle-icon,
+    button[onclick*="toggleJobDetails"].expanded ~ .job-details .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    .job-details.expanded .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    #job-card-clinic-nurse .toggle-icon.rotated,
+    #job-card-patient-care .toggle-icon.rotated,
+    #job-card-pa-np .toggle-icon.rotated,
+    #job-card-physician .toggle-icon.rotated {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
 <body class="bg-light-gray">
@@ -488,65 +520,386 @@
           <p class="text-muted-foreground mb-8 mt-4">Click any position to apply. We're recruiting talented healthcare professionals to join our growing organization.</p>
 
           <div class="space-y-4">
-            <a href="#apply" onclick="selectPosition('Clinic Nurse')" class="block bg-white rounded-lg shadow-md p-6 border-l-4 border-blue hover:shadow-lg hover:border-l-8 transition-all duration-300 cursor-pointer fade-in-up" style="transition-delay: 450ms;">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3 class="text-xl font-semibold text-navy mb-2">Clinic Nurse</h3>
-                  <p class="text-muted-foreground mb-2">Parker, CO</p>
-                  <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
-                  <p class="text-sm text-muted-foreground mt-3">Provide direct patient care in our outpatient pulmonary clinic. Responsibilities include patient assessments, medication administration, care coordination, and patient education.</p>
-                </div>
-                <div class="flex flex-col items-end gap-2">
+            <div id="job-card-clinic-nurse" class="bg-white rounded-lg shadow-md border-l-4 border-blue hover:shadow-lg transition-shadow duration-300 fade-in-up" style="transition-delay: 450ms;">
+              <div class="p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Clinic Nurse</h3>
+                    <p class="text-muted-foreground mb-2">Parker, CO</p>
+                    <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
+                  </div>
                   <span class="text-sm bg-blue/10 text-blue font-semibold px-3 py-1 rounded-full whitespace-nowrap">Open</span>
-                  <span class="text-sm text-blue font-medium flex items-center gap-1 mt-2">Apply <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </div>
               </div>
-            </a>
 
-            <a href="#apply" onclick="selectPosition('Patient Care Coordinator')" class="block bg-white rounded-lg shadow-md p-6 border-l-4 border-amber hover:shadow-lg hover:border-l-8 transition-all duration-300 cursor-pointer fade-in-up" style="transition-delay: 500ms;">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3 class="text-xl font-semibold text-navy mb-2">Patient Care Coordinator</h3>
-                  <p class="text-muted-foreground mb-2">Denver Metro Area</p>
-                  <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
-                  <p class="text-sm text-muted-foreground mt-3">Coordinate patient scheduling, referrals, and follow-up care across our clinic network. Serve as the primary point of contact for patients navigating their care journey.</p>
+              <!-- Details Toggle Button -->
+              <div class="px-6 pb-4">
+                <button onclick="toggleJobDetails('clinic-nurse')" class="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors">
+                  <span class="toggle-text">View Details</span>
+                  <svg class="h-4 w-4 toggle-icon transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
+
+              <!-- Expandable Details Section -->
+              <div class="job-details hidden overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <div class="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Summary</h4>
+                    <p class="text-sm text-muted-foreground">The Clinic Nurse position is an essential clinical role, providing onsite clinical support to multiple Pulmonary and Sleep clinic's day to day operations. The Clinic Nurse must hold an RN degree, BSN preferred and have experience within the nursing field. Working in conjunction with the RN team and clinic staff, they will assist in patient call triaging, medication management, RN visits, care coordination as well as other operational and clinical duties. It is necessary that within this role, the Clinic Nurse cultivates and supports a strong team culture and collaborative environment centered on consistently delivering exceptional patient care. This position is based in our South Clinic located in Parker, CO.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Essential Responsibilities and Tasks</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Promote the CCPSA culture of team collaboration, while providing excellent clinical care to our patients.</li>
+                      <li>Triage patient calls and elevate to APP team or MD as needed.</li>
+                      <li>Schedule audio visits as needed for certain triage patients needing priority assistance and APP advise</li>
+                      <li>Schedule established patient follow up appointments as needed</li>
+                      <li>Assist in the coordination and management of our Lung Health Initiative program</li>
+                      <li>Build strong positive communication with clinic staff to increase the success of the practice and provide excellent patient care.</li>
+                      <li>See patients during nurse visits to assess patient needs.</li>
+                      <li>In collaboration with the Providers, develop patient education on medications and disease states.</li>
+                      <li>Build strong positive working relationships and communication with Providers.</li>
+                      <li>Manage medications for patients; including education, prior authorizations when applicable, and necessary monitoring.</li>
+                      <li>Conduct care coordination for our patients.</li>
+                      <li>Conduct care coordination and evaluation process for Endobronchial Valve candidates in conjunction with our IP physicians and care team</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Skills, Education and/or Work Experience Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>RN degree required, BSN preferred.</li>
+                      <li>Minimum of 1-3 years' experience in the nursing / healthcare field.</li>
+                      <li>Strong clinical knowledge, ability to assess and triage patients over the phone and in person.</li>
+                      <li>Demonstrate knowledge of creating excellent patient experiences in an outpatient clinic setting.</li>
+                      <li>Superior communication skills to effectively and professionally communicate via email, telephone and in person with patients, Providers and staff.</li>
+                      <li>Respect patient privacy by maintaining confidentiality in accordance to HIPAA requirements.</li>
+                      <li>Excellent organizational and time management skills.</li>
+                      <li>Computer proficiency, knowledge of EMR systems.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Physical Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Ability to safely and successfully perform the essential job functions consistent with the ADA, FMLA and other federal, state and local standards, including meeting qualitative and/or quantitative productivity standards.</li>
+                      <li>Ability to drive between clinic locations for meetings.</li>
+                      <li>Ability to sit for extended time periods.</li>
+                      <li>Must be able to lift and carry up to 30 lbs.</li>
+                      <li>Must be able to talk, listen and speak clearly on telephone.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Compensation</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Competitive salary.</li>
+                      <li>Benefits effective date-of-hire (no waiting period).</li>
+                      <li>Comprehensive medical benefits. Company covers 80-85% percent of individual or family premium.</li>
+                      <li>Dental and vision benefits offered at no cost to the employee. Company covers 100% of individual or family premium.</li>
+                      <li>Life and AD&D benefits.</li>
+                      <li>Optional additional life & disability insurance at group discounts.</li>
+                      <li>PTO and holiday pay.</li>
+                      <li>401k benefits with company contribution after eligibility period.</li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-gray-200">
+                    <a href="#apply" onclick="selectPosition('Clinic Nurse')" class="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors">
+                      Apply for this Position <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  </div>
                 </div>
-                <div class="flex flex-col items-end gap-2">
+              </div>
+            </div>
+
+            <div id="job-card-patient-care" class="bg-white rounded-lg shadow-md border-l-4 border-amber hover:shadow-lg transition-shadow duration-300 fade-in-up" style="transition-delay: 500ms;">
+              <div class="p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Patient Care Coordinator</h3>
+                    <p class="text-muted-foreground mb-2">Lakewood, CO</p>
+                    <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
+                  </div>
                   <span class="text-sm bg-amber/10 text-amber font-semibold px-3 py-1 rounded-full whitespace-nowrap">Open</span>
-                  <span class="text-sm text-blue font-medium flex items-center gap-1 mt-2">Apply <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </div>
               </div>
-            </a>
 
-            <a href="#apply" onclick="selectPosition('Physician Assistant/Nurse Practitioner')" class="block bg-white rounded-lg shadow-md p-6 border-l-4 border-blue hover:shadow-lg hover:border-l-8 transition-all duration-300 cursor-pointer fade-in-up" style="transition-delay: 550ms;">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3 class="text-xl font-semibold text-navy mb-2">Physician Assistant / Nurse Practitioner</h3>
-                  <p class="text-muted-foreground mb-2">Multiple Locations</p>
-                  <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
-                  <p class="text-sm text-muted-foreground mt-3">Work alongside board-certified pulmonologists providing outpatient pulmonary care. Manage patients with COPD, asthma, ILD, and other respiratory conditions.</p>
+              <!-- Details Toggle Button -->
+              <div class="px-6 pb-4">
+                <button onclick="toggleJobDetails('patient-care')" class="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors">
+                  <span class="toggle-text">View Details</span>
+                  <svg class="h-4 w-4 toggle-icon transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
+
+              <!-- Expandable Details Section -->
+              <div class="job-details hidden overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <div class="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Summary</h4>
+                    <p class="text-sm text-muted-foreground">We are currently seeking Patient Care Coordinators to join our committed team of professionals at our West Clinic, located in Lakewood, CO. Critical Care, Pulmonary and Sleep Associates is a multispecialty private physician practice, providing Critical Care, Pulmonary and Sleep medical services to the Denver metro area for over 40 years. The Patient Care Coordinator is an essential administrative support role within CCPSA's Clinic Staff Team. The primary function of this position is to perform scheduling duties for the clinic, manage frontline communication, and ensure smooth day-to-day operations.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Essential Responsibilities and Tasks</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Contact patients to schedule new patient and follow-up appointments.</li>
+                      <li>Manage patient referrals and contact PCP regarding referrals as needed.</li>
+                      <li>Check patients in and out for their appointments.</li>
+                      <li>Verify patient insurance information and coverage.</li>
+                      <li>Collect patient payments at point of service.</li>
+                      <li>Prepare charts for new patients and follow up patients.</li>
+                      <li>Establish patient follow-up reminder recalls in EMR.</li>
+                      <li>Manage incoming and outgoing fax communication.</li>
+                      <li>Answer incoming phone calls, return voicemails, and route calls to appropriate staff members.</li>
+                      <li>Schedule hospital procedures as needed (Bronchoscopy, E-BUS, Thoracentesis, etc.)</li>
+                      <li>Obtain patients medical records as needed.</li>
+                      <li>Assist patients with web portal login information.</li>
+                      <li>Other duties as assigned by Clinic Leadership.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Skills, Education and/or Work Experience Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>High school diploma or GED required.</li>
+                      <li>Medical office front desk experience.</li>
+                      <li>Patient centered focus.</li>
+                      <li>Respect patient privacy by maintaining confidentiality in accordance to HIPAA requirements.</li>
+                      <li>Medical terminology knowledge.</li>
+                      <li>Typing speed of at least 50-80 WPM with excellent accuracy</li>
+                      <li>Proficient in Microsoft Office and EMR systems.</li>
+                      <li>Excellent verbal and written communication skills.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Physical Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Ability to safely and successfully perform the essential job functions consistent with the ADA, FMLA and other federal, state and local standards, including meeting qualitative and/or quantitative productivity standards.</li>
+                      <li>Ability to drive between clinic locations for meetings.</li>
+                      <li>Ability to sit for extended time periods.</li>
+                      <li>Must be able to lift and carry up to 30 lbs.</li>
+                      <li>Must be able to talk, listen and speak clearly on telephone.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Compensation</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Competitive hourly compensation.</li>
+                      <li>Benefits effective date-of-hire (no waiting period).</li>
+                      <li>Comprehensive medical benefits. Company covers 80-85% percent of individual or family premium.</li>
+                      <li>Dental and vision benefits offered at no cost to the employee. Company covers 100% of individual or family premium.</li>
+                      <li>Life and AD&D benefits.</li>
+                      <li>Optional additional life & disability insurance at group discounts.</li>
+                      <li>PTO and holiday pay.</li>
+                      <li>401k benefits with company contribution after eligibility period.</li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-gray-200">
+                    <a href="#apply" onclick="selectPosition('Patient Care Coordinator')" class="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors">
+                      Apply for this Position <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  </div>
                 </div>
-                <div class="flex flex-col items-end gap-2">
+              </div>
+            </div>
+
+            <div id="job-card-pa-np" class="bg-white rounded-lg shadow-md border-l-4 border-blue hover:shadow-lg transition-shadow duration-300 fade-in-up" style="transition-delay: 550ms;">
+              <div class="p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Physician Assistant / Nurse Practitioner</h3>
+                    <p class="text-muted-foreground mb-2">Multiple Locations</p>
+                    <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
+                  </div>
                   <span class="text-sm bg-blue/10 text-blue font-semibold px-3 py-1 rounded-full whitespace-nowrap">Open</span>
-                  <span class="text-sm text-blue font-medium flex items-center gap-1 mt-2">Apply <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
                 </div>
               </div>
-            </a>
 
-            <a href="#apply" onclick="selectPosition('Physician - Critical Care & Pulmonary')" class="block bg-white rounded-lg shadow-md p-6 border-l-4 border-amber hover:shadow-lg hover:border-l-8 transition-all duration-300 cursor-pointer fade-in-up" style="transition-delay: 600ms;">
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <h3 class="text-xl font-semibold text-navy mb-2">Physician - Critical Care & Pulmonary</h3>
-                  <p class="text-muted-foreground mb-2">Denver Metro Area</p>
-                  <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
-                  <p class="text-sm text-muted-foreground mt-3">Board-certified or board-eligible pulmonary/critical care physician to join our growing practice. Hospital-based ICU coverage and outpatient clinic responsibilities.</p>
-                </div>
-                <div class="flex flex-col items-end gap-2">
-                  <span class="text-sm bg-amber/10 text-amber font-semibold px-3 py-1 rounded-full whitespace-nowrap">Open</span>
-                  <span class="text-sm text-blue font-medium flex items-center gap-1 mt-2">Apply <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              <!-- Details Toggle Button -->
+              <div class="px-6 pb-4">
+                <button onclick="toggleJobDetails('pa-np')" class="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors">
+                  <span class="toggle-text">View Details</span>
+                  <svg class="h-4 w-4 toggle-icon transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
+
+              <!-- Expandable Details Section -->
+              <div class="job-details hidden overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <div class="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Summary</h4>
+                    <p class="text-sm text-muted-foreground">We are currently seeking a Physician Assistant or Nurse Practitioner to join our committed team of professionals. The Physician Assistant/Nurse Practitioner position is an essential outpatient clinical role, providing direct care to new and established pulmonary and/or sleep patients. It is necessary that within this role, the Advance Practice Provider cultivates and supports a strong team culture and collaborative environment centered on consistently delivering exceptional patient care. This position will have the peer support of 5 additional mid-levels that are currently working in the outpatient practice.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Essential Responsibilities and Tasks</h4>
+                    <div class="space-y-3 text-sm text-muted-foreground">
+                      <div>
+                        <strong>Patient Care:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                          <li>Patients on home O2 or nocturnal CPAP/BIPAP/NIV who need clinic evaluation to continue current care.</li>
+                          <li>Preoperative visits for those patients with non-complex Pulmonary issues and upcoming surgical needs.</li>
+                          <li>Hospital follow-up of patients admitted with COPD exacerbation and other Pulmonary disease.</li>
+                          <li>Pulmonary rehabilitation follow-up.</li>
+                          <li>Telephone consultation and follow-up as needed for patient clinical questions unable to be answered by MA or other clinic staff.</li>
+                          <li>Management and continuity of care for patients with straightforward Pulmonary or Sleep-focused clinical complaints.</li>
+                          <li>Urgent clinic visits (with close support of Pulmonary physician) of potentially both new and established patients as needed.</li>
+                          <li>Provide high-quality patient care while collaborating with the research team to support and manage critical clinical trials.</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <strong>Patient and Staff Education:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1">
+                          <li>Single or group patient education about inhaler therapy.</li>
+                          <li>Single or group patient education on disease processes such as COPD, etc.</li>
+                          <li>Establishing and maintaining educational forms and handouts for patients.</li>
+                          <li>Ongoing clinic staff education, as needed.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Skills, Education and/or Work Experience Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Completion of an accredited Physician Assistant or Nurse Practitioner program.</li>
+                      <li>NCCPA or AANP certified, respectively.</li>
+                      <li>Minimum 5-years total post training experience, minimum 2-years pulmonary experience required.</li>
+                      <li>DEA license eligible upon hire, per Colorado Drug Enforcement Administration's Advanced Practice Provider requirements.</li>
+                      <li>Willingness to travel to various clinic sites, as workflow dictates.</li>
+                      <li>Enthusiasm for working in an outpatient setting with a large team of physicians and clinic staff.</li>
+                      <li>Positive attitude, exemplary patient care, and willingness to adapt to changes in job description as needed for patient and clinic needs.</li>
+                      <li>Excellent verbal and written communication skills with patients and families, as well as clinic physicians and staff.</li>
+                      <li>Proficient with Office 365 software, and the ability to quickly learn and adapt to Electronic Medical Records.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Physical Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Ability to safely and successfully perform the essential job functions consistent with the ADA, FMLA and other federal, state and local standards.</li>
+                      <li>Ability to drive between clinic locations for meetings.</li>
+                      <li>Ability to sit or stand for extended time periods.</li>
+                      <li>Must be able to lift and carry up to 30 lbs.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Compensation</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Competitive salary.</li>
+                      <li>Paid malpractice premiums.</li>
+                      <li>Benefits effective date-of-hire (no waiting period).</li>
+                      <li>Comprehensive medical benefits. Company covers 80-85% percent of individual or family premium.</li>
+                      <li>Dental and vision benefits offered at no cost to the employee. Company covers 100% of individual or family premium.</li>
+                      <li>Life and AD&D benefits.</li>
+                      <li>Optional additional life, disability and accident coverages at group discounts.</li>
+                      <li>PTO and holiday pay.</li>
+                      <li>401k benefits with company contribution after eligibility period.</li>
+                      <li>CME stipend and allotted time.</li>
+                      <li>No call, nights, weekends, or holidays</li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-gray-200">
+                    <a href="#apply" onclick="selectPosition('Physician Assistant/Nurse Practitioner')" class="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors">
+                      Apply for this Position <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </a>
+            </div>
+
+            <div id="job-card-physician" class="bg-white rounded-lg shadow-md border-l-4 border-amber hover:shadow-lg transition-shadow duration-300 fade-in-up" style="transition-delay: 600ms;">
+              <div class="p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-xl font-semibold text-navy mb-2">Physician - Critical Care & Pulmonary</h3>
+                    <p class="text-muted-foreground mb-2">Denver Metro Area</p>
+                    <p class="text-sm text-navy"><strong>Full-time Position</strong></p>
+                  </div>
+                  <span class="text-sm bg-amber/10 text-amber font-semibold px-3 py-1 rounded-full whitespace-nowrap">Open</span>
+                </div>
+              </div>
+
+              <!-- Details Toggle Button -->
+              <div class="px-6 pb-4">
+                <button onclick="toggleJobDetails('physician')" class="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors">
+                  <span class="toggle-text">View Details</span>
+                  <svg class="h-4 w-4 toggle-icon transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </div>
+
+              <!-- Expandable Details Section -->
+              <div class="job-details hidden overflow-hidden transition-all duration-300" style="max-height: 0;">
+                <div class="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Summary</h4>
+                    <p class="text-sm text-muted-foreground">We are currently seeking a Physician board-certified in Pulmonary/Critical Care to join our committed team of professionals. Critical Care, Pulmonary and Sleep Associates is an independent, physician owned, large multispecialty private practice providing Critical Care, Pulmonary and Sleep care to the Denver metro area for over 40 years. Our dedicated team of over 30 Board Certified Critical Care, Pulmonary and Sleep Physicians along with our skilled clinical and administrative staff exclusively serve multiple CommonSpirit and AdventHealth nonprofit Hospital ICUs in the Denver metro area and multiple outpatient clinic locations spanning Colorado's front range.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">What We Do in the Hospital</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>We provide direct patient care for a broad range of complex critically ill medical and surgical patients in addition to hospital pulmonary consultations.</li>
+                      <li>We perform typical ICU and pulmonary procedures as required including intubations, chest tubes, central and arterial lines, bronchoscopy etc.</li>
+                      <li>We have a robust Interventional Pulmonary Service.</li>
+                      <li>We take care of diverse and complex patient populations including ECMO, transplant, complex GI, Cardiac Surgery, Neurointerventional Radiology and Neurosurgical patients.</li>
+                      <li>We have a variety of coverage models from 24/7 in-house coverage to remote tele ICU coverage for our smaller hospitals.</li>
+                      <li>We provide exceptional multidisciplinary care to our patients through our collaborative team-based culture.</li>
+                      <li>We provide opportunities for additional career development including teaching, hospital leadership and clinical research.</li>
+                    </ul>
+                    <p class="text-sm text-muted-foreground mt-3"><strong>Hospital Locations:</strong> St. Anthony Hospital, St. Anthony North Hospital, AdventHealth at Porter, Parker, Castle Rock, Littleton, Avista, St. Anthony Summit, and Elizabeth Hospitals.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">What We Do Outside the Hospital</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>We manage and provide continuity of care for patients with complex pulmonary and/or sleep conditions.</li>
+                      <li>We partner with and provide oversight, leadership, and resource support for our Advanced Practice Providers (NP and PA) in our outpatient clinics.</li>
+                      <li>We build and nurture a culture of strong positive communication with staff, consulting physicians, Nurses, RTs, etc.</li>
+                      <li>We engage in and support clinical and administrative leadership activities and initiatives.</li>
+                    </ul>
+                    <p class="text-sm text-muted-foreground mt-3"><strong>Clinic Locations:</strong> West Clinic (Lakewood, CO), South Clinic (Parker, CO), North Clinic (Westminster, CO), Central Clinic (Littleton, CO), Goodland, KS.</p>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Skills, Education and/or Work Experience Requirements</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Completion of an accredited fellowship in Pulmonary and Critical Care Medicine</li>
+                      <li>Board Certified or Board Eligible in Pulmonary and Critical Care Medicine</li>
+                      <li>Flexibility to travel to various sites, as needed</li>
+                      <li>Strong interpersonal and communication skills</li>
+                      <li>Applicants must be authorized to work for ANY employer in the U.S.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 class="font-semibold text-navy mb-2">Compensation</h4>
+                    <ul class="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Competitive market driven salary and benefits</li>
+                      <li>Fully paid medical malpractice insurance premiums</li>
+                      <li>Comprehensive medical, dental, vision, disability, and life insurance benefits with partial practice subsidy</li>
+                      <li>401k retirement benefits, with employer contributions</li>
+                      <li>Colorado Relocation expense reimbursement</li>
+                      <li>CME stipend</li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-gray-200">
+                    <a href="#apply" onclick="selectPosition('Physician - Critical Care & Pulmonary')" class="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors">
+                      Apply for this Position <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -899,6 +1252,36 @@
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" opacity="0.75"></path></svg> Submitting...';
       });
+    }
+
+    // Toggle job details expand/collapse
+    function toggleJobDetails(cardId) {
+      const cardElement = document.getElementById('job-card-' + cardId);
+      const detailsSection = cardElement.querySelector('.job-details');
+      const toggleButton = cardElement.querySelector('button[onclick*="toggleJobDetails"]');
+      const toggleText = toggleButton.querySelector('.toggle-text');
+      const toggleIcon = toggleButton.querySelector('.toggle-icon');
+
+      if (detailsSection.classList.contains('hidden')) {
+        // Expand
+        detailsSection.classList.remove('hidden');
+        detailsSection.classList.add('expanded');
+        toggleText.textContent = 'Hide Details';
+        toggleIcon.classList.add('rotated');
+        // Trigger animation by setting max-height
+        setTimeout(() => {
+          detailsSection.style.maxHeight = '2000px';
+        }, 10);
+      } else {
+        // Collapse
+        detailsSection.style.maxHeight = '0';
+        toggleText.textContent = 'View Details';
+        toggleIcon.classList.remove('rotated');
+        setTimeout(() => {
+          detailsSection.classList.add('hidden');
+          detailsSection.classList.remove('expanded');
+        }, 300);
+      }
     }
   </script>
 </body>
