@@ -17,14 +17,27 @@
       if (storedAuth) {
         // Returning from OAuth — intercept any popup and post auth token instead
         localStorage.removeItem('decap-cms-auth');
-        var origOpen = window.open;
+
+        // Patch window.open to prevent popup and post auth token
         window.open = function() {
-          // Don't open any popup, just post the stored token
           setTimeout(function() {
             window.postMessage('authorization:github:success:' + storedAuth, '*');
-          }, 100);
+          }, 500);
           return { closed: false, close: function() {} };
         };
+
+        // Auto-click the Sign in button when it appears
+        var check = setInterval(function() {
+          var btns = document.querySelectorAll('button');
+          for (var i = 0; i < btns.length; i++) {
+            if (btns[i].textContent.indexOf('GitHub') >= 0 || btns[i].textContent.indexOf('Sign in') >= 0) {
+              clearInterval(check);
+              btns[i].click();
+              return;
+            }
+          }
+        }, 300);
+      }
       } else {
         // No token — intercept any auth popup and redirect main window to our OAuth endpoint
         var origOpen = window.open;
