@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>CCPSA Admin</title>
-  <script>
+<script>
     window.CMS_MANUAL_INIT = true;
+    // Listen for OAuth token via localStorage relay (fallback when window.opener is lost)
+    window.addEventListener('storage', function(e) {
+      if (e.key === 'decap-cms-auth' && e.newValue) {
+        try {
+          var data = JSON.parse(e.newValue);
+          localStorage.removeItem('decap-cms-auth');
+          window.postMessage('authorization:github:success:' + JSON.stringify(data), '*');
+        } catch(err) {}
+      }
+    });
   </script>
   <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
 </head>
