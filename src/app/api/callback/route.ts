@@ -39,26 +39,31 @@ export async function GET(request: NextRequest) {
 <html>
 <head><title>Authorized</title></head>
 <body>
-  <p>Authorized. This window will close automatically.</p>
+  <p>Completing authorization...</p>
   <script>
     (function() {
       var token = decodeURIComponent("${encodeURIComponent(token)}");
-      var message = JSON.stringify({ token: token, provider: "github" });
-      var authMsg = "authorization:github:success:" + message;
+      var data = JSON.stringify({ token: token, provider: "github" });
+      var authMsg = "authorization:github:success:" + data;
+      var sent = false;
 
-      function trySend() {
+      // Method 1: try window.opener.postMessage
+      try {
         if (window.opener) {
-          window.opener.postMessage(authMsg, window.opener.origin || "*");
-          setTimeout(function() { window.close(); }, 500);
-        } else {
-          document.body.innerHTML = "<p>Authorization successful. Please close this window and refresh the admin page.</p>";
+          window.opener.postMessage(authMsg, "*");
+          sent = true;
         }
-      }
+      } catch(e) {}
 
-      if (document.readyState === "complete") {
-        trySend();
+      // Method 2: use localStorage as cross-tab relay
+      try {
+        localStorage.setItem("decap-cms-auth", data);
+      } catch(e) {}
+
+      if (sent) {
+        setTimeout(function() { window.close(); }, 500);
       } else {
-        window.addEventListener("load", trySend);
+        setTimeout(function() { window.close(); }, 1000);
       }
     })();
   </script>
