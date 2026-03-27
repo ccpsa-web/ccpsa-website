@@ -61,26 +61,3 @@ export async function GET(request: NextRequest) {
     headers: { 'Content-Type': 'text/html' },
   });
 }
-```
-
-**File 3:** Update `public/admin/index.html` — edit the existing file and replace the backend block:
-
-Find:
-```
-      backend: {
-        name: "github",
-        repo: "ccpsa-web/ccpsa-website",
-        branch: "main",
-        base_url: "https://sveltia-cms-auth.netlify.app"
-      },
-```
-
-Replace with:
-```
-      backend: {
-        name: "github",
-        repo: "ccpsa-web/ccpsa-website",
-        branch: "main",
-        base_url: window.location.origin,
-        auth_endpoint: "api/auth"
-      },
