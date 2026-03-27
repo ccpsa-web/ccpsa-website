@@ -559,9 +559,11 @@
           <p class="text-muted-foreground mb-8 mt-4">Upload your resume and we'll be in touch. You can also email <a href="mailto:careers@critcareMD.com" class="text-blue hover:text-navy transition-colors font-medium">careers@critcareMD.com</a> directly.</p>
 
           <div class="bg-white rounded-lg shadow-md p-8">
-            <!-- IMPORTANT: Replace YOUR_FORM_ID with your actual Formspree form ID -->
-            <form id="application-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+            <form id="application-form" action="https://formsubmit.co/careers@critcareMD.com" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_subject" value="New Job Application - CCPSA Website">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://ccpsa-website.vercel.app/join-our-team?submitted=true">
 
               <!-- Resume Upload -->
               <div class="mb-8">
@@ -775,7 +777,7 @@
     // Intersection Observer for fade-in animations
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      rootMargin: '0px 0px 50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -876,43 +878,26 @@
       });
     }
 
-    // Form submission with Formspree
+    // Show success message if returning from form submission
+    if (window.location.search.includes('submitted=true')) {
+      const successMsg = document.getElementById('form-success');
+      const appForm = document.getElementById('application-form');
+      if (successMsg) successMsg.classList.remove('hidden');
+      if (appForm) appForm.style.display = 'none';
+      // Scroll to the success message
+      setTimeout(() => {
+        const applySection = document.getElementById('apply');
+        if (applySection) applySection.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+
+    // Form submit button loading state
     const appForm = document.getElementById('application-form');
     if (appForm) {
-      appForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+      appForm.addEventListener('submit', () => {
         const submitBtn = document.getElementById('submit-btn');
-        const successMsg = document.getElementById('form-success');
-        const errorMsg = document.getElementById('form-error');
-
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" opacity="0.75"></path></svg> Submitting...';
-
-        try {
-          const formData = new FormData(appForm);
-          const response = await fetch(appForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (response.ok) {
-            successMsg.classList.remove('hidden');
-            errorMsg.classList.add('hidden');
-            appForm.reset();
-            fileNameDisplay.classList.add('hidden');
-            dropZone.classList.remove('border-blue', 'bg-blue/5');
-            dropZone.classList.add('border-blue/30');
-            submitBtn.innerHTML = 'Submitted';
-          } else {
-            throw new Error('Form submission failed');
-          }
-        } catch (err) {
-          errorMsg.classList.remove('hidden');
-          successMsg.classList.add('hidden');
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"></path><path d="M22 2L15 22L11 13L2 9L22 2Z"></path></svg> Submit Application';
-        }
       });
     }
   </script>
