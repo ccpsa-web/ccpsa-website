@@ -5,19 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>CCPSA Admin</title>
-<script>
-    window.CMS_MANUAL_INIT = true;
-    // Listen for OAuth token via localStorage relay (fallback when window.opener is lost)
-    window.addEventListener('storage', function(e) {
-      if (e.key === 'decap-cms-auth' && e.newValue) {
-        try {
-          var data = JSON.parse(e.newValue);
-          localStorage.removeItem('decap-cms-auth');
-          window.postMessage('authorization:github:success:' + JSON.stringify(data), '*');
-        } catch(err) {}
+window.CMS_MANUAL_INIT = true;
+
+    (function() {
+      var storedAuth = localStorage.getItem('decap-cms-auth');
+
+      if (storedAuth) {
+        // Returning from OAuth redirect — we have a token
+        localStorage.removeItem('decap-cms-auth');
+
+        // Patch window.open so CMS doesn't actually open a popup
+        var origOpen = window.open;
+        window.open = function() {
+          window.open = origOpen;
+          return { closed: false, close: function() { this.closed = true; } };
+        };
+
+        // Wait for login button, click it (starts CMS auth listener), then post token
+        var check = setInterval(function() {
+          var btn = document.querySelector('button');
+          if (btn && btn.textContent.indexOf('Login') >= 0) {
+            clearInterval(check);
+            btn.click();
+            setTimeout(function() {
+              window.postMessage('authorization:github:success:' + storedAuth, '*');
+            }, 200);
+          }
+        }, 300);
+      } else {
+        // No token yet — redirect main window instead of opening popup
+        var origOpen = window.open;
+        window.open = function(url) {
+          if (url && url.indexOf('/api/auth') >= 0) {
+            window.location.href = url;
+            return null;
+          }
+          return origOpen.apply(window, arguments);
+        };
       }
-    });
-  </script>
+    })();
   <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
 </head>
 <body>
