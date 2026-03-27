@@ -21,17 +21,25 @@ window.CMS_MANUAL_INIT = true;
           return { closed: false, close: function() { this.closed = true; } };
         };
 
-        // Wait for login button, click it (starts CMS auth listener), then post token
+        // Wait for login button, click it, wait for DOM to settle, then post token
         var check = setInterval(function() {
           var btn = document.querySelector('button');
           if (btn && btn.textContent.indexOf('Login') >= 0) {
             clearInterval(check);
             btn.click();
-            setTimeout(function() {
-              window.postMessage('authorization:github:success:' + storedAuth, '*');
-            }, 200);
+            // Use MutationObserver to wait for React to finish its DOM update
+            var observer = new MutationObserver(function() {
+              observer.disconnect();
+              // DOM transition complete, safe to post auth message
+              setTimeout(function() {
+                window.postMessage('authorization:github:success:' + storedAuth, '*');
+              }, 300);
+            });
+            observer.observe(document.getElementById('nc-root') || document.body, {
+              childList: true, subtree: true
+            });
           }
-        }, 300);
+        }, 500);
       } else {
         // No token yet — redirect main window instead of opening popup
         var origOpen = window.open;
