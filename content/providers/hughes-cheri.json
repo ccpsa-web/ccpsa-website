@@ -1,0 +1,15 @@
+{
+  "name": "Cheri Hughes",
+  "credentials": "RRT",
+  "title": "Respiratory Therapist",
+  "category": "allied-health",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/hughes-cheri.jpg",
+  "bio": "Associates Degree of Science in Respiratory Care from Crafton Hills College, 2011.",
+  "order": 45
+}

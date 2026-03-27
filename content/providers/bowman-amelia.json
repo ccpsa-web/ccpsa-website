@@ -1,0 +1,15 @@
+{
+  "name": "Amelia Bowman",
+  "credentials": "MD",
+  "title": "Attending Physician",
+  "category": "critical-care",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/bowman-amelia.jpg",
+  "bio": "Dr. Amelia Bowman received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus in Aurora, CO.",
+  "order": 4
+}

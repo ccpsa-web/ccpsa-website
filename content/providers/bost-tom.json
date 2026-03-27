@@ -1,0 +1,12 @@
+{
+  "name": "Tom Bost",
+  "credentials": "MD",
+  "title": "Attending Physician",
+  "category": "outpatient-pulmonary-sleep",
+  "locations": [
+    "West"
+  ],
+  "image": "/images/providers/bost-tom.jpg",
+  "bio": "Dr. Bost earned his medical degree at the University of Michigan Medical School in Ann Arbor, and served his residency and fellowship at the University of Colorado Health Sciences Center in Denver. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care Medicine as well as Pulmonology. Married with three children, Dr. Bost is a hockey player, hiker, reader and consumer of all things rhubarb.",
+  "order": 38
+}

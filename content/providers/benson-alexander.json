@@ -1,0 +1,15 @@
+{
+  "name": "Alexander Benson",
+  "credentials": "MD",
+  "title": "Attending Physician",
+  "category": "critical-care",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/benson-alexander.jpg",
+  "bio": "Dr. Alexander Benson received his medical degree from Northeast Ohio Medical University in Rootstown, OH. He went on to complete his internship and residency in internal medicine and his fellowship in pulmonary diseases and critical care medicine at the University of Colorado Anschutz Medical Campus in Aurora, CO.",
+  "order": 2
+}

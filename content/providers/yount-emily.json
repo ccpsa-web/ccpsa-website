@@ -1,0 +1,15 @@
+{
+  "name": "Emily Yount",
+  "credentials": "BSN, RN",
+  "title": "Clinic Registered Nurse",
+  "category": "allied-health",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/yount-emily.jpeg",
+  "bio": "Biography coming soon.",
+  "order": 46
+}

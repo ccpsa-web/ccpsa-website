@@ -1,0 +1,13 @@
+{
+  "name": "Peter Riley",
+  "credentials": "MD",
+  "title": "Attending Physician",
+  "category": "critical-care",
+  "locations": [
+    "West",
+    "North"
+  ],
+  "image": "/images/providers/riley-peter.jpg",
+  "bio": "Dr. Riley earned his medical degree at Creighton University School of Medicine in Omaha, NE. He completed both his residency and fellowship at the University of Colorado. He is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
+  "order": 31
+}

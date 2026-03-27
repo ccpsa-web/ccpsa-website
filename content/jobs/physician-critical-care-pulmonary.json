@@ -1,0 +1,46 @@
+{
+  "title": "Physician - Critical Care & Pulmonary",
+  "location": "Denver Metro Area",
+  "type": "Full-time",
+  "status": "open",
+  "summary": "We are currently seeking a Physician board-certified in Pulmonary/Critical Care to join our committed team of professionals. Critical Care, Pulmonary and Sleep Associates is an independent, physician owned, large multispecialty private practice providing Critical Care, Pulmonary and Sleep care to the Denver metro area for over 40 years. Our dedicated team of over 30 Board Certified Critical Care, Pulmonary and Sleep Physicians along with our skilled clinical and administrative staff exclusively serve multiple CommonSpirit and AdventHealth nonprofit Hospital ICUs in the Denver metro area and multiple outpatient clinic locations spanning Colorado's front range.",
+  "hospitalServices": {
+    "title": "What We Do in the Hospital",
+    "items": [
+      "We provide direct patient care for a broad range of complex critically ill medical and surgical patients in addition to hospital pulmonary consultations.",
+      "We perform typical ICU and pulmonary procedures as required including intubations, chest tubes, central and arterial lines, bronchoscopy etc.",
+      "We have a robust Interventional Pulmonary Service.",
+      "We take care of diverse and complex patient populations including ECMO, transplant, complex GI, Cardiac Surgery, Neurointerventional Radiology and Neurosurgical patients.",
+      "We have a variety of coverage models from 24/7 in-house coverage to remote tele ICU coverage for our smaller hospitals.",
+      "We provide exceptional multidisciplinary care to our patients through our collaborative team-based culture.",
+      "We provide opportunities for additional career development including teaching, hospital leadership and clinical research."
+    ],
+    "locations": "St. Anthony Hospital, St. Anthony North Hospital, AdventHealth at Porter, Parker, Castle Rock, Littleton, Avista, St. Anthony Summit, and Elizabeth Hospitals."
+  },
+  "clinicServices": {
+    "title": "What We Do Outside the Hospital",
+    "items": [
+      "We manage and provide continuity of care for patients with complex pulmonary and/or sleep conditions.",
+      "We partner with and provide oversight, leadership, and resource support for our Advanced Practice Providers (NP and PA) in our outpatient clinics.",
+      "We build and nurture a culture of strong positive communication with staff, consulting physicians, Nurses, RTs, etc.",
+      "We engage in and support clinical and administrative leadership activities and initiatives."
+    ],
+    "locations": "West Clinic (Lakewood, CO), South Clinic (Parker, CO), North Clinic (Westminster, CO), Central Clinic (Littleton, CO), Goodland, KS."
+  },
+  "requirements": [
+    "Completion of an accredited fellowship in Pulmonary and Critical Care Medicine",
+    "Board Certified or Board Eligible in Pulmonary and Critical Care Medicine",
+    "Flexibility to travel to various sites, as needed",
+    "Strong interpersonal and communication skills",
+    "Applicants must be authorized to work for ANY employer in the U.S."
+  ],
+  "compensation": [
+    "Competitive market driven salary and benefits",
+    "Fully paid medical malpractice insurance premiums",
+    "Comprehensive medical, dental, vision, disability, and life insurance benefits with partial practice subsidy",
+    "401k retirement benefits, with employer contributions",
+    "Colorado Relocation expense reimbursement",
+    "CME stipend"
+  ],
+  "order": 4
+}

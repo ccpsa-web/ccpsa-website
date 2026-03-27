@@ -1,0 +1,15 @@
+{
+  "name": "Darren Bo\u00e9",
+  "credentials": "MD, PhD",
+  "title": "Attending Physician, Managing Partner",
+  "category": "critical-care",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/boe-darren.png",
+  "bio": "Dr. Boe earned his medical degree and PhD in microbiology at the University of Iowa, Iowa City, IA. He completed both his residency and fellowship at the University of Colorado, Denver. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.",
+  "order": 11
+}

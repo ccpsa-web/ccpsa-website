@@ -1,0 +1,12 @@
+{
+  "name": "Mary Elmasri",
+  "credentials": "MD",
+  "title": "Attending Physician, Interventional Pulmonology",
+  "category": "interventional-pulmonology",
+  "locations": [
+    "West"
+  ],
+  "image": "/images/providers/elmasri-mary.jpg",
+  "bio": "Dr. Elmasri earned her medical degree at Washington University in St. Louis, MO. She served her residency in Internal Medicine and Fellowship in Pulmonary/Critical Care at the University of California, San Diego. She then went on to do her Interventional Pulmonary Fellowship at Duke University in Durham, NC. She is board certified in Internal Medicine, Pulmonary Medicine, and board eligible in Critical Care and Interventional Pulmonary Medicine. She has a special interest in Interventional Pulmonary Medicine.",
+  "order": 36
+}

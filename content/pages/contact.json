@@ -1,0 +1,58 @@
+{
+  "title": "Contact Us",
+  "phone": "(303) 951-0600",
+  "fax": "(303) 951-0605",
+  "email": "info@critcareMD.com",
+  "locations": [
+    {
+      "name": "Lakewood",
+      "address": "274 Union Blvd. Suite 200, Lakewood, CO 80228",
+      "phone": "(303) 951-0600"
+    },
+    {
+      "name": "Castle Rock",
+      "address": "1000 Castleton Ct Suite 100, Castle Rock, CO 80109",
+      "phone": "(303) 688-5864"
+    },
+    {
+      "name": "Parker",
+      "address": "9397 Crown Crest Blvd Suite 431, Parker, CO 80138",
+      "phone": "(303) 840-2000"
+    },
+    {
+      "name": "Littleton",
+      "address": "7720 S Broadway Suite 580, Littleton, CO 80122",
+      "phone": "(303) 795-2685"
+    },
+    {
+      "name": "Wheat Ridge",
+      "address": "3555 Lutheran Pkwy, Wheat Ridge, CO 80033",
+      "phone": "(303) 403-6795"
+    },
+    {
+      "name": "Westminster",
+      "address": "1000 Westside Dr Suite 203, Westminster, CO 80021",
+      "phone": "(303) 657-2500"
+    },
+    {
+      "name": "Thornton",
+      "address": "500 E 128th Ave, Thornton, CO 80241",
+      "phone": "(303) 925-4085"
+    },
+    {
+      "name": "Brighton",
+      "address": "1600 Prairie Center Pkwy Suite 250, Brighton, CO 80601",
+      "phone": "(303) 659-1537"
+    },
+    {
+      "name": "Longmont",
+      "address": "2030 Mountain View Ave Suite 200, Longmont, CO 80501",
+      "phone": "(303) 776-1234"
+    },
+    {
+      "name": "North Denver",
+      "address": "2045 Franklin St, Denver, CO 80205",
+      "phone": "(303) 297-2265"
+    }
+  ]
+}

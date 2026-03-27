@@ -1,0 +1,15 @@
+{
+  "name": "Sarah Mateer",
+  "credentials": "RN, BSN",
+  "title": "Clinic Registered Nurse",
+  "category": "allied-health",
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
+  "image": "/images/providers/mateer-sarah.jpg",
+  "bio": "Biography coming soon.",
+  "order": 49
+}

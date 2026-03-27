@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #1A3050;
+  --blue: #4A6E91;
+  --amber: #AA9070;
+  --light-gray: #F7F0E6;
+  --sage: #90B08A;
+  --linen: #E8D9C4;
+  --driftwood: #AA9070;
+}
+
+body {
+  font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--light-gray);
+  color: var(--navy);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
