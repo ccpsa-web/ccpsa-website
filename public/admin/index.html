@@ -5,43 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>CCPSA Admin</title>
-window.CMS_MANUAL_INIT = true;
-
+  <link rel="stylesheet" href="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.css" />
+</head>
+<body>
+  <div id="nc-root"></div>
+  <script>
+    // Redirect-based OAuth: intercept popup and use full-page redirect instead
     (function() {
       var storedAuth = localStorage.getItem('decap-cms-auth');
 
       if (storedAuth) {
-        // Returning from OAuth redirect — we have a token
+        // Returning from OAuth redirect — post the token when CMS asks for auth
         localStorage.removeItem('decap-cms-auth');
 
-        // Patch window.open so CMS doesn't actually open a popup
-        var origOpen = window.open;
+        // Patch window.open to prevent popup and immediately post auth message
         window.open = function() {
-          window.open = origOpen;
-          return { closed: false, close: function() { this.closed = true; } };
+          setTimeout(function() {
+            window.postMessage('authorization:github:success:' + storedAuth, '*');
+          }, 100);
+          return { closed: false, close: function() {} };
         };
-
-        // Wait for login button, click it, wait for DOM to settle, then post token
-        var check = setInterval(function() {
-          var btn = document.querySelector('button');
-          if (btn && btn.textContent.indexOf('Login') >= 0) {
-            clearInterval(check);
-            btn.click();
-            // Use MutationObserver to wait for React to finish its DOM update
-            var observer = new MutationObserver(function() {
-              observer.disconnect();
-              // DOM transition complete, safe to post auth message
-              setTimeout(function() {
-                window.postMessage('authorization:github:success:' + storedAuth, '*');
-              }, 300);
-            });
-            observer.observe(document.getElementById('nc-root') || document.body, {
-              childList: true, subtree: true
-            });
-          }
-        }, 500);
       } else {
-        // No token yet — redirect main window instead of opening popup
+        // No token — redirect main window instead of popup
         var origOpen = window.open;
         window.open = function(url) {
           if (url && url.indexOf('/api/auth') >= 0) {
@@ -52,11 +37,10 @@ window.CMS_MANUAL_INIT = true;
         };
       }
     })();
-  <script src="https://unpkg.com/decap-cms@3.3.3/dist/decap-cms.js"></script>
-</head>
-<body>
+  </script>
+  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   <script>
-    const config = {
+    var config = {
       backend: {
         name: "github",
         repo: "ccpsa-web/ccpsa-website",
@@ -195,18 +179,8 @@ window.CMS_MANUAL_INIT = true;
       ]
     };
 
-    window.initCMS = function() {
-      const CMS = window.DecapCmsApp || window.CMS;
-      if (CMS && CMS.init) {
-        CMS.init({ config });
-      }
-    };
-
-    if (document.readyState === 'complete') {
-      window.initCMS();
-    } else {
-      window.addEventListener('load', window.initCMS);
-    }
+    // Sveltia CMS reads config from window.CMS_CONFIG
+    window.CMS_CONFIG = config;
   </script>
 </body>
 </html>
