@@ -33,25 +33,33 @@ export async function GET(request: NextRequest) {
     return new NextResponse(`OAuth error: ${tokenData.error_description}`, { status: 400 });
   }
 
-  const html = `
-<!DOCTYPE html>
+  const token = tokenData.access_token;
+
+  const html = `<!DOCTYPE html>
 <html>
 <head><title>Authorized</title></head>
 <body>
   <p>Authorized. This window will close automatically.</p>
   <script>
     (function() {
-      function sendMessage(message) {
-        var target = window.opener || window.parent;
-        if (target) {
-          target.postMessage(
-            'authorization:github:success:' + JSON.stringify(message),
-            '*'
-          );
+      var token = decodeURIComponent("${encodeURIComponent(token)}");
+      var message = JSON.stringify({ token: token, provider: "github" });
+      var authMsg = "authorization:github:success:" + message;
+
+      function trySend() {
+        if (window.opener) {
+          window.opener.postMessage(authMsg, window.opener.origin || "*");
+          setTimeout(function() { window.close(); }, 500);
+        } else {
+          document.body.innerHTML = "<p>Authorization successful. Please close this window and refresh the admin page.</p>";
         }
-        window.close();
       }
-      sendMessage({ token: "${tokenData.access_token}", provider: "github" });
+
+      if (document.readyState === "complete") {
+        trySend();
+      } else {
+        window.addEventListener("load", trySend);
+      }
     })();
   </script>
 </body>
