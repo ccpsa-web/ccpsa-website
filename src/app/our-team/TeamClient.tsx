@@ -192,7 +192,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              
+              <a
                 href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
               >
                 Schedule Online
               </a>
-              
+              <a
                 href="tel:3039510600"
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
