@@ -75,6 +75,11 @@ export function getProviders(): Provider[] {
   return providers.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
+export function getProvider(id: string): Provider | null {
+  const providers = getProviders();
+  return providers.find((p) => p.id === id) || null;
+}
+
 export function getProvidersByCategory(category: string): Provider[] {
   return getProviders().filter(
     (provider) => provider.category?.toLowerCase() === category.toLowerCase()
