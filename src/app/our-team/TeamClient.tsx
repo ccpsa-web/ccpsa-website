@@ -109,7 +109,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                     <FadeInUp key={provider.id} className="h-full">
                       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
                         {/* Photo */}
-                        <div className="relative h-80 bg-gradient-to-br from-navy to-blue">
+                        <div className="relative h-96 bg-gradient-to-br from-navy to-blue">
                           {provider.image ? (
                             <Image
                               src={provider.image}
