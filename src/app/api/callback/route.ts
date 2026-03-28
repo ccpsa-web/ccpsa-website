@@ -41,12 +41,18 @@ export async function GET(request: NextRequest) {
 <body>
   <p>Completing login...</p>
   <script>
-    var data = JSON.stringify({
-      token: decodeURIComponent("${encodeURIComponent(token)}"),
-      provider: "github"
-    });
-    localStorage.setItem("decap-cms-auth", data);
-    window.location.href = "/admin/";
+    (function() {
+      var token = decodeURIComponent("${encodeURIComponent(token)}");
+      var data = JSON.stringify({ token: token, provider: "github" });
+      var msg = "authorization:github:success:" + data;
+
+      if (window.opener) {
+        window.opener.postMessage(msg, window.location.origin);
+        window.close();
+      } else {
+        document.body.innerHTML = "<p>Authentication complete. You can close this window and refresh the admin page.</p>";
+      }
+    })();
   </script>
 </body>
 </html>`;
