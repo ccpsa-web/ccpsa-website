@@ -20,6 +20,32 @@ interface JobsClientProps {
   jobs: Job[];
 }
 
+/**
+ * Renders a field that can be either a string (paragraph) or string[] (bullet list).
+ * - String: renders as one or more paragraphs (split on double newlines)
+ * - Array: renders as a bulleted list
+ */
+function FlexContent({ content }: { content: string | string[] }) {
+  if (Array.isArray(content)) {
+    return (
+      <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+        {content.map((item: string, i: number) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+  // Single string — render as paragraph(s), splitting on double newlines
+  const paragraphs = content.split(/\n\n+/).filter(Boolean);
+  return (
+    <div className="text-sm text-gray-600 leading-relaxed space-y-2">
+      {paragraphs.map((p, i) => (
+        <p key={i}>{p}</p>
+      ))}
+    </div>
+  );
+}
+
 export default function JobsClient({ jobs }: JobsClientProps) {
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -208,14 +234,17 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                           </div>
                         )}
 
+                        {job.responsibilities && (
+                          <div>
+                            <h4 className="font-semibold text-navy mb-2">Responsibilities</h4>
+                            <FlexContent content={job.responsibilities} />
+                          </div>
+                        )}
+
                         {job.hospitalServices && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">{job.hospitalServices.title}</h4>
-                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                              {job.hospitalServices.items?.map((item: string, i: number) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                            </ul>
+                            <FlexContent content={job.hospitalServices.items} />
                             {job.hospitalServices.locations && (
                               <p className="text-sm text-gray-600 mt-3">
                                 <strong>Hospital Locations:</strong> {job.hospitalServices.locations}
@@ -227,11 +256,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                         {job.clinicServices && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">{job.clinicServices.title}</h4>
-                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                              {job.clinicServices.items?.map((item: string, i: number) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                            </ul>
+                            <FlexContent content={job.clinicServices.items} />
                             {job.clinicServices.locations && (
                               <p className="text-sm text-gray-600 mt-3">
                                 <strong>Clinic Locations:</strong> {job.clinicServices.locations}
@@ -243,22 +268,21 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                         {job.requirements && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Skills, Education & Experience Requirements</h4>
-                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                              {job.requirements.map((req: string, i: number) => (
-                                <li key={i}>{req}</li>
-                              ))}
-                            </ul>
+                            <FlexContent content={job.requirements} />
                           </div>
                         )}
 
                         {job.compensation && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Compensation & Benefits</h4>
-                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                              {job.compensation.map((comp: string, i: number) => (
-                                <li key={i}>{comp}</li>
-                              ))}
-                            </ul>
+                            <FlexContent content={job.compensation} />
+                          </div>
+                        )}
+
+                        {job.physicalRequirements && (
+                          <div>
+                            <h4 className="font-semibold text-navy mb-2">Physical Requirements</h4>
+                            <FlexContent content={job.physicalRequirements} />
                           </div>
                         )}
 
