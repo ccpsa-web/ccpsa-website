@@ -63,7 +63,13 @@ export function getProviders(): Provider[] {
   const files = getFilesInDirectory(providersDir);
 
   const providers: Provider[] = files
-    .map((file) => readJsonFile(file))
+    .map((file) => {
+      const data = readJsonFile(file);
+      if (data) {
+        data.id = path.basename(file, '.json');
+      }
+      return data;
+    })
     .filter((provider): provider is Provider => provider !== null);
 
   return providers.sort((a, b) => (a.order || 0) - (b.order || 0));
@@ -80,7 +86,14 @@ export function getJobs(): Job[] {
   const files = getFilesInDirectory(jobsDir);
 
   const jobs: Job[] = files
-    .map((file) => readJsonFile(file))
+    .map((file) => {
+      const data = readJsonFile(file);
+      if (data) {
+        data.id = path.basename(file, '.json');
+        data.slug = path.basename(file, '.json');
+      }
+      return data;
+    })
     .filter((job): job is Job => job !== null);
 
   return jobs;
