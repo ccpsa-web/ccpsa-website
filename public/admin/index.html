@@ -17,8 +17,6 @@
       if (storedAuth) {
         // Returning from OAuth — intercept any popup and post auth token instead
         localStorage.removeItem('decap-cms-auth');
-
-        // Patch window.open to prevent popup and post auth token
         window.open = function() {
           setTimeout(function() {
             window.postMessage('authorization:github:success:' + storedAuth, '*');
@@ -37,12 +35,9 @@
             }
           }
         }, 300);
-      }
       } else {
         // No token — intercept any auth popup and redirect main window to our OAuth endpoint
-        var origOpen = window.open;
         window.open = function(url) {
-          // Redirect to our auth endpoint instead of opening a popup
           window.location.href = window.location.origin + '/api/auth?provider=github';
           return null;
         };
@@ -57,7 +52,6 @@
       if (CMS && CMS.init) {
         CMS.init({
           config: {
-            load_config_file: false,
             load_config_file: false,
             backend: {
               name: "github",
