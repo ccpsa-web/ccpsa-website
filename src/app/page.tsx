@@ -473,6 +473,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Affiliations & Recognition */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <FadeInUp>
+            <h2 className="text-2xl md:text-3xl font-bold text-navy text-center mb-4">
+              Our Affiliations & Recognition
+            </h2>
+            <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+              Proudly affiliated with leading healthcare systems and recognized for excellence in patient care.
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+              <Image
+                src="/images/site/adventhealth-logo.png"
+                alt="AdventHealth"
+                width={180}
+                height={60}
+                className="h-12 md:h-16 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="/images/site/commonspirit-logo.png"
+                alt="CommonSpirit Health"
+                width={180}
+                height={60}
+                className="h-12 md:h-16 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+              <Image
+                src="/images/site/us-news-badge.png"
+                alt="U.S. News and World Report"
+                width={120}
+                height={120}
+                className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          </FadeInUp>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section id="contact" className="py-20 bg-amber relative overflow-hidden scroll-mt-24">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -30,6 +31,38 @@ export default function Footer() {
                   info@critcareMD.com
                 </a>
               </p>
+            </div>
+
+            {/* Review Links */}
+            <div className="flex items-center gap-4 mt-6">
+              <a
+                href="https://www.yelp.com/biz/critical-care-pulmonary-and-sleep-associates-lakewood"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/images/site/yelp-find-us.png"
+                  alt="Find us on Yelp"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              </a>
+              <a
+                href="https://www.google.com/maps/place/Critical+Care,+Pulmonary+%26+Sleep+Associates/@39.7284,-105.0867,15z/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              >
+                <Image
+                  src="/images/site/google-review-us.jpg"
+                  alt="Review us on Google"
+                  width={80}
+                  height={40}
+                  className="h-8 w-auto rounded"
+                />
+              </a>
             </div>
           </div>
 
