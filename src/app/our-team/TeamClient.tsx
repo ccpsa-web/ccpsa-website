@@ -96,10 +96,12 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="space-y-16">
-            {Object.entries(groupedByCategory).map(([category, categoryProviders]) => (
+            {Object.entries(groupedByCategory).map(([category, categoryProviders]) => {
+              const categoryLabel = CATEGORIES.find((c) => c.key === category)?.label || category;
+              return (
               <div key={category}>
                 <h3 className="text-2xl md:text-3xl font-bold text-navy mb-8 pb-4 border-b-2 border-amber">
-                  {category}
+                  {categoryLabel}
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -113,7 +115,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                               src={provider.image}
                               alt={provider.name}
                               fill
-                              className="object-cover"
+                              className="object-cover object-top"
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-white/50 text-center px-4">
@@ -174,7 +176,8 @@ export default function TeamClient({ providers }: TeamClientProps) {
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -189,7 +192,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              
                 href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -197,7 +200,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
               >
                 Schedule Online
               </a>
-              <a
+              
                 href="tel:3039510600"
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
