@@ -9,44 +9,9 @@
 <body>
   <script>
     window.CMS_MANUAL_INIT = true;
-
-    // OAuth redirect flow
-    (function() {
-      var storedAuth = localStorage.getItem('decap-cms-auth');
-
-      if (storedAuth) {
-        // Returning from OAuth — intercept any popup and post auth token instead
-        localStorage.removeItem('decap-cms-auth');
-        window.open = function() {
-          setTimeout(function() {
-            window.postMessage('authorization:github:success:' + storedAuth, '*');
-          }, 500);
-          return { closed: false, close: function() {} };
-        };
-
-        // Auto-click the Sign in button when it appears
-        var check = setInterval(function() {
-          var btns = document.querySelectorAll('button');
-          for (var i = 0; i < btns.length; i++) {
-            if (btns[i].textContent.indexOf('GitHub') >= 0 || btns[i].textContent.indexOf('Sign in') >= 0) {
-              clearInterval(check);
-              btns[i].click();
-              return;
-            }
-          }
-        }, 300);
-      } else {
-        // No token — intercept any auth popup and redirect main window to our OAuth endpoint
-        window.open = function(url) {
-          window.location.href = window.location.origin + '/api/auth?provider=github';
-          return null;
-        };
-      }
-    })();
   </script>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
   <script>
-    // Wait for Sveltia CMS to load, then initialize with config
     function doInit() {
       var CMS = window.CMS || window.SveltiaCMS;
       if (CMS && CMS.init) {
@@ -56,7 +21,9 @@
             backend: {
               name: "github",
               repo: "ccpsa-web/ccpsa-website",
-              branch: "main"
+              branch: "main",
+              base_url: window.location.origin,
+              auth_endpoint: "/api/auth"
             },
             media_folder: "public/images",
             public_folder: "/images",
