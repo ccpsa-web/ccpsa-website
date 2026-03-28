@@ -3,39 +3,59 @@
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
-interface FormCategory {
+interface OnlineForm {
   title: string;
   description: string;
-  forms: Form[];
+  url: string;
 }
 
-interface Form {
+interface DownloadableForm {
   title: string;
   description: string;
   fileName: string;
 }
 
-const FORM_CATEGORIES: FormCategory[] = [
+const NEW_PATIENT_FORMS: OnlineForm[] = [
   {
-    title: 'Patient Forms & Documents',
-    description: 'Downloadable forms for new and established patients.',
-    forms: [
-      {
-        title: 'Release of Information',
-        description: 'Authorization for release of medical records to other providers or parties.',
-        fileName: 'CCPSA-Release-of-Information.pdf',
-      },
-      {
-        title: 'Sleep Diary',
-        description: 'Track your sleep patterns before your sleep medicine appointment.',
-        fileName: 'CCPSA-Sleep-Diary.pdf',
-      },
-      {
-        title: 'Notice of Privacy Practices',
-        description: 'HIPAA privacy notice detailing how your medical information is used and protected.',
-        fileName: 'Notice-of-Privacy-Practices.pdf',
-      },
-    ],
+    title: 'New Patient Paperwork (Pulmonary & Sleep Packet)',
+    description: 'Comprehensive patient demographics, medical history, and intake forms. Required for all new patients.',
+    url: 'https://criticalcare.medforward.com/FillOutForm.aspx?formname=Pulmonary_and_Sleep_Packet',
+  },
+];
+
+const ESTABLISHED_PATIENT_FORMS: OnlineForm[] = [
+  {
+    title: 'General Consent for Care and Treatment',
+    description: 'Initial consent for medical evaluation and treatment.',
+    url: 'https://criticalcare.medforward.com/FillOutForm.aspx?formname=General_Consent_for_Care_and_Treatment',
+  },
+  {
+    title: 'Consent to Leave or Send Medical Information',
+    description: 'Authorization for sharing medical records with other providers.',
+    url: 'https://criticalcare.medforward.com/FillOutForm.aspx?formname=Consent_to_Leave_or_Send_Medical_Information',
+  },
+  {
+    title: 'Acknowledgement of Privacy Practices & Patient Responsibility',
+    description: 'HIPAA privacy notice acknowledgement and patient financial responsibility.',
+    url: 'https://criticalcare.medforward.com/FillOutForm.aspx?formname=Privacy_Agreement',
+  },
+];
+
+const DOWNLOADABLE_FORMS: DownloadableForm[] = [
+  {
+    title: 'Release of Information',
+    description: 'Authorization for release of medical records to other providers or parties.',
+    fileName: 'CCPSA-Release-of-Information.pdf',
+  },
+  {
+    title: 'Sleep Diary',
+    description: 'Track your sleep patterns before your sleep medicine appointment.',
+    fileName: 'CCPSA-Sleep-Diary.pdf',
+  },
+  {
+    title: 'Notice of Privacy Practices',
+    description: 'HIPAA privacy notice detailing how your medical information is used and protected.',
+    fileName: 'Notice-of-Privacy-Practices.pdf',
   },
 ];
 
@@ -93,57 +113,127 @@ export default function PatientForms() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 To expedite your check-in and ensure we have complete information about your medical history, please complete the appropriate patient forms before your appointment.
               </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Complete your paperwork online using the secure links below. All online forms are hosted on a HIPAA-compliant server — your information is safe. If you do not have your paperwork complete prior to your appointment, please plan to arrive 15 minutes early.
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                You can either download and print the forms to bring with you, or fill them out online through our patient portal. If you need assistance completing any forms, please call us at <a href="tel:3039510600" className="text-blue hover:text-navy font-medium">(303) 951-0600</a>.
+                If you need assistance completing any forms, please call us at <a href="tel:3039510600" className="text-blue hover:text-navy font-medium">(303) 951-0600</a>.
               </p>
             </div>
           </FadeInUp>
         </div>
       </section>
 
-      {/* Form Categories */}
+      {/* New Patient Paperwork */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            {FORM_CATEGORIES.map((category, catIdx) => (
-              <div key={catIdx} className={catIdx > 0 ? 'mt-16' : ''}>
-                <h2 className="text-3xl font-bold text-navy mb-2">{category.title}</h2>
-                <p className="text-gray-600 mb-8">{category.description}</p>
+            <h2 className="text-3xl font-bold text-navy mb-2">New Patient Paperwork</h2>
+            <p className="text-gray-600 mb-8">Required for all new patients visiting our clinics for the first time.</p>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  {category.forms.map((form, formIdx) => (
-                    <FadeInUp key={formIdx}>
-                      <div className="bg-light-gray rounded-lg p-6 border border-gray-200 hover:border-amber hover:shadow-md transition-all duration-300">
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <h3 className="text-lg font-semibold text-navy mb-1 group-hover:text-blue transition-colors">
-                              {form.title}
-                            </h3>
-                            <p className="text-sm text-gray-600 mb-4">{form.description}</p>
-                          </div>
-                          <svg className="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                          </svg>
-                        </div>
-
-                        <button
-                          onClick={() => handleDownload(form.fileName)}
-                          className="mt-4 inline-flex items-center gap-2 text-blue hover:text-navy font-medium transition-colors text-sm"
-                        >
-                          <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                            <polyline points="7 10 12 15 17 10" />
-                            <line x1="12" y1="15" x2="12" y2="3" />
-                          </svg>
-                          Download PDF
-                        </button>
+            <div className="grid md:grid-cols-2 gap-6">
+              {NEW_PATIENT_FORMS.map((form, idx) => (
+                <FadeInUp key={idx}>
+                  <a
+                    href={form.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-light-gray rounded-lg p-6 border border-gray-200 hover:border-amber hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-lg font-semibold text-navy mb-1">{form.title}</h3>
+                        <p className="text-sm text-gray-600 mb-4">{form.description}</p>
                       </div>
-                    </FadeInUp>
-                  ))}
-                </div>
+                      <svg className="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                    </div>
+                    <span className="inline-flex items-center gap-2 text-blue font-medium text-sm">
+                      Fill Out Online
+                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </a>
+                </FadeInUp>
+              ))}
+            </div>
+
+            {/* Established Patient Paperwork */}
+            <div className="mt-16">
+              <h2 className="text-3xl font-bold text-navy mb-2">Established Patient Paperwork</h2>
+              <p className="text-gray-600 mb-8">Please complete all three of the following forms before your next in-office or telehealth appointment.</p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {ESTABLISHED_PATIENT_FORMS.map((form, idx) => (
+                  <FadeInUp key={idx}>
+                    <a
+                      href={form.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block bg-light-gray rounded-lg p-6 border border-gray-200 hover:border-amber hover:shadow-md transition-all duration-300"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-navy mb-1">{form.title}</h3>
+                          <p className="text-sm text-gray-600 mb-4">{form.description}</p>
+                        </div>
+                        <svg className="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                      </div>
+                      <span className="inline-flex items-center gap-2 text-blue font-medium text-sm">
+                        Fill Out Online
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </a>
+                  </FadeInUp>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Downloadable Forms */}
+            <div className="mt-16">
+              <h2 className="text-3xl font-bold text-navy mb-2">Additional Forms & Documents</h2>
+              <p className="text-gray-600 mb-8">Downloadable PDF forms and reference documents.</p>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {DOWNLOADABLE_FORMS.map((form, idx) => (
+                  <FadeInUp key={idx}>
+                    <div className="bg-light-gray rounded-lg p-6 border border-gray-200 hover:border-amber hover:shadow-md transition-all duration-300">
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h3 className="text-lg font-semibold text-navy mb-1">{form.title}</h3>
+                          <p className="text-sm text-gray-600 mb-4">{form.description}</p>
+                        </div>
+                        <svg className="h-5 w-5 text-amber flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                      </div>
+                      <button
+                        onClick={() => handleDownload(form.fileName)}
+                        className="inline-flex items-center gap-2 text-blue hover:text-navy font-medium transition-colors text-sm"
+                      >
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                          <polyline points="7 10 12 15 17 10" />
+                          <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download PDF
+                      </button>
+                    </div>
+                  </FadeInUp>
+                ))}
+              </div>
+            </div>
           </FadeInUp>
         </div>
       </section>
