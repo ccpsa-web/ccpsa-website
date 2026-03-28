@@ -92,24 +92,24 @@
                   },
                   { label: "Summary", name: "summary", widget: "text", hint: "Brief job description shown on the card" },
                   {
-                    label: "Essential Responsibilities", name: "responsibilities", widget: "list",
-                    hint: "One responsibility per item",
-                    field: { label: "Responsibility", name: "item", widget: "string" }
+                    label: "Essential Responsibilities", name: "responsibilities", widget: "text",
+                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
+                    required: false
                   },
                   {
-                    label: "Skills & Education Requirements", name: "requirements", widget: "list",
-                    hint: "One requirement per item",
-                    field: { label: "Requirement", name: "item", widget: "string" }
+                    label: "Skills & Education Requirements", name: "requirements", widget: "text",
+                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
+                    required: false
                   },
                   {
-                    label: "Physical Requirements", name: "physicalRequirements", widget: "list",
-                    required: false, hint: "One requirement per item",
-                    field: { label: "Requirement", name: "item", widget: "string" }
+                    label: "Physical Requirements", name: "physicalRequirements", widget: "text",
+                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
+                    required: false
                   },
                   {
-                    label: "Compensation & Benefits", name: "compensation", widget: "list",
-                    hint: "One benefit per item",
-                    field: { label: "Benefit", name: "item", widget: "string" }
+                    label: "Compensation & Benefits", name: "compensation", widget: "text",
+                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
+                    required: false
                   },
                   { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
                 ]

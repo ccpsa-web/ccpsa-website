@@ -21,11 +21,16 @@ interface JobsClientProps {
 }
 
 /**
- * Renders a field that can be either a string (paragraph) or string[] (bullet list).
- * - String: renders as one or more paragraphs (split on double newlines)
- * - Array: renders as a bulleted list
+ * Renders a field that can be:
+ *   1. string[] — legacy array format, renders as bullet list
+ *   2. string with bullet lines (-, •, *, or 1.) — renders as bullet list
+ *   3. plain string — renders as paragraph(s)
+ *
+ * Bullet detection: if >50% of non-empty lines start with a bullet
+ * character, the whole block is treated as a list.
  */
 function FlexContent({ content }: { content: string | string[] }) {
+  // Legacy array format
   if (Array.isArray(content)) {
     return (
       <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
@@ -35,7 +40,50 @@ function FlexContent({ content }: { content: string | string[] }) {
       </ul>
     );
   }
-  // Single string — render as paragraph(s), splitting on double newlines
+
+  // String — check if it contains bulleted lines
+  const bulletPattern = /^[\s]*[-•*▪◦‣⁃]\s|^[\s]*\d+[.)]\s/;
+  const lines = content.split(/\n/).filter((l) => l.trim().length > 0);
+
+  if (lines.length > 0) {
+    const bulletCount = lines.filter((l) => bulletPattern.test(l)).length;
+    // If at least some lines look like bullets, render as a mixed list
+    if (bulletCount >= 1 && bulletCount > lines.length * 0.3) {
+      // Build elements: non-bullet lines become bold headers, bullet lines become <li>
+      const elements: React.ReactNode[] = [];
+      let currentItems: string[] = [];
+
+      const flushItems = () => {
+        if (currentItems.length > 0) {
+          elements.push(
+            <ul key={`ul-${elements.length}`} className="text-sm text-gray-600 space-y-1 list-disc list-inside mb-2">
+              {currentItems.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          );
+          currentItems = [];
+        }
+      };
+
+      for (const line of lines) {
+        if (bulletPattern.test(line)) {
+          const cleaned = line.replace(/^[\s]*[-•*▪◦‣⁃]\s*/, '').replace(/^[\s]*\d+[.)]\s*/, '').trim();
+          currentItems.push(cleaned);
+        } else {
+          flushItems();
+          elements.push(
+            <p key={`h-${elements.length}`} className="text-sm font-semibold text-navy mt-3 mb-1">{line.trim()}</p>
+          );
+        }
+      }
+      flushItems();
+
+      return <div>{elements}</div>;
+    }
+  }
+
+  // Plain text — render as paragraph(s), splitting on double newlines
   const paragraphs = content.split(/\n\n+/).filter(Boolean);
   return (
     <div className="text-sm text-gray-600 leading-relaxed space-y-2">
