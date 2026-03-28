@@ -50,7 +50,7 @@ export default function Footer() {
                 />
               </a>
               <a
-                href="https://www.google.com/maps/place/Critical+Care,+Pulmonary+%26+Sleep+Associates/@39.7284,-105.0867,15z/"
+                href="https://search.google.com/local/writereview?placeid=ChIJm65QNAeEa4cR_BQi4xZN_x0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-80 hover:opacity-100 transition-opacity"
