@@ -26,22 +26,23 @@ export default function Header() {
           <span>Email: info@critcareMD.com</span>
         </div>
 
-        {/* Main header */}
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
+        {/* Logo - centered */}
+        <div className="flex justify-center py-4">
+          <Link href="/">
             <Image
               src="/images/site/ccpsa-logo.png"
               alt="CCPSA Logo"
-              width={180}
-              height={60}
+              width={280}
+              height={90}
               priority
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </Link>
+        </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex justify-center items-center pb-3">
+          <nav className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -52,11 +53,13 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+        </div>
 
-          {/* Mobile menu button */}
+        {/* Mobile menu button */}
+        <div className="flex justify-end md:hidden pb-3 -mt-12">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-navy hover:bg-light-gray rounded-lg transition-colors"
+            className="p-2 text-navy hover:bg-light-gray rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             <svg
