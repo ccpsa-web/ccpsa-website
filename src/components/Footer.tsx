@@ -13,7 +13,8 @@ export default function Footer() {
               <p>Critical Care, Pulmonary & Sleep Associates</p>
               <p className="mt-4">
                 <strong>Address:</strong><br />
-                [Your Address Here]
+                274 Union Blvd, Suite 200<br />
+                Lakewood, CO 80228
               </p>
               <p className="mt-2">
                 <strong>Phone:</strong><br />
@@ -21,7 +22,7 @@ export default function Footer() {
               </p>
               <p className="mt-2">
                 <strong>Fax:</strong><br />
-                [Fax Number]
+                (303) 951-0605
               </p>
               <p className="mt-2">
                 <strong>Email:</strong><br />
