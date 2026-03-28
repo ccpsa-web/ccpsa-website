@@ -275,10 +275,10 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                     {/* Expanded Details */}
                     {expandedJob === job.id && (
                       <div className="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
-                        {job.description && (
+                        {(job.summary || job.description) && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Summary</h4>
-                            <p className="text-sm text-gray-600 leading-relaxed">{job.description}</p>
+                            <p className="text-sm text-gray-600 leading-relaxed">{job.summary || job.description}</p>
                           </div>
                         )}
 
