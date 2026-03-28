@@ -17,70 +17,23 @@ interface Form {
 
 const FORM_CATEGORIES: FormCategory[] = [
   {
-    title: 'New Patient Paperwork',
-    description: 'Required forms for new patients visiting our clinics for the first time.',
-    forms: [
-      {
-        title: 'New Patient Information & Medical History',
-        description: 'Comprehensive patient demographics and medical history form.',
-        fileName: 'new-patient-packet.pdf',
-      },
-      {
-        title: 'General Consent for Care and Treatment',
-        description: 'Initial consent for medical evaluation and treatment.',
-        fileName: 'general-consent.pdf',
-      },
-      {
-        title: 'Consent to Leave or Send Medical Information',
-        description: 'Authorization for sharing medical records with other providers.',
-        fileName: 'records-release.pdf',
-      },
-    ],
-  },
-  {
-    title: 'Established Patient Paperwork',
-    description: 'Forms for patients with established care at CCPSA.',
-    forms: [
-      {
-        title: 'Update Patient Information',
-        description: 'Form to update contact information, insurance, and medical history.',
-        fileName: 'patient-update.pdf',
-      },
-      {
-        title: 'Acknowledgement of Privacy Practices & Patient Responsibility',
-        description: 'HIPAA privacy notice acknowledgement and patient financial responsibility.',
-        fileName: 'privacy-acknowledgement.pdf',
-      },
-      {
-        title: 'Consent to Leave or Send Medical Information',
-        description: 'Authorization for sharing medical records with other providers.',
-        fileName: 'records-release.pdf',
-      },
-    ],
-  },
-  {
-    title: 'Additional Forms & Documents',
-    description: 'Specialized forms for specific conditions and procedures.',
+    title: 'Patient Forms & Documents',
+    description: 'Downloadable forms for new and established patients.',
     forms: [
       {
         title: 'Release of Information',
-        description: 'Detailed authorization for release of medical records.',
-        fileName: 'release-of-information.pdf',
+        description: 'Authorization for release of medical records to other providers or parties.',
+        fileName: 'CCPSA-Release-of-Information.pdf',
       },
       {
         title: 'Sleep Diary',
         description: 'Track your sleep patterns before your sleep medicine appointment.',
-        fileName: 'sleep-diary.pdf',
+        fileName: 'CCPSA-Sleep-Diary.pdf',
       },
       {
-        title: 'Pulmonary Function Test Instructions',
-        description: 'Preparation instructions for PFT testing.',
-        fileName: 'pft-instructions.pdf',
-      },
-      {
-        title: 'Sleep Study Instructions',
-        description: 'What to expect and how to prepare for your sleep study.',
-        fileName: 'sleep-study-instructions.pdf',
+        title: 'Notice of Privacy Practices',
+        description: 'HIPAA privacy notice detailing how your medical information is used and protected.',
+        fileName: 'Notice-of-Privacy-Practices.pdf',
       },
     ],
   },
