@@ -82,6 +82,29 @@ export default function InterventionalPulmonaryPage() {
         </div>
       </section>
 
+      {/* Hospital Locations */}
+      {content.locations && content.locations.length > 0 && (
+        <section className="py-16 bg-light-gray">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <FadeInUp>
+                <h2 className="text-3xl font-bold text-navy mb-12">Hospital Locations</h2>
+              </FadeInUp>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {content.locations.map((location: {name: string; city: string}, idx: number) => (
+                  <FadeInUp key={idx}>
+                    <div className="bg-white rounded-lg p-6 border-l-4 border-blue">
+                      <h3 className="font-bold text-navy mb-2">{location.name}</h3>
+                      <p className="text-gray-700">{location.city}</p>
+                    </div>
+                  </FadeInUp>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-navy to-blue">
         <div className="container mx-auto px-4">
