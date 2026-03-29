@@ -129,7 +129,68 @@
                       { label: "Phone Number", name: "phone", widget: "string" },
                       { label: "Email", name: "email", widget: "string" },
                       { label: "Address", name: "address", widget: "string" },
-                      { label: "Fax", name: "fax", widget: "string" }
+                      { label: "Fax", name: "fax", widget: "string" },
+                      { label: "Schedule URL", name: "scheduleUrl", widget: "string", required: false },
+                      { label: "Office Hours", name: "officeHours", widget: "string", required: false },
+                      { label: "Services Title", name: "servicesTitle", widget: "string", required: false },
+                      { label: "Services Subtitle", name: "servicesSubtitle", widget: "text", required: false },
+                      {
+                        label: "Services", name: "services", widget: "list", required: false,
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "Link", name: "href", widget: "string" }
+                        ]
+                      },
+                      { label: "Team Section Tag", name: "teamSectionTag", widget: "string", required: false },
+                      { label: "Team Section Title", name: "teamSectionTitle", widget: "string", required: false },
+                      { label: "Team Section Text", name: "teamSectionText", widget: "text", required: false },
+                      {
+                        label: "Team Highlights", name: "teamHighlights", widget: "list", required: false,
+                        field: { label: "Highlight", name: "highlight", widget: "string" }
+                      },
+                      {
+                        label: "Stats", name: "stats", widget: "list", required: false,
+                        fields: [
+                          { label: "Number", name: "number", widget: "string" },
+                          { label: "Label", name: "label", widget: "string" }
+                        ]
+                      },
+                      { label: "Appointment Title", name: "appointmentTitle", widget: "string", required: false },
+                      { label: "Appointment Subtitle", name: "appointmentSubtitle", widget: "text", required: false },
+                      { label: "Telehealth Title", name: "telehealthTitle", widget: "string", required: false },
+                      { label: "Telehealth Text", name: "telehealthText", widget: "text", required: false },
+                      {
+                        label: "Telehealth Features", name: "telehealthFeatures", widget: "list", required: false,
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "Quick Access Title", name: "quickAccessTitle", widget: "string", required: false },
+                      { label: "Quick Access Subtitle", name: "quickAccessSubtitle", widget: "text", required: false },
+                      {
+                        label: "Quick Access Cards", name: "quickAccessCards", widget: "list", required: false,
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "Button Text", name: "buttonText", widget: "string" }
+                        ]
+                      },
+                      { label: "Testimonials Title", name: "testimonialsTitle", widget: "string", required: false },
+                      { label: "Testimonials Subtitle", name: "testimonialsSubtitle", widget: "text", required: false },
+                      {
+                        label: "Testimonials", name: "testimonials", widget: "list", required: false,
+                        fields: [
+                          { label: "Quote", name: "quote", widget: "text" },
+                          { label: "Author", name: "author", widget: "string" },
+                          { label: "Role", name: "role", widget: "string" }
+                        ]
+                      },
+                      { label: "Affiliations Title", name: "affiliationsTitle", widget: "string", required: false },
+                      { label: "Affiliations Subtitle", name: "affiliationsSubtitle", widget: "text", required: false },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string", required: false },
+                      { label: "CTA Text", name: "ctaText", widget: "text", required: false }
                     ]
                   },
                   {
@@ -149,6 +210,383 @@
                           { label: "Phone", name: "phone", widget: "string" }
                         ]
                       }
+                    ]
+                  },
+                  {
+                    label: "For Patients",
+                    name: "for-patients",
+                    file: "content/pages/for-patients.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Before Visit Title", name: "beforeVisitTitle", widget: "string" },
+                      {
+                        label: "Before Visit Items", name: "beforeVisitItems", widget: "list",
+                        field: { label: "Item", name: "item", widget: "string" }
+                      },
+                      { label: "What to Expect Title", name: "whatToExpectTitle", widget: "string" },
+                      { label: "What to Expect Text", name: "whatToExpectText", widget: "text" },
+                      {
+                        label: "Clinic Locations", name: "clinicLocations", widget: "list",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string" },
+                          { label: "Address", name: "address", widget: "string" },
+                          { label: "City", name: "city", widget: "string" },
+                          { label: "Phone", name: "phone", widget: "string" },
+                          { label: "Fax", name: "fax", widget: "string" }
+                        ]
+                      },
+                      {
+                        label: "Patient Resources", name: "patientResources", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "Link", name: "link", widget: "string" },
+                          { label: "External", name: "external", widget: "boolean" }
+                        ]
+                      },
+                      {
+                        label: "Insurance & Billing", name: "insuranceBilling", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Schedule URL", name: "scheduleUrl", widget: "string" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "For Physicians",
+                    name: "for-physicians",
+                    file: "content/pages/for-physicians.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "About Title", name: "aboutTitle", widget: "string" },
+                      { label: "About Text", name: "aboutText", widget: "text" },
+                      {
+                        label: "Services", name: "services", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Referral How", name: "referralHow", widget: "list",
+                        field: { label: "Method", name: "method", widget: "string" }
+                      },
+                      {
+                        label: "Referral Needed", name: "referralNeeded", widget: "list",
+                        field: { label: "Item", name: "item", widget: "string" }
+                      },
+                      { label: "Office Address", name: "officeAddress", widget: "string" },
+                      { label: "Office City", name: "officeCity", widget: "string" },
+                      { label: "Phone", name: "phone", widget: "string" },
+                      { label: "Fax", name: "fax", widget: "string" },
+                      { label: "Email", name: "email", widget: "string" },
+                      {
+                        label: "Excellence Items", name: "excellenceItems", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" }
+                    ]
+                  },
+                  {
+                    label: "New Patients",
+                    name: "new-patients",
+                    file: "content/pages/new-patients.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Welcome Title", name: "welcomeTitle", widget: "string" },
+                      { label: "Welcome Text", name: "welcomeText", widget: "text" },
+                      {
+                        label: "Visit Stages", name: "visitStages", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          {
+                            label: "Steps", name: "steps", widget: "list",
+                            field: { label: "Step", name: "step", widget: "string" }
+                          }
+                        ]
+                      },
+                      {
+                        label: "Checklist", name: "checklist", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Referral Steps", name: "referralSteps", widget: "list",
+                        field: { label: "Step", name: "step", widget: "string" }
+                      },
+                      { label: "Phone", name: "phone", widget: "string" },
+                      { label: "Email", name: "email", widget: "string" },
+                      { label: "Schedule URL", name: "scheduleUrl", widget: "string" },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" }
+                    ]
+                  },
+                  {
+                    label: "Patient Forms",
+                    name: "patient-forms",
+                    file: "content/pages/patient-forms.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Before Appointment Text", name: "beforeAppointmentText", widget: "text" },
+                      {
+                        label: "New Patient Forms", name: "newPatientForms", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "URL", name: "url", widget: "string" }
+                        ]
+                      },
+                      {
+                        label: "Established Patient Forms", name: "establishedPatientForms", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "URL", name: "url", widget: "string" }
+                        ]
+                      },
+                      {
+                        label: "Downloadable Forms", name: "downloadableForms", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "File Name", name: "fileName", widget: "string" }
+                        ]
+                      },
+                      {
+                        label: "Online Services", name: "onlineServices", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "Link", name: "link", widget: "string" },
+                          { label: "Icon", name: "icon", widget: "string" },
+                          { label: "Icon Label", name: "iconLabel", widget: "string" }
+                        ]
+                      },
+                      { label: "Phone", name: "phone", widget: "string" },
+                      { label: "Email", name: "email", widget: "string" },
+                      { label: "Address", name: "address", widget: "text" },
+                      { label: "Schedule URL", name: "scheduleUrl", widget: "string" },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" }
+                    ]
+                  },
+                  {
+                    label: "Our Team",
+                    name: "our-team",
+                    file: "content/pages/our-team.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" },
+                      { label: "Schedule URL", name: "scheduleUrl", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Join Our Team",
+                    name: "join-our-team",
+                    file: "content/pages/join-our-team.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "About Title", name: "aboutTitle", widget: "string" },
+                      { label: "About Text", name: "aboutText", widget: "text" },
+                      {
+                        label: "Benefits", name: "benefits", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Careers Email", name: "careersEmail", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Critical Care",
+                    name: "critical-care",
+                    file: "content/pages/critical-care.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      {
+                        label: "Services", name: "services", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Locations", name: "locations", widget: "list",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string" },
+                          { label: "City", name: "city", widget: "string" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Interventional Pulmonary",
+                    name: "interventional-pulmonary",
+                    file: "content/pages/interventional-pulmonary.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      {
+                        label: "Procedures", name: "procedures", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Conditions", name: "conditions", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Pulmonary Services",
+                    name: "pulmonary-services",
+                    file: "content/pages/pulmonary-services.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      {
+                        label: "Conditions", name: "conditions", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Diagnostic Services", name: "diagnosticServices", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Locations", name: "locations", widget: "list",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string" },
+                          { label: "City", name: "city", widget: "string" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Sleep Medicine",
+                    name: "sleep-medicine",
+                    file: "content/pages/sleep-medicine.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      {
+                        label: "Conditions", name: "conditions", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Diagnostic Services", name: "diagnosticServices", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Locations", name: "locations", widget: "list",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string" },
+                          { label: "City", name: "city", widget: "string" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Neurocritical Care",
+                    name: "neurocritical-care",
+                    file: "content/pages/neurocritical-care.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      {
+                        label: "Conditions", name: "conditions", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Capabilities", name: "capabilities", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      {
+                        label: "Locations", name: "locations", widget: "list",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string" },
+                          { label: "City", name: "city", widget: "string" }
+                        ]
+                      },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
+                    label: "Privacy Policy",
+                    name: "privacy-policy",
+                    file: "content/pages/privacy-policy.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Effective Date", name: "effectiveDate", widget: "string" },
+                      { label: "Privacy Officer Phone", name: "privacyOfficerPhone", widget: "string" },
+                      { label: "Privacy Officer Email", name: "privacyOfficerEmail", widget: "string" },
+                      { label: "Privacy Officer Address", name: "privacyOfficerAddress", widget: "text" },
+                      { label: "Practice Name", name: "practiceName", widget: "string" }
                     ]
                   }
                 ]

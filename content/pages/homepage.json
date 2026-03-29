@@ -5,5 +5,122 @@
   "phone": "(303) 951-0600",
   "email": "info@critcareMD.com",
   "address": "274 Union Blvd. Suite 200, Lakewood, CO 80228",
-  "fax": "(303) 951-0605"
+  "fax": "(303) 951-0605",
+  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "officeHours": "Mon-Fri, 8 AM - 5 PM",
+  "servicesTitle": "Our Specialized Services",
+  "servicesSubtitle": "Comprehensive care across multiple specialties, delivered by board-certified physicians with decades of experience.",
+  "services": [
+    {
+      "title": "Critical Care",
+      "description": "Comprehensive intensive care for complex medical conditions",
+      "href": "/critical-care"
+    },
+    {
+      "title": "Pulmonary Services",
+      "description": "Expert diagnosis and treatment of lung diseases",
+      "href": "/pulmonary-services"
+    },
+    {
+      "title": "Interventional Pulmonary",
+      "description": "Advanced procedures for complex pulmonary conditions",
+      "href": "/interventional-pulmonary"
+    },
+    {
+      "title": "Sleep Medicine",
+      "description": "Specialized care for sleep disorders and related conditions",
+      "href": "/sleep-medicine"
+    },
+    {
+      "title": "Neurocritical Care",
+      "description": "Specialized critical care for neurological conditions",
+      "href": "/neurocritical-care"
+    }
+  ],
+  "teamSectionTag": "Expert Physicians",
+  "teamSectionTitle": "Personalized Care from Board-Certified Specialists",
+  "teamSectionText": "Our team of board-certified physicians brings decades of combined experience in critical care, pulmonary medicine, sleep disorders, and interventional procedures. We believe in collaborative care, working closely with you and your family to develop personalized treatment plans.",
+  "teamHighlights": [
+    "Collaborative approach involving you in every decision",
+    "Same-day consultations for urgent cases",
+    "Coordinated care with your primary physician"
+  ],
+  "stats": [
+    {
+      "number": "40+",
+      "label": "Years Serving Colorado"
+    },
+    {
+      "number": "100%",
+      "label": "Board Certified"
+    },
+    {
+      "number": "5",
+      "label": "Specialized Disciplines"
+    }
+  ],
+  "appointmentTitle": "Schedule Your Appointment",
+  "appointmentSubtitle": "We make it easy to get the care you need. Choose the scheduling option that works best for you.",
+  "telehealthTitle": "Telehealth Visits from the Comfort of Home",
+  "telehealthText": "Experience the same quality care you'd receive in-person, but from wherever you are. Our secure telehealth platform makes it easy to consult with our specialists.",
+  "telehealthFeatures": [
+    {
+      "title": "Face-to-Face Care",
+      "description": "Connect via secure video"
+    },
+    {
+      "title": "HIPAA Compliant",
+      "description": "Privacy protected"
+    },
+    {
+      "title": "Convenient",
+      "description": "No commute needed"
+    },
+    {
+      "title": "Easy to Use",
+      "description": "Simple technology"
+    }
+  ],
+  "quickAccessTitle": "Quick Access",
+  "quickAccessSubtitle": "Manage your care with just a few clicks",
+  "quickAccessCards": [
+    {
+      "title": "Patient Portal",
+      "description": "Access records, results, communicate with care team",
+      "buttonText": "Login"
+    },
+    {
+      "title": "Online Scheduling",
+      "description": "Book an appointment 24/7",
+      "buttonText": "Schedule Now"
+    },
+    {
+      "title": "Pay Your Bill",
+      "description": "Make a secure payment online",
+      "buttonText": "Pay Now"
+    }
+  ],
+  "testimonialsTitle": "What Our Patients Say",
+  "testimonialsSubtitle": "Trusted by patients and physicians throughout Colorado",
+  "testimonials": [
+    {
+      "quote": "The care provided by the team at CCPSA was nothing short of exceptional. From the moment I walked in, I felt heard and supported. The doctors and staff were not only highly skilled but also deeply compassionate.",
+      "author": "Sarah M.",
+      "role": "Former ICU Patient"
+    },
+    {
+      "quote": "I have had the pleasure of working with several of the physicians at Critical Care Pulmonary and Sleep Associates over the past decade. Their clinical expertise is top-notch, and they consistently go above and beyond for their patients.",
+      "author": "Dr. James R.",
+      "role": "Referring Physician"
+    },
+    {
+      "quote": "After struggling with sleep issues for years, I finally found answers at CCPSA. The sleep medicine team was thorough, patient, and genuinely interested in improving my quality of life.",
+      "author": "Michael T.",
+      "role": "Sleep Medicine Patient"
+    }
+  ],
+  "affiliationsTitle": "Our Affiliations & Recognition",
+  "affiliationsSubtitle": "Proudly affiliated with leading healthcare systems and recognized for excellence in patient care.",
+  "ctaTitle": "Ready to Start Your Care?",
+  "ctaText": "Our team is here to help. Reach out today and take the first step toward better health."
 }

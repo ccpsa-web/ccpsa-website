@@ -1,0 +1,62 @@
+{
+  "title": "For Physicians",
+  "subtitle": "Partner with our board-certified specialists for comprehensive critical care, pulmonary, sleep, and interventional services.",
+  "aboutTitle": "About CCPSA",
+  "aboutText": "Critical Care, Pulmonary and Sleep Associates has been proudly serving the Denver metro area for over 40 years. As an independent, physician-owned practice, we provide specialized critical care, pulmonary, sleep, and interventional pulmonary services to multiple CommonSpirit and AdventHealth hospitals and outpatient clinics.\n\nOur team of over 30 board-certified physicians works collaboratively with referring physicians and hospital partners to deliver exceptional patient care and outcomes.",
+  "services": [
+    {
+      "title": "Critical Care Services",
+      "description": "Comprehensive ICU coverage and consultation for critically ill patients across multiple hospital sites."
+    },
+    {
+      "title": "Pulmonary Medicine",
+      "description": "Board-certified pulmonologists providing outpatient pulmonary services and hospital consultations."
+    },
+    {
+      "title": "Interventional Pulmonology",
+      "description": "Advanced procedures including bronchoscopy, transbronchial biopsies, and airway management."
+    },
+    {
+      "title": "Sleep Medicine",
+      "description": "Comprehensive sleep disorder diagnosis and treatment in our accredited sleep labs."
+    },
+    {
+      "title": "Neurocritical Care",
+      "description": "Specialized care for neurologically ill and injured patients in our ICUs."
+    }
+  ],
+  "referralHow": [
+    "Call our main office at (303) 951-0600",
+    "Fax referral forms to (303) 951-0605",
+    "Use our online patient portal for direct consultation requests",
+    "Patients can self-schedule via our online system"
+  ],
+  "referralNeeded": [
+    "Patient name and contact information",
+    "Insurance details (if available)",
+    "Pertinent medical history and medications",
+    "Current imaging or test results",
+    "Clinical question or reason for consultation"
+  ],
+  "officeAddress": "274 Union Blvd. Suite 200",
+  "officeCity": "Lakewood, CO 80228",
+  "phone": "(303) 951-0600",
+  "fax": "(303) 951-0605",
+  "email": "info@critcareMD.com",
+  "excellenceItems": [
+    {
+      "title": "Board Certified",
+      "description": "All physicians are board-certified in their specialties"
+    },
+    {
+      "title": "Multidisciplinary Care",
+      "description": "Collaborative approach with hospital teams and specialists"
+    },
+    {
+      "title": "Continuous Improvement",
+      "description": "Ongoing education and adoption of best practices"
+    }
+  ],
+  "ctaTitle": "Need to Refer a Patient?",
+  "ctaText": "Contact us today to refer a patient or discuss a case with one of our specialists."
+}

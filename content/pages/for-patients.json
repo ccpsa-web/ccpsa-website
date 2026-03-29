@@ -1,0 +1,94 @@
+{
+  "title": "For Patients",
+  "subtitle": "We're here to help. Find resources, schedule appointments, and get the answers you need.",
+  "beforeVisitTitle": "Before Your Visit",
+  "beforeVisitItems": [
+    "Arrive 10-15 minutes early to check in",
+    "Bring your insurance card and photo ID",
+    "Bring a list of current medications",
+    "Bring recent medical records if available",
+    "Complete patient paperwork online if possible"
+  ],
+  "whatToExpectTitle": "What to Expect",
+  "whatToExpectText": "Our clinical staff will conduct a brief evaluation, take vital signs, and review your medical history. Your physician will then spend time with you to discuss your symptoms, perform an exam, and develop a personalized care plan.\n\nWe're committed to providing compassionate, evidence-based care in a comfortable and professional environment.",
+  "clinicLocations": [
+    {
+      "name": "West Clinic",
+      "address": "274 Union Blvd. Suite 200",
+      "city": "Lakewood, CO 80228",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    },
+    {
+      "name": "North Clinic",
+      "address": "11450 Commons Drive",
+      "city": "Westminster, CO 80020",
+      "phone": "(720) 962-2200",
+      "fax": "(720) 962-2207"
+    },
+    {
+      "name": "South Clinic",
+      "address": "2950 South Gartland Street",
+      "city": "Parker, CO 80134",
+      "phone": "(720) 851-8300",
+      "fax": "(720) 851-8307"
+    },
+    {
+      "name": "Central Clinic",
+      "address": "9220 South Simms Street, Suite B",
+      "city": "Littleton, CO 80127",
+      "phone": "(303) 794-9700",
+      "fax": "(303) 794-9707"
+    }
+  ],
+  "patientResources": [
+    {
+      "title": "Online Scheduling",
+      "description": "Schedule your appointment at your convenience.",
+      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+      "external": true
+    },
+    {
+      "title": "Patient Portal - Epic MyChart",
+      "description": "Access your medical records, test results, and communicate with your care team.",
+      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+      "external": true
+    },
+    {
+      "title": "Online Bill Payment",
+      "description": "Pay your medical bills securely online.",
+      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+      "external": true
+    },
+    {
+      "title": "Patient Information & Paperwork",
+      "description": "Download and complete patient forms before your visit.",
+      "link": "/patient-forms",
+      "external": false
+    },
+    {
+      "title": "Notice of Privacy Practices",
+      "description": "Review our HIPAA privacy practices and your patient rights.",
+      "link": "/privacy-policy",
+      "external": false
+    }
+  ],
+  "insuranceBilling": [
+    {
+      "title": "Current Billing (7/1/2018 - Present)",
+      "description": "Information about recent billing and payment options."
+    },
+    {
+      "title": "Prior Billing (Before 7/1/2018)",
+      "description": "Historical billing information available upon request."
+    },
+    {
+      "title": "Insurance Coverage",
+      "description": "We accept most major insurance plans. Contact us to verify your coverage."
+    }
+  ],
+  "ctaTitle": "Ready to Schedule Your Appointment?",
+  "ctaText": "Use our online scheduling system or call us today to book your appointment with one of our specialists.",
+  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "phone": "(303) 951-0600"
+}

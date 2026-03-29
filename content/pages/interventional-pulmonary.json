@@ -1,0 +1,76 @@
+{
+  "title": "Interventional Pulmonary",
+  "subtitle": "Advanced minimally invasive procedures for complex lung and airway conditions",
+  "approachText": "Our interventional pulmonology team performs advanced minimally invasive procedures for diagnosis and treatment of complex lung and airway conditions. Using state-of-the-art technology, we provide options that reduce the need for more invasive surgical procedures.",
+  "procedures": [
+    {
+      "title": "Flexible & Rigid Bronchoscopy",
+      "description": "Visualization and treatment of airway disorders."
+    },
+    {
+      "title": "EBUS with TBNA",
+      "description": "Endobronchial ultrasound for lymph node sampling."
+    },
+    {
+      "title": "Navigational Bronchoscopy",
+      "description": "Advanced imaging for peripheral lung lesion evaluation."
+    },
+    {
+      "title": "Airway Stent Placement",
+      "description": "Management of airway obstruction with stent therapy."
+    },
+    {
+      "title": "Endobronchial Valve Placement",
+      "description": "Treatment of emphysema with minimally invasive technique."
+    },
+    {
+      "title": "Foreign Body Removal",
+      "description": "Safe extraction of aspirated foreign material."
+    },
+    {
+      "title": "Whole Lung Lavage",
+      "description": "Therapeutic lung cleansing for specialized conditions."
+    },
+    {
+      "title": "Pleural Procedures",
+      "description": "Thoracentesis, pleurodesis, and tunneled pleural catheter placement."
+    },
+    {
+      "title": "Percutaneous Tracheostomy",
+      "description": "Minimally invasive airway access procedure."
+    }
+  ],
+  "conditions": [
+    {
+      "title": "Lung Cancer Staging",
+      "description": "Diagnostic procedures for cancer diagnosis and staging."
+    },
+    {
+      "title": "Mediastinal Lymphadenopathy",
+      "description": "Evaluation of enlarged mediastinal lymph nodes."
+    },
+    {
+      "title": "Central Airway Obstruction",
+      "description": "Treatment of airway narrowing from various causes."
+    },
+    {
+      "title": "Tracheal Stenosis",
+      "description": "Management of airway narrowing and strictures."
+    },
+    {
+      "title": "Malignant Pleural Effusions",
+      "description": "Treatment of fluid accumulation from cancer."
+    },
+    {
+      "title": "Benign Pleural Effusions",
+      "description": "Diagnosis and management of non-cancerous pleural fluid."
+    },
+    {
+      "title": "Bronchopleural Fistula",
+      "description": "Treatment of abnormal communication between airway and pleura."
+    }
+  ],
+  "ctaTitle": "Ready to Get Started?",
+  "ctaText": "Contact us today to learn more about our interventional pulmonary services and schedule your consultation.",
+  "phone": "(303) 951-0600"
+}

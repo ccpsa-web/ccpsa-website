@@ -17,8 +17,20 @@ interface Provider {
   order?: number;
 }
 
+interface PageContent {
+  title?: string;
+  subtitle?: string;
+  ctaTitle?: string;
+  ctaText?: string;
+  phone?: string;
+  scheduleUrl?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+}
+
 interface TeamClientProps {
   providers: Provider[];
+  content?: PageContent | null;
 }
 
 const CATEGORIES = [
@@ -31,7 +43,7 @@ const CATEGORIES = [
   { key: 'executive', label: 'Executive' },
 ];
 
-export default function TeamClient({ providers }: TeamClientProps) {
+export default function TeamClient({ providers, content }: TeamClientProps) {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredProviders = useMemo(() => {
@@ -59,9 +71,9 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content?.title || 'Our Team'}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.
+              {content?.subtitle || 'Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.'}
             </p>
           </FadeInUp>
         </div>
@@ -186,14 +198,14 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-amber text-navy py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Schedule an Appointment</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{content?.ctaTitle || 'Schedule an Appointment'}</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Ready to work with one of our experienced providers? Book your appointment online or call us today.
+              {content?.ctaText || 'Ready to work with one of our experienced providers? Book your appointment online or call us today.'}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+                href={content?.scheduleUrl || 'https://mountain.mycommonspirit.org/MCH/Authentication/Login?'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
@@ -201,10 +213,10 @@ export default function TeamClient({ providers }: TeamClientProps) {
                 Schedule Online
               </a>
               <a
-                href="tel:3039510600"
+                href={`tel:${content?.phone?.replace(/[^\d]/g, '') || '3039510600'}`}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call (303) 951-0600
+                Call {content?.phone || '(303) 951-0600'}
               </a>
             </div>
           </FadeInUp>

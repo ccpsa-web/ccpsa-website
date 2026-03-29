@@ -1,0 +1,98 @@
+{
+  "title": "Neurocritical Care",
+  "subtitle": "Specialized intensive care for acute neurological emergencies and brain disorders",
+  "approachText": "Our neurocritical care team provides specialized intensive care for patients with acute neurological emergencies. Multiple CCPSA physicians hold board certification in Neurocritical Care, offering expert management of complex neurological conditions in the ICU setting.",
+  "conditions": [
+    {
+      "title": "Acute Ischemic & Hemorrhagic Stroke",
+      "description": "Intensive management of acute cerebrovascular events."
+    },
+    {
+      "title": "Traumatic Brain Injury",
+      "description": "Expert care for severe head injuries and complications."
+    },
+    {
+      "title": "Subarachnoid Hemorrhage",
+      "description": "Specialized management of intracranial bleeds."
+    },
+    {
+      "title": "Status Epilepticus",
+      "description": "Emergency management of prolonged seizures."
+    },
+    {
+      "title": "Spinal Cord Injury",
+      "description": "Acute care and stabilization of spinal injuries."
+    },
+    {
+      "title": "Neuromuscular Respiratory Failure",
+      "description": "Management of Guillain-Barre, myasthenia gravis, and related conditions."
+    },
+    {
+      "title": "Brain Tumor Complications",
+      "description": "Critical care for acute tumor-related emergencies."
+    },
+    {
+      "title": "Post-Neurosurgical Care",
+      "description": "Intensive monitoring and management after brain surgery."
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "ICP Monitoring & Management",
+      "description": "Intracranial pressure assessment and intervention."
+    },
+    {
+      "title": "Continuous EEG Monitoring",
+      "description": "24/7 brain activity monitoring and seizure detection."
+    },
+    {
+      "title": "Targeted Temperature Management",
+      "description": "Therapeutic hypothermia for neuroprotection."
+    },
+    {
+      "title": "Neurological Prognostication",
+      "description": "Expert outcome prediction and planning."
+    },
+    {
+      "title": "Specialist Team Coordination",
+      "description": "Collaboration with neurology and neurosurgery."
+    },
+    {
+      "title": "Family & Goals of Care",
+      "description": "Compassionate communication and advance care planning."
+    }
+  ],
+  "locations": [
+    {
+      "name": "St. Anthony Hospital",
+      "city": "Lakewood"
+    },
+    {
+      "name": "St. Anthony North",
+      "city": "Westminster"
+    },
+    {
+      "name": "Parker Adventist Hospital",
+      "city": "Parker"
+    },
+    {
+      "name": "Littleton Adventist Hospital",
+      "city": "Littleton"
+    },
+    {
+      "name": "Castle Rock Adventist Hospital",
+      "city": "Castle Rock"
+    },
+    {
+      "name": "Avista Adventist Hospital",
+      "city": "Louisville"
+    },
+    {
+      "name": "Porter Adventist Hospital",
+      "city": "Denver"
+    }
+  ],
+  "ctaTitle": "Ready to Get Started?",
+  "ctaText": "Contact us today to learn more about our neurocritical care services and schedule your consultation.",
+  "phone": "(303) 951-0600"
+}

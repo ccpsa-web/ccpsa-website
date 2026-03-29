@@ -1,6 +1,10 @@
 import FadeInUp from '@/components/FadeInUp';
+import { getPageContent } from '@/lib/content';
 
 export default function NeurocriticalCarePage() {
+  const content = getPageContent('neurocritical-care');
+  if (!content) return null;
+
   return (
     <>
       {/* Hero Banner */}
@@ -12,10 +16,10 @@ export default function NeurocriticalCarePage() {
           <FadeInUp>
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 text-balance">
-                Neurocritical Care
+                {content.title}
               </h1>
               <p className="text-lg text-white/80 text-pretty">
-                Specialized intensive care for acute neurological emergencies and brain disorders
+                {content.subtitle}
               </p>
             </div>
           </FadeInUp>
@@ -29,7 +33,7 @@ export default function NeurocriticalCarePage() {
             <FadeInUp>
               <h2 className="text-3xl font-bold text-navy mb-6">Our Approach</h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our neurocritical care team provides specialized intensive care for patients with acute neurological emergencies. Multiple CCPSA physicians hold board certification in Neurocritical Care, offering expert management of complex neurological conditions in the ICU setting.
+                {content.approachText}
               </p>
             </FadeInUp>
           </div>
@@ -44,20 +48,11 @@ export default function NeurocriticalCarePage() {
               <h2 className="text-3xl font-bold text-navy mb-12">Acute Neurological Conditions</h2>
             </FadeInUp>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { title: 'Acute Ischemic & Hemorrhagic Stroke', desc: 'Intensive management of acute cerebrovascular events.' },
-                { title: 'Traumatic Brain Injury', desc: 'Expert care for severe head injuries and complications.' },
-                { title: 'Subarachnoid Hemorrhage', desc: 'Specialized management of intracranial bleeds.' },
-                { title: 'Status Epilepticus', desc: 'Emergency management of prolonged seizures.' },
-                { title: 'Spinal Cord Injury', desc: 'Acute care and stabilization of spinal injuries.' },
-                { title: 'Neuromuscular Respiratory Failure', desc: 'Management of Guillain-Barre, myasthenia gravis, and related conditions.' },
-                { title: 'Brain Tumor Complications', desc: 'Critical care for acute tumor-related emergencies.' },
-                { title: 'Post-Neurosurgical Care', desc: 'Intensive monitoring and management after brain surgery.' }
-              ].map((condition, idx) => (
+              {content.conditions.map((condition: {title: string; description: string}, idx: number) => (
                 <FadeInUp key={idx}>
                   <div className="bg-white rounded-lg p-6 shadow-md border-l-4 border-amber">
                     <h3 className="font-bold text-navy mb-2">{condition.title}</h3>
-                    <p className="text-gray-700">{condition.desc}</p>
+                    <p className="text-gray-700">{condition.description}</p>
                   </div>
                 </FadeInUp>
               ))}
@@ -74,18 +69,11 @@ export default function NeurocriticalCarePage() {
               <h2 className="text-3xl font-bold text-navy mb-12">Clinical Capabilities</h2>
             </FadeInUp>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { title: 'ICP Monitoring & Management', desc: 'Intracranial pressure assessment and intervention.' },
-                { title: 'Continuous EEG Monitoring', desc: '24/7 brain activity monitoring and seizure detection.' },
-                { title: 'Targeted Temperature Management', desc: 'Therapeutic hypothermia for neuroprotection.' },
-                { title: 'Neurological Prognostication', desc: 'Expert outcome prediction and planning.' },
-                { title: 'Specialist Team Coordination', desc: 'Collaboration with neurology and neurosurgery.' },
-                { title: 'Family & Goals of Care', desc: 'Compassionate communication and advance care planning.' }
-              ].map((capability, idx) => (
+              {content.capabilities.map((capability: {title: string; description: string}, idx: number) => (
                 <FadeInUp key={idx}>
                   <div className="bg-light-gray rounded-lg p-6 border-l-4 border-blue">
                     <h3 className="font-bold text-navy mb-2">{capability.title}</h3>
-                    <p className="text-gray-700">{capability.desc}</p>
+                    <p className="text-gray-700">{capability.description}</p>
                   </div>
                 </FadeInUp>
               ))}
@@ -102,15 +90,7 @@ export default function NeurocriticalCarePage() {
               <h2 className="text-3xl font-bold text-navy mb-12">Hospital Locations</h2>
             </FadeInUp>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { name: 'St. Anthony Hospital', city: 'Lakewood' },
-                { name: 'St. Anthony North', city: 'Westminster' },
-                { name: 'Parker Adventist Hospital', city: 'Parker' },
-                { name: 'Littleton Adventist Hospital', city: 'Littleton' },
-                { name: 'Castle Rock Adventist Hospital', city: 'Castle Rock' },
-                { name: 'Avista Adventist Hospital', city: 'Louisville' },
-                { name: 'Porter Adventist Hospital', city: 'Denver' }
-              ].map((location, idx) => (
+              {content.locations.map((location: {name: string; city: string}, idx: number) => (
                 <FadeInUp key={idx}>
                   <div className="bg-white rounded-lg p-6 border-l-4 border-blue shadow-md">
                     <h3 className="font-bold text-navy mb-2">{location.name}</h3>
@@ -128,13 +108,13 @@ export default function NeurocriticalCarePage() {
         <div className="container mx-auto px-4">
           <FadeInUp>
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{content.ctaTitle}</h2>
               <p className="text-lg text-white/80 mb-8">
-                Contact us today to learn more about our neurocritical care services and schedule your consultation.
+                {content.ctaText}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:3039510600" className="inline-block bg-amber text-navy px-8 py-3 rounded-lg font-bold hover:bg-amber/90 transition-colors duration-200">
-                  Call (303) 951-0600
+                <a href={`tel:${content.phone.replace(/\D/g, '')}`} className="inline-block bg-amber text-navy px-8 py-3 rounded-lg font-bold hover:bg-amber/90 transition-colors duration-200">
+                  Call {content.phone}
                 </a>
                 <a href="/for-physicians" className="inline-block bg-white text-navy px-8 py-3 rounded-lg font-bold hover:bg-white/90 transition-colors duration-200">
                   For Physicians

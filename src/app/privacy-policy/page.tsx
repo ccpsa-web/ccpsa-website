@@ -1,7 +1,6 @@
-'use client';
-
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
+import { getPageContent } from '@/lib/content';
 
 interface Section {
   title: string;
@@ -97,15 +96,19 @@ const POLICY_SECTIONS: Section[] = [
 ];
 
 export default function PrivacyPolicy() {
+  const content = getPageContent('privacy-policy');
+
+  if (!content) return null;
+
   return (
     <div className="min-h-screen bg-light-gray">
       {/* Hero Banner */}
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.title || 'Privacy Policy'}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              Notice of Privacy Practices & HIPAA Compliance
+              {content.subtitle || 'Notice of Privacy Practices & HIPAA Compliance'}
             </p>
           </FadeInUp>
         </div>
@@ -117,7 +120,8 @@ export default function PrivacyPolicy() {
           <FadeInUp>
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10 mb-12">
               <p className="text-gray-600 leading-relaxed">
-                <strong>Effective Date:</strong> This Notice became effective January 1, 2024. Your privacy is important to us. Critical Care, Pulmonary and Sleep Associates (CCPSA) is required by federal law to protect the privacy of your health information and to give you this Notice of our privacy practices.
+                <strong>Effective Date:</strong> {content.effectiveDate || 'This notice is effective as of January 1, 2024.'}
+                {' '}Your privacy is important to us. {content.practiceName || 'Critical Care, Pulmonary and Sleep Associates (CCPSA)'} is required by federal law to protect the privacy of your health information and to give you this Notice of our privacy practices.
               </p>
             </div>
           </FadeInUp>
@@ -169,21 +173,20 @@ export default function PrivacyPolicy() {
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Phone</p>
-                    <a href="tel:3039510600" className="text-blue-text hover:text-navy font-medium transition-colors">
-                      (303) 951-0600
+                    <a href={`tel:${content.privacyOfficerPhone?.replace(/[^\d]/g, '')}`} className="text-blue-text hover:text-navy font-medium transition-colors">
+                      {content.privacyOfficerPhone || '(303) 951-0600'}
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Email</p>
-                    <a href="mailto:privacy@critcareMD.com" className="text-blue-text hover:text-navy font-medium transition-colors">
-                      privacy@critcareMD.com
+                    <a href={`mailto:${content.privacyOfficerEmail}`} className="text-blue-text hover:text-navy font-medium transition-colors">
+                      {content.privacyOfficerEmail || 'privacy@critcareMD.com'}
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Address</p>
                     <p className="text-navy font-medium">
-                      274 Union Blvd. Suite 200<br />
-                      Lakewood, CO 80228
+                      {content.privacyOfficerAddress || '274 Union Blvd. Suite 200\nLakewood, CO 80228'}
                     </p>
                   </div>
                 </div>

@@ -1,0 +1,27 @@
+{
+  "title": "Join Our Team",
+  "subtitle": "Help us deliver exceptional critical care, pulmonary, and sleep medicine to the Denver metro area.",
+  "aboutTitle": "About CCPSA",
+  "aboutText": "Critical Care, Pulmonary and Sleep Associates is an independent, physician-owned practice serving the Denver metro area for over 40 years. We provide specialized critical care, pulmonary, sleep, and interventional pulmonary services to multiple hospital and outpatient sites.\n\nOur team includes over 30 board-certified physicians, advanced practice providers, and clinical support staff dedicated to evidence-based patient care.\n\nWe are always looking for talented, dedicated professionals who share our commitment to clinical excellence.",
+  "benefits": [
+    {
+      "title": "Physician-Owned Practice",
+      "description": "Independent, physician-led decision-making"
+    },
+    {
+      "title": "Work-Life Balance",
+      "description": "Flexible scheduling and fair workload distribution"
+    },
+    {
+      "title": "Competitive Compensation",
+      "description": "Salary, benefits, and partnership track"
+    },
+    {
+      "title": "Professional Growth",
+      "description": "CME support and leadership opportunities"
+    }
+  ],
+  "ctaTitle": "Ready to Apply?",
+  "ctaText": "Submit your application and our team will be in touch.",
+  "careersEmail": "careers@critcareMD.com"
+}
