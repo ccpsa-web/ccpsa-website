@@ -476,22 +476,8 @@ export default function HomePage() {
                 className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
               />
               <Image
-                src="/images/site/critical-care-excellence-badge.png"
-                alt="Critical Care Excellence Award - Healthgrades"
-                width={120}
-                height={120}
-                className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <Image
                 src="/images/site/5280-top-docs-badge.png"
-                alt="5280 Top Docs"
-                width={120}
-                height={120}
-                className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/images/site/hipaa-compliant-badge.png"
-                alt="HIPAA Compliant"
+                alt="5280 Top Doctors - Denver 2025"
                 width={120}
                 height={120}
                 className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
