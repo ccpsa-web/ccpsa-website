@@ -35,6 +35,11 @@
       "title": "Neurocritical Care",
       "description": "Specialized critical care for neurological conditions",
       "href": "/neurocritical-care"
+    },
+    {
+      "title": "Clinical Research",
+      "description": "Partnering with CCT Research to advance patient care through clinical trials",
+      "href": "/clinical-trials"
     }
   ],
   "teamSectionTag": "Expert Physicians",

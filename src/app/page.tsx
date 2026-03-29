@@ -98,7 +98,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(() => {
-              const serviceGradients = ['from-red-500 to-rose-600', 'from-blue to-cyan-600', 'from-purple-500 to-indigo-600', 'from-indigo-500 to-blue-600', 'from-emerald-500 to-teal-600'];
+              const serviceGradients = ['from-red-500 to-rose-600', 'from-blue to-cyan-600', 'from-purple-500 to-indigo-600', 'from-indigo-500 to-blue-600', 'from-emerald-500 to-teal-600', 'from-amber to-orange-500'];
               return content.services.map((service: any, idx: number) => (
               <FadeInUp key={idx}>
                 <Link href={service.href}>
@@ -112,6 +112,7 @@ export default function HomePage() {
                           {idx === 2 && <><path d="M3.196 11.823c.99-1.465 2.573-2.765 4.45-3.582a8 8 0 0 1 8.708 0c1.877.817 3.46 2.117 4.45 3.582"></path><path d="M6 9.5a3 3 0 1 0 6 0 3 3 0 0 0-6 0"></path><path d="M12 9.5a3 3 0 1 0 6 0 3 3 0 0 0-6 0"></path><path d="M18 21H6a3 3 0 0 1-3-3v-3h18v3a3 3 0 0 1-3 3z"></path></>}
                           {idx === 3 && <><circle cx="12" cy="12" r="1"></circle><path d="M12 1v6m0 6v6"></path><path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path><path d="M1 12h6m6 0h6"></path><path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path></>}
                           {idx === 4 && <><path d="M4 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M12 4a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M20 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M12 20a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path></>}
+                          {idx === 5 && <><path d="M9 2h6v2H9z"></path><path d="M4 7v13a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7"></path><path d="M2 7h20"></path><path d="M15 12l-3 3-3-3"></path><path d="M12 12V9"></path></>}
                         </svg>
                       </div>
                       <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors duration-200">{service.title}</h3>

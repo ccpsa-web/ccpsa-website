@@ -583,6 +583,37 @@
                     ]
                   },
                   {
+                    label: "Clinical Trials",
+                    name: "clinical-trials",
+                    file: "content/pages/clinical-trials.json",
+                    fields: [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Partnership Title", name: "partnershipTitle", widget: "string" },
+                      { label: "Partnership Text", name: "partnershipText", widget: "text" },
+                      { label: "Monitoring Text", name: "monitoringText", widget: "text" },
+                      { label: "Partner URL", name: "partnerUrl", widget: "string" },
+                      { label: "Partner URL Label", name: "partnerUrlLabel", widget: "string" },
+                      { label: "Enrolling Title", name: "enrollingTitle", widget: "string" },
+                      {
+                        label: "Enrolling Trials", name: "enrollingTrials", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" }
+                        ]
+                      },
+                      { label: "Enrolling Note", name: "enrollingNote", widget: "text" },
+                      { label: "Contact Title", name: "contactTitle", widget: "string" },
+                      { label: "Contact Text", name: "contactText", widget: "text" },
+                      { label: "Contact Name", name: "contactName", widget: "string" },
+                      { label: "Contact Phone", name: "contactPhone", widget: "string" },
+                      { label: "Contact Email", name: "contactEmail", widget: "string" },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "CTA Text", name: "ctaText", widget: "text" },
+                      { label: "Phone", name: "phone", widget: "string" }
+                    ]
+                  },
+                  {
                     label: "Privacy Policy",
                     name: "privacy-policy",
                     file: "content/pages/privacy-policy.json",

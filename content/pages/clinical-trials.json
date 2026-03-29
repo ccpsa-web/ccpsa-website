@@ -1,0 +1,49 @@
+{
+  "title": "Clinical Trials",
+  "subtitle": "Advancing patient care through clinical research partnerships",
+  "partnershipTitle": "Clinical Trials Partnership Between CCPSA & CCT Research",
+  "partnershipText": "CCPSA has partnered with CCT Research to offer eligible patients the opportunity to participate in clinical trials. A clinical trial is a carefully designed research study that investigates the effectiveness of a specific treatment for a particular group of people. Well-designed clinical trials are the fastest way to find new, effective treatments.",
+  "monitoringText": "Trial participants are closely monitored by knowledgeable, experienced CCPSA physicians and healthcare professionals, including clinical research coordinators.",
+  "partnerUrl": "https://www.cctresearch.com/",
+  "partnerUrlLabel": "Visit the CCT Research website to learn more",
+  "enrollingTitle": "Clinical Trials are enrolling for the following:",
+  "enrollingTrials": [
+    {
+      "title": "Vaccinations",
+      "description": "Including influenza and respiratory syncytial virus (RSV)"
+    },
+    {
+      "title": "Asthma",
+      "description": "Clinical trials for asthma treatment and management"
+    },
+    {
+      "title": "Chronic Obstructive Pulmonary Disease (COPD)",
+      "description": "Research studies for COPD therapies"
+    },
+    {
+      "title": "Interstitial Lung Disease (ILD)",
+      "description": "Trials investigating treatments for interstitial lung disease"
+    },
+    {
+      "title": "Idiopathic Pulmonary Fibrosis (IPF)",
+      "description": "Studies for idiopathic pulmonary fibrosis treatments"
+    },
+    {
+      "title": "Pulmonary Hypertension",
+      "description": "Clinical trials for pulmonary hypertension management"
+    },
+    {
+      "title": "Chronic Cough",
+      "description": "Research studies for chronic cough treatment"
+    }
+  ],
+  "enrollingNote": "More clinical trials are being added regularly. If you are interested in participating in research and would like the most current list of open trials, please contact our clinical research team.",
+  "contactTitle": "CCT - Clinical Trials Team",
+  "contactText": "To learn more about or participate in available clinical trials at CCPSA, contact:",
+  "contactName": "Jennifer Quinn, Site Manager",
+  "contactPhone": "(303) 219-2076",
+  "contactEmail": "jenniferquinn@cctresearch.com",
+  "ctaTitle": "Have Questions? We Can Help",
+  "ctaText": "Contact us today with any questions you might have about clinical trial participation.",
+  "phone": "(303) 951-0600"
+}
