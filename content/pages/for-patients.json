@@ -5,6 +5,12 @@
   "quickAccessSubtitle": "Manage your care with just a few clicks",
   "quickAccessCards": [
     {
+      "title": "Call for Appointment",
+      "description": "Speak directly with our scheduling team",
+      "buttonText": "Call Now",
+      "link": "tel:3039510600"
+    },
+    {
       "title": "Patient Portal",
       "description": "Access records, results, communicate with care team",
       "buttonText": "Login"
