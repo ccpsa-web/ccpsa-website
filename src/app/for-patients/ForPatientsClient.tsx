@@ -67,14 +67,22 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
                     </div>
 
                     <div className="p-6 flex flex-col flex-grow">
-                      <p className="text-gray-600 mb-6 flex-grow">{card.description}</p>
-                      <a href={card.link || content.scheduleUrl} target={card.link?.startsWith('tel:') ? undefined : '_blank'} rel={card.link?.startsWith('tel:') ? undefined : 'noopener noreferrer'} className="w-full bg-navy hover:bg-blue text-white font-semibold transition-all duration-300 group-hover:shadow-lg rounded-lg py-2 px-4 inline-flex items-center justify-center">
-                        {card.buttonText}
-                        <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <line x1="5" y1="12" x2="19" y2="12"></line>
-                          <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                      </a>
+                      {card.isPhoneDisplay ? (
+                        <div className="flex flex-col items-center justify-center flex-grow">
+                          <p className="text-2xl font-bold text-navy">{card.description}</p>
+                        </div>
+                      ) : (
+                        <>
+                          <p className="text-gray-600 mb-6 flex-grow">{card.description}</p>
+                          <a href={card.link || content.scheduleUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-navy hover:bg-blue text-white font-semibold transition-all duration-300 group-hover:shadow-lg rounded-lg py-2 px-4 inline-flex items-center justify-center">
+                            {card.buttonText}
+                            <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <line x1="5" y1="12" x2="19" y2="12"></line>
+                              <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
                 ));

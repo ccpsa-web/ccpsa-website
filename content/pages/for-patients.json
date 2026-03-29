@@ -6,9 +6,10 @@
   "quickAccessCards": [
     {
       "title": "Call for Appointment",
-      "description": "Speak directly with our scheduling team",
-      "buttonText": "Call Now",
-      "link": "tel:3039510600"
+      "description": "(303) 951-0600",
+      "buttonText": "View Number",
+      "link": "#",
+      "isPhoneDisplay": true
     },
     {
       "title": "Patient Portal",
