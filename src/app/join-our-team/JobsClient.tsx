@@ -123,7 +123,8 @@ export default function JobsClient({ jobs }: JobsClientProps) {
   const selectPosition = (positionTitle: string) => {
     setFormData({ ...formData, position: positionTitle });
     setTimeout(() => {
-      document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' });
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.getElementById('apply')?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     }, 100);
   };
 
@@ -243,7 +244,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                             <strong>{job.type}</strong> Position
                           </p>
                         </div>
-                        <span className="inline-block bg-amber/10 text-amber px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
+                        <span className="inline-block bg-amber/10 text-amber-text px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
                           Open
                         </span>
                       </div>
@@ -253,7 +254,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                     <div className="px-6 pb-4">
                       <button
                         onClick={() => toggleJobDetails(job.id)}
-                        className="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors"
+                        className="text-sm text-blue-text font-medium flex items-center gap-1 hover:text-navy transition-colors"
                       >
                         <span className="toggle-text">
                           {expandedJob === job.id ? 'Hide Details' : 'View Details'}
@@ -266,6 +267,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
+                          aria-hidden="true"
                         >
                           <path d="M6 9l6 6 6-6" />
                         </svg>
@@ -338,7 +340,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                         <div className="pt-4 border-t border-gray-200">
                           <button
                             onClick={() => selectPosition(job.title)}
-                            className="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors"
+                            className="inline-flex items-center gap-2 text-blue-text font-medium hover:text-navy transition-colors"
                           >
                             Apply for this Position
                             <svg
@@ -368,7 +370,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
             </div>
             <p className="text-gray-600 mb-8 mt-4">
               Upload your resume and we&apos;ll be in touch. You can also email{' '}
-              <Link href="mailto:careers@critcareMD.com" className="text-blue hover:text-navy transition-colors font-medium">
+              <Link href="mailto:careers@critcareMD.com" className="text-blue-text hover:text-navy transition-colors font-medium">
                 careers@critcareMD.com
               </Link>{' '}
               directly.
@@ -389,7 +391,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                 {/* Resume Upload */}
                 <div className="mb-8">
                   <label className="block text-navy font-semibold mb-3">
-                    Upload Resume <span className="text-red-500">*</span>
+                    Upload Resume <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
                   </label>
                   <div
                     onDragOver={handleDragOver}
@@ -398,7 +400,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                     className="border-2 border-dashed border-blue/30 rounded-lg p-8 text-center hover:border-blue/60 transition-colors duration-300 cursor-pointer bg-light-gray/50"
                   >
                     <svg
-                      className="h-10 w-10 text-blue/50 mx-auto mb-3"
+                      className="h-10 w-10 text-blue-text/50 mx-auto mb-3"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -430,7 +432,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="first-name" className="block text-navy font-semibold mb-2">
-                      First Name <span className="text-red-500">*</span>
+                      First Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
                     </label>
                     <input
                       type="text"
@@ -445,7 +447,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                   </div>
                   <div>
                     <label htmlFor="last-name" className="block text-navy font-semibold mb-2">
-                      Last Name <span className="text-red-500">*</span>
+                      Last Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
                     </label>
                     <input
                       type="text"
@@ -463,7 +465,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                 {/* Email */}
                 <div className="mb-6">
                   <label htmlFor="email" className="block text-navy font-semibold mb-2">
-                    Email <span className="text-red-500">*</span>
+                    Email <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
                   </label>
                   <input
                     type="email"
@@ -496,7 +498,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                 {/* Position */}
                 <div className="mb-8">
                   <label htmlFor="position" className="block text-navy font-semibold mb-2">
-                    Position <span className="text-red-500">*</span>
+                    Position <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
                   </label>
                   <select
                     id="position"
@@ -546,11 +548,11 @@ export default function JobsClient({ jobs }: JobsClientProps) {
             <div className="mt-8 bg-white rounded-lg shadow-md p-6 border-l-4 border-amber">
               <p className="text-navy">
                 <strong>Prefer to apply another way?</strong> Call{' '}
-                <Link href="tel:3039510600" className="text-blue hover:text-navy transition-colors font-medium">
+                <Link href="tel:3039510600" className="text-blue-text hover:text-navy transition-colors font-medium">
                   (303) 951-0600
                 </Link>
                 , email{' '}
-                <Link href="mailto:careers@critcareMD.com" className="text-blue hover:text-navy transition-colors font-medium">
+                <Link href="mailto:careers@critcareMD.com" className="text-blue-text hover:text-navy transition-colors font-medium">
                   careers@critcareMD.com
                 </Link>
                 , or mail your resume to CCPSA Human Resources, 274 Union Blvd. Suite 200, Lakewood, CO 80228.

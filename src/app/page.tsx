@@ -25,7 +25,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance">
-                  Award-Winning <span className="text-amber">Critical Care</span>, <span className="text-blue">Pulmonary</span> and <span className="text-blue/80">Sleep Specialists</span>
+                  Award-Winning <span className="text-amber">Critical Care</span>, <span className="text-blue-text">Pulmonary</span> and <span className="text-blue-text/80">Sleep Specialists</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty">
@@ -113,9 +113,9 @@ export default function HomePage() {
                           {idx === 4 && <><path d="M4 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M12 4a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M20 12a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path><path d="M12 20a1 1 0 1 0 2 0 1 1 0 0 0-2 0"></path></>}
                         </svg>
                       </div>
-                      <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-blue transition-colors duration-200">{service.title}</h3>
+                      <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors duration-200">{service.title}</h3>
                       <p className="text-gray-600 mb-4">{service.desc}</p>
-                      <div className="flex items-center text-blue font-medium group-hover:text-navy transition-colors duration-200">
+                      <div className="flex items-center text-blue-text font-medium group-hover:text-navy transition-colors duration-200">
                         <span>Learn More</span>
                         <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -215,7 +215,7 @@ export default function HomePage() {
                 { number: '5', label: 'Specialized Disciplines', icon: 'book' }
               ].map((stat, idx) => (
                 <div key={idx} className="bg-light-gray border-0 text-center rounded-lg p-6">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${idx === 0 ? 'bg-navy/10 text-navy' : idx === 1 ? 'bg-blue/10 text-blue' : 'bg-amber/10 text-amber'} mb-4`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${idx === 0 ? 'bg-navy/10 text-navy' : idx === 1 ? 'bg-blue/10 text-blue-text' : 'bg-amber/10 text-amber'} mb-4`}>
                     {idx === 0 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9c0-1 1-2 2-2h8c1 0 2 1 2 2v12c0 1-1 2-2 2H8c-1 0-2-1-2-2V9z"></path><path d="M9 5c0-1 .5-2 1.5-2h3c1 0 1.5 1 1.5 2"></path></svg>}
                     {idx === 1 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 8a6 6 0 1 0 12 0A6 6 0 0 0 6 8z"></path><path d="M15 11h5"></path><path d="M18 8v6"></path></svg>}
                     {idx === 2 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>}
@@ -311,11 +311,11 @@ export default function HomePage() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="inline-flex items-center gap-2 bg-blue/10 rounded-full px-4 py-2 mb-6">
-                    <svg className="h-4 w-4 text-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg className="h-4 w-4 text-blue-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <polygon points="23 7 16 12 23 17 23 7"></polygon>
                       <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                     </svg>
-                    <span className="text-blue font-medium text-sm">Virtual Care Available</span>
+                    <span className="text-blue-text font-medium text-sm">Virtual Care Available</span>
                   </div>
 
                   <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
@@ -354,7 +354,7 @@ export default function HomePage() {
                       { title: 'Easy to Use', desc: 'Simple technology' }
                     ].map((item, idx) => (
                       <div key={idx} className="bg-light-gray rounded-xl p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1" style={{transitionDelay: `${idx * 50}ms`}}>
-                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue/10 text-blue mb-3">
+                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue/10 text-blue-text mb-3">
                           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
                         </div>
                         <h3 className="font-semibold text-navy mb-1 text-sm">{item.title}</h3>

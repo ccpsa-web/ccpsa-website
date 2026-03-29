@@ -64,19 +64,19 @@ const ONLINE_SERVICES = [
     title: 'Patient Portal / Epic MyChart',
     description: 'Access your medical records, test results, view medications, and communicate with your care team.',
     link: 'https://mountain.mycommonspirit.org/MCH/Authentication/Login?',
-    icon: '📱',
+    icon: '📱', iconLabel: 'Mobile device',
   },
   {
     title: 'Online Scheduling',
     description: 'Schedule or reschedule your appointments at your convenience, 24/7.',
     link: 'https://mountain.mycommonspirit.org/MCH/Authentication/Login?',
-    icon: '📅',
+    icon: '📅', iconLabel: 'Calendar',
   },
   {
     title: 'Online Bill Payment',
     description: 'Pay your medical bills securely online using our payment portal.',
     link: 'https://mountain.mycommonspirit.org/MCH/Authentication/Login?',
-    icon: '💳',
+    icon: '💳', iconLabel: 'Payment',
   },
 ];
 
@@ -117,7 +117,7 @@ export default function PatientForms() {
                 Complete your paperwork online using the secure links below. All online forms are hosted on a HIPAA-compliant server — your information is safe. If you do not have your paperwork complete prior to your appointment, please plan to arrive 15 minutes early.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                If you need assistance completing any forms, please call us at <a href="tel:3039510600" className="text-blue hover:text-navy font-medium">(303) 951-0600</a>.
+                If you need assistance completing any forms, please call us at <a href="tel:3039510600" className="text-blue-text hover:text-navy font-medium">(303) 951-0600</a>.
               </p>
             </div>
           </FadeInUp>
@@ -151,7 +151,7 @@ export default function PatientForms() {
                         <line x1="10" y1="14" x2="21" y2="3" />
                       </svg>
                     </div>
-                    <span className="inline-flex items-center gap-2 text-blue font-medium text-sm">
+                    <span className="inline-flex items-center gap-2 text-blue-text font-medium text-sm">
                       Fill Out Online
                       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -187,7 +187,7 @@ export default function PatientForms() {
                           <line x1="10" y1="14" x2="21" y2="3" />
                         </svg>
                       </div>
-                      <span className="inline-flex items-center gap-2 text-blue font-medium text-sm">
+                      <span className="inline-flex items-center gap-2 text-blue-text font-medium text-sm">
                         Fill Out Online
                         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M5 12h14M12 5l7 7-7 7" />
@@ -220,7 +220,7 @@ export default function PatientForms() {
                       </div>
                       <button
                         onClick={() => handleDownload(form.fileName)}
-                        className="inline-flex items-center gap-2 text-blue hover:text-navy font-medium transition-colors text-sm"
+                        className="inline-flex items-center gap-2 text-blue-text hover:text-navy font-medium transition-colors text-sm"
                       >
                         <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -256,12 +256,12 @@ export default function PatientForms() {
                     rel="noopener noreferrer"
                     className="block bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-blue group"
                   >
-                    <div className="text-4xl mb-4">{service.icon}</div>
-                    <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">
+                    <div className="text-4xl mb-4" role="img" aria-label={service.iconLabel || ''}>{service.icon}</div>
+                    <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors">
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-600 mb-4">{service.description}</p>
-                    <div className="flex items-center gap-2 text-blue group-hover:text-navy transition-colors">
+                    <div className="flex items-center gap-2 text-blue-text group-hover:text-navy transition-colors">
                       <span className="text-sm font-medium">Access Now</span>
                       <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
@@ -284,7 +284,7 @@ export default function PatientForms() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-light-gray rounded-lg p-8 border-l-4 border-blue">
                 <h3 className="text-xl font-semibold text-navy mb-4 flex items-center gap-2">
-                  <span className="text-2xl">📋</span>
+                  <span className="text-2xl" role="img" aria-label="Forms">📋</span>
                   Printing Forms
                 </h3>
                 <ol className="space-y-2 text-gray-600 text-sm">
@@ -324,25 +324,25 @@ export default function PatientForms() {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">📞</span>
+                  <span className="text-2xl" role="img" aria-label="Phone">📞</span>
                   <div>
                     <p className="text-sm text-gray-600">Call us at</p>
-                    <a href="tel:3039510600" className="text-blue hover:text-navy font-medium transition-colors">
+                    <a href="tel:3039510600" className="text-blue-text hover:text-navy font-medium transition-colors">
                       (303) 951-0600
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl">✉️</span>
+                  <span className="text-2xl" role="img" aria-label="Email">✉️</span>
                   <div>
                     <p className="text-sm text-gray-600">Email us at</p>
-                    <a href="mailto:info@critcareMD.com" className="text-blue hover:text-navy font-medium transition-colors">
+                    <a href="mailto:info@critcareMD.com" className="text-blue-text hover:text-navy font-medium transition-colors">
                       info@critcareMD.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">📍</span>
+                  <span className="text-2xl" role="img" aria-label="Address">📍</span>
                   <div>
                     <p className="text-sm text-gray-600">Visit us at</p>
                     <p className="text-navy font-medium">

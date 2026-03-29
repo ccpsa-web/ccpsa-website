@@ -87,11 +87,11 @@ export default function NewPatients() {
                 <h3 className="text-xl font-semibold text-navy mb-4">Check-In (5-10 minutes)</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">1</span>
+                    <span className="text-blue-text font-bold">1</span>
                     <span>Verify insurance and complete demographic information</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">2</span>
+                    <span className="text-blue-text font-bold">2</span>
                     <span>Review and sign HIPAA privacy notice and consent forms</span>
                   </li>
                 </ul>
@@ -101,11 +101,11 @@ export default function NewPatients() {
                 <h3 className="text-xl font-semibold text-navy mb-4">Clinical Evaluation (20-40 minutes)</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">3</span>
+                    <span className="text-blue-text font-bold">3</span>
                     <span>Vital signs and clinical assessment by nursing staff</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">4</span>
+                    <span className="text-blue-text font-bold">4</span>
                     <span>Comprehensive evaluation and exam by your physician</span>
                   </li>
                 </ul>
@@ -115,11 +115,11 @@ export default function NewPatients() {
                 <h3 className="text-xl font-semibold text-navy mb-4">Care Planning (10-15 minutes)</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">5</span>
+                    <span className="text-blue-text font-bold">5</span>
                     <span>Discussion of diagnosis, treatment options, and next steps</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">6</span>
+                    <span className="text-blue-text font-bold">6</span>
                     <span>Prescriptions and referrals as needed</span>
                   </li>
                 </ul>
@@ -129,11 +129,11 @@ export default function NewPatients() {
                 <h3 className="text-xl font-semibold text-navy mb-4">Check-Out (5 minutes)</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">7</span>
+                    <span className="text-blue-text font-bold">7</span>
                     <span>Schedule follow-up appointments or procedures</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-blue font-bold">8</span>
+                    <span className="text-blue-text font-bold">8</span>
                     <span>Receive aftercare instructions and educational materials</span>
                   </li>
                 </ul>
@@ -204,10 +204,10 @@ export default function NewPatients() {
                   Have questions about referral requirements? Contact us:
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="tel:3039510600" className="text-blue hover:text-navy font-medium transition-colors">
+                  <a href="tel:3039510600" className="text-blue-text hover:text-navy font-medium transition-colors">
                     (303) 951-0600
                   </a>
-                  <a href="mailto:info@critcareMD.com" className="text-blue hover:text-navy font-medium transition-colors">
+                  <a href="mailto:info@critcareMD.com" className="text-blue-text hover:text-navy font-medium transition-colors">
                     info@critcareMD.com
                   </a>
                 </div>

@@ -140,7 +140,7 @@ export default function PrivacyPolicy() {
                   <ul className="space-y-3">
                     {section.content.map((item, itemIdx) => (
                       <li key={itemIdx} className="flex items-start gap-3">
-                        <svg className="h-5 w-5 text-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <svg className="h-5 w-5 text-blue-text flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                           <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                         </svg>
                         <span className="text-gray-600">{item}</span>
@@ -169,13 +169,13 @@ export default function PrivacyPolicy() {
                 <div className="space-y-4">
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Phone</p>
-                    <a href="tel:3039510600" className="text-blue hover:text-navy font-medium transition-colors">
+                    <a href="tel:3039510600" className="text-blue-text hover:text-navy font-medium transition-colors">
                       (303) 951-0600
                     </a>
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Email</p>
-                    <a href="mailto:privacy@critcareMD.com" className="text-blue hover:text-navy font-medium transition-colors">
+                    <a href="mailto:privacy@critcareMD.com" className="text-blue-text hover:text-navy font-medium transition-colors">
                       privacy@critcareMD.com
                     </a>
                   </div>
@@ -200,7 +200,7 @@ export default function PrivacyPolicy() {
                     Office for Civil Rights<br />
                     <a
                       href="mailto:OCRComplaint@hhs.gov"
-                      className="text-blue hover:text-navy transition-colors"
+                      className="text-blue-text hover:text-navy transition-colors"
                     >
                       OCRComplaint@hhs.gov
                     </a>

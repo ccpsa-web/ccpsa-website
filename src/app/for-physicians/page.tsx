@@ -145,7 +145,7 @@ export default function ForPhysicians() {
                     <ul className="space-y-3">
                       {section.items.map((item, iIdx) => (
                         <li key={iIdx} className="flex items-start gap-3">
-                          <svg className="h-5 w-5 text-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                          <svg className="h-5 w-5 text-blue-text flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                           </svg>
                           <span className="text-gray-600">{item}</span>
@@ -171,20 +171,20 @@ export default function ForPhysicians() {
                 <h3 className="text-xl font-semibold text-navy mb-6">{office.title}</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <span className="text-2xl">📍</span>
+                    <span className="text-2xl" role="img" aria-label="Address">📍</span>
                     <div>
                       <p className="font-medium text-navy">{office.details.address}</p>
                       <p className="text-gray-600">{office.details.city}</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">📞</span>
-                    <Link href={`tel:${office.details.phone.replace(/[^\d]/g, '')}`} className="text-blue hover:text-navy font-medium transition-colors">
+                    <span className="text-2xl" role="img" aria-label="Phone">📞</span>
+                    <Link href={`tel:${office.details.phone.replace(/[^\d]/g, '')}`} className="text-blue-text hover:text-navy font-medium transition-colors">
                       {office.details.phone}
                     </Link>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">📠</span>
+                    <span className="text-2xl" role="img" aria-label="Fax">📠</span>
                     <span className="text-gray-600">{office.details.fax}</span>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function ForPhysicians() {
                   <p className="text-sm text-gray-600 mb-3">
                     For consultation requests and referrals, please contact us at:
                   </p>
-                  <Link href="mailto:info@critcareMD.com" className="text-blue hover:text-navy font-medium transition-colors">
+                  <Link href="mailto:info@critcareMD.com" className="text-blue-text hover:text-navy font-medium transition-colors">
                     info@critcareMD.com
                   </Link>
                 </div>

@@ -70,7 +70,7 @@ export default function ProviderProfile({ params }: { params: { id: string } }) 
                 {/* Details */}
                 <div className="md:w-2/3 p-8">
                   {/* Category Badge */}
-                  <span className="inline-block bg-amber/10 text-amber px-3 py-1 rounded-full text-sm font-semibold mb-4">
+                  <span className="inline-block bg-amber/10 text-amber-text px-3 py-1 rounded-full text-sm font-semibold mb-4">
                     {provider.category}
                   </span>
 
@@ -82,7 +82,7 @@ export default function ProviderProfile({ params }: { params: { id: string } }) 
                         {provider.locations.map((location: string) => (
                           <span
                             key={location}
-                            className="inline-block bg-blue/10 text-blue px-3 py-1 rounded-full text-sm font-medium"
+                            className="inline-block bg-blue/10 text-blue-text px-3 py-1 rounded-full text-sm font-medium"
                           >
                             {location}
                           </span>

@@ -126,31 +126,31 @@ export default function ForPatients() {
                 <h2 className="text-2xl font-bold text-navy mb-4">Before Your Visit</h2>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
-                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <span className="text-gray-600">Arrive 10-15 minutes early to check in</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <span className="text-gray-600">Bring your insurance card and photo ID</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <span className="text-gray-600">Bring a list of current medications</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <span className="text-gray-600">Bring recent medical records if available</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                    <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                     </svg>
                     <span className="text-gray-600">Complete patient paperwork online if possible</span>
@@ -188,14 +188,14 @@ export default function ForPatients() {
                       rel={resource.external ? 'noopener noreferrer' : undefined}
                       className="block no-underline"
                     >
-                      <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors duration-200">
+                      <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors duration-200">
                         {resource.title}
                       </h3>
                       <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
                         {resource.description}
                       </p>
                       {resource.link && (
-                        <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                        <div className="flex items-center gap-2 text-blue-text mt-3 group-hover:text-navy transition-colors">
                           <span className="text-sm font-medium">Learn More</span>
                           <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M5 12h14M12 5l7 7-7 7" />
@@ -220,28 +220,30 @@ export default function ForPatients() {
             <div className="grid md:grid-cols-2 gap-6">
               {CLINIC_LOCATIONS.map((clinic, idx) => (
                 <FadeInUp key={idx}>
-                  <div
+                  <button
+                    type="button"
                     onClick={() => setExpandedLocation(expandedLocation === clinic.name ? null : clinic.name)}
-                    className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-300"
+                    className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-300 w-full text-left"
+                    aria-expanded={expandedLocation === clinic.name}
                   >
                     <h3 className="text-lg font-semibold text-navy mb-4">{clinic.name}</h3>
 
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-start gap-2">
-                        <span className="text-amber mt-1">📍</span>
+                        <span className="text-amber mt-1" role="img" aria-label="Address">📍</span>
                         <div>
                           <p>{clinic.address}</p>
                           <p>{clinic.city}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-amber">📞</span>
-                        <Link href={`tel:${clinic.phone.replace(/[^\d]/g, '')}`} className="hover:text-blue transition-colors">
+                        <span className="text-amber" role="img" aria-label="Phone">📞</span>
+                        <Link href={`tel:${clinic.phone.replace(/[^\d]/g, '')}`} className="hover:text-blue-text transition-colors">
                           {clinic.phone}
                         </Link>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-amber">📠</span>
+                        <span className="text-amber" role="img" aria-label="Fax">📠</span>
                         <span>{clinic.fax}</span>
                       </div>
                     </div>
@@ -250,11 +252,11 @@ export default function ForPatients() {
                       href={`https://maps.google.com/maps?q=${encodeURIComponent(`${clinic.address} ${clinic.city}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block text-blue hover:text-navy font-medium text-sm transition-colors"
+                      className="mt-4 inline-block text-blue-text hover:text-navy font-medium text-sm transition-colors"
                     >
                       Get Directions →
                     </Link>
-                  </div>
+                  </button>
                 </FadeInUp>
               ))}
             </div>

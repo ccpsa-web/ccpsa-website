@@ -81,7 +81,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 border-2 ${
                     activeCategory === cat.key
                       ? 'bg-amber border-amber text-white'
-                      : 'border-navy/20 text-navy hover:border-amber hover:text-amber'
+                      : 'border-navy/20 text-navy hover:border-amber hover:text-amber-text'
                   }`}
                 >
                   {cat.label}
@@ -113,7 +113,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                           {provider.image ? (
                             <Image
                               src={provider.image}
-                              alt={provider.name}
+                              alt={`${provider.name}, ${provider.title || 'Provider'}`}
                               fill
                               className="object-cover object-top"
                             />
@@ -128,7 +128,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                         <div className="p-6 flex-grow flex flex-col">
                           {/* Category Badge */}
                           <div className="mb-3">
-                            <span className="inline-block bg-amber/10 text-amber px-3 py-1 rounded-full text-xs font-semibold">
+                            <span className="inline-block bg-amber/10 text-amber-text px-3 py-1 rounded-full text-xs font-semibold">
                               {provider.category}
                             </span>
                           </div>
@@ -139,7 +139,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                           </h3>
 
                           {/* Title */}
-                          <p className="text-sm text-blue font-medium mb-4">{provider.title}</p>
+                          <p className="text-sm text-blue-text font-medium mb-4">{provider.title}</p>
 
                           {/* Locations */}
                           {provider.locations && provider.locations.length > 0 && (
@@ -147,7 +147,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
                               {provider.locations.map((location) => (
                                 <span
                                   key={location}
-                                  className="inline-block bg-blue/10 text-blue px-3 py-1 rounded-full text-xs font-medium"
+                                  className="inline-block bg-blue/10 text-blue-text px-3 py-1 rounded-full text-xs font-medium"
                                 >
                                   {location}
                                 </span>

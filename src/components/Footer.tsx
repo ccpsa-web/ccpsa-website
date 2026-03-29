@@ -123,9 +123,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-amber transition-colors">
+                <span className="text-white/70">
                   Clinical Research
-                </a>
+                </span>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-amber transition-colors">
