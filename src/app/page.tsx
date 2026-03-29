@@ -151,22 +151,6 @@ export default function HomePage() {
                 </div>
               </FadeInUp>
 
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4 border border-gray-200 hidden sm:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-amber/10 flex items-center justify-center">
-                    <svg className="h-6 w-6 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                      <circle cx="9" cy="7" r="4"></circle>
-                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-navy">1000s</div>
-                    <div className="text-sm text-gray-600">Patients Served</div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div className="order-1 lg:order-2">
@@ -198,7 +182,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <a href="#contact" className="bg-navy hover:bg-navy/90 text-white font-semibold px-8 py-6 rounded-lg inline-flex items-center transition-all duration-300">
+                <a href="/our-team" className="bg-navy hover:bg-navy/90 text-white font-semibold px-8 py-6 rounded-lg inline-flex items-center transition-all duration-300">
                   Meet Our Team
                 </a>
               </FadeInUp>
