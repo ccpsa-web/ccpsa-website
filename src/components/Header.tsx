@@ -31,11 +31,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top contact bar - desktop only */}
-        <div className="hidden md:flex justify-end items-center py-2 text-sm text-navy border-b border-light-gray">
-          <span className="mr-6">Phone: (303) 951-0600</span>
-          <span>Email: info@critcareMD.com</span>
-        </div>
 
         {/* Logo - centered */}
         <div className="flex justify-center py-4">
@@ -103,10 +98,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <div className="px-4 py-3 border-t border-light-gray">
-              <p className="text-sm text-navy mb-2">Phone: (303) 951-0600</p>
-              <p className="text-sm text-navy">Email: info@critcareMD.com</p>
-            </div>
           </nav>
         )}
       </div>
