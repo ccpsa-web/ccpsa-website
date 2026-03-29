@@ -1,6 +1,25 @@
 {
   "title": "For Patients",
   "subtitle": "We're here to help. Find resources, schedule appointments, and get the answers you need.",
+  "quickAccessTitle": "Quick Access",
+  "quickAccessSubtitle": "Manage your care with just a few clicks",
+  "quickAccessCards": [
+    {
+      "title": "Patient Portal",
+      "description": "Access records, results, communicate with care team",
+      "buttonText": "Login"
+    },
+    {
+      "title": "Online Scheduling",
+      "description": "Book an appointment 24/7",
+      "buttonText": "Schedule Now"
+    },
+    {
+      "title": "Pay Your Bill",
+      "description": "Make a secure payment online",
+      "buttonText": "Pay Now"
+    }
+  ],
   "beforeVisitTitle": "Before Your Visit",
   "beforeVisitItems": [
     "Arrive 10-15 minutes early to check in",

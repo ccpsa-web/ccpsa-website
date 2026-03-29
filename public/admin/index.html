@@ -219,6 +219,16 @@
                     fields: [
                       { label: "Title", name: "title", widget: "string" },
                       { label: "Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Quick Access Title", name: "quickAccessTitle", widget: "string" },
+                      { label: "Quick Access Subtitle", name: "quickAccessSubtitle", widget: "text" },
+                      {
+                        label: "Quick Access Cards", name: "quickAccessCards", widget: "list",
+                        fields: [
+                          { label: "Title", name: "title", widget: "string" },
+                          { label: "Description", name: "description", widget: "text" },
+                          { label: "Button Text", name: "buttonText", widget: "string" }
+                        ]
+                      },
                       { label: "Before Visit Title", name: "beforeVisitTitle", widget: "string" },
                       {
                         label: "Before Visit Items", name: "beforeVisitItems", widget: "list",

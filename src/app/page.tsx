@@ -343,49 +343,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Quick Access Cards */}
-      <section id="patients" className="py-20 bg-light-gray scroll-mt-24">
-        <div className="container mx-auto px-4">
-          <FadeInUp>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-                {content.quickAccessTitle}
-              </h2>
-              <p className="text-lg text-gray-600">
-                {content.quickAccessSubtitle}
-              </p>
-            </div>
-          </FadeInUp>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {(() => {
-              const cardGradients = ['from-navy to-blue', 'from-blue to-cyan-600', 'from-amber to-orange-500'];
-              return content.quickAccessCards.map((card: any, idx: number) => (
-              <div key={idx} className="group bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden rounded-lg flex flex-col" style={{transitionDelay: `${idx * 100}ms`}}>
-                <div className={`bg-gradient-to-r ${cardGradients[idx]} p-6 text-white`}>
-                  {idx === 0 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>}
-                  {idx === 1 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>}
-                  {idx === 2 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><path d="M16 3l-4 4-4-4"></path></svg>}
-                  <h3 className="text-xl font-bold">{card.title}</h3>
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-gray-600 mb-6 flex-grow">{card.description}</p>
-                  <a href={content.scheduleUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-navy hover:bg-blue text-white font-semibold transition-all duration-300 group-hover:shadow-lg rounded-lg py-2 px-4 inline-flex items-center justify-center">
-                    {card.buttonText}
-                    <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ));
-            })()}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <section id="testimonials" className="py-24 bg-navy relative overflow-hidden scroll-mt-24">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
