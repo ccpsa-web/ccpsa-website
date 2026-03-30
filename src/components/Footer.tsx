@@ -36,21 +36,7 @@ export default function Footer() {
             {/* Review Links */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://www.yelp.com/biz/critical-care-pulmonary-and-sleep-associates-lakewood"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <Image
-                  src="/images/site/yelp-find-us.png"
-                  alt="Find us on Yelp"
-                  width={80}
-                  height={40}
-                  className="h-8 w-auto"
-                />
-              </a>
-              <a
-                href="https://search.google.com/local/writereview?placeid=ChIJm65QNAeEa4cR_BQi4xZN_x0"
+                href="https://www.google.com/search?sca_esv=9b49c139cd80d27d&rlz=1C1GCEU_en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x1grRhu6CJ5S5kJ6J5E7Mkpl1oFLivQKGPfyycWSPcWo0UobwDof5gaB7nbAAy-0wQNVnnct_U0-svn3SXdiqcNGxKm9D7mMcs-TouU5pbrHun7dluBWvy_FGgXKxSLOx_nPv1Q%3D&q=Critical+Care,+Pulmonary+and+Sleep+Associates+Reviews&sa=X&ved=2ahUKEwi4-qaflMiTAxWiH0QIHUCEDFEQ0bkNegQINhAH&biw=1536&bih=826&dpr=1.25"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="opacity-80 hover:opacity-100 transition-opacity"
