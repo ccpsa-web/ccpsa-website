@@ -1,7 +1,7 @@
 {
   "title": "Patient Forms",
   "subtitle": "Download, complete, and bring patient forms to your appointment, or fill them out online before your visit.",
-  "beforeAppointmentText": "To expedite your check-in and ensure we have complete information about your medical history, please complete the appropriate patient forms before your appointment.\n\nComplete your paperwork online using the secure links below. All online forms are hosted on a HIPAA-compliant server \u2014 your information is safe. If you do not have your paperwork complete prior to your appointment, please plan to arrive 15 minutes early.",
+  "beforeAppointmentText": "To expedite your check-in and ensure we have complete information about your medical history, please complete the appropriate patient forms before your appointment.\n\nComplete your paperwork online using the secure links below. All online forms are hosted on a HIPAA-compliant server — your information is safe. If you do not have your paperwork complete prior to your appointment, please plan to arrive 30 minutes early.",
   "newPatientForms": [
     {
       "title": "New Patient Paperwork (Pulmonary & Sleep Packet)",
@@ -48,21 +48,21 @@
       "title": "Patient Portal / Epic MyChart",
       "description": "Access your medical records, test results, view medications, and communicate with your care team.",
       "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "\ud83d\udcf1",
+      "icon": "📱",
       "iconLabel": "Mobile device"
     },
     {
       "title": "Online Scheduling",
       "description": "Schedule or reschedule your appointments at your convenience, 24/7.",
       "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "\ud83d\udcc5",
+      "icon": "📅",
       "iconLabel": "Calendar"
     },
     {
       "title": "Online Bill Payment",
       "description": "Pay your medical bills securely online using our payment portal.",
       "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "\ud83d\udcb3",
+      "icon": "💳",
       "iconLabel": "Payment"
     }
   ],
