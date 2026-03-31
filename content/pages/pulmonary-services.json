@@ -54,14 +54,6 @@
       "description": "Direct visualization of airways for diagnosis."
     },
     {
-      "title": "CT-Guided Lung Biopsy Referral",
-      "description": "Precise tissue sampling for definitive diagnosis."
-    },
-    {
-      "title": "Cardiopulmonary Exercise Testing",
-      "description": "Assessment of exercise tolerance and limitation."
-    },
-    {
       "title": "6-Minute Walk Testing",
       "description": "Functional assessment of respiratory capacity."
     }
