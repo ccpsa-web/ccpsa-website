@@ -72,20 +72,12 @@
   ],
   "locations": [
     {
-      "name": "AdventHealth Denver",
+      "name": "AdventHealth Porter",
       "city": "Denver, CO"
     },
     {
-      "name": "AdventHealth Parker",
-      "city": "Parker, CO"
-    },
-    {
-      "name": "AdventHealth Littleton",
-      "city": "Littleton, CO"
-    },
-    {
-      "name": "AdventHealth Castle Rock",
-      "city": "Castle Rock, CO"
+      "name": "Common Spirit St. Anthony's Hospital",
+      "city": "Lakewood, CO"
     }
   ],
   "ctaTitle": "Ready to Get Started?",
