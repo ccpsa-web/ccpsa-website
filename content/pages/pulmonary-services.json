@@ -72,8 +72,16 @@
       "city": "Lakewood"
     },
     {
-      "name": "East Clinic",
-      "city": "Castle Rock"
+      "name": "Central Clinic",
+      "city": "Highlands Ranch"
+    },
+    {
+      "name": "South Clinic",
+      "city": "Parker"
+    },
+    {
+      "name": "North Clinic",
+      "city": "Westminster"
     }
   ],
   "ctaTitle": "Ready to Get Started?",
