@@ -64,32 +64,40 @@
   ],
   "locations": [
     {
-      "name": "St. Anthony Hospital",
+      "name": "CommonSpirit St. Anthony Hospital",
       "city": "Lakewood"
     },
     {
-      "name": "St. Anthony North",
+      "name": "CommonSpirit St. Anthony North Hospital",
       "city": "Westminster"
     },
     {
-      "name": "Parker Adventist Hospital",
-      "city": "Parker"
+      "name": "CommonSpirit St. Anthony Summit Hospital",
+      "city": "Frisco"
     },
     {
-      "name": "Littleton Adventist Hospital",
+      "name": "CommonSpirit St. Elizabeth Hospital",
+      "city": "Fort Morgan"
+    },
+    {
+      "name": "AdventHealth Littleton Hospital",
       "city": "Littleton"
     },
     {
-      "name": "Castle Rock Adventist Hospital",
+      "name": "AdventHealth Porter Hospital",
+      "city": "Denver"
+    },
+    {
+      "name": "AdventHealth Parker Hospital",
+      "city": "Parker"
+    },
+    {
+      "name": "AdventHealth Castle Rock Hospital",
       "city": "Castle Rock"
     },
     {
-      "name": "Avista Adventist Hospital",
+      "name": "AdventHealth Avista Hospital",
       "city": "Louisville"
-    },
-    {
-      "name": "Porter Adventist Hospital",
-      "city": "Denver"
     }
   ],
   "ctaTitle": "Ready to Get Started?",
