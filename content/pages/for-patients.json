@@ -14,17 +14,20 @@
     {
       "title": "Patient Portal",
       "description": "Access records, results, communicate with care team",
-      "buttonText": "Login"
+      "buttonText": "Login",
+      "link": ""
     },
     {
       "title": "Online Scheduling",
       "description": "Book an appointment 24/7",
-      "buttonText": "Schedule Now"
+      "buttonText": "Schedule Now",
+      "link": ""
     },
     {
       "title": "Pay Your Bill",
       "description": "Make a secure payment online",
-      "buttonText": "Pay Now"
+      "buttonText": "Pay Now",
+      "link": ""
     }
   ],
   "beforeVisitTitle": "Before Your Visit",
@@ -47,24 +50,24 @@
     },
     {
       "name": "North Clinic",
-      "address": "11450 Commons Drive",
-      "city": "Westminster, CO 80020",
-      "phone": "(720) 962-2200",
-      "fax": "(720) 962-2207"
+      "address": "14300 Orchard Pkwy., 3rd Floor",
+      "city": "Westminster, CO 80023",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
     },
     {
       "name": "South Clinic",
-      "address": "2950 South Gartland Street",
-      "city": "Parker, CO 80134",
-      "phone": "(720) 851-8300",
-      "fax": "(720) 851-8307"
+      "address": "10371 Parkglenn Way Suite 230",
+      "city": "Parker, CO 80138",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
     },
     {
       "name": "Central Clinic",
-      "address": "9220 South Simms Street, Suite B",
-      "city": "Littleton, CO 80127",
-      "phone": "(303) 794-9700",
-      "fax": "(303) 794-9707"
+      "address": "206 W. County Line Rd. Suite 260",
+      "city": "Highlands Ranch, CO 80126",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
     }
   ],
   "patientResources": [
@@ -88,7 +91,7 @@
     },
     {
       "title": "Patient Information & Paperwork",
-      "description": "Download and complete patient forms before your visit.",
+      "description": "Complete patient forms before your visit.",
       "link": "/patient-forms",
       "external": false
     },
