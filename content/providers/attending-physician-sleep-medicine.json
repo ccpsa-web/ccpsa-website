@@ -1,0 +1,14 @@
+{
+  "name": "Gautam Ramesh",
+  "credentials": "MD",
+  "title": "Attending Physician, Sleep Medicine",
+  "category": "outpatient-pulmonary-sleep",
+  "locations": [
+    "West",
+    "Central",
+    "North"
+  ],
+  "image": "/images/GautamRamesh_HeadShotJPG.JPG",
+  "bio": "Dr. Gautam Ramesh grew up in the metropolitan Detroit area, and he earned his medical\n degree from Michigan State University College of Human Medicine. He stayed in \nMichigan to complete his Neurology residency at Ascension Macomb-Oakland Hospital. \nFor additional training, he attended the University of Chicago where he completed his \nSleep Medicine fellowship. In his spare time, Gautam loves to travel, try new food, and \nspend time with his wife and dog.",
+  "order": 3
+}
