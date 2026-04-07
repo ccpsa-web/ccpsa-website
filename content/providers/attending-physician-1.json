@@ -1,0 +1,12 @@
+{
+  "name": "Sean Kalra",
+  "credentials": "MD, MPH",
+  "title": "Attending Physician",
+  "category": "critical-care",
+  "locations": [
+    "Central"
+  ],
+  "image": "/images/KalraProfessionalPhoto3.jpg",
+  "bio": "A Boulder native, Dr. Kalra earned his medical degree \nfrom the University of Colorado. He then completed \nresidency in internal medicine at Yale New Haven \nHospital, and fellowship in pulmonary and critical care\n medicine at the Brigham and Women's Hospital in \nBoston. Following fellowship he obtained a Masters of \nPublic Health from Harvard while pursuing post-doctoral\n training in bioinformatics at the Channing.",
+  "order": 35
+}
