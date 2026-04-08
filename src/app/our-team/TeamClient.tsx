@@ -142,13 +142,13 @@ export default function TeamClient({ providers, content }: TeamClientProps) {
                     <FadeInUp key={provider.id} className="h-full">
                       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
                         {/* Photo */}
-                        <div className="relative h-48 bg-gradient-to-br from-navy to-blue">
+                        <div className="relative h-64 bg-gradient-to-br from-navy to-blue">
                           {provider.image ? (
                             <Image
                               src={provider.image}
                               alt={`${provider.name}, ${provider.title || 'Provider'}`}
                               fill
-                              className="object-cover object-top"
+                              className="object-cover object-[center_25%]"
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-white/50 text-center px-4">
