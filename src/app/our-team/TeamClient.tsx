@@ -77,6 +77,14 @@ export default function TeamClient({ providers, content }: TeamClientProps) {
         groups[activeCategory].push(provider);
       });
     }
+    // Sort each group alphabetically by last name
+    Object.keys(groups).forEach((key) => {
+      groups[key].sort((a, b) => {
+        const lastA = a.name.split(' ').slice(-1)[0].toLowerCase();
+        const lastB = b.name.split(' ').slice(-1)[0].toLowerCase();
+        return lastA.localeCompare(lastB);
+      });
+    });
     return groups;
   }, [filteredProviders, activeCategory]);
 
@@ -142,13 +150,13 @@ export default function TeamClient({ providers, content }: TeamClientProps) {
                     <FadeInUp key={provider.id} className="h-full">
                       <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col hover:-translate-y-1">
                         {/* Photo */}
-                        <div className="relative h-64 bg-gradient-to-br from-navy to-blue">
+                        <div className="relative h-72 bg-gradient-to-br from-navy to-blue">
                           {provider.image ? (
                             <Image
                               src={provider.image}
                               alt={`${provider.name}, ${provider.title || 'Provider'}`}
                               fill
-                              className="object-cover object-[center_25%]"
+                              className="object-cover object-top"
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-white/50 text-center px-4">
