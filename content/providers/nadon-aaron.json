@@ -4,10 +4,7 @@
   "title": "Attending Physician",
   "category": "critical-care",
   "locations": [
-    "West",
-    "Central",
-    "South",
-    "North"
+    "Parker"
   ],
   "image": "/images/providers/nadon-aaron.jpg",
   "bio": "Dr. Nadon earned his medical degree at the University of Illinois College of Medicine in Chicago. He served his residency at Northwestern University in Chicago and his fellowship at the University of Colorado Health Sciences Center. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care and Pulmonary Medicine.",
