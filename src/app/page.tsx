@@ -38,12 +38,12 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                  <a href={`tel:${content.phone?.replace(/[^\d]/g, '')}`} className="bg-amber hover:bg-amber/90 text-navy font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-lg inline-flex items-center">
+                  <span className="bg-amber text-navy font-semibold px-8 py-6 text-lg shadow-lg rounded-lg inline-flex items-center">
                     <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
-                    Call {content.phone}
-                  </a>
+                    {content.phone}
+                  </span>
                   <a href="#contact" className="border-2 border-white text-navy bg-white hover:bg-white/90 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 rounded-lg inline-flex items-center">
                     <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
@@ -81,6 +81,81 @@ export default function HomePage() {
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
             <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V120Z" fill="#F7F0E6"></path>
           </svg>
+        </div>
+      </section>
+
+      {/* Appointment Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue via-blue to-navy"></div>
+
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-navy/30 rounded-full translate-x-1/4 translate-y-1/4"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-amber/20 rounded-full blur-2xl"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <FadeInUp>
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {content.appointmentTitle}
+              </h2>
+              <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto">
+                {content.appointmentSubtitle}
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-10">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber text-navy mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-1">Schedule Online</h3>
+                  <p className="text-white/70 text-sm mb-2">(for established patients only)</p>
+                  <div className="flex items-center justify-center gap-2 text-white/70 mb-6">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Available 24/7</span>
+                  </div>
+                  <a href={content.scheduleUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-amber hover:bg-amber/90 text-navy font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg inline-block">
+                    Book Now
+                  </a>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white text-navy mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{content.phone}</h3>
+                  <div className="flex items-center justify-center gap-2 text-white/70 mb-6">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>{content.officeHours}</span>
+                  </div>
+                  <a href={`tel:${content.phone?.replace(/[^\d]/g, '')}`} className="w-full border-2 border-white bg-white text-navy hover:bg-white/90 font-semibold py-6 text-lg transition-all duration-300 rounded-lg inline-block">
+                    Call Us
+                  </a>
+                </div>
+              </div>
+
+              <div className="inline-flex items-center gap-3 bg-red-600/40 border-2 border-red-400/60 rounded-full px-6 py-3 text-white">
+                <svg className="h-5 w-5 text-red-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span className="text-sm font-bold">For emergencies, call 911 immediately.</span>
+              </div>
+            </div>
+          </FadeInUp>
         </div>
       </section>
 
@@ -208,80 +283,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Appointment Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue via-blue to-navy"></div>
-
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-navy/30 rounded-full translate-x-1/4 translate-y-1/4"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-amber/20 rounded-full blur-2xl"></div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <FadeInUp>
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                {content.appointmentTitle}
-              </h2>
-              <p className="text-lg text-white/80 mb-12 max-w-2xl mx-auto">
-                {content.appointmentSubtitle}
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-10">
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-amber text-navy mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                      <line x1="16" y1="2" x2="16" y2="6"></line>
-                      <line x1="8" y1="2" x2="8" y2="6"></line>
-                      <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Schedule Online</h3>
-                  <div className="flex items-center justify-center gap-2 text-white/70 mb-6">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span>Available 24/7</span>
-                  </div>
-                  <a href={content.scheduleUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-amber hover:bg-amber/90 text-navy font-semibold py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg inline-block">
-                    Book Now
-                  </a>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-all duration-300 group">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white text-navy mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{content.phone}</h3>
-                  <div className="flex items-center justify-center gap-2 text-white/70 mb-6">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span>{content.officeHours}</span>
-                  </div>
-                  <a href={`tel:${content.phone?.replace(/[^\d]/g, '')}`} className="w-full border-2 border-white bg-white text-navy hover:bg-white/90 font-semibold py-6 text-lg transition-all duration-300 rounded-lg inline-block">
-                    Call Us
-                  </a>
-                </div>
-              </div>
-
-              <div className="inline-flex items-center gap-3 bg-red-600/40 border-2 border-red-400/60 rounded-full px-6 py-3 text-white">
-                <svg className="h-5 w-5 text-red-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                  <line x1="12" y1="9" x2="12" y2="13"></line>
-                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                </svg>
-                <span className="text-sm font-bold">For emergencies, call 911 immediately.</span>
-              </div>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
       {/* Telehealth Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -297,9 +298,10 @@ export default function HomePage() {
                     <span className="text-blue-text font-medium text-sm">Virtual Care Available</span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-navy mb-2">
                     {content.telehealthTitle}
                   </h2>
+                  <p className="text-navy/70 text-sm mb-4">(for established patients only)</p>
                   <p className="text-lg text-gray-600 mb-8">
                     {content.telehealthText}
                   </p>
