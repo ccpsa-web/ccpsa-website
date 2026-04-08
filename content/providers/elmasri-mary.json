@@ -3,6 +3,7 @@
   "credentials": "MD",
   "title": "Attending Physician, Interventional Pulmonology",
   "category": "interventional-pulmonology",
+  "categories": ["critical-care", "interventional-pulmonology", "outpatient-pulmonary-sleep"],
   "locations": [
     "West"
   ],
