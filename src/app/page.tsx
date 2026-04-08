@@ -133,6 +133,7 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{content.phone}</h3>
+                   <p className="text-white/70 text-sm mb-1">(new patients)</p>
                   <div className="flex items-center justify-center gap-2 text-white/70 mb-6">
                     <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <circle cx="12" cy="12" r="10"></circle>
@@ -311,7 +312,7 @@ export default function HomePage() {
                       <polygon points="23 7 16 12 23 17 23 7"></polygon>
                       <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
                     </svg>
-                    Schedule a Telehealth Visit
+                    Schedule a Telehealth Visit (established patients only)
                   </a>
                 </div>
 
