@@ -4,10 +4,7 @@
   "title": "Attending Physician",
   "category": "critical-care",
   "locations": [
-    "West",
-    "Central",
-    "South",
-    "North"
+    "Central"
   ],
   "image": "/images/providers/hay-margaret.jpg",
   "bio": "Dr. Hay earned her medical degree at the University of Nebraska Medical Center in Omaha. She served her residency at the University of Colorado Health Sciences Center and her fellowship at the National Jewish Medical and Research Center. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
