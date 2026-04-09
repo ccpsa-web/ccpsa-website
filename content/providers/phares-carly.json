@@ -3,12 +3,7 @@
   "credentials": "RRT",
   "title": "Respiratory Therapist",
   "category": "allied-health",
-  "locations": [
-    "West",
-    "Central",
-    "South",
-    "North"
-  ],
+  "locations": [],
   "image": "/images/providers/phares-carly.jpg",
   "bio": "Bachelor of Science in English-Journalism from Tennessee Technological University and an Associates in Respiratory Therapy from Pima (2013).",
   "order": 47
