@@ -563,21 +563,6 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 <strong>Application submitted.</strong> Our HR team will review your resume and contact you if there is a match. Thank you for your interest in CCPSA.
               </div>
             )}
-
-            {/* Alternative Contact */}
-            <div className="mt-8 bg-white rounded-lg shadow-md p-6 border-l-4 border-amber">
-              <p className="text-navy">
-                <strong>Prefer to apply another way?</strong> Call{' '}
-                <Link href="tel:3039510600" className="text-blue-text hover:text-navy transition-colors font-medium">
-                  (303) 951-0600
-                </Link>
-                , email{' '}
-                <Link href={`mailto:${content?.careersEmail || 'careers@critcareMD.com'}`} className="text-blue-text hover:text-navy transition-colors font-medium">
-                  {content?.careersEmail || 'careers@critcareMD.com'}
-                </Link>
-                , or mail your resume to CCPSA Human Resources, 274 Union Blvd. Suite 200, Lakewood, CO 80228.
-              </p>
-            </div>
           </FadeInUp>
         </div>
       </section>
