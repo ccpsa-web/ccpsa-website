@@ -6,21 +6,23 @@
   "quickAccessCards": [
     {
       "title": "Call for Appointment",
+      "subtitle": "(New patients)",
       "description": "(303) 951-0600",
       "buttonText": "View Number",
       "link": "#",
       "isPhoneDisplay": true
     },
     {
-      "title": "Patient Portal",
-      "description": "Access records, results, communicate with care team",
-      "buttonText": "Login",
+      "title": "Online Scheduling",
+      "subtitle": "(Established patients)",
+      "description": "Book an appointment 24/7",
+      "buttonText": "Schedule Now",
       "link": ""
     },
     {
-      "title": "Online Scheduling",
-      "description": "Book an appointment 24/7",
-      "buttonText": "Schedule Now",
+      "title": "Patient Portal",
+      "description": "Access records, results, communicate with care team",
+      "buttonText": "Login",
       "link": ""
     },
     {
