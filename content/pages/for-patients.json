@@ -68,6 +68,13 @@
       "city": "Highlands Ranch, CO 80126",
       "phone": "(303) 951-0600",
       "fax": "(303) 951-0605"
+    },
+    {
+      "name": "Longmont Clinic",
+      "address": "220 W 2nd St.",
+      "city": "Goodland, KS 67735",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
     }
   ],
   "patientResources": [
@@ -104,12 +111,8 @@
   ],
   "insuranceBilling": [
     {
-      "title": "Current Billing (7/1/2018 - Present)",
-      "description": "Information about recent billing and payment options."
-    },
-    {
-      "title": "Prior Billing (Before 7/1/2018)",
-      "description": "Historical billing information available upon request."
+      "title": "For Billing Questions",
+      "description": "Call (303)680-2306"
     },
     {
       "title": "Insurance Coverage",
