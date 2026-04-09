@@ -236,44 +236,7 @@ export default function PatientFormsClient({ content }: PatientFormsClientProps)
         </div>
       </section>
 
-      {/* Instructions Section */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <FadeInUp>
-            <h2 className="text-3xl font-bold text-navy mb-8">How to Use These Forms</h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-light-gray rounded-lg p-8 border-l-4 border-blue">
-                <h3 className="text-xl font-semibold text-navy mb-4 flex items-center gap-2">
-                  <span className="text-2xl" role="img" aria-label="Forms">📋</span>
-                  Printing Forms
-                </h3>
-                <ol className="space-y-2 text-gray-600 text-sm">
-                  <li>1. Click the Download button for the form you need</li>
-                  <li>2. Print the PDF on standard 8.5&quot; x 11&quot; paper</li>
-                  <li>3. Complete the form using black or blue ink</li>
-                  <li>4. Bring the completed form to your appointment</li>
-                </ol>
-              </div>
-
-              <div className="bg-light-gray rounded-lg p-8 border-l-4 border-amber">
-                <h3 className="text-xl font-semibold text-navy mb-4 flex items-center gap-2">
-                  <span className="text-2xl">💻</span>
-                  Online Forms
-                </h3>
-                <ol className="space-y-2 text-gray-600 text-sm">
-                  <li>1. Log into your Patient Portal (Epic MyChart)</li>
-                  <li>2. Select &quot;Complete Paperwork&quot;</li>
-                  <li>3. Fill out forms electronically</li>
-                  <li>4. Submit before your appointment date</li>
-                </ol>
-              </div>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* Contact Section */}
+      {/* Contact Section */}{/* Contact Section */}
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
@@ -332,20 +295,26 @@ export default function PatientFormsClient({ content }: PatientFormsClientProps)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={content.scheduleUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
-              >
-                Schedule Online
-              </a>
-              <a
-                href={`tel:${content.phone?.replace(/[^\d]/g, '')}`}
-                className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
-              >
-                Call {content.phone}
-              </a>
+              <div className="flex flex-col items-center">
+                <a
+                  href={content.scheduleUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
+                >
+                  Schedule Online
+                </a>
+                <span className="text-sm text-navy/70 mt-2">(established patients)</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <a
+                  href={`tel:${content.phone?.replace(/[^\d]/g, '')}`}
+                  className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
+                >
+                  Call {content.phone}
+                </a>
+                <span className="text-sm text-navy/70 mt-2">(new patients)</span>
+              </div>
             </div>
           </FadeInUp>
         </div>
