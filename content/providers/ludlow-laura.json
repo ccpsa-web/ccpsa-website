@@ -5,8 +5,6 @@
   "category": "app",
   "locations": [
     "West",
-    "Central",
-    "South",
     "North"
   ],
   "image": "/images/providers/ludlow-laura.jpg",
