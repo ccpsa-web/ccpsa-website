@@ -38,10 +38,10 @@ export default function Header() {
             <Image
               src="/images/site/ccpsa-logo.png"
               alt="CCPSA Logo"
-              width={280}
-              height={90}
+              width={364}
+              height={117}
               priority
-              className="h-20 w-auto"
+              className="h-[104px] w-auto"
             />
           </Link>
         </div>
