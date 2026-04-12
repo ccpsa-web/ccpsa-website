@@ -64,7 +64,13 @@ export function getProviders(): Provider[] {
   const files = getFilesInDirectory(providersDir);
 
   const providers: Provider[] = files
-    .map((file) => readJsonFile(file))
+    .map((file) => {
+      const data = readJsonFile(file);
+      if (data) {
+        data.id = path.basename(file, '.json');
+      }
+      return data;
+    })
     .filter((provider): provider is Provider => provider !== null);
 
   return providers.sort((a, b) => {
@@ -72,6 +78,11 @@ export function getProviders(): Provider[] {
     const lastNameB = b.name.split(' ').slice(-1)[0].toLowerCase();
     return lastNameA.localeCompare(lastNameB);
   });
+}
+
+export function getProvider(id: string): Provider | null {
+  const providers = getProviders();
+  return providers.find((p) => p.id === id) || null;
 }
 
 export function getProvidersByCategory(category: string): Provider[] {
@@ -86,7 +97,14 @@ export function getJobs(): Job[] {
   const files = getFilesInDirectory(jobsDir);
 
   const jobs: Job[] = files
-    .map((file) => readJsonFile(file))
+    .map((file) => {
+      const data = readJsonFile(file);
+      if (data) {
+        data.id = path.basename(file, '.json');
+        data.slug = path.basename(file, '.json');
+      }
+      return data;
+    })
     .filter((job): job is Job => job !== null);
 
   return jobs;
