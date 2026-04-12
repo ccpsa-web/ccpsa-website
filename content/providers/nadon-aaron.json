@@ -2,12 +2,17 @@
   "name": "Aaron Nadon",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
-    "Critical Care",
-    "Central Clinic"
+    "West",
+    "Central",
+    "South",
+    "North"
   ],
   "image": "/images/providers/nadon-aaron.jpg",
   "bio": "Dr. Nadon earned his medical degree at the University of Illinois College of Medicine in Chicago. He served his residency at Northwestern University in Chicago and his fellowship at the University of Colorado Health Sciences Center. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care and Pulmonary Medicine.",
-  "order": 22
+  "order": 1,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

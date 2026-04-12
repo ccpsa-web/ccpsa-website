@@ -2,9 +2,17 @@
   "name": "Julie Sutarik",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
-  "locations": [],
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
   "image": "/images/providers/sutarik-julie.jpg",
   "bio": "Dr. Sutarik earned her medical degree at the University of Washington School of Medicine in Seattle. Her residency and fellowship were completed at the University of Colorado. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
-  "order": 29
+  "order": 23,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

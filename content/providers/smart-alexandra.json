@@ -2,11 +2,15 @@
   "name": "Alexandra Smart",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
-    "West"
+    "West",
+    "Central"
   ],
   "image": "/images/providers/smart-alexandra.jpg",
   "bio": "Dr. Smart earned her medical degree at Tulane University School of Medicine in New Orleans. She served her residency at the University of Colorado Health Sciences Center and her fellowship at National Jewish Health. She is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.",
-  "order": 26
+  "order": 3,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

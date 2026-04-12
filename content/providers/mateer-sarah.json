@@ -2,9 +2,17 @@
   "name": "Sarah Mateer",
   "credentials": "RN, BSN",
   "title": "Clinic Registered Nurse",
-  "category": "allied-health",
-  "locations": [],
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
   "image": "/images/providers/mateer-sarah.jpg",
   "bio": "Biography coming soon.",
-  "order": 46
+  "order": 49,
+  "categories": [
+    "allied-health",
+    "outpatient-pulmonary-sleep"
+  ]
 }

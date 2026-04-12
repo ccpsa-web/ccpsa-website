@@ -2,11 +2,17 @@
   "name": "Catherine Kim",
   "credentials": "DO",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
-    "West"
+    "West",
+    "Central",
+    "South",
+    "North"
   ],
   "image": "/images/providers/kim-catherine.jpg",
   "bio": "Dr. Catherine Kim received her Doctor of Osteopathic Medicine from Kansas City University in Kansas City, MO. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
-  "order": 15
+  "order": 10,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

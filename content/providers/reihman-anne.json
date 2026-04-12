@@ -2,11 +2,14 @@
   "name": "Anne Reihman",
   "credentials": "MD",
   "title": "Attending Physician, Interventional Pulmonology",
-  "category": "interventional-pulmonology",
   "locations": [
     "South"
   ],
   "image": "/images/providers/reihman-anne.jpg",
   "bio": "Dr. Anne Reihman earned her medical degree from Oregon Health & Science University School of Medicine. She completed her internal medicine residency at the University of Washington and her Pulmonary and Critical Care Fellowship at the University of Colorado. She went on to complete her Interventional Pulmonology fellowship at the University of Colorado Anschutz Medical Campus.",
-  "order": 36
+  "order": 35,
+  "categories": [
+    "interventional-pulmonology",
+    "outpatient-pulmonary-sleep"
+  ]
 }

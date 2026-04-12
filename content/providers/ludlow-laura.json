@@ -2,12 +2,17 @@
   "name": "Laura Ludlow",
   "credentials": "PA-C",
   "title": "Physician Assistant",
-  "category": "app",
   "locations": [
     "West",
+    "Central",
+    "South",
     "North"
   ],
   "image": "/images/providers/ludlow-laura.jpg",
   "bio": "Biography coming soon.",
-  "order": 40
+  "order": 42,
+  "categories": [
+    "app",
+    "outpatient-pulmonary-sleep"
+  ]
 }

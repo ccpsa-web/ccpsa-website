@@ -2,11 +2,17 @@
   "name": "Jennifer Miller",
   "credentials": "DO",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
-    "Central"
+    "West",
+    "Central",
+    "South",
+    "North"
   ],
   "image": "/images/providers/miller-jen.jpeg",
   "bio": "Dr. Jennifer Miller was born in Colorado and has always considered it home. She graduated from Western University of Health Sciences for medical school and went on to complete her internal medicine residency and pulmonary/critical care fellowship at the University of Colorado.",
-  "order": 20
+  "order": 18,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

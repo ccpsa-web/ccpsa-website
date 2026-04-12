@@ -2,11 +2,14 @@
   "name": "Brian Ahn",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
     "West"
   ],
   "image": "/images/providers/ahn-brian.jpg",
   "bio": "Dr. Brian Ahn received his medical degree from the University of Pittsburgh School of Medicine. Subsequently, he completed his residency in internal medicine at UPMC and his fellowship in Pulmonary and Critical Care Medicine at the University of Colorado.",
-  "order": 1
+  "order": 9,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

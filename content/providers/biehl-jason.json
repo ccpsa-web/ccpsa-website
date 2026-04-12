@@ -2,11 +2,14 @@
   "name": "Jason Biehl",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
     "West"
   ],
   "image": "/images/providers/biehl-jason.jpg",
   "bio": "Dr. Jason Biehl received his medical degree from the University of Colorado Health Sciences Center. He completed both his internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at Baylor College of Medicine in Houston. He is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
-  "order": 5
+  "order": 17,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

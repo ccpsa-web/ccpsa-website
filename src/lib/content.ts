@@ -8,6 +8,7 @@ interface Provider {
   name: string;
   title: string;
   category: string;
+  categories?: string[];
   order: number;
   bio?: string;
   image?: string;
@@ -63,27 +64,17 @@ export function getProviders(): Provider[] {
   const files = getFilesInDirectory(providersDir);
 
   const providers: Provider[] = files
-    .map((file) => {
-      const data = readJsonFile(file);
-      if (data) {
-        data.id = path.basename(file, '.json');
-      }
-      return data;
-    })
+    .map((file) => readJsonFile(file))
     .filter((provider): provider is Provider => provider !== null);
 
   return providers.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
-export function getProvider(id: string): Provider | null {
-  const providers = getProviders();
-  return providers.find((p) => p.id === id) || null;
-}
-
 export function getProvidersByCategory(category: string): Provider[] {
-  return getProviders().filter(
-    (provider) => provider.category?.toLowerCase() === category.toLowerCase()
-  );
+  return getProviders().filter((provider) => {
+    const cats = provider.categories || (provider.category ? [provider.category] : []);
+    return cats.some((c) => c.toLowerCase() === category.toLowerCase());
+  });
 }
 
 export function getJobs(): Job[] {
@@ -91,14 +82,7 @@ export function getJobs(): Job[] {
   const files = getFilesInDirectory(jobsDir);
 
   const jobs: Job[] = files
-    .map((file) => {
-      const data = readJsonFile(file);
-      if (data) {
-        data.id = path.basename(file, '.json');
-        data.slug = path.basename(file, '.json');
-      }
-      return data;
-    })
+    .map((file) => readJsonFile(file))
     .filter((job): job is Job => job !== null);
 
   return jobs;

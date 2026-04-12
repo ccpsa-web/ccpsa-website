@@ -2,11 +2,14 @@
   "name": "Eric Stramel",
   "credentials": "DO",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
     "South"
   ],
   "image": "/images/providers/stramel-eric.jpg",
   "bio": "Dr. Stramel earned his degree in osteopathic medicine at Des Moines University College of Osteopathic Medicine in Des Moines. His residency was served at Iowa Methodist Medical Center/University of Iowa and his fellowship at Creighton University Medical Center in Omaha, NE. Dr. Stramel is board certified in Internal Medicine, Pulmonary, Critical Care and Neuro-Critical Care.",
-  "order": 27
+  "order": 14,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

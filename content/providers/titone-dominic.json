@@ -1,16 +1,16 @@
 {
   "name": "Dominic Titone",
   "credentials": "MD",
-  "title": "Managing Partner",
-  "category": "critical-care",
+  "title": "Physician",
+  "categories": [
+    "critical-care",
+    "executive",
+    "outpatient-pulmonary-sleep"
+  ],
   "locations": [
     "West"
   ],
   "image": "/images/providers/titone-dominic.jpg",
   "bio": "Dr. Dominic Titone received his medical degree from the Loyola University Chicago Stritch School of Medicine. He completed his internal medicine residency at the University of Colorado and his Pulmonary and Critical Care fellowship at the University of Colorado Anschutz Medical Campus.",
-  "order": 32,
-  "categories": [
-    "critical-care",
-    "executive"
-  ]
+  "order": 12
 }

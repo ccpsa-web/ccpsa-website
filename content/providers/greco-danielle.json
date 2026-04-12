@@ -2,9 +2,17 @@
   "name": "Danielle Greco",
   "credentials": "",
   "title": "Director of Human Resources",
-  "category": "executive",
-  "locations": [],
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
   "image": "/images/providers/greco-danielle.jpg",
   "bio": "Danielle Greco joined CCPSA in 2018. She received her BA from the University of Vermont in Burlington, VT and she is a certified human resources professional through The Society of Human Resource Management (SHRM-CP).",
-  "order": 51
+  "order": 51,
+  "categories": [
+    "executive",
+    "outpatient-pulmonary-sleep"
+  ]
 }

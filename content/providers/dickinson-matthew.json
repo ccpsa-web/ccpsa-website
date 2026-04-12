@@ -2,12 +2,15 @@
   "name": "Matthew Dickinson",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
     "West",
     "Central"
   ],
   "image": "/images/providers/dickinson-matthew.jpg",
   "bio": "A native of Colorado, Dr. Dickinson received his medical degree from the University of Colorado Health Sciences Center in Denver. He served both his residency and fellowship there, as well. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care Medicine as well as Pulmonology. Married with two children, Dr. Dickinson is an avid backpacker and cyclist.",
-  "order": 10
+  "order": 28,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }

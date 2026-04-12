@@ -2,9 +2,17 @@
   "name": "Alisa Batton",
   "credentials": "RRT",
   "title": "Respiratory Therapist",
-  "category": "allied-health",
-  "locations": [],
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
   "image": "/images/providers/batton-alisa.jpg",
   "bio": "Front Range Community College, graduated 1991.",
-  "order": 43
+  "order": 43,
+  "categories": [
+    "allied-health",
+    "outpatient-pulmonary-sleep"
+  ]
 }

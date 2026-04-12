@@ -1,5 +1,5 @@
 {
-  "name": "Cheri Hughes",
+  "name": "Erica Brown",
   "credentials": "RRT",
   "title": "Respiratory Therapist",
   "locations": [
@@ -8,9 +8,9 @@
     "South",
     "North"
   ],
-  "image": "/images/providers/hughes-cheri.jpg",
-  "bio": "Associates Degree of Science in Respiratory Care from Crafton Hills College, 2011.",
-  "order": 45,
+  "image": "/images/providers/brown-erica.jpeg",
+  "bio": "Associates degree in Respiratory Therapy from Pickens Technical College, 2011.",
+  "order": 47,
   "categories": [
     "allied-health",
     "outpatient-pulmonary-sleep"

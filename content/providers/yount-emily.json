@@ -2,9 +2,17 @@
   "name": "Emily Yount",
   "credentials": "BSN, RN",
   "title": "Clinic Registered Nurse",
-  "category": "allied-health",
-  "locations": [],
+  "locations": [
+    "West",
+    "Central",
+    "South",
+    "North"
+  ],
   "image": "/images/providers/yount-emily.jpeg",
   "bio": "Biography coming soon.",
-  "order": 49
+  "order": 46,
+  "categories": [
+    "allied-health",
+    "outpatient-pulmonary-sleep"
+  ]
 }

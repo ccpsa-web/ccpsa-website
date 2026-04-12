@@ -2,11 +2,17 @@
   "name": "Ana Pacheco-Navarro",
   "credentials": "MD",
   "title": "Attending Physician",
-  "category": "critical-care",
   "locations": [
-    "West"
+    "West",
+    "Central",
+    "South",
+    "North"
   ],
   "image": "/images/providers/pacheco-navarro-ana.jpg",
   "bio": "Dr. Ana Pacheco-Navarro earned her medical degree from the Ponce Health Sciences University School of Medicine in Ponce, Puerto Rico. She completed her internal medicine residency at the University of Connecticut and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
-  "order": 24
+  "order": 5,
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ]
 }
