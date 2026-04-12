@@ -38,14 +38,15 @@
                 extension: "json",
                 format: "json",
                 slug: "{{slug}}",
-                summary: "{{fields.name}} - {{fields.credentials}} ({{fields.category}})",
-                sortable_fields: ["order", "name", "category"],
+                summary: "{{fields.lastName}}, {{fields.name}} — {{fields.credentials}}",
+                sortable_fields: ["lastName", "name"],
                 fields: [
-                  { label: "Name", name: "name", widget: "string", hint: "Full name (e.g. Darren Boe)" },
+                  { label: "Name", name: "name", widget: "string", hint: "Full name (e.g. Darren Boé)" },
+                  { label: "Last Name", name: "lastName", widget: "string", hint: "Used for sorting (e.g. Boé)" },
                   { label: "Credentials", name: "credentials", widget: "string", hint: "e.g. MD, PhD", required: false },
                   { label: "Title", name: "title", widget: "string", hint: "e.g. Attending Physician, Managing Partner" },
                   {
-                    label: "Category", name: "category", widget: "select",
+                    label: "Categories", name: "categories", widget: "select", multiple: true, min: 1,
                     options: [
                       { label: "Critical Care", value: "critical-care" },
                       { label: "Interventional Pulmonology", value: "interventional-pulmonology" },
@@ -61,8 +62,7 @@
                     field: { label: "Location", name: "location", widget: "string" }
                   },
                   { label: "Photo", name: "image", widget: "image", hint: "Upload provider headshot" },
-                  { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" },
-                  { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
+                  { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" }
                 ]
               },
               {
