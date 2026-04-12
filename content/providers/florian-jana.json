@@ -2,16 +2,10 @@
   "name": "Jana Florian",
   "credentials": "MD",
   "title": "Attending Physician",
-  "locations": [
-    "West",
-    "Central",
-    "South",
-    "North"
-  ],
+  "locations": [],
   "image": "/images/providers/florian-jana.jpg",
   "bio": "Dr. Florian earned her medical degree at the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado, Anschutz Medical Campus. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.",
   "categories": [
-    "critical-care",
-    "outpatient-pulmonary-sleep"
+    "critical-care"
   ]
 }

@@ -2,16 +2,10 @@
   "name": "Nicole Turnbaugh",
   "credentials": "RT",
   "title": "Respiratory Therapist",
-  "locations": [
-    "West",
-    "Central",
-    "South",
-    "North"
-  ],
+  "locations": [],
   "image": "/images/providers/turnbaugh-nicole.jpg",
   "bio": "Applied Associate Degree in Science, Certified Respiratory Therapist (Certified by the National Board for Respiratory Care).",
   "categories": [
-    "allied-health",
-    "outpatient-pulmonary-sleep"
+    "allied-health"
   ]
 }
