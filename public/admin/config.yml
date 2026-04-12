@@ -17,7 +17,7 @@ collections:
     format: "json"
     slug: "{{slug}}"
     summary: "{{name}} — {{credentials}}"
-    sortable_fields: ["order", "name"]
+    sortable_fields: ["name"]
     fields:
       - { label: "Name", name: "name", widget: "string", hint: "Full name (e.g. Darren Boé)" }
       - { label: "Credentials", name: "credentials", widget: "string", hint: "e.g. MD, PhD", required: false }
@@ -41,7 +41,6 @@ collections:
         field: { label: "Location", name: "location", widget: "string" }
       - { label: "Photo", name: "image", widget: "image", hint: "Upload provider headshot" }
       - { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" }
-      - { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
 
   - name: "jobs"
     label: "Job Listings"

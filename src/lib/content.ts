@@ -67,7 +67,11 @@ export function getProviders(): Provider[] {
     .map((file) => readJsonFile(file))
     .filter((provider): provider is Provider => provider !== null);
 
-  return providers.sort((a, b) => (a.order || 0) - (b.order || 0));
+  return providers.sort((a, b) => {
+    const lastNameA = a.name.split(' ').slice(-1)[0].toLowerCase();
+    const lastNameB = b.name.split(' ').slice(-1)[0].toLowerCase();
+    return lastNameA.localeCompare(lastNameB);
+  });
 }
 
 export function getProvidersByCategory(category: string): Provider[] {
