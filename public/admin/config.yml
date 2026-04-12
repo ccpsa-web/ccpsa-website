@@ -16,10 +16,11 @@ collections:
     extension: "json"
     format: "json"
     slug: "{{slug}}"
-    summary: "{{name}} — {{credentials}}"
-    sortable_fields: ["name"]
+    summary: "{{lastName}}, {{name}} — {{credentials}}"
+    sortable_fields: ["lastName", "name"]
     fields:
       - { label: "Name", name: "name", widget: "string", hint: "Full name (e.g. Darren Boé)" }
+      - { label: "Last Name", name: "lastName", widget: "string", hint: "Used for sorting (e.g. Boé)" }
       - { label: "Credentials", name: "credentials", widget: "string", hint: "e.g. MD, PhD", required: false }
       - { label: "Title", name: "title", widget: "string", hint: "e.g. Attending Physician, Managing Partner" }
       - label: "Categories"
