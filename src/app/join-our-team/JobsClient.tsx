@@ -16,99 +16,11 @@ interface Job {
   [key: string]: any;
 }
 
-interface PageContent {
-  title?: string;
-  subtitle?: string;
-  aboutTitle?: string;
-  aboutText?: string;
-  benefits?: Array<{ title: string; description: string }>;
-  ctaTitle?: string;
-  ctaText?: string;
-  careersEmail?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-}
-
 interface JobsClientProps {
   jobs: Job[];
-  content?: PageContent | null;
 }
 
-/**
- * Renders a field that can be:
- *   1. string[] — legacy array format, renders as bullet list
- *   2. string with bullet lines (-, •, *, or 1.) — renders as bullet list
- *   3. plain string — renders as paragraph(s)
- *
- * Bullet detection: if >50% of non-empty lines start with a bullet
- * character, the whole block is treated as a list.
- */
-function FlexContent({ content }: { content: string | string[] }) {
-  // Legacy array format
-  if (Array.isArray(content)) {
-    return (
-      <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-        {content.map((item: string, i: number) => (
-          <li key={i}>{item}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  // String — check if it contains bulleted lines
-  const bulletPattern = /^[\s]*[-•*▪◦‣⁃]\s|^[\s]*\d+[.)]\s/;
-  const lines = content.split(/\n/).filter((l) => l.trim().length > 0);
-
-  if (lines.length > 0) {
-    const bulletCount = lines.filter((l) => bulletPattern.test(l)).length;
-    // If at least some lines look like bullets, render as a mixed list
-    if (bulletCount >= 1 && bulletCount > lines.length * 0.3) {
-      // Build elements: non-bullet lines become bold headers, bullet lines become <li>
-      const elements: React.ReactNode[] = [];
-      let currentItems: string[] = [];
-
-      const flushItems = () => {
-        if (currentItems.length > 0) {
-          elements.push(
-            <ul key={`ul-${elements.length}`} className="text-sm text-gray-600 space-y-1 list-disc list-inside mb-2">
-              {currentItems.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          );
-          currentItems = [];
-        }
-      };
-
-      for (const line of lines) {
-        if (bulletPattern.test(line)) {
-          const cleaned = line.replace(/^[\s]*[-•*▪◦‣⁃]\s*/, '').replace(/^[\s]*\d+[.)]\s*/, '').trim();
-          currentItems.push(cleaned);
-        } else {
-          flushItems();
-          elements.push(
-            <p key={`h-${elements.length}`} className="text-sm font-semibold text-navy mt-3 mb-1">{line.trim()}</p>
-          );
-        }
-      }
-      flushItems();
-
-      return <div>{elements}</div>;
-    }
-  }
-
-  // Plain text — render as paragraph(s), splitting on double newlines
-  const paragraphs = content.split(/\n\n+/).filter(Boolean);
-  return (
-    <div className="text-sm text-gray-600 leading-relaxed space-y-2">
-      {paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
-      ))}
-    </div>
-  );
-}
-
-export default function JobsClient({ jobs, content }: JobsClientProps) {
+export default function JobsClient({ jobs }: JobsClientProps) {
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -137,8 +49,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
   const selectPosition = (positionTitle: string) => {
     setFormData({ ...formData, position: positionTitle });
     setTimeout(() => {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      document.getElementById('apply')?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+      document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
 
@@ -182,9 +93,9 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content?.title || 'Join Our Team'}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Team</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              {content?.subtitle || 'Help us deliver exceptional critical care and pulmonary services to the Denver metro area. Explore open positions and apply today.'}
+              Help us deliver exceptional critical care and pulmonary services to the Denver metro area. Explore open positions and apply today.
             </p>
           </FadeInUp>
         </div>
@@ -196,9 +107,15 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
           {/* About Section */}
           <FadeInUp className="mb-16">
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10">
-              <h2 className="text-3xl font-bold text-navy mb-6">{content?.aboutTitle || 'About CCPSA'}</h2>
+              <h2 className="text-3xl font-bold text-navy mb-6">About CCPSA</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Critical Care, Pulmonary and Sleep Associates is an independent, physician-owned, large multispecialty private practice. For over 40 years, we have been providing exceptional critical care, pulmonary, and sleep medicine services to the Denver metro area.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Our dedicated team of over 30 board-certified physicians, advanced practice providers, nurses, and support staff exclusively serve multiple CommonSpirit and AdventHealth hospitals and multiple outpatient clinic locations spanning Colorado&apos;s front range.
+              </p>
               <p className="text-gray-600 leading-relaxed">
-                {content?.aboutText || 'Critical Care, Pulmonary and Sleep Associates is an independent, physician-owned, large multispecialty private practice. For over 40 years, we have been providing exceptional critical care, pulmonary, and sleep medicine services to the Denver metro area.'}
+                We&apos;re committed to building a culture of excellence, collaboration, and professional growth for all team members.
               </p>
             </div>
           </FadeInUp>
@@ -211,33 +128,22 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 Why Join Us
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                {content?.benefits && content.benefits.length > 0 ? (
-                  content.benefits.map((benefit: any, idx: number) => (
-                    <div key={idx}>
-                      <h3 className="font-semibold text-navy mb-2">{benefit.title}</h3>
-                      <p className="text-sm text-gray-600">{benefit.description}</p>
-                    </div>
-                  ))
-                ) : (
-                  <>
-                    <div>
-                      <h3 className="font-semibold text-navy mb-2">Physician-Owned Practice</h3>
-                      <p className="text-sm text-gray-600">An independent practice with physician leadership and input on clinical decisions.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-navy mb-2">Work-Life Balance</h3>
-                      <p className="text-sm text-gray-600">Flexible schedules, no mandated call, and reasonable clinic hours.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-navy mb-2">Competitive Compensation</h3>
-                      <p className="text-sm text-gray-600">Market-driven salaries with comprehensive benefits and relocation assistance.</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-navy mb-2">Professional Growth</h3>
-                      <p className="text-sm text-gray-600">Opportunities in teaching, research, leadership, and clinical advancement.</p>
-                    </div>
-                  </>
-                )}
+                <div>
+                  <h3 className="font-semibold text-navy mb-2">Physician-Owned Practice</h3>
+                  <p className="text-sm text-gray-600">An independent practice with physician leadership and input on clinical decisions.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-navy mb-2">Work-Life Balance</h3>
+                  <p className="text-sm text-gray-600">Flexible schedules, no mandated call, and reasonable clinic hours.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-navy mb-2">Competitive Compensation</h3>
+                  <p className="text-sm text-gray-600">Market-driven salaries with comprehensive benefits and relocation assistance.</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-navy mb-2">Professional Growth</h3>
+                  <p className="text-sm text-gray-600">Opportunities in teaching, research, leadership, and clinical advancement.</p>
+                </div>
               </div>
             </div>
           </FadeInUp>
@@ -263,7 +169,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                             <strong>{job.type}</strong> Position
                           </p>
                         </div>
-                        <span className="inline-block bg-amber/10 text-amber-text px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
+                        <span className="inline-block bg-amber/10 text-amber px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
                           Open
                         </span>
                       </div>
@@ -273,7 +179,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                     <div className="px-6 pb-4">
                       <button
                         onClick={() => toggleJobDetails(job.id)}
-                        className="text-sm text-blue-text font-medium flex items-center gap-1 hover:text-navy transition-colors"
+                        className="text-sm text-blue font-medium flex items-center gap-1 hover:text-navy transition-colors"
                       >
                         <span className="toggle-text">
                           {expandedJob === job.id ? 'Hide Details' : 'View Details'}
@@ -286,7 +192,6 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
-                          aria-hidden="true"
                         >
                           <path d="M6 9l6 6 6-6" />
                         </svg>
@@ -296,24 +201,21 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                     {/* Expanded Details */}
                     {expandedJob === job.id && (
                       <div className="px-6 pb-6 space-y-4 border-t border-gray-200 pt-4">
-                        {(job.summary || job.description) && (
+                        {job.description && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Summary</h4>
-                            <p className="text-sm text-gray-600 leading-relaxed">{job.summary || job.description}</p>
-                          </div>
-                        )}
-
-                        {job.responsibilities && (
-                          <div>
-                            <h4 className="font-semibold text-navy mb-2">Responsibilities</h4>
-                            <FlexContent content={job.responsibilities} />
+                            <p className="text-sm text-gray-600 leading-relaxed">{job.description}</p>
                           </div>
                         )}
 
                         {job.hospitalServices && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">{job.hospitalServices.title}</h4>
-                            <FlexContent content={job.hospitalServices.items} />
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.hospitalServices.items?.map((item: string, i: number) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
                             {job.hospitalServices.locations && (
                               <p className="text-sm text-gray-600 mt-3">
                                 <strong>Hospital Locations:</strong> {job.hospitalServices.locations}
@@ -325,7 +227,11 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                         {job.clinicServices && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">{job.clinicServices.title}</h4>
-                            <FlexContent content={job.clinicServices.items} />
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.clinicServices.items?.map((item: string, i: number) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
                             {job.clinicServices.locations && (
                               <p className="text-sm text-gray-600 mt-3">
                                 <strong>Clinic Locations:</strong> {job.clinicServices.locations}
@@ -337,21 +243,22 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                         {job.requirements && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Skills, Education & Experience Requirements</h4>
-                            <FlexContent content={job.requirements} />
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.requirements.map((req: string, i: number) => (
+                                <li key={i}>{req}</li>
+                              ))}
+                            </ul>
                           </div>
                         )}
 
                         {job.compensation && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Compensation & Benefits</h4>
-                            <FlexContent content={job.compensation} />
-                          </div>
-                        )}
-
-                        {job.physicalRequirements && (
-                          <div>
-                            <h4 className="font-semibold text-navy mb-2">Physical Requirements</h4>
-                            <FlexContent content={job.physicalRequirements} />
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.compensation.map((comp: string, i: number) => (
+                                <li key={i}>{comp}</li>
+                              ))}
+                            </ul>
                           </div>
                         )}
 
@@ -359,7 +266,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                         <div className="pt-4 border-t border-gray-200">
                           <button
                             onClick={() => selectPosition(job.title)}
-                            className="inline-flex items-center gap-2 text-blue-text font-medium hover:text-navy transition-colors"
+                            className="inline-flex items-center gap-2 text-blue font-medium hover:text-navy transition-colors"
                           >
                             Apply for this Position
                             <svg
@@ -389,8 +296,8 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
             </div>
             <p className="text-gray-600 mb-8 mt-4">
               Upload your resume and we&apos;ll be in touch. You can also email{' '}
-              <Link href={`mailto:${content?.careersEmail || 'careers@critcareMD.com'}`} className="text-blue-text hover:text-navy transition-colors font-medium">
-                {content?.careersEmail || 'careers@critcareMD.com'}
+              <Link href="mailto:info@critcareMD.com" className="text-blue hover:text-navy transition-colors font-medium">
+                info@critcareMD.com
               </Link>{' '}
               directly.
             </p>
@@ -398,20 +305,19 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
             <div className="bg-white rounded-lg shadow-md p-8">
               <form
                 id="application-form"
-                action="https://formsubmit.co/careers@critcareMD.com"
+                action="https://formsubmit.co/info@critcareMD.com"
                 method="POST"
                 encType="multipart/form-data"
               >
                 <input type="hidden" name="_subject" value="New Job Application - CCPSA Website" />
                 <input type="hidden" name="_captcha" value="true" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://ccpsa-website.vercel.app/join-our-team?submitted=true" />
-                <input type="hidden" name="_to" value={content?.careersEmail || 'careers@critcareMD.com'} />
+                <input type="hidden" name="_next" value="/join-our-team?submitted=true" />
 
                 {/* Resume Upload */}
                 <div className="mb-8">
                   <label className="block text-navy font-semibold mb-3">
-                    Upload Resume <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                    Upload Resume <span className="text-red-500">*</span>
                   </label>
                   <div
                     onDragOver={handleDragOver}
@@ -420,7 +326,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                     className="border-2 border-dashed border-blue/30 rounded-lg p-8 text-center hover:border-blue/60 transition-colors duration-300 cursor-pointer bg-light-gray/50"
                   >
                     <svg
-                      className="h-10 w-10 text-blue-text/50 mx-auto mb-3"
+                      className="h-10 w-10 text-blue/50 mx-auto mb-3"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -452,7 +358,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="first-name" className="block text-navy font-semibold mb-2">
-                      First Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                      First Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -467,7 +373,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                   </div>
                   <div>
                     <label htmlFor="last-name" className="block text-navy font-semibold mb-2">
-                      Last Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                      Last Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -485,7 +391,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 {/* Email */}
                 <div className="mb-6">
                   <label htmlFor="email" className="block text-navy font-semibold mb-2">
-                    Email <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                    Email <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -518,7 +424,7 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 {/* Position */}
                 <div className="mb-8">
                   <label htmlFor="position" className="block text-navy font-semibold mb-2">
-                    Position <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                    Position <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="position"
@@ -563,6 +469,21 @@ export default function JobsClient({ jobs, content }: JobsClientProps) {
                 <strong>Application submitted.</strong> Our HR team will review your resume and contact you if there is a match. Thank you for your interest in CCPSA.
               </div>
             )}
+
+            {/* Alternative Contact */}
+            <div className="mt-8 bg-white rounded-lg shadow-md p-6 border-l-4 border-amber">
+              <p className="text-navy">
+                <strong>Prefer to apply another way?</strong> Call{' '}
+                <Link href="tel:3039510600" className="text-blue hover:text-navy transition-colors font-medium">
+                  (303) 951-0600
+                </Link>
+                , email{' '}
+                <Link href="mailto:info@critcareMD.com" className="text-blue hover:text-navy transition-colors font-medium">
+                  info@critcareMD.com
+                </Link>
+                , or mail your resume to CCPSA Human Resources, 274 Union Blvd. Suite 200, Lakewood, CO 80228.
+              </p>
+            </div>
           </FadeInUp>
         </div>
       </section>
