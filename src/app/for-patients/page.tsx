@@ -1,10 +1,9 @@
 import { getPageContent } from '@/lib/content';
 import ForPatientsClient from './ForPatientsClient';
+import type { ForPatientsData } from './ForPatientsClient';
 
 export default function ForPatients() {
-  const content = getPageContent('for-patients');
+  const data = getPageContent('for-patients') as ForPatientsData;
 
-  if (!content) return null;
-
-  return <ForPatientsClient content={content} />;
+  return <ForPatientsClient data={data} />;
 }

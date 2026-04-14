@@ -1,82 +1,46 @@
 {
-  "title": "Pulmonary Medicine",
-  "subtitle": "Expert diagnosis and treatment of lung and respiratory diseases",
-  "approachText": "Our pulmonary specialists provide comprehensive outpatient evaluation and management of pulmonary and respiratory diseases. We combine advanced diagnostics with evidence-based treatment plans tailored to each patient.",
-  "conditions": [
+  "heroTitle": "Pulmonary Medicine",
+  "heroSubtitle": "Expert diagnosis and treatment of lung and respiratory diseases",
+  "approachHeading": "Our Approach",
+  "approachBody": "Our pulmonary specialists provide comprehensive outpatient evaluation and management of pulmonary and respiratory diseases. We combine advanced diagnostics with evidence-based treatment plans tailored to each patient.",
+  "sections": [
     {
-      "title": "Asthma",
-      "description": "Comprehensive asthma management and control strategies."
+      "heading": "Conditions We Treat",
+      "style": "amber",
+      "items": [
+        { "title": "Asthma", "description": "Comprehensive asthma management and control strategies." },
+        { "title": "COPD & Emphysema", "description": "Specialized care for chronic obstructive pulmonary disease." },
+        { "title": "Interstitial Lung Disease", "description": "Management of diffuse parenchymal lung diseases." },
+        { "title": "Pulmonary Fibrosis", "description": "Expert care for progressive fibrotic lung diseases." },
+        { "title": "Sarcoidosis", "description": "Diagnosis and treatment of this inflammatory condition." },
+        { "title": "Occupational Lung Disease", "description": "Evaluation of work-related respiratory conditions." },
+        { "title": "Chronic Cough", "description": "Thorough evaluation and management of persistent cough." },
+        { "title": "Pulmonary Nodule Evaluation", "description": "Assessment and management of lung nodules." },
+        { "title": "Pleural Effusion", "description": "Diagnosis and treatment of fluid around the lungs." },
+        { "title": "Lung Cancer Screening", "description": "Early detection and prevention programs." }
+      ]
     },
     {
-      "title": "COPD & Emphysema",
-      "description": "Specialized care for chronic obstructive pulmonary disease."
-    },
-    {
-      "title": "Interstitial Lung Disease",
-      "description": "Management of diffuse parenchymal lung diseases."
-    },
-    {
-      "title": "Pulmonary Fibrosis",
-      "description": "Expert care for progressive fibrotic lung diseases."
-    },
-    {
-      "title": "Sarcoidosis",
-      "description": "Diagnosis and treatment of this inflammatory condition."
-    },
-    {
-      "title": "Occupational Lung Disease",
-      "description": "Evaluation of work-related respiratory conditions."
-    },
-    {
-      "title": "Chronic Cough",
-      "description": "Thorough evaluation and management of persistent cough."
-    },
-    {
-      "title": "Pulmonary Nodule Evaluation",
-      "description": "Assessment and management of lung nodules."
-    },
-    {
-      "title": "Pleural Effusion",
-      "description": "Diagnosis and treatment of fluid around the lungs."
-    },
-    {
-      "title": "Lung Cancer Screening",
-      "description": "Early detection and prevention programs."
+      "heading": "Diagnostic Services",
+      "style": "blue",
+      "items": [
+        { "title": "Pulmonary Function Testing (PFTs)", "description": "Comprehensive assessment of lung capacity and function." },
+        { "title": "Bronchoscopy", "description": "Direct visualization of airways for diagnosis." },
+        { "title": "CT-Guided Lung Biopsy Referral", "description": "Precise tissue sampling for definitive diagnosis." },
+        { "title": "Cardiopulmonary Exercise Testing", "description": "Assessment of exercise tolerance and limitation." },
+        { "title": "6-Minute Walk Testing", "description": "Functional assessment of respiratory capacity." }
+      ]
     }
   ],
-  "diagnosticServices": [
-    {
-      "title": "Pulmonary Function Testing (PFTs)",
-      "description": "Comprehensive assessment of lung capacity and function."
-    },
-    {
-      "title": "Bronchoscopy",
-      "description": "Direct visualization of airways for diagnosis."
-    },
-    {
-      "title": "6-Minute Walk Testing",
-      "description": "Functional assessment of respiratory capacity."
-    }
-  ],
+  "locationsHeading": "Office Locations",
   "locations": [
-    {
-      "name": "West Clinic",
-      "city": "Lakewood"
-    },
-    {
-      "name": "Central Clinic",
-      "city": "Highlands Ranch"
-    },
-    {
-      "name": "South Clinic",
-      "city": "Parker"
-    },
-    {
-      "name": "North Clinic",
-      "city": "Westminster"
-    }
+    { "name": "West Clinic", "city": "Lakewood" },
+    { "name": "East Clinic", "city": "Castle Rock" }
   ],
-  "ctaTitle": "Ready to Get Started?",
-  "ctaText": "Contact us today to learn more about our pulmonary services and schedule your consultation.",
-  "phone": "(303) 951-0600"
+  "ctaHeading": "Ready to Get Started?",
+  "ctaBody": "Contact us today to learn more about our pulmonary services and schedule your consultation.",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600",
+  "ctaSecondaryLink": "/for-physicians",
+  "ctaSecondaryText": "For Physicians"
 }

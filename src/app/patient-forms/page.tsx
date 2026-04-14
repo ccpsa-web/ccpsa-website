@@ -1,9 +1,9 @@
 import { getPageContent } from '@/lib/content';
 import PatientFormsClient from './PatientFormsClient';
+import type { PatientFormsData } from './PatientFormsClient';
 
 export default function PatientForms() {
-  const content = getPageContent('patient-forms');
-  if (!content) return null;
+  const data = getPageContent('patient-forms') as PatientFormsData;
 
-  return <PatientFormsClient content={content} />;
+  return <PatientFormsClient data={data} />;
 }

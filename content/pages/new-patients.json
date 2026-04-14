@@ -1,72 +1,61 @@
 {
-  "title": "New Patient Welcome",
-  "subtitle": "We're excited to meet you. Here's what to expect during your first visit.",
-  "welcomeTitle": "Welcome to CCPSA",
-  "welcomeText": "We're committed to providing compassionate, evidence-based care tailored to your individual needs. Our board-certified physicians and clinical team work together to ensure you receive comprehensive evaluation and treatment planning.\n\nWhether you're seeking care for critical illness, pulmonary conditions, sleep disorders, or interventional pulmonology procedures, we're here to help you achieve optimal health outcomes.",
-  "visitStages": [
+  "heroTitle": "New Patient Welcome",
+  "heroSubtitle": "We're excited to meet you. Here's what to expect during your first visit.",
+  "welcomeHeading": "Welcome to CCPSA",
+  "welcomeBody1": "We're committed to providing compassionate, evidence-based care tailored to your individual needs. Our board-certified physicians and clinical team work together to ensure you receive comprehensive evaluation and treatment planning.",
+  "welcomeBody2": "Whether you're seeking care for critical illness, pulmonary conditions, sleep disorders, or interventional pulmonology procedures, we're here to help you achieve optimal health outcomes.",
+  "visitSteps": [
     {
       "title": "Check-In (5-10 minutes)",
-      "steps": [
+      "items": [
         "Verify insurance and complete demographic information",
         "Review and sign HIPAA privacy notice and consent forms"
       ]
     },
     {
       "title": "Clinical Evaluation (20-40 minutes)",
-      "steps": [
+      "items": [
         "Vital signs and clinical assessment by nursing staff",
         "Comprehensive evaluation and exam by your physician"
       ]
     },
     {
       "title": "Care Planning (10-15 minutes)",
-      "steps": [
+      "items": [
         "Discussion of diagnosis, treatment options, and next steps",
         "Prescriptions and referrals as needed"
       ]
     },
     {
       "title": "Check-Out (5 minutes)",
-      "steps": [
+      "items": [
         "Schedule follow-up appointments or procedures",
         "Receive aftercare instructions and educational materials"
       ]
     }
   ],
   "checklist": [
-    {
-      "title": "Complete Patient Paperwork Online",
-      "description": "Fill out your medical history and patient forms on our online portal before your appointment to save time at check-in."
-    },
-    {
-      "title": "Arrive Early",
-      "description": "Plan to arrive 10-15 minutes early to allow time for check-in and to verify your insurance information."
-    },
-    {
-      "title": "Bring Required Documents",
-      "description": "Have your photo ID, insurance card, and current medication list ready. Bring any recent medical records or imaging."
-    },
-    {
-      "title": "Prepare Your Medical History",
-      "description": "Write down any recent symptoms, changes in health, allergies, and family medical history to discuss with your provider."
-    },
-    {
-      "title": "List All Medications",
-      "description": "Include all prescription medications, over-the-counter drugs, and supplements you are currently taking with dosages."
-    },
-    {
-      "title": "Bring Medical Imaging",
-      "description": "If available, bring CDs or images from recent chest X-rays, CT scans, sleep studies, or pulmonary function tests."
-    }
+    { "title": "Complete Patient Paperwork Online", "description": "Fill out your medical history and patient forms on our online portal before your appointment to save time at check-in." },
+    { "title": "Arrive Early", "description": "Plan to arrive 10-15 minutes early to allow time for check-in and to verify your insurance information." },
+    { "title": "Bring Required Documents", "description": "Have your photo ID, insurance card, and current medication list ready. Bring any recent medical records or imaging." },
+    { "title": "Prepare Your Medical History", "description": "Write down any recent symptoms, changes in health, allergies, and family medical history to discuss with your provider." },
+    { "title": "List All Medications", "description": "Include all prescription medications, over-the-counter drugs, and supplements you are currently taking with dosages." },
+    { "title": "Bring Medical Imaging", "description": "If available, bring CDs or images from recent chest X-rays, CT scans, sleep studies, or pulmonary function tests." }
   ],
+  "referralIntro": "If your insurance plan requires a referral from your primary care physician, please follow these steps:",
   "referralSteps": [
     "If your insurance requires a referral, contact your primary care physician to obtain one before your appointment.",
     "Ask your primary care physician to send your medical records to our office to facilitate continuity of care.",
     "Provide CCPSA with your referral number when scheduling your appointment."
   ],
-  "phone": "(303) 951-0600",
-  "email": "info@critcareMD.com",
-  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-  "ctaTitle": "Ready to Schedule Your Appointment?",
-  "ctaText": "Use our convenient online scheduling system or give us a call. We look forward to meeting you!"
+  "referralPhone": "(303) 951-0600",
+  "referralEmail": "info@critcareMD.com",
+  "formsHeading": "Patient Forms",
+  "formsBody": "Download and complete our patient forms before your visit. This helps us provide you with better care and speeds up your check-in process.",
+  "formsDescription": "View all available patient forms, including new patient packets, consent forms, and medical records release forms.",
+  "ctaHeading": "Ready to Schedule Your Appointment?",
+  "ctaBody": "Use our convenient online scheduling system or give us a call. We look forward to meeting you!",
+  "ctaScheduleLink": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
 }

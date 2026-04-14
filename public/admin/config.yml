@@ -120,3 +120,391 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Address", name: "address", widget: "string" }
               - { label: "Phone", name: "phone", widget: "string" }
+
+      - label: "Critical Care"
+        name: "critical-care"
+        file: "content/pages/critical-care.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Approach Heading", name: "approachHeading", widget: "string" }
+          - { label: "Approach Body", name: "approachBody", widget: "text" }
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"] }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false }
+          - label: "Locations"
+            name: "locations"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string" }
+          - { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string" }
+
+      - label: "Interventional Pulmonary"
+        name: "interventional-pulmonary"
+        file: "content/pages/interventional-pulmonary.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Approach Heading", name: "approachHeading", widget: "string" }
+          - { label: "Approach Body", name: "approachBody", widget: "text" }
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"] }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false }
+          - label: "Locations"
+            name: "locations"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string" }
+          - { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string" }
+
+      - label: "Sleep Medicine"
+        name: "sleep-medicine"
+        file: "content/pages/sleep-medicine.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Approach Heading", name: "approachHeading", widget: "string" }
+          - { label: "Approach Body", name: "approachBody", widget: "text" }
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"] }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false }
+          - label: "Locations"
+            name: "locations"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string" }
+          - { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string" }
+
+      - label: "Pulmonary Services"
+        name: "pulmonary-services"
+        file: "content/pages/pulmonary-services.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Approach Heading", name: "approachHeading", widget: "string" }
+          - { label: "Approach Body", name: "approachBody", widget: "text" }
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"] }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false }
+          - label: "Locations"
+            name: "locations"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string" }
+          - { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string" }
+
+      - label: "Neurocritical Care"
+        name: "neurocritical-care"
+        file: "content/pages/neurocritical-care.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Approach Heading", name: "approachHeading", widget: "string" }
+          - { label: "Approach Body", name: "approachBody", widget: "text" }
+          - label: "Content Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string" }
+              - { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"] }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+          - { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false }
+          - label: "Locations"
+            name: "locations"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string" }
+          - { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string" }
+
+      - label: "For Patients"
+        name: "for-patients"
+        file: "content/pages/for-patients.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - label: "Before Your Visit Items"
+            name: "beforeYourVisit"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "What to Expect Heading", name: "whatToExpectHeading", widget: "string" }
+          - { label: "What to Expect Body 1", name: "whatToExpectBody1", widget: "text" }
+          - { label: "What to Expect Body 2", name: "whatToExpectBody2", widget: "text" }
+          - label: "Resource Sections"
+            name: "resourceSections"
+            widget: "list"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Resources"
+                name: "resources"
+                widget: "list"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
+                  - { label: "Link URL", name: "link", widget: "string", required: false }
+                  - { label: "External Link?", name: "external", widget: "boolean", default: false }
+          - label: "Clinic Locations"
+            name: "clinicLocations"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Fax", name: "fax", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Schedule Link", name: "ctaScheduleLink", widget: "string" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+
+      - label: "For Physicians"
+        name: "for-physicians"
+        file: "content/pages/for-physicians.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "About Heading", name: "aboutHeading", widget: "string" }
+          - { label: "About Body 1", name: "aboutBody1", widget: "text" }
+          - { label: "About Body 2", name: "aboutBody2", widget: "text" }
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Referral Sections"
+            name: "referralSections"
+            widget: "list"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+          - label: "Office Info"
+            name: "officeInfo"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "Fax", name: "fax", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+          - { label: "Excellence Heading", name: "excellenceHeading", widget: "string" }
+          - { label: "Excellence Body", name: "excellenceBody", widget: "text" }
+          - label: "Excellence Items"
+            name: "excellenceItems"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+          - { label: "CTA Fax (Display)", name: "ctaFax", widget: "string" }
+          - { label: "CTA Fax (Raw)", name: "ctaFaxRaw", widget: "string" }
+          - { label: "CTA Email", name: "ctaEmail", widget: "string" }
+
+      - label: "New Patients"
+        name: "new-patients"
+        file: "content/pages/new-patients.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Welcome Heading", name: "welcomeHeading", widget: "string" }
+          - { label: "Welcome Body 1", name: "welcomeBody1", widget: "text" }
+          - { label: "Welcome Body 2", name: "welcomeBody2", widget: "text" }
+          - label: "Visit Steps"
+            name: "visitSteps"
+            widget: "list"
+            fields:
+              - { label: "Step Title", name: "title", widget: "string" }
+              - label: "Step Items"
+                name: "items"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+          - label: "Checklist"
+            name: "checklist"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Referral Intro", name: "referralIntro", widget: "text" }
+          - label: "Referral Steps"
+            name: "referralSteps"
+            widget: "list"
+            field: { label: "Step", name: "step", widget: "string" }
+          - { label: "Referral Phone", name: "referralPhone", widget: "string" }
+          - { label: "Referral Email", name: "referralEmail", widget: "string" }
+          - { label: "Forms Heading", name: "formsHeading", widget: "string" }
+          - { label: "Forms Body", name: "formsBody", widget: "text" }
+          - { label: "Forms Description", name: "formsDescription", widget: "text" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Schedule Link", name: "ctaScheduleLink", widget: "string" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+
+      - label: "Patient Forms"
+        name: "patient-forms"
+        file: "content/pages/patient-forms.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Before Appointment Heading", name: "beforeAppointmentHeading", widget: "string" }
+          - { label: "Before Appointment Body 1", name: "beforeAppointmentBody1", widget: "text" }
+          - { label: "Before Appointment Body 2", name: "beforeAppointmentBody2", widget: "text" }
+          - label: "Form Categories"
+            name: "formCategories"
+            widget: "list"
+            fields:
+              - { label: "Category Title", name: "title", widget: "string" }
+              - { label: "Category Description", name: "description", widget: "text" }
+              - label: "Forms"
+                name: "forms"
+                widget: "list"
+                fields:
+                  - { label: "Form Title", name: "title", widget: "string" }
+                  - { label: "Form Description", name: "description", widget: "text" }
+                  - { label: "File Name", name: "fileName", widget: "string", hint: "e.g. new-patient-packet.pdf" }
+          - label: "Online Services"
+            name: "onlineServices"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Link URL", name: "link", widget: "string" }
+              - { label: "Icon Key", name: "icon", widget: "select", options: ["portal", "schedule", "payment"] }
+          - label: "Printing Steps"
+            name: "printingSteps"
+            widget: "list"
+            field: { label: "Step", name: "step", widget: "string" }
+          - label: "Online Steps"
+            name: "onlineSteps"
+            widget: "list"
+            field: { label: "Step", name: "step", widget: "string" }
+          - { label: "Help Phone", name: "helpPhone", widget: "string" }
+          - { label: "Help Email", name: "helpEmail", widget: "string" }
+          - { label: "Help Address", name: "helpAddress", widget: "string" }
+          - { label: "Help City", name: "helpCity", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Schedule Link", name: "ctaScheduleLink", widget: "string" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+
+      - label: "Privacy Policy"
+        name: "privacy-policy"
+        file: "content/pages/privacy-policy.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Effective Date Text", name: "effectiveDate", widget: "text" }
+          - label: "Policy Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Section Title", name: "title", widget: "string" }
+              - { label: "Content Type", name: "contentType", widget: "select", options: ["text", "list"] }
+              - { label: "Content", name: "content", widget: "text", hint: "For list type, separate items with newlines" }
+          - { label: "Privacy Officer Phone", name: "privacyOfficerPhone", widget: "string" }
+          - { label: "Privacy Officer Email", name: "privacyOfficerEmail", widget: "string" }
+          - { label: "Privacy Officer Address", name: "privacyOfficerAddress", widget: "string" }
+          - { label: "Privacy Officer City", name: "privacyOfficerCity", widget: "string" }
+          - { label: "Complaint Agency", name: "complaintAgency", widget: "string" }
+          - { label: "Complaint Office", name: "complaintOffice", widget: "string" }
+          - { label: "Complaint Email", name: "complaintEmail", widget: "string" }
+          - label: "Rights Details"
+            name: "rightsDetails"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Border Style", name: "style", widget: "select", options: ["navy", "blue", "amber", "sage"] }
+          - { label: "Acknowledgement Body", name: "acknowledgementBody", widget: "text" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
