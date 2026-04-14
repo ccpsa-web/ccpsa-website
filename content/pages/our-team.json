@@ -1,8 +1,19 @@
 {
-  "title": "Our Team",
-  "subtitle": "Board-certified specialists dedicated to providing exceptional care across the Denver metro area.",
-  "ctaTitle": "Schedule an Appointment",
-  "ctaText": "Contact us today to schedule an appointment with one of our specialists.",
-  "phone": "(303) 951-0600",
-  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+  "heroTitle": "Our Team",
+  "heroSubtitle": "Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.",
+  "filterHeading": "Find Your Provider",
+  "categories": [
+    { "key": "all", "label": "All" },
+    { "key": "critical-care", "label": "Critical Care" },
+    { "key": "interventional-pulmonology", "label": "Interventional Pulmonology" },
+    { "key": "outpatient-pulmonary-sleep", "label": "Outpatient Pulmonary & Sleep" },
+    { "key": "app", "label": "APP" },
+    { "key": "allied-health", "label": "Allied Health" },
+    { "key": "executive", "label": "Executive" }
+  ],
+  "ctaHeading": "Schedule an Appointment",
+  "ctaBody": "Ready to work with one of our experienced providers? Book your appointment online or call us today.",
+  "ctaScheduleLink": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
 }

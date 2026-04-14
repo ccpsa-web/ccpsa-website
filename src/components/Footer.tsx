@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -14,8 +13,7 @@ export default function Footer() {
               <p>Critical Care, Pulmonary & Sleep Associates</p>
               <p className="mt-4">
                 <strong>Address:</strong><br />
-                274 Union Blvd, Suite 200<br />
-                Lakewood, CO 80228
+                [Your Address Here]
               </p>
               <p className="mt-2">
                 <strong>Phone:</strong><br />
@@ -23,7 +21,7 @@ export default function Footer() {
               </p>
               <p className="mt-2">
                 <strong>Fax:</strong><br />
-                (303) 951-0605
+                [Fax Number]
               </p>
               <p className="mt-2">
                 <strong>Email:</strong><br />
@@ -31,24 +29,6 @@ export default function Footer() {
                   info@critcareMD.com
                 </a>
               </p>
-            </div>
-
-            {/* Review Links */}
-            <div className="flex items-center gap-4 mt-6">
-              <a
-                href="https://www.google.com/search?sca_esv=9b49c139cd80d27d&rlz=1C1GCEU_en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x1grRhu6CJ5S5kJ6J5E7Mkpl1oFLivQKGPfyycWSPcWo0UobwDof5gaB7nbAAy-0wQNVnnct_U0-svn3SXdiqcNGxKm9D7mMcs-TouU5pbrHun7dluBWvy_FGgXKxSLOx_nPv1Q%3D&q=Critical+Care,+Pulmonary+and+Sleep+Associates+Reviews&sa=X&ved=2ahUKEwi4-qaflMiTAxWiH0QIHUCEDFEQ0bkNegQINhAH&biw=1536&bih=826&dpr=1.25"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="opacity-80 hover:opacity-100 transition-opacity"
-              >
-                <Image
-                  src="/images/site/google-review-us.jpg"
-                  alt="Review us on Google"
-                  width={80}
-                  height={40}
-                  className="h-8 w-auto rounded"
-                />
-              </a>
             </div>
           </div>
 
@@ -109,9 +89,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/clinical-trials" className="hover:text-amber transition-colors">
+                <a href="#" className="hover:text-amber transition-colors">
                   Clinical Research
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-amber transition-colors">

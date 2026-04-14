@@ -4,9 +4,59 @@
   "type": "Full-time",
   "status": "open",
   "summary": "We are currently seeking a Physician Assistant or Nurse Practitioner to join our committed team of professionals. The Physician Assistant/Nurse Practitioner position is an essential outpatient clinical role, providing direct care to new and established pulmonary and/or sleep patients. It is necessary that within this role, the Advance Practice Provider cultivates and supports a strong team culture and collaborative environment centered on consistently delivering exceptional patient care. This position will have the peer support of 5 additional mid-levels that are currently working in the outpatient practice.",
-  "responsibilities": "Patient Care:\n- Patients on home O2 or nocturnal CPAP/BIPAP/NIV who need clinic evaluation to continue current care.\n- Preoperative visits for those patients with non-complex Pulmonary issues and upcoming surgical needs.\n- Hospital follow-up of patients admitted with COPD exacerbation and other Pulmonary disease.\n- Pulmonary rehabilitation follow-up.\n- Telephone consultation and follow-up as needed for patient clinical questions unable to be answered by MA or other clinic staff.\n- Management and continuity of care for patients with straightforward Pulmonary or Sleep-focused clinical complaints.\n- Urgent clinic visits (with close support of Pulmonary physician) of potentially both new and established patients as needed.\n- Provide high-quality patient care while collaborating with the research team to support and manage critical clinical trials.\n\nPatient and Staff Education:\n- Single or group patient education about inhaler therapy.\n- Single or group patient education on disease processes such as COPD, etc.\n- Establishing and maintaining educational forms and handouts for patients.\n- Ongoing clinic staff education, as needed.",
-  "requirements": "- Completion of an accredited Physician Assistant or Nurse Practitioner program.\n- NCCPA or AANP certified, respectively.\n- Minimum 5-years total post training experience, minimum 2-years pulmonary experience required.\n- DEA license eligible upon hire, per Colorado Drug Enforcement Administration's Advanced Practice Provider requirements.\n- Willingness to travel to various clinic sites, as workflow dictates.\n- Enthusiasm for working in an outpatient setting with a large team of physicians and clinic staff.\n- Positive attitude, exemplary patient care, and willingness to adapt to changes in job description as needed for patient and clinic needs.\n- Excellent verbal and written communication skills with patients and families, as well as clinic physicians and staff.\n- Proficient with Office 365 software, and the ability to quickly learn and adapt to Electronic Medical Records.",
-  "physicalRequirements": "- Ability to safely and successfully perform the essential job functions consistent with the ADA, FMLA and other federal, state and local standards.\n- Ability to drive between clinic locations for meetings.\n- Ability to sit or stand for extended time periods.\n- Must be able to lift and carry up to 30 lbs.",
-  "compensation": "- Competitive salary.\n- Paid malpractice premiums.\n- Benefits effective date-of-hire (no waiting period).\n- Comprehensive medical benefits. Company covers 80-85% of individual or family premium.\n- Dental and vision benefits offered at no cost to the employee. Company covers 100% of individual or family premium.\n- Life and AD&D benefits.\n- Optional additional life, disability and accident coverages at group discounts.\n- PTO and holiday pay.\n- 401k benefits with company contribution after eligibility period.\n- CME stipend and allotted time.\n- No call, nights, weekends, or holidays",
+  "responsibilities": [
+    {
+      "category": "Patient Care",
+      "items": [
+        "Patients on home O2 or nocturnal CPAP/BIPAP/NIV who need clinic evaluation to continue current care.",
+        "Preoperative visits for those patients with non-complex Pulmonary issues and upcoming surgical needs.",
+        "Hospital follow-up of patients admitted with COPD exacerbation and other Pulmonary disease.",
+        "Pulmonary rehabilitation follow-up.",
+        "Telephone consultation and follow-up as needed for patient clinical questions unable to be answered by MA or other clinic staff.",
+        "Management and continuity of care for patients with straightforward Pulmonary or Sleep-focused clinical complaints.",
+        "Urgent clinic visits (with close support of Pulmonary physician) of potentially both new and established patients as needed.",
+        "Provide high-quality patient care while collaborating with the research team to support and manage critical clinical trials."
+      ]
+    },
+    {
+      "category": "Patient and Staff Education",
+      "items": [
+        "Single or group patient education about inhaler therapy.",
+        "Single or group patient education on disease processes such as COPD, etc.",
+        "Establishing and maintaining educational forms and handouts for patients.",
+        "Ongoing clinic staff education, as needed."
+      ]
+    }
+  ],
+  "requirements": [
+    "Completion of an accredited Physician Assistant or Nurse Practitioner program.",
+    "NCCPA or AANP certified, respectively.",
+    "Minimum 5-years total post training experience, minimum 2-years pulmonary experience required.",
+    "DEA license eligible upon hire, per Colorado Drug Enforcement Administration's Advanced Practice Provider requirements.",
+    "Willingness to travel to various clinic sites, as workflow dictates.",
+    "Enthusiasm for working in an outpatient setting with a large team of physicians and clinic staff.",
+    "Positive attitude, exemplary patient care, and willingness to adapt to changes in job description as needed for patient and clinic needs.",
+    "Excellent verbal and written communication skills with patients and families, as well as clinic physicians and staff.",
+    "Proficient with Office 365 software, and the ability to quickly learn and adapt to Electronic Medical Records."
+  ],
+  "physicalRequirements": [
+    "Ability to safely and successfully perform the essential job functions consistent with the ADA, FMLA and other federal, state and local standards.",
+    "Ability to drive between clinic locations for meetings.",
+    "Ability to sit or stand for extended time periods.",
+    "Must be able to lift and carry up to 30 lbs."
+  ],
+  "compensation": [
+    "Competitive salary.",
+    "Paid malpractice premiums.",
+    "Benefits effective date-of-hire (no waiting period).",
+    "Comprehensive medical benefits. Company covers 80-85% of individual or family premium.",
+    "Dental and vision benefits offered at no cost to the employee. Company covers 100% of individual or family premium.",
+    "Life and AD&D benefits.",
+    "Optional additional life, disability and accident coverages at group discounts.",
+    "PTO and holiday pay.",
+    "401k benefits with company contribution after eligibility period.",
+    "CME stipend and allotted time.",
+    "No call, nights, weekends, or holidays"
+  ],
   "order": 3
 }

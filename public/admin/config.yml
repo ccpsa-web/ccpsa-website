@@ -508,3 +508,24 @@ collections:
           - { label: "CTA Body", name: "ctaBody", widget: "text" }
           - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
           - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }
+
+      - label: "Our Team"
+        name: "our-team"
+        file: "content/pages/our-team.json"
+        format: "json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Filter Heading", name: "filterHeading", widget: "string" }
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            summary: "{{fields.label}} ({{fields.key}})"
+            fields:
+              - { label: "Key (slug)", name: "key", widget: "string", hint: "Lowercase slug matching provider category values (e.g. critical-care)" }
+              - { label: "Display Label", name: "label", widget: "string", hint: "How the category appears on the page (e.g. Critical Care)" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string" }
+          - { label: "CTA Body", name: "ctaBody", widget: "text" }
+          - { label: "CTA Schedule Link", name: "ctaScheduleLink", widget: "string" }
+          - { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string" }
+          - { label: "CTA Phone (Raw)", name: "ctaPhoneRaw", widget: "string" }

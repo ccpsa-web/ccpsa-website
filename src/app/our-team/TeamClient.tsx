@@ -18,21 +18,30 @@ interface Provider {
   order?: number;
 }
 
-interface TeamClientProps {
-  providers: Provider[];
+interface CategoryItem {
+  key: string;
+  label: string;
 }
 
-const CATEGORIES = [
-  { key: 'all', label: 'All' },
-  { key: 'critical-care', label: 'Critical Care' },
-  { key: 'interventional-pulmonology', label: 'Interventional Pulmonology' },
-  { key: 'outpatient-pulmonary-sleep', label: 'Outpatient Pulmonary & Sleep' },
-  { key: 'app', label: 'APP' },
-  { key: 'allied-health', label: 'Allied Health' },
-  { key: 'executive', label: 'Executive' },
-];
+export interface OurTeamData {
+  heroTitle: string;
+  heroSubtitle: string;
+  filterHeading: string;
+  categories: CategoryItem[];
+  ctaHeading: string;
+  ctaBody: string;
+  ctaScheduleLink: string;
+  ctaPhone: string;
+  ctaPhoneRaw: string;
+}
 
-export default function TeamClient({ providers }: TeamClientProps) {
+interface TeamClientProps {
+  providers: Provider[];
+  data: OurTeamData;
+}
+
+export default function TeamClient({ providers, data }: TeamClientProps) {
+  const CATEGORIES = data.categories;
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredProviders = useMemo(() => {
@@ -77,9 +86,9 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{data.heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.
+              {data.heroSubtitle}
             </p>
           </FadeInUp>
         </div>
@@ -89,7 +98,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-white py-12 border-b">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Find Your Provider</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">{data.filterHeading}</h2>
 
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
               {CATEGORIES.map((cat) => (
@@ -114,10 +123,12 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="space-y-16">
-            {Object.entries(groupedByCategory).map(([category, categoryProviders]) => (
+            {Object.entries(groupedByCategory).map(([category, categoryProviders]) => {
+              const categoryLabel = CATEGORIES.find((c) => c.key === category)?.label || category;
+              return (
               <div key={category}>
                 <h3 className="text-2xl md:text-3xl font-bold text-navy mb-8 pb-4 border-b-2 border-amber">
-                  {category}
+                  {categoryLabel}
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -200,7 +211,8 @@ export default function TeamClient({ providers }: TeamClientProps) {
                   })}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -209,14 +221,14 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-amber text-navy py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Schedule an Appointment</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{data.ctaHeading}</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Ready to work with one of our experienced providers? Book your appointment online or call us today.
+              {data.ctaBody}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+                href={data.ctaScheduleLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
@@ -224,10 +236,10 @@ export default function TeamClient({ providers }: TeamClientProps) {
                 Schedule Online
               </a>
               <a
-                href="tel:3039510600"
+                href={`tel:${data.ctaPhoneRaw}`}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call (303) 951-0600
+                Call {data.ctaPhone}
               </a>
             </div>
           </FadeInUp>

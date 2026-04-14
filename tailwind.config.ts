@@ -11,9 +11,7 @@ const config: Config = {
       colors: {
         navy: '#1A3050',
         blue: '#4A6E91',
-        'blue-text': '#3A5A7A',
         amber: '#AA9070',
-        'amber-text': '#7A6548',
         'light-gray': '#F7F0E6',
         sage: '#90B08A',
         linen: '#E8D9C4',

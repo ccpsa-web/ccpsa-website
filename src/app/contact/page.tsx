@@ -50,27 +50,27 @@ export default function Contact() {
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               {/* Phone */}
               <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="text-4xl mb-4" role="img" aria-label="Phone">📞</div>
+                <div className="text-4xl mb-4">📞</div>
                 <h3 className="text-xl font-semibold text-navy mb-2">Call Us</h3>
-                <a href={`tel:${contactData.phone.replace(/[^\d]/g, '')}`} className="text-blue-text hover:text-navy font-medium transition-colors">
+                <a href={`tel:${contactData.phone.replace(/[^\d]/g, '')}`} className="text-blue hover:text-navy font-medium transition-colors">
                   {contactData.phone}
                 </a>
               </div>
 
               {/* Email */}
               <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="text-4xl mb-4" role="img" aria-label="Email">✉️</div>
+                <div className="text-4xl mb-4">✉️</div>
                 <h3 className="text-xl font-semibold text-navy mb-2">Email Us</h3>
-                <a href={`mailto:${contactData.email}`} className="text-blue-text hover:text-navy font-medium transition-colors">
+                <a href={`mailto:${contactData.email}`} className="text-blue hover:text-navy font-medium transition-colors">
                   {contactData.email}
                 </a>
               </div>
 
               {/* Fax */}
               <div className="bg-white rounded-lg shadow-md p-8 text-center hover:shadow-lg transition-shadow duration-300">
-                <div className="text-4xl mb-4" role="img" aria-label="Fax">📠</div>
+                <div className="text-4xl mb-4">📠</div>
                 <h3 className="text-xl font-semibold text-navy mb-2">Fax Us</h3>
-                <p className="text-blue-text font-medium">{contactData.fax}</p>
+                <p className="text-blue font-medium">{contactData.fax}</p>
               </div>
             </div>
           </FadeInUp>
@@ -94,15 +94,15 @@ export default function Contact() {
 
                     <div className="space-y-3 mb-6">
                       <div className="flex items-start gap-3">
-                        <span className="text-amber text-lg" role="img" aria-label="Address">📍</span>
+                        <span className="text-amber text-lg">📍</span>
                         <p className="text-sm text-gray-600">{location.address}</p>
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="text-amber text-lg" role="img" aria-label="Phone">📞</span>
+                        <span className="text-amber text-lg">📞</span>
                         <Link
                           href={`tel:${location.phone.replace(/[^\d]/g, '')}`}
-                          className="text-blue-text hover:text-navy font-medium transition-colors text-sm"
+                          className="text-blue hover:text-navy font-medium transition-colors text-sm"
                         >
                           {location.phone}
                         </Link>
@@ -114,9 +114,9 @@ export default function Contact() {
                       href={`https://maps.google.com/maps?q=${encodeURIComponent(location.address)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-blue-text hover:text-navy font-medium text-sm transition-colors"
+                      className="inline-flex items-center gap-2 text-blue hover:text-navy font-medium text-sm transition-colors"
                     >
-                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                      <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                         <circle cx="12" cy="10" r="3" />
                       </svg>
@@ -148,7 +148,7 @@ export default function Contact() {
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label htmlFor="name" className="block text-navy font-semibold mb-2">
-                      Full Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -162,7 +162,7 @@ export default function Contact() {
 
                   <div>
                     <label htmlFor="email" className="block text-navy font-semibold mb-2">
-                      Email <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                      Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -190,7 +190,7 @@ export default function Contact() {
 
                 <div className="mb-6">
                   <label htmlFor="subject" className="block text-navy font-semibold mb-2">
-                    Subject <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                    Subject <span className="text-red-500">*</span>
                   </label>
                   <select
                     id="subject"
@@ -209,7 +209,7 @@ export default function Contact() {
 
                 <div className="mb-8">
                   <label htmlFor="message" className="block text-navy font-semibold mb-2">
-                    Message <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
+                    Message <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -225,7 +225,7 @@ export default function Contact() {
                   type="submit"
                   className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2"
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M22 2L11 13"></path>
                     <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
                   </svg>
