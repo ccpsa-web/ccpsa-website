@@ -1,75 +1,63 @@
 {
-  "title": "Patient Forms",
-  "subtitle": "Download, complete, and bring patient forms to your appointment, or fill them out online before your visit.",
-  "beforeAppointmentText": "To expedite your check-in and ensure we have complete information about your medical history, please complete the appropriate patient forms before your appointment.\n\nComplete your paperwork online using the secure links below. All online forms are hosted on a HIPAA-compliant server — your information is safe. If you do not have your paperwork complete prior to your appointment, please plan to arrive 30 minutes early.",
-  "newPatientForms": [
+  "heroTitle": "Patient Forms",
+  "heroSubtitle": "Download, complete, and bring patient forms to your appointment, or fill them out online before your visit.",
+  "beforeAppointmentHeading": "Before Your Appointment",
+  "beforeAppointmentBody1": "To expedite your check-in and ensure we have complete information about your medical history, please complete the appropriate patient forms before your appointment.",
+  "beforeAppointmentBody2": "You can either download and print the forms to bring with you, or fill them out online through our patient portal. If you need assistance completing any forms, please call us at (303) 951-0600.",
+  "formCategories": [
     {
-      "title": "New Patient Paperwork (Pulmonary & Sleep Packet)",
-      "description": "Comprehensive patient demographics, medical history, and intake forms. Required for all new patients.",
-      "url": "https://criticalcare.medforward.com/FillOutForm.aspx?formname=Pulmonary_and_Sleep_Packet"
-    }
-  ],
-  "establishedPatientForms": [
-    {
-      "title": "General Consent for Care and Treatment",
-      "description": "Initial consent for medical evaluation and treatment.",
-      "url": "https://criticalcare.medforward.com/FillOutForm.aspx?formname=General_Consent_for_Care_and_Treatment"
+      "title": "New Patient Paperwork",
+      "description": "Required forms for new patients visiting our clinics for the first time.",
+      "forms": [
+        { "title": "New Patient Information & Medical History", "description": "Comprehensive patient demographics and medical history form.", "fileName": "new-patient-packet.pdf" },
+        { "title": "General Consent for Care and Treatment", "description": "Initial consent for medical evaluation and treatment.", "fileName": "general-consent.pdf" },
+        { "title": "Consent to Leave or Send Medical Information", "description": "Authorization for sharing medical records with other providers.", "fileName": "records-release.pdf" }
+      ]
     },
     {
-      "title": "Consent to Leave or Send Medical Information",
-      "description": "Authorization for sharing medical records with other providers.",
-      "url": "https://criticalcare.medforward.com/FillOutForm.aspx?formname=Consent_to_Leave_or_Send_Medical_Information"
+      "title": "Established Patient Paperwork",
+      "description": "Forms for patients with established care at CCPSA.",
+      "forms": [
+        { "title": "Update Patient Information", "description": "Form to update contact information, insurance, and medical history.", "fileName": "patient-update.pdf" },
+        { "title": "Acknowledgement of Privacy Practices & Patient Responsibility", "description": "HIPAA privacy notice acknowledgement and patient financial responsibility.", "fileName": "privacy-acknowledgement.pdf" },
+        { "title": "Consent to Leave or Send Medical Information", "description": "Authorization for sharing medical records with other providers.", "fileName": "records-release.pdf" }
+      ]
     },
     {
-      "title": "Acknowledgement of Privacy Practices & Patient Responsibility",
-      "description": "HIPAA privacy notice acknowledgement and patient financial responsibility.",
-      "url": "https://criticalcare.medforward.com/FillOutForm.aspx?formname=Privacy_Agreement"
-    }
-  ],
-  "downloadableForms": [
-    {
-      "title": "Release of Information",
-      "description": "Authorization for release of medical records to other providers or parties.",
-      "fileName": "CCPSA-Release-of-Information.pdf"
-    },
-    {
-      "title": "Sleep Diary",
-      "description": "Track your sleep patterns before your sleep medicine appointment.",
-      "fileName": "CCPSA-Sleep-Diary.pdf"
-    },
-    {
-      "title": "Notice of Privacy Practices",
-      "description": "HIPAA privacy notice detailing how your medical information is used and protected.",
-      "fileName": "Notice-of-Privacy-Practices.pdf"
+      "title": "Additional Forms & Documents",
+      "description": "Specialized forms for specific conditions and procedures.",
+      "forms": [
+        { "title": "Release of Information", "description": "Detailed authorization for release of medical records.", "fileName": "release-of-information.pdf" },
+        { "title": "Sleep Diary", "description": "Track your sleep patterns before your sleep medicine appointment.", "fileName": "sleep-diary.pdf" },
+        { "title": "Pulmonary Function Test Instructions", "description": "Preparation instructions for PFT testing.", "fileName": "pft-instructions.pdf" },
+        { "title": "Sleep Study Instructions", "description": "What to expect and how to prepare for your sleep study.", "fileName": "sleep-study-instructions.pdf" }
+      ]
     }
   ],
   "onlineServices": [
-    {
-      "title": "Patient Portal / Epic MyChart",
-      "description": "Access your medical records, test results, view medications, and communicate with your care team.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "📱",
-      "iconLabel": "Mobile device"
-    },
-    {
-      "title": "Online Scheduling",
-      "description": "Schedule or reschedule your appointments at your convenience, 24/7.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "📅",
-      "iconLabel": "Calendar"
-    },
-    {
-      "title": "Online Bill Payment",
-      "description": "Pay your medical bills securely online using our payment portal.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "icon": "💳",
-      "iconLabel": "Payment"
-    }
+    { "title": "Patient Portal / Epic MyChart", "description": "Access your medical records, test results, view medications, and communicate with your care team.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "portal" },
+    { "title": "Online Scheduling", "description": "Schedule or reschedule your appointments at your convenience, 24/7.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "schedule" },
+    { "title": "Online Bill Payment", "description": "Pay your medical bills securely online using our payment portal.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "payment" }
   ],
-  "phone": "(303) 951-0600",
-  "email": "For general inquiries not related to patient care: info@critcareMD.com",
-  "address": "274 Union Blvd. Suite 200\nLakewood, CO 80228",
-  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-  "ctaTitle": "Ready to Schedule Your Appointment?",
-  "ctaText": "Complete your forms and book your appointment with one of our specialists."
+  "printingSteps": [
+    "Click the Download button for the form you need",
+    "Print the PDF on standard 8.5\" x 11\" paper",
+    "Complete the form using black or blue ink",
+    "Bring the completed form to your appointment"
+  ],
+  "onlineSteps": [
+    "Log into your Patient Portal (Epic MyChart)",
+    "Select \"Complete Paperwork\"",
+    "Fill out forms electronically",
+    "Submit before your appointment date"
+  ],
+  "helpPhone": "(303) 951-0600",
+  "helpEmail": "info@critcareMD.com",
+  "helpAddress": "274 Union Blvd. Suite 200",
+  "helpCity": "Lakewood, CO 80228",
+  "ctaHeading": "Ready to Schedule Your Appointment?",
+  "ctaBody": "Complete your forms and book your appointment with one of our specialists.",
+  "ctaScheduleLink": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
 }

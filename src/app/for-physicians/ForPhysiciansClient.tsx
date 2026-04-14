@@ -3,34 +3,61 @@
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
-interface PageContent {
-  [key: string]: any;
+interface Service {
+  title: string;
+  description: string;
 }
 
-interface ForPhysiciansClientProps {
-  content: PageContent;
+interface ReferralSection {
+  title: string;
+  items: string[];
 }
 
-export default function ForPhysiciansClient({ content }: ForPhysiciansClientProps) {
-  if (!content) {
-    return <div>Loading...</div>;
-  }
+interface ExcellenceItem {
+  title: string;
+  description: string;
+}
 
-  const services = content.services || [];
-  const referralHow = content.referralHow || [];
-  const referralNeeded = content.referralNeeded || [];
-  const excellenceItems = content.excellenceItems || [];
-  const aboutParagraphs = content.aboutText?.split('\n\n') || [];
+interface OfficeInfo {
+  title: string;
+  address: string;
+  city: string;
+  phone: string;
+  fax: string;
+  email: string;
+}
 
+export interface ForPhysiciansData {
+  heroTitle: string;
+  heroSubtitle: string;
+  aboutHeading: string;
+  aboutBody1: string;
+  aboutBody2: string;
+  services: Service[];
+  referralSections: ReferralSection[];
+  officeInfo: OfficeInfo;
+  excellenceHeading: string;
+  excellenceBody: string;
+  excellenceItems: ExcellenceItem[];
+  ctaHeading: string;
+  ctaBody: string;
+  ctaPhone: string;
+  ctaPhoneRaw: string;
+  ctaFax: string;
+  ctaFaxRaw: string;
+  ctaEmail: string;
+}
+
+export default function ForPhysiciansClient({ data }: { data: ForPhysiciansData }) {
   return (
     <div className="min-h-screen bg-light-gray">
       {/* Hero Banner */}
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{data.heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              {content.subtitle}
+              {data.heroSubtitle}
             </p>
           </FadeInUp>
         </div>
@@ -41,12 +68,9 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10 mb-12">
-              <h2 className="text-3xl font-bold text-navy mb-6">{content.aboutTitle}</h2>
-              {aboutParagraphs.map((paragraph: string, idx: number) => (
-                <p key={idx} className="text-gray-600 leading-relaxed mb-4">
-                  {paragraph}
-                </p>
-              ))}
+              <h2 className="text-3xl font-bold text-navy mb-6">{data.aboutHeading}</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">{data.aboutBody1}</p>
+              <p className="text-gray-600 leading-relaxed">{data.aboutBody2}</p>
             </div>
           </FadeInUp>
         </div>
@@ -59,7 +83,7 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
             <h2 className="text-3xl font-bold text-navy mb-8">Our Services</h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {services.map((service: any, idx: number) => (
+              {data.services.map((service, idx) => (
                 <FadeInUp key={idx}>
                   <div className="bg-light-gray hover:bg-amber/5 rounded-lg p-6 border border-gray-200 hover:border-amber transition-all duration-300">
                     <div className="flex items-start gap-4">
@@ -93,37 +117,23 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <FadeInUp>
-                <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-amber">
-                  <h3 className="text-2xl font-semibold text-navy mb-6">How to Refer a Patient</h3>
-                  <ul className="space-y-3">
-                    {referralHow.map((item: string, iIdx: number) => (
-                      <li key={iIdx} className="flex items-start gap-3">
-                        <svg className="h-5 w-5 text-blue-text flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                        </svg>
-                        <span className="text-gray-600">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeInUp>
-
-              <FadeInUp>
-                <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-amber">
-                  <h3 className="text-2xl font-semibold text-navy mb-6">What We Need</h3>
-                  <ul className="space-y-3">
-                    {referralNeeded.map((item: string, iIdx: number) => (
-                      <li key={iIdx} className="flex items-start gap-3">
-                        <svg className="h-5 w-5 text-blue-text flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-                        </svg>
-                        <span className="text-gray-600">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeInUp>
+              {data.referralSections.map((section, idx) => (
+                <FadeInUp key={idx}>
+                  <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-amber">
+                    <h3 className="text-2xl font-semibold text-navy mb-6">{section.title}</h3>
+                    <ul className="space-y-3">
+                      {section.items.map((item, iIdx) => (
+                        <li key={iIdx} className="flex items-start gap-3">
+                          <svg className="h-5 w-5 text-blue flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                          </svg>
+                          <span className="text-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </FadeInUp>
+              ))}
             </div>
           </FadeInUp>
         </div>
@@ -136,24 +146,24 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
             <h2 className="text-3xl font-bold text-navy mb-8">Contact Us</h2>
 
             <div className="bg-light-gray rounded-lg shadow-md p-8 border-l-4 border-blue max-w-2xl">
-              <h3 className="text-xl font-semibold text-navy mb-6">Main Office</h3>
+              <h3 className="text-xl font-semibold text-navy mb-6">{data.officeInfo.title}</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl" role="img" aria-label="Address">📍</span>
+                  <span className="text-2xl">📍</span>
                   <div>
-                    <p className="font-medium text-navy">{content.officeAddress}</p>
-                    <p className="text-gray-600">{content.officeCity}</p>
+                    <p className="font-medium text-navy">{data.officeInfo.address}</p>
+                    <p className="text-gray-600">{data.officeInfo.city}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl" role="img" aria-label="Phone">📞</span>
-                  <Link href={`tel:${content.phone?.replace(/[^\d]/g, '')}`} className="text-blue-text hover:text-navy font-medium transition-colors">
-                    {content.phone}
+                  <span className="text-2xl">📞</span>
+                  <Link href={`tel:${data.officeInfo.phone.replace(/[^\d]/g, '')}`} className="text-blue hover:text-navy font-medium transition-colors">
+                    {data.officeInfo.phone}
                   </Link>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-2xl" role="img" aria-label="Fax">📠</span>
-                  <span className="text-gray-600">{content.fax}</span>
+                  <span className="text-2xl">📠</span>
+                  <span className="text-gray-600">{data.officeInfo.fax}</span>
                 </div>
               </div>
 
@@ -161,8 +171,8 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
                 <p className="text-sm text-gray-600 mb-3">
                   For consultation requests and referrals, please contact us at:
                 </p>
-                <Link href={`mailto:${content.email}`} className="text-blue-text hover:text-navy font-medium transition-colors">
-                  {content.email}
+                <Link href={`mailto:${data.officeInfo.email}`} className="text-blue hover:text-navy font-medium transition-colors">
+                  {data.officeInfo.email}
                 </Link>
               </div>
             </div>
@@ -175,14 +185,12 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Clinical Excellence & Collaboration</h2>
-              <p className="text-lg max-w-2xl mx-auto">
-                We&apos;re committed to providing evidence-based, collaborative care and maintaining the highest standards of clinical practice.
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">{data.excellenceHeading}</h2>
+              <p className="text-lg max-w-2xl mx-auto">{data.excellenceBody}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {excellenceItems.map((item: any, idx: number) => (
+              {data.excellenceItems.map((item, idx) => (
                 <FadeInUp key={idx}>
                   <div className="bg-white bg-opacity-20 backdrop-blur rounded-lg p-6 text-center">
                     <h3 className="font-semibold mb-2">{item.title}</h3>
@@ -199,19 +207,23 @@ export default function ForPhysiciansClient({ content }: ForPhysiciansClientProp
       <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-2xl font-bold text-navy mb-6">{content.ctaTitle}</h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              {content.ctaText}
-            </p>
+            <h2 className="text-2xl font-bold text-navy mb-6">{data.ctaHeading}</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">{data.ctaBody}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={`tel:${content.phone?.replace(/[^\d]/g, '')}`}
+                href={`tel:${data.ctaPhoneRaw}`}
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call {content.phone}
+                Call {data.ctaPhone}
               </a>
               <a
-                href={`mailto:${content.email}`}
+                href={`fax:${data.ctaFaxRaw}`}
+                className="inline-block bg-blue hover:bg-navy text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
+              >
+                Fax {data.ctaFax}
+              </a>
+              <a
+                href={`mailto:${data.ctaEmail}`}
                 className="inline-block bg-amber hover:bg-amber/90 text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
                 Email Us

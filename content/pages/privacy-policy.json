@@ -1,9 +1,85 @@
 {
-  "title": "Privacy Policy",
-  "subtitle": "Notice of Privacy Practices & HIPAA Compliance",
-  "effectiveDate": "This notice is effective as of January 1, 2024.",
+  "heroTitle": "Privacy Policy",
+  "heroSubtitle": "Notice of Privacy Practices & HIPAA Compliance",
+  "effectiveDate": "This Notice became effective January 1, 2024. Your privacy is important to us. Critical Care, Pulmonary and Sleep Associates (CCPSA) is required by federal law to protect the privacy of your health information and to give you this Notice of our privacy practices.",
+  "sections": [
+    {
+      "title": "Introduction",
+      "contentType": "text",
+      "content": "Critical Care, Pulmonary and Sleep Associates (CCPSA), as a healthcare provider, is committed to protecting your privacy. This Notice of Privacy Practices describes how your medical information may be used and shared, and how you can access and control that information."
+    },
+    {
+      "title": "Our Legal Duty",
+      "contentType": "text",
+      "content": "We are required by law to maintain the privacy of your protected health information. This Notice describes our privacy practices and your rights regarding your health information. We are required to give you this Notice and to follow the practices described herein."
+    },
+    {
+      "title": "Information We Collect",
+      "contentType": "list",
+      "content": "Medical history and current health conditions\nInsurance information and payment records\nClinical examination findings and test results\nMedications and allergies\nFamily medical history\nEmergency contact information\nContact information (address, phone, email)"
+    },
+    {
+      "title": "How We Use Your Information",
+      "contentType": "list",
+      "content": "Treatment: To provide you with medical care and services\nPayment: To bill your insurance and collect payment for services\nOperations: To improve our services, staff training, and quality assurance\nLegal Compliance: To comply with applicable laws and regulations\nPatient Safety: To protect the health and safety of our patients and staff\nCommunication: To contact you about appointments, test results, and health information"
+    },
+    {
+      "title": "How We May Share Your Information",
+      "contentType": "list",
+      "content": "With your healthcare providers: Other physicians, specialists, and hospitals involved in your care\nFor treatment coordination: To facilitate continuity of care among multiple providers\nInsurance purposes: With your insurance company for billing and coverage determination\nAs required by law: To comply with legal obligations (court orders, subpoenas, etc.)\nPublic health: To report disease outbreaks, births, and deaths as required by law\nPatient safety: In emergencies to protect your health and safety"
+    },
+    {
+      "title": "Your Privacy Rights",
+      "contentType": "list",
+      "content": "Right to Access: You have the right to request and receive copies of your medical records\nRight to Amendment: You can request corrections to your medical records\nRight to Accounting: You can request a list of disclosures made of your medical information\nRight to Restrict: You can request restrictions on uses and disclosures (certain restrictions may apply)\nRight to Confidential Communication: You can request we communicate with you at alternate locations or methods\nRight to Breach Notification: You will be notified of any breach of your unsecured medical information"
+    },
+    {
+      "title": "How to Request Your Rights",
+      "contentType": "text",
+      "content": "To exercise any of these rights, contact our Privacy Officer at (303) 951-0600 or submit a written request to our main office. We will respond to reasonable requests within 30 days."
+    },
+    {
+      "title": "Minors and Legal Representatives",
+      "contentType": "text",
+      "content": "If you are a parent or legal guardian, you have the right to access and control the health information of your minor children, subject to certain limitations under state and federal law."
+    },
+    {
+      "title": "Health Information Exchange",
+      "contentType": "text",
+      "content": "We participate in secure health information exchange with other healthcare providers to improve care coordination and patient safety. Your information may be shared for treatment purposes without your specific authorization unless you opt out."
+    },
+    {
+      "title": "Electronic Health Records (EHR)",
+      "contentType": "text",
+      "content": "Your health information is stored in a secure electronic health record system (Epic MyChart). You can access your records through our patient portal at https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+    },
+    {
+      "title": "Breach Notification",
+      "contentType": "text",
+      "content": "In the event of a breach of your unsecured health information, we will notify you without unreasonable delay and describe the breach, information that may have been involved, and steps you should take."
+    },
+    {
+      "title": "Changes to This Notice",
+      "contentType": "text",
+      "content": "We may update this Notice of Privacy Practices. Any changes will be effective upon distribution of the revised Notice. We will post the updated Notice in our offices and on our website."
+    }
+  ],
   "privacyOfficerPhone": "(303) 951-0600",
   "privacyOfficerEmail": "privacy@critcareMD.com",
-  "privacyOfficerAddress": "274 Union Blvd. Suite 200, Lakewood, CO 80228",
-  "practiceName": "Critical Care, Pulmonary and Sleep Associates (CCPSA)"
+  "privacyOfficerAddress": "274 Union Blvd. Suite 200",
+  "privacyOfficerCity": "Lakewood, CO 80228",
+  "complaintAgency": "U.S. Department of Health and Human Services",
+  "complaintOffice": "Office for Civil Rights",
+  "complaintEmail": "OCRComplaint@hhs.gov",
+  "rightsDetails": [
+    { "title": "Right to Inspect Records", "description": "You have the right to inspect and obtain copies of your medical records by submitting a written request to our Privacy Officer. We may charge reasonable copying and mailing costs.", "style": "navy" },
+    { "title": "Right to Request Amendments", "description": "If you believe information in your medical record is incorrect or incomplete, you can request an amendment. We may deny your request under certain circumstances as permitted by law.", "style": "blue" },
+    { "title": "Right to Request Restrictions", "description": "You can request restrictions on how we use and disclose your information. We are not required to agree to all restriction requests, but we will consider and discuss your requests.", "style": "amber" },
+    { "title": "Right to Request Confidential Communications", "description": "You can request that we communicate with you about your health information by alternative means, such as emailing you at a specific address or calling you at an alternate phone number.", "style": "sage" }
+  ],
+  "acknowledgementBody": "You will receive a copy of this Notice of Privacy Practices when you first visit CCPSA or can request a copy at any time. We will document when you acknowledge receipt of this Notice.",
+  "ctaHeading": "Questions About Your Privacy?",
+  "ctaBody": "Contact our Privacy Officer or visit your local clinic with any questions or concerns about your privacy rights.",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
 }

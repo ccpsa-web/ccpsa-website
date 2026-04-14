@@ -4,25 +4,44 @@ import { useState } from 'react';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
-interface PageContent {
-  [key: string]: any;
+interface Resource {
+  title: string;
+  description: string;
+  link: string;
+  external: boolean;
 }
 
-interface ForPatientsClientProps {
-  content: PageContent;
+interface ResourceSection {
+  title: string;
+  resources: Resource[];
 }
 
-export default function ForPatientsClient({ content }: ForPatientsClientProps) {
+interface ClinicLocation {
+  name: string;
+  address: string;
+  city: string;
+  phone: string;
+  fax: string;
+}
+
+export interface ForPatientsData {
+  heroTitle: string;
+  heroSubtitle: string;
+  beforeYourVisit: string[];
+  whatToExpectHeading: string;
+  whatToExpectBody1: string;
+  whatToExpectBody2: string;
+  resourceSections: ResourceSection[];
+  clinicLocations: ClinicLocation[];
+  ctaHeading: string;
+  ctaBody: string;
+  ctaScheduleLink: string;
+  ctaPhone: string;
+  ctaPhoneRaw: string;
+}
+
+export default function ForPatientsClient({ data }: { data: ForPatientsData }) {
   const [expandedLocation, setExpandedLocation] = useState<string | null>(null);
-
-  if (!content) {
-    return <div>Loading...</div>;
-  }
-
-  const clinicLocations = content.clinicLocations || [];
-  const patientResources = content.patientResources || [];
-  const insuranceBilling = content.insuranceBilling || [];
-  const whatToExpectParagraphs = content.whatToExpectText?.split('\n\n') || [];
 
   return (
     <div className="min-h-screen bg-light-gray">
@@ -30,68 +49,13 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{data.heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              {content.subtitle}
+              {data.heroSubtitle}
             </p>
           </FadeInUp>
         </div>
       </section>
-
-      {/* Quick Access Cards */}
-      {content.quickAccessCards && content.quickAccessCards.length > 0 && (
-        <section className="py-16 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4">
-            <FadeInUp>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
-                  {content.quickAccessTitle}
-                </h2>
-                <p className="text-lg text-gray-600">
-                  {content.quickAccessSubtitle}
-                </p>
-              </div>
-            </FadeInUp>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-              {(() => {
-                const cardGradients = ['from-emerald-500 to-teal-600', 'from-navy to-blue', 'from-blue to-cyan-600', 'from-amber to-orange-500'];
-                return content.quickAccessCards.map((card: any, idx: number) => (
-                  <div key={idx} className="group bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden rounded-lg flex flex-col" style={{transitionDelay: `${idx * 100}ms`}}>
-                    <div className={`bg-gradient-to-r ${cardGradients[idx % cardGradients.length]} p-6 text-white`}>
-                      {idx === 0 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>}
-                      {idx === 1 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>}
-                      {idx === 2 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>}
-                      {idx === 3 && <svg className="h-10 w-10 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><path d="M16 3l-4 4-4-4"></path></svg>}
-                      <h3 className="text-xl font-bold">{card.title}</h3>
-                      {card.subtitle && <p className="text-sm text-white/80 mt-1">{card.subtitle}</p>}
-                    </div>
-
-                    <div className="p-6 flex flex-col flex-grow">
-                      {card.isPhoneDisplay ? (
-                        <div className="flex flex-col items-center justify-center flex-grow">
-                          <p className="text-2xl font-bold text-navy">{card.description}</p>
-                        </div>
-                      ) : (
-                        <>
-                          <p className="text-gray-600 mb-6 flex-grow">{card.description}</p>
-                          <a href={card.link || content.scheduleUrl} target="_blank" rel="noopener noreferrer" className="w-full bg-navy hover:bg-blue text-white font-semibold transition-all duration-300 group-hover:shadow-lg rounded-lg py-2 px-4 inline-flex items-center justify-center">
-                            {card.buttonText}
-                            <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                              <line x1="5" y1="12" x2="19" y2="12"></line>
-                              <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                          </a>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                ));
-              })()}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Before Your Visit */}
       <section className="py-16 md:py-20">
@@ -99,11 +63,11 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
           <FadeInUp>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-2xl font-bold text-navy mb-4">{content.beforeVisitTitle}</h2>
+                <h2 className="text-2xl font-bold text-navy mb-4">Before Your Visit</h2>
                 <ul className="space-y-3">
-                  {(content.beforeVisitItems || []).map((item: string, idx: number) => (
+                  {data.beforeYourVisit.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <svg className="h-5 w-5 text-amber flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                       </svg>
                       <span className="text-gray-600">{item}</span>
@@ -113,12 +77,9 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
               </div>
 
               <div className="bg-amber/5 rounded-lg shadow-md p-8 border border-amber/20">
-                <h2 className="text-2xl font-bold text-navy mb-4">{content.whatToExpectTitle}</h2>
-                {whatToExpectParagraphs.map((paragraph: string, idx: number) => (
-                  <p key={idx} className="text-gray-600 mb-4">
-                    {paragraph}
-                  </p>
-                ))}
+                <h2 className="text-2xl font-bold text-navy mb-4">{data.whatToExpectHeading}</h2>
+                <p className="text-gray-600 mb-4">{data.whatToExpectBody1}</p>
+                <p className="text-gray-600">{data.whatToExpectBody2}</p>
               </div>
             </div>
           </FadeInUp>
@@ -128,71 +89,39 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
       {/* Patient Resources */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          {/* Patient Resources Section */}
-          <FadeInUp className="mb-16">
-            <h2 className="text-3xl font-bold text-navy mb-8">Patient Resources</h2>
+          {data.resourceSections.map((section, idx) => (
+            <FadeInUp key={idx} className={idx > 0 ? 'mt-16' : ''}>
+              <h2 className="text-3xl font-bold text-navy mb-8">{section.title}</h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {patientResources.map((resource: any, rIdx: number) => (
-                <div key={rIdx} className="group bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:border-amber">
-                  <Link
-                    href={resource.link || '#'}
-                    target={resource.external ? '_blank' : undefined}
-                    rel={resource.external ? 'noopener noreferrer' : undefined}
-                    className="block no-underline"
-                  >
-                    <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors duration-200">
-                      {resource.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
-                      {resource.description}
-                    </p>
-                    {resource.link && (
-                      <div className="flex items-center gap-2 text-blue-text mt-3 group-hover:text-navy transition-colors">
-                        <span className="text-sm font-medium">Learn More</span>
-                        <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    )}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </FadeInUp>
-
-          {/* Insurance & Billing Section */}
-          <FadeInUp>
-            <h2 className="text-3xl font-bold text-navy mb-8">Insurance & Billing</h2>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {insuranceBilling.map((resource: any, rIdx: number) => (
-                <div key={rIdx} className="group bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:border-amber">
-                  <Link
-                    href={resource.link || '#'}
-                    target={resource.external ? '_blank' : undefined}
-                    rel={resource.external ? 'noopener noreferrer' : undefined}
-                    className="block no-underline"
-                  >
-                    <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue-text transition-colors duration-200">
-                      {resource.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
-                      {resource.description}
-                    </p>
-                    {resource.link && (
-                      <div className="flex items-center gap-2 text-blue-text mt-3 group-hover:text-navy transition-colors">
-                        <span className="text-sm font-medium">Learn More</span>
-                        <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    )}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </FadeInUp>
+              <div className="grid md:grid-cols-2 gap-6">
+                {section.resources.map((resource, rIdx) => (
+                  <div key={rIdx} className="group bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 cursor-pointer border border-gray-200 hover:border-amber">
+                    <Link
+                      href={resource.link || '#'}
+                      target={resource.external ? '_blank' : undefined}
+                      rel={resource.external ? 'noopener noreferrer' : undefined}
+                      className="block no-underline"
+                    >
+                      <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors duration-200">
+                        {resource.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 group-hover:text-gray-700 transition-colors">
+                        {resource.description}
+                      </p>
+                      {resource.link && (
+                        <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                          <span className="text-sm font-medium">Learn More</span>
+                          <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      )}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </FadeInUp>
+          ))}
         </div>
       </section>
 
@@ -203,32 +132,30 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
             <h2 className="text-3xl font-bold text-navy mb-8">Clinic Locations</h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {clinicLocations.map((clinic: any, idx: number) => (
+              {data.clinicLocations.map((clinic, idx) => (
                 <FadeInUp key={idx}>
-                  <button
-                    type="button"
+                  <div
                     onClick={() => setExpandedLocation(expandedLocation === clinic.name ? null : clinic.name)}
-                    className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-300 w-full text-left"
-                    aria-expanded={expandedLocation === clinic.name}
+                    className="bg-white rounded-lg shadow-md p-6 cursor-pointer hover:shadow-lg transition-shadow duration-300"
                   >
                     <h3 className="text-lg font-semibold text-navy mb-4">{clinic.name}</h3>
 
                     <div className="space-y-2 text-sm text-gray-600">
                       <div className="flex items-start gap-2">
-                        <span className="text-amber mt-1" role="img" aria-label="Address">📍</span>
+                        <span className="text-amber mt-1">📍</span>
                         <div>
                           <p>{clinic.address}</p>
                           <p>{clinic.city}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-amber" role="img" aria-label="Phone">📞</span>
-                        <Link href={`tel:${clinic.phone.replace(/[^\d]/g, '')}`} className="hover:text-blue-text transition-colors">
+                        <span className="text-amber">📞</span>
+                        <Link href={`tel:${clinic.phone.replace(/[^\d]/g, '')}`} className="hover:text-blue transition-colors">
                           {clinic.phone}
                         </Link>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-amber" role="img" aria-label="Fax">📠</span>
+                        <span className="text-amber">📠</span>
                         <span>{clinic.fax}</span>
                       </div>
                     </div>
@@ -237,11 +164,11 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
                       href={`https://maps.google.com/maps?q=${encodeURIComponent(`${clinic.address} ${clinic.city}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block text-blue-text hover:text-navy font-medium text-sm transition-colors"
+                      className="mt-4 inline-block text-blue hover:text-navy font-medium text-sm transition-colors"
                     >
                       Get Directions →
                     </Link>
-                  </button>
+                  </div>
                 </FadeInUp>
               ))}
             </div>
@@ -253,14 +180,12 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
       <section className="bg-amber text-navy py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.ctaTitle}</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              {content.ctaText}
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{data.ctaHeading}</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">{data.ctaBody}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={content.scheduleUrl}
+                href={data.ctaScheduleLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
@@ -268,10 +193,10 @@ export default function ForPatientsClient({ content }: ForPatientsClientProps) {
                 Schedule Online
               </a>
               <a
-                href={`tel:${content.phone?.replace(/[^\d]/g, '')}`}
+                href={`tel:${data.ctaPhoneRaw}`}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call {content.phone}
+                Call {data.ctaPhone}
               </a>
             </div>
           </FadeInUp>

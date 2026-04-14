@@ -1,47 +1,76 @@
 {
-  "title": "For Patients",
-  "subtitle": "We're here to help. Find resources, schedule appointments, and get the answers you need.",
-  "quickAccessTitle": "Quick Access",
-  "quickAccessSubtitle": "Manage your care with just a few clicks",
-  "quickAccessCards": [
-    {
-      "title": "Call for Appointment",
-      "subtitle": "(New patients)",
-      "description": "(303) 951-0600",
-      "buttonText": "View Number",
-      "link": "#",
-      "isPhoneDisplay": true
-    },
-    {
-      "title": "Online Scheduling",
-      "subtitle": "(Established patients)",
-      "description": "Book an appointment 24/7",
-      "buttonText": "Schedule Now",
-      "link": ""
-    },
-    {
-      "title": "Patient Portal",
-      "description": "Access records, results, communicate with care team",
-      "buttonText": "Login",
-      "link": ""
-    },
-    {
-      "title": "Pay Your Bill",
-      "description": "Make a secure payment online",
-      "buttonText": "Pay Now",
-      "link": ""
-    }
-  ],
-  "beforeVisitTitle": "Before Your Visit",
-  "beforeVisitItems": [
+  "heroTitle": "For Patients",
+  "heroSubtitle": "We're here to help. Find resources, schedule appointments, and get the answers you need.",
+  "beforeYourVisit": [
     "Arrive 10-15 minutes early to check in",
     "Bring your insurance card and photo ID",
     "Bring a list of current medications",
     "Bring recent medical records if available",
     "Complete patient paperwork online if possible"
   ],
-  "whatToExpectTitle": "What to Expect",
-  "whatToExpectText": "Our clinical staff will conduct a brief evaluation, take vital signs, and review your medical history. Your physician will then spend time with you to discuss your symptoms, perform an exam, and develop a personalized care plan.\n\nWe're committed to providing compassionate, evidence-based care in a comfortable and professional environment.",
+  "whatToExpectHeading": "What to Expect",
+  "whatToExpectBody1": "Our clinical staff will conduct a brief evaluation, take vital signs, and review your medical history. Your physician will then spend time with you to discuss your symptoms, perform an exam, and develop a personalized care plan.",
+  "whatToExpectBody2": "We're committed to providing compassionate, evidence-based care in a comfortable and professional environment.",
+  "resourceSections": [
+    {
+      "title": "Patient Resources",
+      "resources": [
+        {
+          "title": "Online Scheduling",
+          "description": "Schedule your appointment at your convenience.",
+          "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+          "external": true
+        },
+        {
+          "title": "Patient Portal - Epic MyChart",
+          "description": "Access your medical records, test results, and communicate with your care team.",
+          "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+          "external": true
+        },
+        {
+          "title": "Online Bill Payment",
+          "description": "Pay your medical bills securely online.",
+          "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+          "external": true
+        },
+        {
+          "title": "Patient Information & Paperwork",
+          "description": "Download and complete patient forms before your visit.",
+          "link": "/patient-forms",
+          "external": false
+        },
+        {
+          "title": "Notice of Privacy Practices",
+          "description": "Review our HIPAA privacy practices and your patient rights.",
+          "link": "/privacy-policy",
+          "external": false
+        }
+      ]
+    },
+    {
+      "title": "Insurance & Billing",
+      "resources": [
+        {
+          "title": "Current Billing (7/1/2018 - Present)",
+          "description": "Information about recent billing and payment options.",
+          "link": "",
+          "external": false
+        },
+        {
+          "title": "Prior Billing (Before 7/1/2018)",
+          "description": "Historical billing information available upon request.",
+          "link": "",
+          "external": false
+        },
+        {
+          "title": "Insurance Coverage",
+          "description": "We accept most major insurance plans. Contact us to verify your coverage.",
+          "link": "",
+          "external": false
+        }
+      ]
+    }
+  ],
   "clinicLocations": [
     {
       "name": "West Clinic",
@@ -52,77 +81,29 @@
     },
     {
       "name": "North Clinic",
-      "address": "14300 Orchard Pkwy., 3rd Floor",
-      "city": "Westminster, CO 80023",
-      "phone": "(303) 951-0600",
-      "fax": "(303) 951-0605"
+      "address": "11450 Commons Drive",
+      "city": "Westminster, CO 80020",
+      "phone": "(720) 962-2200",
+      "fax": "(720) 962-2207"
     },
     {
       "name": "South Clinic",
-      "address": "10371 Parkglenn Way Suite 230",
-      "city": "Parker, CO 80138",
-      "phone": "(303) 951-0600",
-      "fax": "(303) 951-0605"
+      "address": "2950 South Gartland Street",
+      "city": "Parker, CO 80134",
+      "phone": "(720) 851-8300",
+      "fax": "(720) 851-8307"
     },
     {
       "name": "Central Clinic",
-      "address": "206 W. County Line Rd. Suite 260",
-      "city": "Highlands Ranch, CO 80126",
-      "phone": "(303) 951-0600",
-      "fax": "(303) 951-0605"
-    },
-    {
-      "name": "Longmont Clinic",
-      "address": "220 W 2nd St.",
-      "city": "Goodland, KS 67735",
-      "phone": "(303) 951-0600",
-      "fax": "(303) 951-0605"
+      "address": "9220 South Simms Street, Suite B",
+      "city": "Littleton, CO 80127",
+      "phone": "(303) 794-9700",
+      "fax": "(303) 794-9707"
     }
   ],
-  "patientResources": [
-    {
-      "title": "Online Scheduling",
-      "description": "Schedule your appointment at your convenience.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "external": true
-    },
-    {
-      "title": "Patient Portal - Epic MyChart",
-      "description": "Access your medical records, test results, and communicate with your care team.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "external": true
-    },
-    {
-      "title": "Online Bill Payment",
-      "description": "Pay your medical bills securely online.",
-      "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-      "external": true
-    },
-    {
-      "title": "Patient Information & Paperwork",
-      "description": "Complete patient forms before your visit.",
-      "link": "/patient-forms",
-      "external": false
-    },
-    {
-      "title": "Notice of Privacy Practices",
-      "description": "Review our HIPAA privacy practices and your patient rights.",
-      "link": "/privacy-policy",
-      "external": false
-    }
-  ],
-  "insuranceBilling": [
-    {
-      "title": "For Billing Questions",
-      "description": "Call (303)680-2306"
-    },
-    {
-      "title": "Insurance Coverage",
-      "description": "We accept most major insurance plans. Contact your insurance provider to verify your coverage."
-    }
-  ],
-  "ctaTitle": "Ready to Schedule Your Appointment?",
-  "ctaText": "Use our online scheduling system or call us today to book your appointment with one of our specialists.",
-  "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-  "phone": "(303) 951-0600"
+  "ctaHeading": "Ready to Schedule Your Appointment?",
+  "ctaBody": "Use our online scheduling system or call us today to book your appointment with one of our specialists.",
+  "ctaScheduleLink": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
 }

@@ -3,23 +3,40 @@
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
-interface PageContent {
-  [key: string]: any;
+interface VisitStep {
+  title: string;
+  items: string[];
 }
 
-interface NewPatientsClientProps {
-  content: PageContent;
+interface ChecklistItem {
+  title: string;
+  description: string;
 }
 
-export default function NewPatientsClient({ content }: NewPatientsClientProps) {
-  if (!content) {
-    return <div>Loading...</div>;
-  }
+export interface NewPatientsData {
+  heroTitle: string;
+  heroSubtitle: string;
+  welcomeHeading: string;
+  welcomeBody1: string;
+  welcomeBody2: string;
+  visitSteps: VisitStep[];
+  checklist: ChecklistItem[];
+  referralIntro: string;
+  referralSteps: string[];
+  referralPhone: string;
+  referralEmail: string;
+  formsHeading: string;
+  formsBody: string;
+  formsDescription: string;
+  ctaHeading: string;
+  ctaBody: string;
+  ctaScheduleLink: string;
+  ctaPhone: string;
+  ctaPhoneRaw: string;
+}
 
-  const checklist = content.checklist || [];
-  const referralSteps = content.referralSteps || [];
-  const visitStages = content.visitStages || [];
-  const welcomeParagraphs = content.welcomeText?.split('\n\n') || [];
+export default function NewPatientsClient({ data }: { data: NewPatientsData }) {
+  let stepCounter = 0;
 
   return (
     <div className="min-h-screen bg-light-gray">
@@ -27,9 +44,9 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{content.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{data.heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              {content.subtitle}
+              {data.heroSubtitle}
             </p>
           </FadeInUp>
         </div>
@@ -40,12 +57,9 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10 mb-12">
-              <h2 className="text-3xl font-bold text-navy mb-6">{content.welcomeTitle}</h2>
-              {welcomeParagraphs.map((paragraph: string, idx: number) => (
-                <p key={idx} className="text-gray-600 leading-relaxed mb-4">
-                  {paragraph}
-                </p>
-              ))}
+              <h2 className="text-3xl font-bold text-navy mb-6">{data.welcomeHeading}</h2>
+              <p className="text-gray-600 leading-relaxed mb-4">{data.welcomeBody1}</p>
+              <p className="text-gray-600 leading-relaxed">{data.welcomeBody2}</p>
             </div>
           </FadeInUp>
         </div>
@@ -58,16 +72,19 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
             <h2 className="text-3xl font-bold text-navy mb-8">What to Expect During Your Visit</h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {visitStages.map((stage: any, idx: number) => (
-                <div key={idx} className="bg-light-gray rounded-lg p-8">
-                  <h3 className="text-xl font-semibold text-navy mb-4">{stage.title}</h3>
+              {data.visitSteps.map((step, sIdx) => (
+                <div key={sIdx} className="bg-light-gray rounded-lg p-8">
+                  <h3 className="text-xl font-semibold text-navy mb-4">{step.title}</h3>
                   <ul className="space-y-3 text-gray-600">
-                    {stage.steps.map((step: string, sIdx: number) => (
-                      <li key={sIdx} className="flex items-start gap-3">
-                        <span className="text-blue-text font-bold">{sIdx + 1}</span>
-                        <span>{step}</span>
-                      </li>
-                    ))}
+                    {step.items.map((item, iIdx) => {
+                      stepCounter++;
+                      return (
+                        <li key={iIdx} className="flex items-start gap-3">
+                          <span className="text-blue font-bold">{stepCounter}</span>
+                          <span>{item}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
@@ -86,7 +103,7 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {checklist.map((item: any, idx: number) => (
+              {data.checklist.map((item, idx) => (
                 <FadeInUp key={idx}>
                   <div className="bg-white rounded-lg shadow-md p-6 border-l-4 border-amber hover:shadow-lg transition-shadow duration-300">
                     <div className="flex items-start gap-4">
@@ -118,11 +135,9 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
             </h2>
 
             <div className="bg-amber/5 border border-amber/20 rounded-lg p-8 max-w-3xl">
-              <p className="text-gray-600 mb-6">
-                If your insurance plan requires a referral from your primary care physician, please follow these steps:
-              </p>
+              <p className="text-gray-600 mb-6">{data.referralIntro}</p>
               <ul className="space-y-4">
-                {referralSteps.map((item: string, idx: number) => (
+                {data.referralSteps.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <svg className="h-5 w-5 text-amber flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
@@ -137,11 +152,11 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
                   Have questions about referral requirements? Contact us:
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href={`tel:${content.phone?.replace(/[^\d]/g, '')}`} className="text-blue-text hover:text-navy font-medium transition-colors">
-                    {content.phone}
+                  <a href={`tel:${data.referralPhone.replace(/[^\d]/g, '')}`} className="text-blue hover:text-navy font-medium transition-colors">
+                    {data.referralPhone}
                   </a>
-                  <a href={`mailto:${content.email}`} className="text-blue-text hover:text-navy font-medium transition-colors">
-                    {content.email}
+                  <a href={`mailto:${data.referralEmail}`} className="text-blue hover:text-navy font-medium transition-colors">
+                    {data.referralEmail}
                   </a>
                 </div>
               </div>
@@ -154,15 +169,11 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h2 className="text-3xl font-bold text-navy mb-8">Patient Forms</h2>
-            <p className="text-gray-600 mb-8 max-w-2xl">
-              Download and complete our patient forms before your visit. This helps us provide you with better care and speeds up your check-in process.
-            </p>
+            <h2 className="text-3xl font-bold text-navy mb-8">{data.formsHeading}</h2>
+            <p className="text-gray-600 mb-8 max-w-2xl">{data.formsBody}</p>
 
             <div className="bg-white rounded-lg shadow-md p-8 border-l-4 border-blue">
-              <p className="text-gray-600 mb-6">
-                View all available patient forms, including new patient packets, consent forms, and medical records release forms.
-              </p>
+              <p className="text-gray-600 mb-6">{data.formsDescription}</p>
               <Link
                 href="/patient-forms"
                 className="inline-flex items-center gap-2 bg-blue hover:bg-navy text-white px-6 py-3 rounded font-semibold transition-colors duration-200"
@@ -181,14 +192,12 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
       <section className="bg-amber text-navy py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.ctaTitle}</h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              {content.ctaText}
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{data.ctaHeading}</h2>
+            <p className="text-lg mb-8 max-w-2xl mx-auto">{data.ctaBody}</p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={content.scheduleUrl}
+                href={data.ctaScheduleLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
@@ -196,10 +205,10 @@ export default function NewPatientsClient({ content }: NewPatientsClientProps) {
                 Schedule Online
               </a>
               <a
-                href={`tel:${content.phone?.replace(/[^\d]/g, '')}`}
+                href={`tel:${data.ctaPhoneRaw}`}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call {content.phone}
+                Call {data.ctaPhone}
               </a>
             </div>
           </FadeInUp>

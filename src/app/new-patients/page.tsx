@@ -1,9 +1,9 @@
 import { getPageContent } from '@/lib/content';
 import NewPatientsClient from './NewPatientsClient';
+import type { NewPatientsData } from './NewPatientsClient';
 
 export default function NewPatients() {
-  const content = getPageContent('new-patients');
-  if (!content) return null;
+  const data = getPageContent('new-patients') as NewPatientsData;
 
-  return <NewPatientsClient content={content} />;
+  return <NewPatientsClient data={data} />;
 }
