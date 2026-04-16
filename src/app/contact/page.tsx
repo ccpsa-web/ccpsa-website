@@ -140,98 +140,23 @@ export default function Contact() {
             </h2>
 
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10">
-              <form action="https://formsubmit.co/info@critcareMD.com" method="POST">
-                <input type="hidden" name="_subject" value="New Contact Form Submission - CCPSA Website" />
-                <input type="hidden" name="_captcha" value="true" />
-                <input type="hidden" name="_template" value="table" />
+              <p className="text-gray-600 mb-8">
+                Click the button below to open your email client with our address pre-filled, or email us directly at{' '}
+                <a href={`mailto:${contactData.email}`} className="text-blue-text hover:text-navy font-medium transition-colors">
+                  {contactData.email}
+                </a>.
+              </p>
 
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <label htmlFor="name" className="block text-navy font-semibold mb-2">
-                      Full Name <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/50 focus:border-blue transition-colors"
-                      placeholder="Your name"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-navy font-semibold mb-2">
-                      Email <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/50 focus:border-blue transition-colors"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="phone" className="block text-navy font-semibold mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/50 focus:border-blue transition-colors"
-                    placeholder="(303) 555-0100"
-                  />
-                </div>
-
-                <div className="mb-6">
-                  <label htmlFor="subject" className="block text-navy font-semibold mb-2">
-                    Subject <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/50 focus:border-blue transition-colors bg-white"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="Patient Inquiry">Patient Inquiry</option>
-                    <option value="Physician Referral">Physician Referral</option>
-                    <option value="Insurance Question">Insurance Question</option>
-                    <option value="Employment Opportunity">Employment Opportunity</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div className="mb-8">
-                  <label htmlFor="message" className="block text-navy font-semibold mb-2">
-                    Message <span className="text-red-500" aria-hidden="true">*</span><span className="sr-only">(required)</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue/50 focus:border-blue transition-colors resize-none"
-                    placeholder="Please tell us how we can help..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2"
-                >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                    <path d="M22 2L11 13"></path>
-                    <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
-                  </svg>
-                  Send Message
-                </button>
-              </form>
+              <a
+                href={`mailto:${contactData.email}?subject=Website%20Inquiry%20-%20CCPSA`}
+                className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M22 2L11 13"></path>
+                  <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                </svg>
+                Send Us an Email
+              </a>
             </div>
           </FadeInUp>
         </div>
