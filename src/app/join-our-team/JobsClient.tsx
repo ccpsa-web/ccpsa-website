@@ -240,18 +240,40 @@ export default function JobsClient({ jobs }: JobsClientProps) {
                           </div>
                         )}
 
-                        {job.requirements && (
+                        {job.responsibilities?.length > 0 && (
+                          <div>
+                            <h4 className="font-semibold text-navy mb-2">Responsibilities</h4>
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.responsibilities.map((item: string, i: number) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {job.requirements?.length > 0 && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Skills, Education & Experience Requirements</h4>
                             <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                              {job.requirements.map((req: string, i: number) => (
+                              {job.requirements?.map((req: string, i: number) => (
                                 <li key={i}>{req}</li>
                               ))}
                             </ul>
                           </div>
                         )}
 
-                        {job.compensation && (
+                        {job.physicalRequirements?.length > 0 && (
+                          <div>
+                            <h4 className="font-semibold text-navy mb-2">Physical Requirements</h4>
+                            <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
+                              {job.physicalRequirements.map((item: string, i: number) => (
+                                <li key={i}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {job.compensation?.length > 0 && (
                           <div>
                             <h4 className="font-semibold text-navy mb-2">Compensation & Benefits</h4>
                             <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
