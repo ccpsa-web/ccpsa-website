@@ -1,9 +1,13 @@
-import { getPageContent } from '@/lib/content';
+import { getPageContent, getHospitalLocations } from '@/lib/content';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 import type { ServicePageData } from '@/components/ServicePageTemplate';
 
 export default function NeurocriticalCarePage() {
-  const data = getPageContent('neurocritical-care') as ServicePageData;
+  const raw = getPageContent('neurocritical-care') as Omit<ServicePageData, 'locations'>;
+  const data: ServicePageData = {
+    ...raw,
+    locations: getHospitalLocations(),
+  };
 
   return <ServicePageTemplate data={data} />;
 }

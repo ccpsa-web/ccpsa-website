@@ -1,4 +1,4 @@
-import { getPageContent } from '@/lib/content';
+import { getPageContent, getClinicLocations } from '@/lib/content';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
@@ -17,7 +17,17 @@ interface ContactData {
 }
 
 export default function Contact() {
-  const contactData = getPageContent('contact') as ContactData | null;
+  const rawContact = getPageContent('contact') as Omit<ContactData, 'locations'> | null;
+  const contactData: ContactData | null = rawContact
+    ? {
+        ...rawContact,
+        locations: getClinicLocations().map((l) => ({
+          name: l.name,
+          address: `${l.addressStreet}, ${l.city}, ${l.state} ${l.zip}`,
+          phone: l.phone,
+        })),
+      }
+    : null;
 
   if (!contactData) {
     return (
@@ -125,38 +135,6 @@ export default function Contact() {
                   </div>
                 </FadeInUp>
               ))}
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-16 md:py-20">
-        <div className="max-w-3xl mx-auto px-4">
-          <FadeInUp>
-            <h2 className="text-3xl font-bold text-navy mb-8 flex items-center gap-3">
-              <span className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></span>
-              Send Us a Message
-            </h2>
-
-            <div className="bg-white rounded-lg shadow-md p-8 md:p-10">
-              <p className="text-gray-600 mb-8">
-                Click the button below to open your email client with our address pre-filled, or email us directly at{' '}
-                <a href={`mailto:${contactData.email}`} className="text-blue-text hover:text-navy font-medium transition-colors">
-                  {contactData.email}
-                </a>.
-              </p>
-
-              <a
-                href={`mailto:${contactData.email}?subject=Website%20Inquiry%20-%20CCPSA`}
-                className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M22 2L11 13"></path>
-                  <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
-                </svg>
-                Send Us an Email
-              </a>
             </div>
           </FadeInUp>
         </div>

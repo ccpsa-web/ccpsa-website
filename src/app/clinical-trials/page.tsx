@@ -125,9 +125,6 @@ export default function ClinicalTrialsPage() {
                 <a href={`tel:${content.phone.replace(/\D/g, '')}`} className="inline-block bg-amber text-navy px-8 py-3 rounded-lg font-bold hover:bg-amber/90 transition-colors duration-200">
                   Call {content.phone}
                 </a>
-                <a href="/contact" className="inline-block bg-white text-navy px-8 py-3 rounded-lg font-bold hover:bg-white/90 transition-colors duration-200">
-                  Contact Us
-                </a>
               </div>
             </div>
           </FadeInUp>

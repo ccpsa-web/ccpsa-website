@@ -209,12 +209,6 @@ export default function PrivacyPolicyClient({ data }: { data: PrivacyPolicyData 
               >
                 Call {data.ctaPhone}
               </a>
-              <Link
-                href="/contact"
-                className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
-              >
-                Contact Us
-              </Link>
             </div>
           </FadeInUp>
         </div>

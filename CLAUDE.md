@@ -195,7 +195,7 @@ To add a new content editor:
 
 - **GoDaddy account:** Darren's login. Manages domain + DNS + old hosting.
 - **Vercel:** Darren's account `dboe-2499`, team `ccpsa`.
-- **GitHub org:** `ccpsa-web`. Darren is the owner.
+- **GitHub account:** `ccpsa-web` is a personal user account (NOT an organization). Collaborators automatically get write access; there's no role selector in the collaborators UI.
 - **Microsoft 365 admin:** Separate practice-wide login.
 
 ---

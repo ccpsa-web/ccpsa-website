@@ -33,10 +33,6 @@
     }
   ],
   "locationsHeading": "Office Locations",
-  "locations": [
-    { "name": "West Clinic", "city": "Lakewood" },
-    { "name": "East Clinic", "city": "Castle Rock" }
-  ],
   "ctaHeading": "Ready to Get Started?",
   "ctaBody": "Contact us today to learn more about our pulmonary services and schedule your consultation.",
   "ctaPhone": "(303) 951-0600",

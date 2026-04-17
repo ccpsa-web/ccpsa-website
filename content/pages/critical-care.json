@@ -1,4 +1,5 @@
 {
+  "hideCta": true,
   "heroTitle": "Critical Care Medicine",
   "heroSubtitle": "Comprehensive intensive care for complex medical conditions by board-certified intensivists",
   "approachHeading": "Our Approach",
@@ -19,15 +20,6 @@
     }
   ],
   "locationsHeading": "Hospital Locations",
-  "locations": [
-    { "name": "St. Anthony Hospital", "city": "Lakewood" },
-    { "name": "St. Anthony North", "city": "Westminster" },
-    { "name": "Parker Adventist Hospital", "city": "Parker" },
-    { "name": "Littleton Adventist Hospital", "city": "Littleton" },
-    { "name": "Castle Rock Adventist Hospital", "city": "Castle Rock" },
-    { "name": "Avista Adventist Hospital", "city": "Louisville" },
-    { "name": "Porter Adventist Hospital", "city": "Denver" }
-  ],
   "ctaHeading": "Ready to Get Started?",
   "ctaBody": "Contact us today to learn more about our critical care services and schedule your consultation.",
   "ctaPhone": "(303) 951-0600",

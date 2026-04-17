@@ -124,3 +124,28 @@ export function getSettings(name: string): PageContent | null {
   const settingsFile = path.join(CONTENT_DIR, 'settings', `${name}.json`);
   return readJsonFile(settingsFile);
 }
+
+export interface ClinicLocation {
+  name: string;
+  addressStreet: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone: string;
+  fax: string;
+}
+
+export interface HospitalLocation {
+  name: string;
+  city: string;
+}
+
+export function getClinicLocations(): ClinicLocation[] {
+  const data = getSettings('clinic-locations');
+  return (data?.locations as ClinicLocation[]) || [];
+}
+
+export function getHospitalLocations(): HospitalLocation[] {
+  const data = getSettings('hospital-locations');
+  return (data?.locations as HospitalLocation[]) || [];
+}

@@ -30,6 +30,7 @@ export interface ServicePageData {
   ctaPhoneRaw: string;
   ctaSecondaryLink: string;
   ctaSecondaryText: string;
+  hideCta?: boolean;
 }
 
 export default function ServicePageTemplate({ data }: { data: ServicePageData }) {
@@ -122,26 +123,28 @@ export default function ServicePageTemplate({ data }: { data: ServicePageData })
       )}
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-navy to-blue">
-        <div className="container mx-auto px-4">
-          <FadeInUp>
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{data.ctaHeading}</h2>
-              <p className="text-lg text-white/80 mb-8">
-                {data.ctaBody}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href={`tel:${data.ctaPhoneRaw}`} className="inline-block bg-amber text-navy px-8 py-3 rounded-lg font-bold hover:bg-amber/90 transition-colors duration-200">
-                  Call {data.ctaPhone}
-                </a>
-                <a href={data.ctaSecondaryLink} className="inline-block bg-white text-navy px-8 py-3 rounded-lg font-bold hover:bg-white/90 transition-colors duration-200">
-                  {data.ctaSecondaryText}
-                </a>
+      {!data.hideCta && (
+        <section className="py-16 bg-gradient-to-r from-navy to-blue">
+          <div className="container mx-auto px-4">
+            <FadeInUp>
+              <div className="text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{data.ctaHeading}</h2>
+                <p className="text-lg text-white/80 mb-8">
+                  {data.ctaBody}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href={`tel:${data.ctaPhoneRaw}`} className="inline-block bg-amber text-navy px-8 py-3 rounded-lg font-bold hover:bg-amber/90 transition-colors duration-200">
+                    Call {data.ctaPhone}
+                  </a>
+                  <a href={data.ctaSecondaryLink} className="inline-block bg-white text-navy px-8 py-3 rounded-lg font-bold hover:bg-white/90 transition-colors duration-200">
+                    {data.ctaSecondaryText}
+                  </a>
+                </div>
               </div>
-            </div>
-          </FadeInUp>
-        </div>
-      </section>
+            </FadeInUp>
+          </div>
+        </section>
+      )}
     </>
   );
 }

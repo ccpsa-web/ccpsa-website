@@ -2,27 +2,5 @@
   "title": "Contact Us",
   "phone": "(303) 951-0600",
   "fax": "(303) 951-0605",
-  "email": "info@critcareMD.com",
-  "locations": [
-    {
-      "name": "West Clinic",
-      "address": "274 Union Blvd. Suite 200, Lakewood, CO 80228",
-      "phone": "(303) 951-0600"
-    },
-    {
-      "name": "South Clinic",
-      "address": "10371 Parkglenn Way Suite 230, Parker, CO 80138",
-      "phone": "(303) 951-0600"
-    },
-    {
-      "name": "Central Clinic",
-      "address": "206 W. County Line Rd. Suite 260, Highlands Ranch, CO 80126",
-      "phone": "(303) 951-0600"
-    },
-    {
-      "name": "North Clinic",
-      "address": "14300 Orchard Pkwy., 3rd Floor, Westminster, CO 80021",
-      "phone": "(303) 951-0600"
-    }
-  ]
+  "email": "info@critcareMD.com"
 }

@@ -85,6 +85,43 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    label: "Clinic Locations",
+                    name: "clinic-locations",
+                    file: "content/settings/clinic-locations.json",
+                    description: "CCPSA's outpatient clinic offices. This is the single source of truth — edits here propagate to the Contact page, For Patients page, Pulmonary Services page, and Sleep Medicine page.",
+                    fields: [
+                      {
+                        label: "Clinics", name: "locations", widget: "list",
+                        hint: "Add, remove, or reorder clinics. Changes appear on all pages that show clinic locations.",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string", hint: "e.g. 'West Clinic'" },
+                          { label: "Street Address", name: "addressStreet", widget: "string", hint: "Street address with suite (e.g. '274 Union Blvd. Suite 200')" },
+                          { label: "City", name: "city", widget: "string", hint: "City name only (e.g. 'Lakewood')" },
+                          { label: "State", name: "state", widget: "string", hint: "Two-letter state (e.g. 'CO')" },
+                          { label: "ZIP", name: "zip", widget: "string" },
+                          { label: "Phone", name: "phone", widget: "string" },
+                          { label: "Fax", name: "fax", widget: "string" }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    label: "Hospital Locations",
+                    name: "hospital-locations",
+                    file: "content/settings/hospital-locations.json",
+                    description: "Hospital sites where CCPSA physicians provide critical care. This is the single source of truth — edits here propagate to the Critical Care and Neurocritical Care pages.",
+                    fields: [
+                      {
+                        label: "Hospitals", name: "locations", widget: "list",
+                        hint: "Add, remove, or reorder hospitals. Changes appear on all critical-care pages.",
+                        fields: [
+                          { label: "Name", name: "name", widget: "string", hint: "e.g. 'St. Anthony Hospital'" },
+                          { label: "City", name: "city", widget: "string" }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -270,19 +307,12 @@
                     label: "Contact Page",
                     name: "contact",
                     file: "content/pages/contact.json",
+                    description: "The /contact page. Location data comes from Site Settings → Clinic Locations — edit it there, not here.",
                     fields: [
                       { label: "Page Title", name: "title", widget: "string" },
                       { label: "Phone", name: "phone", widget: "string" },
                       { label: "Fax", name: "fax", widget: "string" },
-                      { label: "Email", name: "email", widget: "string" },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "Address", name: "address", widget: "string" },
-                          { label: "Phone", name: "phone", widget: "string" }
-                        ]
-                      }
+                      { label: "Email", name: "email", widget: "string" }
                     ]
                   },
                   {
@@ -310,16 +340,7 @@
                       },
                       { label: "What to Expect Title", name: "whatToExpectTitle", widget: "string" },
                       { label: "What to Expect Text", name: "whatToExpectText", widget: "text" },
-                      {
-                        label: "Clinic Locations", name: "clinicLocations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "Address", name: "address", widget: "string" },
-                          { label: "City", name: "city", widget: "string" },
-                          { label: "Phone", name: "phone", widget: "string" },
-                          { label: "Fax", name: "fax", widget: "string" }
-                        ]
-                      },
+                      // Clinic Locations moved to Site Settings → Clinic Locations.
                       {
                         label: "Patient Resources", name: "patientResources", widget: "list",
                         fields: [
@@ -519,163 +540,175 @@
                     label: "Critical Care",
                     name: "critical-care",
                     file: "content/pages/critical-care.json",
+                    description: "The /critical-care service page.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      { label: "Hide Bottom CTA Section", name: "hideCta", widget: "boolean", default: false, required: false, hint: "Check to hide the bottom 'Ready to Get Started?' CTA section on this page." },
+                      { label: "Hero Title", name: "heroTitle", widget: "string" },
+                      { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                      { label: "Approach Heading", name: "approachHeading", widget: "string" },
+                      { label: "Approach Body", name: "approachBody", widget: "text" },
                       {
-                        label: "Services", name: "services", widget: "list",
+                        label: "Content Sections", name: "sections", widget: "list",
+                        hint: "Main body sections with card grids. Each section has a heading, card color, and a list of items.",
                         fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
+                          { label: "Section Heading", name: "heading", widget: "string" },
+                          { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"], default: "amber", hint: "Left-border color on item cards" },
+                          {
+                            label: "Items", name: "items", widget: "list",
+                            fields: [
+                              { label: "Title", name: "title", widget: "string" },
+                              { label: "Description", name: "description", widget: "text" }
+                            ]
+                          }
                         ]
                       },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "City", name: "city", widget: "string" }
-                        ]
-                      },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" }
+                      { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false, hint: "Heading displayed above the locations grid. The actual location list is managed in Site Settings → Clinic Locations / Hospital Locations." },
+                      { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false, hint: "Only shown when 'Hide Bottom CTA Section' is unchecked." },
+                      { label: "CTA Body", name: "ctaBody", widget: "text", required: false },
+                      { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string", required: false, hint: "Display format, e.g. (303) 951-0600" },
+                      { label: "CTA Phone (Raw Digits)", name: "ctaPhoneRaw", widget: "string", required: false, hint: "Digits only for tel: link, e.g. 3039510600" },
+                      { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string", required: false, hint: "URL for the secondary button (e.g. /for-physicians)" },
+                      { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string", required: false, hint: "Label on the secondary button" }
                     ]
                   },
                   {
                     label: "Interventional Pulmonary",
                     name: "interventional-pulmonary",
                     file: "content/pages/interventional-pulmonary.json",
+                    description: "The /interventional-pulmonary service page.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      { label: "Hide Bottom CTA Section", name: "hideCta", widget: "boolean", default: false, required: false, hint: "Check to hide the bottom 'Ready to Get Started?' CTA section on this page." },
+                      { label: "Hero Title", name: "heroTitle", widget: "string" },
+                      { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                      { label: "Approach Heading", name: "approachHeading", widget: "string" },
+                      { label: "Approach Body", name: "approachBody", widget: "text" },
                       {
-                        label: "Procedures", name: "procedures", widget: "list",
+                        label: "Content Sections", name: "sections", widget: "list",
+                        hint: "Main body sections with card grids. Each section has a heading, card color, and a list of items.",
                         fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
+                          { label: "Section Heading", name: "heading", widget: "string" },
+                          { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"], default: "amber", hint: "Left-border color on item cards" },
+                          {
+                            label: "Items", name: "items", widget: "list",
+                            fields: [
+                              { label: "Title", name: "title", widget: "string" },
+                              { label: "Description", name: "description", widget: "text" }
+                            ]
+                          }
                         ]
                       },
-                      {
-                        label: "Conditions", name: "conditions", widget: "list",
-                        fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
-                        ]
-                      },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "City", name: "city", widget: "string" }
-                        ]
-                      },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" }
+                      { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false, hint: "Heading displayed above the locations grid. The actual location list is managed in Site Settings → Clinic Locations / Hospital Locations." },
+                      { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false, hint: "Only shown when 'Hide Bottom CTA Section' is unchecked." },
+                      { label: "CTA Body", name: "ctaBody", widget: "text", required: false },
+                      { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string", required: false, hint: "Display format, e.g. (303) 951-0600" },
+                      { label: "CTA Phone (Raw Digits)", name: "ctaPhoneRaw", widget: "string", required: false, hint: "Digits only for tel: link, e.g. 3039510600" },
+                      { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string", required: false, hint: "URL for the secondary button (e.g. /for-physicians)" },
+                      { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string", required: false, hint: "Label on the secondary button" }
                     ]
                   },
                   {
                     label: "Pulmonary Services",
                     name: "pulmonary-services",
                     file: "content/pages/pulmonary-services.json",
+                    description: "The /pulmonary-services service page.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      { label: "Hide Bottom CTA Section", name: "hideCta", widget: "boolean", default: false, required: false, hint: "Check to hide the bottom 'Ready to Get Started?' CTA section on this page." },
+                      { label: "Hero Title", name: "heroTitle", widget: "string" },
+                      { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                      { label: "Approach Heading", name: "approachHeading", widget: "string" },
+                      { label: "Approach Body", name: "approachBody", widget: "text" },
                       {
-                        label: "Conditions", name: "conditions", widget: "list",
+                        label: "Content Sections", name: "sections", widget: "list",
+                        hint: "Main body sections with card grids. Each section has a heading, card color, and a list of items.",
                         fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
+                          { label: "Section Heading", name: "heading", widget: "string" },
+                          { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"], default: "amber", hint: "Left-border color on item cards" },
+                          {
+                            label: "Items", name: "items", widget: "list",
+                            fields: [
+                              { label: "Title", name: "title", widget: "string" },
+                              { label: "Description", name: "description", widget: "text" }
+                            ]
+                          }
                         ]
                       },
-                      {
-                        label: "Diagnostic Services", name: "diagnosticServices", widget: "list",
-                        fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
-                        ]
-                      },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "City", name: "city", widget: "string" }
-                        ]
-                      },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" }
+                      { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false, hint: "Heading displayed above the locations grid. The actual location list is managed in Site Settings → Clinic Locations / Hospital Locations." },
+                      { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false, hint: "Only shown when 'Hide Bottom CTA Section' is unchecked." },
+                      { label: "CTA Body", name: "ctaBody", widget: "text", required: false },
+                      { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string", required: false, hint: "Display format, e.g. (303) 951-0600" },
+                      { label: "CTA Phone (Raw Digits)", name: "ctaPhoneRaw", widget: "string", required: false, hint: "Digits only for tel: link, e.g. 3039510600" },
+                      { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string", required: false, hint: "URL for the secondary button (e.g. /for-physicians)" },
+                      { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string", required: false, hint: "Label on the secondary button" }
                     ]
                   },
                   {
                     label: "Sleep Medicine",
                     name: "sleep-medicine",
                     file: "content/pages/sleep-medicine.json",
+                    description: "The /sleep-medicine service page.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      { label: "Hide Bottom CTA Section", name: "hideCta", widget: "boolean", default: false, required: false, hint: "Check to hide the bottom 'Ready to Get Started?' CTA section on this page." },
+                      { label: "Hero Title", name: "heroTitle", widget: "string" },
+                      { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                      { label: "Approach Heading", name: "approachHeading", widget: "string" },
+                      { label: "Approach Body", name: "approachBody", widget: "text" },
                       {
-                        label: "Conditions", name: "conditions", widget: "list",
+                        label: "Content Sections", name: "sections", widget: "list",
+                        hint: "Main body sections with card grids. Each section has a heading, card color, and a list of items.",
                         fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
+                          { label: "Section Heading", name: "heading", widget: "string" },
+                          { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"], default: "amber", hint: "Left-border color on item cards" },
+                          {
+                            label: "Items", name: "items", widget: "list",
+                            fields: [
+                              { label: "Title", name: "title", widget: "string" },
+                              { label: "Description", name: "description", widget: "text" }
+                            ]
+                          }
                         ]
                       },
-                      {
-                        label: "Diagnostic Services", name: "diagnosticServices", widget: "list",
-                        fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
-                        ]
-                      },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "City", name: "city", widget: "string" }
-                        ]
-                      },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" }
+                      { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false, hint: "Heading displayed above the locations grid. The actual location list is managed in Site Settings → Clinic Locations / Hospital Locations." },
+                      { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false, hint: "Only shown when 'Hide Bottom CTA Section' is unchecked." },
+                      { label: "CTA Body", name: "ctaBody", widget: "text", required: false },
+                      { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string", required: false, hint: "Display format, e.g. (303) 951-0600" },
+                      { label: "CTA Phone (Raw Digits)", name: "ctaPhoneRaw", widget: "string", required: false, hint: "Digits only for tel: link, e.g. 3039510600" },
+                      { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string", required: false, hint: "URL for the secondary button (e.g. /for-physicians)" },
+                      { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string", required: false, hint: "Label on the secondary button" }
                     ]
                   },
                   {
                     label: "Neurocritical Care",
                     name: "neurocritical-care",
                     file: "content/pages/neurocritical-care.json",
+                    description: "The /neurocritical-care service page.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "Approach Text", name: "approachText", widget: "text" },
+                      { label: "Hide Bottom CTA Section", name: "hideCta", widget: "boolean", default: false, required: false, hint: "Check to hide the bottom 'Ready to Get Started?' CTA section on this page." },
+                      { label: "Hero Title", name: "heroTitle", widget: "string" },
+                      { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" },
+                      { label: "Approach Heading", name: "approachHeading", widget: "string" },
+                      { label: "Approach Body", name: "approachBody", widget: "text" },
                       {
-                        label: "Conditions", name: "conditions", widget: "list",
+                        label: "Content Sections", name: "sections", widget: "list",
+                        hint: "Main body sections with card grids. Each section has a heading, card color, and a list of items.",
                         fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
+                          { label: "Section Heading", name: "heading", widget: "string" },
+                          { label: "Card Style", name: "style", widget: "select", options: ["amber", "blue"], default: "amber", hint: "Left-border color on item cards" },
+                          {
+                            label: "Items", name: "items", widget: "list",
+                            fields: [
+                              { label: "Title", name: "title", widget: "string" },
+                              { label: "Description", name: "description", widget: "text" }
+                            ]
+                          }
                         ]
                       },
-                      {
-                        label: "Capabilities", name: "capabilities", widget: "list",
-                        fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" }
-                        ]
-                      },
-                      {
-                        label: "Locations", name: "locations", widget: "list",
-                        fields: [
-                          { label: "Name", name: "name", widget: "string" },
-                          { label: "City", name: "city", widget: "string" }
-                        ]
-                      },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" }
+                      { label: "Locations Heading", name: "locationsHeading", widget: "string", required: false, hint: "Heading displayed above the locations grid. The actual location list is managed in Site Settings → Clinic Locations / Hospital Locations." },
+                      { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false, hint: "Only shown when 'Hide Bottom CTA Section' is unchecked." },
+                      { label: "CTA Body", name: "ctaBody", widget: "text", required: false },
+                      { label: "CTA Phone (Display)", name: "ctaPhone", widget: "string", required: false, hint: "Display format, e.g. (303) 951-0600" },
+                      { label: "CTA Phone (Raw Digits)", name: "ctaPhoneRaw", widget: "string", required: false, hint: "Digits only for tel: link, e.g. 3039510600" },
+                      { label: "CTA Secondary Link", name: "ctaSecondaryLink", widget: "string", required: false, hint: "URL for the secondary button (e.g. /for-physicians)" },
+                      { label: "CTA Secondary Text", name: "ctaSecondaryText", widget: "string", required: false, hint: "Label on the secondary button" }
                     ]
                   },
                   {

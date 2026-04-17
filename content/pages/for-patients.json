@@ -28,6 +28,18 @@
           "external": true
         },
         {
+          "title": "Request Medical Records (Patients)",
+          "description": "Request copies of your medical records through our records partner, MediCopy.",
+          "link": "https://medicopy.net/patients",
+          "external": true
+        },
+        {
+          "title": "Request Medical Records (Third Party Requesters)",
+          "description": "For attorneys, insurers, and other third-party requesters submitting records requests through MediCopy.",
+          "link": "https://medicopy.net/thirdpartyrequesters",
+          "external": true
+        },
+        {
           "title": "Online Bill Payment",
           "description": "Pay your medical bills securely online.",
           "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
@@ -69,36 +81,6 @@
           "external": false
         }
       ]
-    }
-  ],
-  "clinicLocations": [
-    {
-      "name": "West Clinic",
-      "address": "274 Union Blvd. Suite 200",
-      "city": "Lakewood, CO 80228",
-      "phone": "(303) 951-0600",
-      "fax": "(303) 951-0605"
-    },
-    {
-      "name": "North Clinic",
-      "address": "11450 Commons Drive",
-      "city": "Westminster, CO 80020",
-      "phone": "(720) 962-2200",
-      "fax": "(720) 962-2207"
-    },
-    {
-      "name": "South Clinic",
-      "address": "2950 South Gartland Street",
-      "city": "Parker, CO 80134",
-      "phone": "(720) 851-8300",
-      "fax": "(720) 851-8307"
-    },
-    {
-      "name": "Central Clinic",
-      "address": "9220 South Simms Street, Suite B",
-      "city": "Littleton, CO 80127",
-      "phone": "(303) 794-9700",
-      "fax": "(303) 794-9707"
     }
   ],
   "ctaHeading": "Ready to Schedule Your Appointment?",

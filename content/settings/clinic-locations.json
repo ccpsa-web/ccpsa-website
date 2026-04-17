@@ -1,0 +1,40 @@
+{
+  "locations": [
+    {
+      "name": "West Clinic",
+      "addressStreet": "274 Union Blvd. Suite 200",
+      "city": "Lakewood",
+      "state": "CO",
+      "zip": "80228",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    },
+    {
+      "name": "South Clinic",
+      "addressStreet": "10371 Parkglenn Way Suite 230",
+      "city": "Parker",
+      "state": "CO",
+      "zip": "80138",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    },
+    {
+      "name": "Central Clinic",
+      "addressStreet": "206 W. County Line Rd. Suite 260",
+      "city": "Highlands Ranch",
+      "state": "CO",
+      "zip": "80126",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    },
+    {
+      "name": "North Clinic",
+      "addressStreet": "14300 Orchard Pkwy., 3rd Floor",
+      "city": "Westminster",
+      "state": "CO",
+      "zip": "80021",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    }
+  ]
+}
