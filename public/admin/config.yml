@@ -1,3 +1,9 @@
+# ============================================================================
+# !! THIS FILE IS NOT USED !!
+# The admin UI uses Sveltia CMS configured inline in public/admin/index.html
+# (with `load_config_file: false`). Edit index.html to change admin behavior.
+# This file is kept only for historical reference; delete if desired.
+# ============================================================================
 backend:
   name: github
   repo: ccpsa-web/ccpsa-website
@@ -7,6 +13,57 @@ media_folder: "public/images"
 public_folder: "/images"
 
 collections:
+  - name: "settings"
+    label: "Site Settings"
+    description: "Global settings that appear on every page (footer, header/navigation)."
+    files:
+      - label: "Footer"
+        name: "footer"
+        file: "content/settings/footer.json"
+        description: "Controls the footer that appears at the bottom of every page."
+        fields:
+          - { label: "Practice Short Name", name: "practiceName", widget: "string", hint: "Shown as the heading of the first footer column (e.g. 'CCPSA')" }
+          - { label: "Practice Full Name", name: "practiceFullName", widget: "string", hint: "Displayed under the heading (e.g. 'Critical Care, Pulmonary & Sleep Associates')" }
+          - { label: "Address (street)", name: "address", widget: "string", hint: "e.g. 274 Union Blvd, Suite 200" }
+          - { label: "Address (city, state, zip)", name: "city", widget: "string", hint: "e.g. Lakewood, CO 80228" }
+          - { label: "Phone", name: "phone", widget: "string", hint: "e.g. (303) 951-0600" }
+          - { label: "Fax", name: "fax", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Google Review URL", name: "googleReviewUrl", widget: "string", required: false, hint: "Full URL to Google reviews page. Leave blank to hide the review badge." }
+          - { label: "Google Review Image", name: "googleReviewImage", widget: "image", required: false, hint: "Small badge image shown next to the review link." }
+          - label: "Footer Link Columns"
+            name: "columns"
+            widget: "list"
+            min: 1
+            max: 3
+            hint: "Up to 3 additional columns of links. Do not add more than 3."
+            fields:
+              - { label: "Column Heading", name: "heading", widget: "string" }
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "URL", name: "href", widget: "string", hint: "Internal path (e.g. /our-team) or full URL for external sites" }
+                  - { label: "Opens in new tab?", name: "external", widget: "boolean", default: false, hint: "Check this for links to external websites (patient portal, etc.)" }
+          - { label: "HIPAA Notice Text", name: "bottomBarLine1", widget: "string", required: false, hint: "Bottom bar line above the copyright. Leave blank to hide." }
+          - { label: "Copyright Name", name: "bottomBarCopyrightName", widget: "string", hint: "Used in the copyright line. Year is automatic." }
+
+      - label: "Header / Navigation"
+        name: "header"
+        file: "content/settings/header.json"
+        description: "Controls the logo and top navigation links on every page."
+        fields:
+          - { label: "Logo Image", name: "logoImage", widget: "image", hint: "Site logo shown at the top of every page" }
+          - { label: "Logo Alt Text", name: "logoAlt", widget: "string", hint: "Describes the logo for screen readers (e.g. 'CCPSA Logo')" }
+          - label: "Navigation Links"
+            name: "navLinks"
+            widget: "list"
+            hint: "Top navigation menu. Keep to ~7 links or fewer to avoid crowding."
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "URL", name: "href", widget: "string", hint: "Internal path (e.g. /our-team) or anchor (e.g. /#services)" }
+
   - name: "providers"
     label: "Providers"
     label_singular: "Provider"
@@ -96,14 +153,169 @@ collections:
       - label: "Homepage"
         name: "homepage"
         file: "content/pages/homepage.json"
+        description: "The main landing page at critcaremd.com. Changes here affect the first page visitors see."
         fields:
-          - { label: "Hero Tagline", name: "heroTagline", widget: "string" }
-          - { label: "Hero Title", name: "heroTitle", widget: "string" }
-          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Address", name: "address", widget: "string" }
-          - { label: "Fax", name: "fax", widget: "string" }
+          # ---- Hero (top of page) ----
+          - { label: "Hero Tagline", name: "heroTagline", widget: "string", hint: "Small text in the top badge (e.g. '40+ Years Serving Colorado')" }
+          - { label: "Hero Title", name: "heroTitle", widget: "string", hint: "Stored for reference. The visible headline is styled in code and won't change when this is edited." }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", hint: "The paragraph below the headline." }
+          # ---- Contact info (used in hero, appointment, and final CTA sections) ----
+          - { label: "Phone Number", name: "phone", widget: "string", hint: "Display format. Used in the hero button and Call Us buttons across the homepage." }
+          - { label: "Email", name: "email", widget: "string", hint: "Used in the 'Contact Us' button at the bottom of the page." }
+          - { label: "Address", name: "address", widget: "string", required: false, hint: "Reference only. The footer has its own address field in Site Settings." }
+          - { label: "Fax", name: "fax", widget: "string", required: false }
+          - { label: "Online Scheduling URL", name: "scheduleUrl", widget: "string", hint: "Patient portal / scheduling link. Used in 'Book Now' and telehealth CTA buttons." }
+          - { label: "Office Hours", name: "officeHours", widget: "string", hint: "e.g. 'Mon-Fri, 8 AM - 5 PM'" }
+          # ---- Appointment section ----
+          - { label: "Appointment Section Heading", name: "appointmentTitle", widget: "string", hint: "Heading of the blue appointment-scheduling section" }
+          - { label: "Appointment Section Subtitle", name: "appointmentSubtitle", widget: "text" }
+          # ---- Services grid (6 fixed cards; do NOT add/remove) ----
+          - { label: "Services Grid Title", name: "servicesTitle", widget: "string" }
+          - { label: "Services Grid Subtitle", name: "servicesSubtitle", widget: "text" }
+          - label: "Service Cards"
+            name: "services"
+            widget: "list"
+            min: 6
+            max: 6
+            hint: "There are 6 fixed service cards. Edit the title, description, and link for each. DO NOT add or remove cards — the icons and colors are tied to position."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Link URL", name: "href", widget: "string", hint: "Where the card links to (e.g. /critical-care)" }
+          # ---- Team section ----
+          - { label: "Team Section Tag", name: "teamSectionTag", widget: "string", hint: "Small text in the badge above the team heading (e.g. 'Expert Physicians')" }
+          - { label: "Team Section Title", name: "teamSectionTitle", widget: "string" }
+          - { label: "Team Section Text", name: "teamSectionText", widget: "text" }
+          - label: "Team Highlights"
+            name: "teamHighlights"
+            widget: "list"
+            hint: "Bulleted list next to the team photo (usually 3 items)."
+            field: { label: "Highlight", name: "item", widget: "string" }
+          - label: "Stat Cards"
+            name: "stats"
+            widget: "list"
+            min: 3
+            max: 3
+            hint: "There are 3 fixed stat cards. Edit the number and label. DO NOT add or remove cards — the icons are tied to position."
+            fields:
+              - { label: "Number", name: "number", widget: "string", hint: "e.g. '40+', '100%', '5'" }
+              - { label: "Label", name: "label", widget: "string", hint: "e.g. 'Years Serving Colorado'" }
+          # ---- Telehealth section ----
+          - { label: "Telehealth Title", name: "telehealthTitle", widget: "string" }
+          - { label: "Telehealth Text", name: "telehealthText", widget: "text" }
+          - label: "Telehealth Features"
+            name: "telehealthFeatures"
+            widget: "list"
+            min: 4
+            max: 4
+            hint: "There are 4 fixed feature cards. Edit the title and description. DO NOT add or remove cards."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+          # ---- Testimonials ----
+          - { label: "Testimonials Title", name: "testimonialsTitle", widget: "string" }
+          - { label: "Testimonials Subtitle", name: "testimonialsSubtitle", widget: "text" }
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            min: 3
+            max: 3
+            hint: "3 testimonials display in a row. Edit quote, author name, and role."
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Author", name: "author", widget: "string", hint: "e.g. 'Sarah M.' — do NOT use full patient names" }
+              - { label: "Role", name: "role", widget: "string", hint: "e.g. 'Former ICU Patient'" }
+          # ---- Affiliations ----
+          - { label: "Affiliations Title", name: "affiliationsTitle", widget: "string" }
+          - { label: "Affiliations Subtitle", name: "affiliationsSubtitle", widget: "text" }
+          - label: "Affiliations & Recognition Logos"
+            name: "affiliations"
+            widget: "list"
+            hint: "Logos and badges shown in the Affiliations section. You can add, remove, or reorder."
+            fields:
+              - { label: "Logo Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", hint: "Describes the logo for screen readers (e.g. 'AdventHealth')" }
+              - label: "Display Size"
+                name: "size"
+                widget: "select"
+                default: "small"
+                options:
+                  - { label: "Small (wider logos like AdventHealth)", value: "small" }
+                  - { label: "Large (square badges like U.S. News)", value: "large" }
+          # ---- Final CTA ----
+          - { label: "CTA Title", name: "ctaTitle", widget: "string", hint: "Amber section at bottom of homepage" }
+          - { label: "CTA Text", name: "ctaText", widget: "text" }
+
+      - label: "Our Team Page"
+        name: "our-team"
+        file: "content/pages/our-team.json"
+        description: "The /our-team page that lists all providers. Providers themselves are edited in the Providers collection."
+        fields:
+          - { label: "Hero Title", name: "title", widget: "string", hint: "Large heading at the top of the page" }
+          - { label: "Hero Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Filter Section Heading", name: "filterHeading", widget: "string", hint: "Heading above the category filter buttons (e.g. 'Find Your Provider')" }
+          - { label: "CTA Title", name: "ctaTitle", widget: "string", hint: "Amber call-to-action section at the bottom" }
+          - { label: "CTA Text", name: "ctaText", widget: "text" }
+          - { label: "CTA Phone", name: "phone", widget: "string" }
+          - { label: "Online Scheduling URL", name: "scheduleUrl", widget: "string" }
+          - { label: "Scheduling Button Text", name: "scheduleButtonText", widget: "string", hint: "Label on the scheduling button (e.g. 'Schedule Online')" }
+
+      - label: "Clinical Trials Page"
+        name: "clinical-trials"
+        file: "content/pages/clinical-trials.json"
+        description: "The /clinical-trials page describing the CCT Research partnership and open trials."
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Partnership Title", name: "partnershipTitle", widget: "string" }
+          - { label: "Partnership Text", name: "partnershipText", widget: "text" }
+          - { label: "Monitoring Text", name: "monitoringText", widget: "text" }
+          - { label: "Partner URL", name: "partnerUrl", widget: "string", hint: "CCT Research website" }
+          - { label: "Partner URL Label", name: "partnerUrlLabel", widget: "string" }
+          - { label: "Enrolling Title", name: "enrollingTitle", widget: "string" }
+          - label: "Enrolling Trials"
+            name: "enrollingTrials"
+            widget: "list"
+            hint: "List of trials currently enrolling. Add, remove, or reorder freely."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Enrolling Note", name: "enrollingNote", widget: "text" }
+          - { label: "Contact Section Title", name: "contactTitle", widget: "string" }
+          - { label: "Contact Section Text", name: "contactText", widget: "text" }
+          - { label: "Contact Name", name: "contactName", widget: "string" }
+          - { label: "Contact Phone", name: "contactPhone", widget: "string" }
+          - { label: "Contact Email", name: "contactEmail", widget: "string" }
+          - { label: "Bottom CTA Title", name: "ctaTitle", widget: "string" }
+          - { label: "Bottom CTA Text", name: "ctaText", widget: "text" }
+          - { label: "CTA Phone", name: "phone", widget: "string" }
+
+      - label: "Join Our Team Page"
+        name: "join-our-team"
+        file: "content/pages/join-our-team.json"
+        description: "The /join-our-team careers page. Individual job listings are edited in the Job Listings collection."
+        fields:
+          - { label: "Hero Title", name: "title", widget: "string" }
+          - { label: "Hero Subtitle", name: "subtitle", widget: "text" }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string" }
+          - label: "About Section Paragraphs"
+            name: "aboutParagraphs"
+            widget: "list"
+            hint: "Each item becomes its own paragraph under the About heading."
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Why Join Us Title", name: "whyJoinTitle", widget: "string" }
+          - label: "Why Join Us Cards"
+            name: "benefits"
+            widget: "list"
+            hint: "Benefit cards shown in the Why Join Us grid. Editable, reorderable."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Open Positions Heading", name: "openPositionsTitle", widget: "string" }
+          - { label: "Apply Section Title", name: "applyTitle", widget: "string" }
+          - { label: "Apply Intro Text", name: "applyIntro", widget: "string", hint: "Text shown before the email link. e.g. 'Upload your resume and we\u2019ll be in touch. You can also email'" }
+          - { label: "Apply Intro Suffix", name: "applyIntroEmailSuffix", widget: "string", hint: "Text shown after the email link (e.g. 'directly.')" }
+          - { label: "Careers Email", name: "careersEmail", widget: "string", hint: "Receives application form submissions AND is the displayed email link. Changing this changes where applications go \u2014 coordinate with the person who manages careers email." }
 
       - label: "Contact Page"
         name: "contact"

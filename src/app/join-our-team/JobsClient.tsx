@@ -16,11 +16,59 @@ interface Job {
   [key: string]: any;
 }
 
-interface JobsClientProps {
-  jobs: Job[];
+interface Benefit {
+  title: string;
+  description: string;
 }
 
-export default function JobsClient({ jobs }: JobsClientProps) {
+interface PageContent {
+  title?: string;
+  subtitle?: string;
+  aboutTitle?: string;
+  aboutParagraphs?: string[];
+  whyJoinTitle?: string;
+  benefits?: Benefit[];
+  openPositionsTitle?: string;
+  applyTitle?: string;
+  applyIntro?: string;
+  applyIntroEmailSuffix?: string;
+  careersEmail?: string;
+}
+
+interface JobsClientProps {
+  jobs: Job[];
+  pageContent: PageContent;
+}
+
+const DEFAULT_CAREERS_EMAIL = 'info@critcareMD.com';
+
+export default function JobsClient({ jobs, pageContent }: JobsClientProps) {
+  const heroTitle = pageContent.title || 'Join Our Team';
+  const heroSubtitle = pageContent.subtitle || 'Help us deliver exceptional critical care and pulmonary services to the Denver metro area. Explore open positions and apply today.';
+  const aboutTitle = pageContent.aboutTitle || 'About CCPSA';
+  const aboutParagraphs = pageContent.aboutParagraphs && pageContent.aboutParagraphs.length > 0
+    ? pageContent.aboutParagraphs
+    : [
+        'Critical Care, Pulmonary and Sleep Associates is an independent, physician-owned, large multispecialty private practice. For over 40 years, we have been providing exceptional critical care, pulmonary, and sleep medicine services to the Denver metro area.',
+        "Our dedicated team of over 30 board-certified physicians, advanced practice providers, nurses, and support staff exclusively serve multiple CommonSpirit and AdventHealth hospitals and multiple outpatient clinic locations spanning Colorado's front range.",
+        "We're committed to building a culture of excellence, collaboration, and professional growth for all team members.",
+      ];
+  const whyJoinTitle = pageContent.whyJoinTitle || 'Why Join Us';
+  const benefits: Benefit[] = pageContent.benefits && pageContent.benefits.length > 0
+    ? pageContent.benefits
+    : [
+        { title: 'Physician-Owned Practice', description: 'An independent practice with physician leadership and input on clinical decisions.' },
+        { title: 'Work-Life Balance', description: 'Flexible schedules, no mandated call, and reasonable clinic hours.' },
+        { title: 'Competitive Compensation', description: 'Market-driven salaries with comprehensive benefits and relocation assistance.' },
+        { title: 'Professional Growth', description: 'Opportunities in teaching, research, leadership, and clinical advancement.' },
+      ];
+  const openPositionsTitle = pageContent.openPositionsTitle || 'Open Positions';
+  const applyTitle = pageContent.applyTitle || 'Apply Now';
+  const applyIntro = pageContent.applyIntro || "Upload your resume and we'll be in touch. You can also email";
+  const applyIntroEmailSuffix = pageContent.applyIntroEmailSuffix || 'directly.';
+  const careersEmail = pageContent.careersEmail || DEFAULT_CAREERS_EMAIL;
+  const formAction = `https://formsubmit.co/${careersEmail}`;
+
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -93,9 +141,9 @@ export default function JobsClient({ jobs }: JobsClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Join Our Team</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              Help us deliver exceptional critical care and pulmonary services to the Denver metro area. Explore open positions and apply today.
+              {heroSubtitle}
             </p>
           </FadeInUp>
         </div>
@@ -107,16 +155,15 @@ export default function JobsClient({ jobs }: JobsClientProps) {
           {/* About Section */}
           <FadeInUp className="mb-16">
             <div className="bg-white rounded-lg shadow-md p-8 md:p-10">
-              <h2 className="text-3xl font-bold text-navy mb-6">About CCPSA</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Critical Care, Pulmonary and Sleep Associates is an independent, physician-owned, large multispecialty private practice. For over 40 years, we have been providing exceptional critical care, pulmonary, and sleep medicine services to the Denver metro area.
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                Our dedicated team of over 30 board-certified physicians, advanced practice providers, nurses, and support staff exclusively serve multiple CommonSpirit and AdventHealth hospitals and multiple outpatient clinic locations spanning Colorado&apos;s front range.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                We&apos;re committed to building a culture of excellence, collaboration, and professional growth for all team members.
-              </p>
+              <h2 className="text-3xl font-bold text-navy mb-6">{aboutTitle}</h2>
+              {aboutParagraphs.map((para, idx) => (
+                <p
+                  key={idx}
+                  className={`text-gray-600 leading-relaxed${idx < aboutParagraphs.length - 1 ? ' mb-4' : ''}`}
+                >
+                  {para}
+                </p>
+              ))}
             </div>
           </FadeInUp>
 
@@ -125,25 +172,15 @@ export default function JobsClient({ jobs }: JobsClientProps) {
             <div className="bg-amber/5 rounded-lg border border-amber/20 p-8 md:p-10">
               <h2 className="text-3xl font-bold text-navy mb-6 flex items-center gap-3">
                 <span className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></span>
-                Why Join Us
+                {whyJoinTitle}
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-navy mb-2">Physician-Owned Practice</h3>
-                  <p className="text-sm text-gray-600">An independent practice with physician leadership and input on clinical decisions.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-navy mb-2">Work-Life Balance</h3>
-                  <p className="text-sm text-gray-600">Flexible schedules, no mandated call, and reasonable clinic hours.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-navy mb-2">Competitive Compensation</h3>
-                  <p className="text-sm text-gray-600">Market-driven salaries with comprehensive benefits and relocation assistance.</p>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-navy mb-2">Professional Growth</h3>
-                  <p className="text-sm text-gray-600">Opportunities in teaching, research, leadership, and clinical advancement.</p>
-                </div>
+                {benefits.map((benefit, idx) => (
+                  <div key={idx}>
+                    <h3 className="font-semibold text-navy mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-gray-600">{benefit.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </FadeInUp>
@@ -152,7 +189,7 @@ export default function JobsClient({ jobs }: JobsClientProps) {
           <FadeInUp>
             <h2 className="text-3xl font-bold text-navy mb-8 flex items-center gap-3">
               <span className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></span>
-              Open Positions
+              {openPositionsTitle}
             </h2>
 
             <div className="space-y-4">
@@ -314,20 +351,20 @@ export default function JobsClient({ jobs }: JobsClientProps) {
           <FadeInUp className="mt-16" id="apply">
             <div className="flex items-center gap-3 mb-2">
               <div className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></div>
-              <h2 className="text-3xl font-bold text-navy">Apply Now</h2>
+              <h2 className="text-3xl font-bold text-navy">{applyTitle}</h2>
             </div>
             <p className="text-gray-600 mb-8 mt-4">
-              Upload your resume and we&apos;ll be in touch. You can also email{' '}
-              <Link href="mailto:info@critcareMD.com" className="text-blue hover:text-navy transition-colors font-medium">
-                info@critcareMD.com
+              {applyIntro}{' '}
+              <Link href={`mailto:${careersEmail}`} className="text-blue hover:text-navy transition-colors font-medium">
+                {careersEmail}
               </Link>{' '}
-              directly.
+              {applyIntroEmailSuffix}
             </p>
 
             <div className="bg-white rounded-lg shadow-md p-8">
               <form
                 id="application-form"
-                action="https://formsubmit.co/info@critcareMD.com"
+                action={formAction}
                 method="POST"
                 encType="multipart/form-data"
               >

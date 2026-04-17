@@ -1,0 +1,13 @@
+{
+  "logoImage": "/images/site/ccpsa-logo.png",
+  "logoAlt": "CCPSA Logo",
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "Our Care", "href": "/#services" },
+    { "label": "Our Team", "href": "/our-team" },
+    { "label": "Join Our Team", "href": "/join-our-team" },
+    { "label": "For Patients", "href": "/for-patients" },
+    { "label": "For Physicians", "href": "/for-physicians" },
+    { "label": "Contact Us", "href": "/contact" }
+  ]
+}

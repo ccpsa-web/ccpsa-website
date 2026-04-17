@@ -18,8 +18,20 @@ interface Provider {
   order?: number;
 }
 
+interface PageContent {
+  title?: string;
+  subtitle?: string;
+  filterHeading?: string;
+  ctaTitle?: string;
+  ctaText?: string;
+  phone?: string;
+  scheduleUrl?: string;
+  scheduleButtonText?: string;
+}
+
 interface TeamClientProps {
   providers: Provider[];
+  pageContent: PageContent;
 }
 
 const CATEGORIES = [
@@ -32,8 +44,18 @@ const CATEGORIES = [
   { key: 'executive', label: 'Executive' },
 ];
 
-export default function TeamClient({ providers }: TeamClientProps) {
+export default function TeamClient({ providers, pageContent }: TeamClientProps) {
   const [activeCategory, setActiveCategory] = useState('all');
+
+  const heroTitle = pageContent.title || 'Our Team';
+  const heroSubtitle = pageContent.subtitle || 'Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.';
+  const filterHeading = pageContent.filterHeading || 'Find Your Provider';
+  const ctaTitle = pageContent.ctaTitle || 'Schedule an Appointment';
+  const ctaText = pageContent.ctaText || 'Ready to work with one of our experienced providers? Book your appointment online or call us today.';
+  const phoneDisplay = pageContent.phone || '(303) 951-0600';
+  const phoneHref = `tel:${phoneDisplay.replace(/\D/g, '')}`;
+  const scheduleUrl = pageContent.scheduleUrl || 'https://mountain.mycommonspirit.org/MCH/Authentication/Login?';
+  const scheduleButtonText = pageContent.scheduleButtonText || 'Schedule Online';
 
   const filteredProviders = useMemo(() => {
     if (activeCategory === 'all') {
@@ -77,9 +99,9 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-gradient-to-br from-navy to-blue py-16 md:py-24 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">{heroTitle}</h1>
             <p className="text-lg md:text-xl max-w-3xl text-white/90">
-              Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.
+              {heroSubtitle}
             </p>
           </FadeInUp>
         </div>
@@ -89,7 +111,7 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-white py-12 border-b">
         <div className="max-w-7xl mx-auto px-4">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Find Your Provider</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">{filterHeading}</h2>
 
             <div className="flex flex-wrap justify-center gap-2 md:gap-3">
               {CATEGORIES.map((cat) => (
@@ -212,25 +234,25 @@ export default function TeamClient({ providers }: TeamClientProps) {
       <section className="bg-amber text-navy py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <FadeInUp>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Schedule an Appointment</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{ctaTitle}</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Ready to work with one of our experienced providers? Book your appointment online or call us today.
+              {ctaText}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+                href={scheduleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Schedule Online
+                {scheduleButtonText}
               </a>
               <a
-                href="tel:3039510600"
+                href={phoneHref}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
               >
-                Call (303) 951-0600
+                Call {phoneDisplay}
               </a>
             </div>
           </FadeInUp>

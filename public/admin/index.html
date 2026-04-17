@@ -29,6 +29,66 @@
             public_folder: "/images",
             collections: [
               {
+                name: "settings",
+                label: "Site Settings",
+                description: "Global settings that appear on every page (footer, header/navigation).",
+                files: [
+                  {
+                    label: "Footer",
+                    name: "footer",
+                    file: "content/settings/footer.json",
+                    description: "Controls the footer that appears at the bottom of every page.",
+                    fields: [
+                      { label: "Practice Short Name", name: "practiceName", widget: "string", hint: "Shown as the heading of the first footer column (e.g. 'CCPSA')" },
+                      { label: "Practice Full Name", name: "practiceFullName", widget: "string", hint: "Displayed under the heading (e.g. 'Critical Care, Pulmonary & Sleep Associates')" },
+                      { label: "Address (street)", name: "address", widget: "string", hint: "e.g. 274 Union Blvd, Suite 200" },
+                      { label: "Address (city, state, zip)", name: "city", widget: "string", hint: "e.g. Lakewood, CO 80228" },
+                      { label: "Phone", name: "phone", widget: "string", hint: "e.g. (303) 951-0600" },
+                      { label: "Fax", name: "fax", widget: "string" },
+                      { label: "Email", name: "email", widget: "string" },
+                      { label: "Google Review URL", name: "googleReviewUrl", widget: "string", required: false, hint: "Full URL to Google reviews page. Leave blank to hide the review badge." },
+                      { label: "Google Review Image", name: "googleReviewImage", widget: "image", required: false, hint: "Small badge image shown next to the review link." },
+                      {
+                        label: "Footer Link Columns", name: "columns", widget: "list",
+                        min: 1, max: 3,
+                        hint: "Up to 3 columns of links next to the address block. Do not add more than 3.",
+                        fields: [
+                          { label: "Column Heading", name: "heading", widget: "string" },
+                          {
+                            label: "Links", name: "links", widget: "list",
+                            fields: [
+                              { label: "Label", name: "label", widget: "string" },
+                              { label: "URL", name: "href", widget: "string", hint: "Internal path (e.g. /our-team) or full URL for external sites" },
+                              { label: "Opens in new tab?", name: "external", widget: "boolean", default: false, hint: "Check this for links to external websites (patient portal, etc.)" }
+                            ]
+                          }
+                        ]
+                      },
+                      { label: "HIPAA Notice Text", name: "bottomBarLine1", widget: "string", required: false, hint: "Bottom bar line above the copyright. Leave blank to hide." },
+                      { label: "Copyright Name", name: "bottomBarCopyrightName", widget: "string", hint: "Used in the copyright line. Year is automatic." }
+                    ]
+                  },
+                  {
+                    label: "Header / Navigation",
+                    name: "header",
+                    file: "content/settings/header.json",
+                    description: "Controls the logo and top navigation links on every page.",
+                    fields: [
+                      { label: "Logo Image", name: "logoImage", widget: "image", hint: "Site logo shown at the top of every page" },
+                      { label: "Logo Alt Text", name: "logoAlt", widget: "string", hint: "Describes the logo for screen readers (e.g. 'CCPSA Logo')" },
+                      {
+                        label: "Navigation Links", name: "navLinks", widget: "list",
+                        hint: "Top navigation menu. Keep to ~7 links or fewer to avoid crowding.",
+                        fields: [
+                          { label: "Label", name: "label", widget: "string" },
+                          { label: "URL", name: "href", widget: "string", hint: "Internal path (e.g. /our-team) or anchor (e.g. /#services)" }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
                 name: "providers",
                 label: "Providers",
                 label_singular: "Provider",
@@ -136,6 +196,8 @@
                       { label: "Services Subtitle", name: "servicesSubtitle", widget: "text", required: false },
                       {
                         label: "Services", name: "services", widget: "list", required: false,
+                        min: 6, max: 6,
+                        hint: "There are 6 fixed service cards. Edit the title, description, and link for each. DO NOT add or remove cards — the icons and colors are tied to position.",
                         fields: [
                           { label: "Title", name: "title", widget: "string" },
                           { label: "Description", name: "description", widget: "text" },
@@ -151,6 +213,8 @@
                       },
                       {
                         label: "Stats", name: "stats", widget: "list", required: false,
+                        min: 3, max: 3,
+                        hint: "There are 3 fixed stat cards. Edit the number and label. DO NOT add or remove cards — the icons are tied to position.",
                         fields: [
                           { label: "Number", name: "number", widget: "string" },
                           { label: "Label", name: "label", widget: "string" }
@@ -162,33 +226,42 @@
                       { label: "Telehealth Text", name: "telehealthText", widget: "text", required: false },
                       {
                         label: "Telehealth Features", name: "telehealthFeatures", widget: "list", required: false,
+                        min: 4, max: 4,
+                        hint: "There are 4 fixed feature cards. Edit the title and description. DO NOT add or remove cards.",
                         fields: [
                           { label: "Title", name: "title", widget: "string" },
                           { label: "Description", name: "description", widget: "text" }
-                        ]
-                      },
-                      { label: "Quick Access Title", name: "quickAccessTitle", widget: "string", required: false },
-                      { label: "Quick Access Subtitle", name: "quickAccessSubtitle", widget: "text", required: false },
-                      {
-                        label: "Quick Access Cards", name: "quickAccessCards", widget: "list", required: false,
-                        fields: [
-                          { label: "Title", name: "title", widget: "string" },
-                          { label: "Description", name: "description", widget: "text" },
-                          { label: "Button Text", name: "buttonText", widget: "string" }
                         ]
                       },
                       { label: "Testimonials Title", name: "testimonialsTitle", widget: "string", required: false },
                       { label: "Testimonials Subtitle", name: "testimonialsSubtitle", widget: "text", required: false },
                       {
                         label: "Testimonials", name: "testimonials", widget: "list", required: false,
+                        min: 3, max: 3,
+                        hint: "3 testimonials display in a row. Edit quote, author name, and role.",
                         fields: [
                           { label: "Quote", name: "quote", widget: "text" },
-                          { label: "Author", name: "author", widget: "string" },
-                          { label: "Role", name: "role", widget: "string" }
+                          { label: "Author", name: "author", widget: "string", hint: "e.g. 'Sarah M.' — do NOT use full patient names" },
+                          { label: "Role", name: "role", widget: "string", hint: "e.g. 'Former ICU Patient'" }
                         ]
                       },
                       { label: "Affiliations Title", name: "affiliationsTitle", widget: "string", required: false },
                       { label: "Affiliations Subtitle", name: "affiliationsSubtitle", widget: "text", required: false },
+                      {
+                        label: "Affiliations & Recognition Logos", name: "affiliations", widget: "list", required: false,
+                        hint: "Logos and badges shown in the Affiliations section. You can add, remove, or reorder.",
+                        fields: [
+                          { label: "Logo Image", name: "image", widget: "image" },
+                          { label: "Alt Text", name: "alt", widget: "string", hint: "Describes the logo for screen readers (e.g. 'AdventHealth')" },
+                          {
+                            label: "Display Size", name: "size", widget: "select", default: "small",
+                            options: [
+                              { label: "Small (wider logos like AdventHealth)", value: "small" },
+                              { label: "Large (square badges like U.S. News)", value: "large" }
+                            ]
+                          }
+                        ]
+                      },
                       { label: "CTA Title", name: "ctaTitle", widget: "string", required: false },
                       { label: "CTA Text", name: "ctaText", widget: "text", required: false }
                     ]
@@ -400,34 +473,46 @@
                     label: "Our Team",
                     name: "our-team",
                     file: "content/pages/our-team.json",
+                    description: "The /our-team page. Providers themselves are edited in the Providers collection.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
+                      { label: "Hero Title", name: "title", widget: "string", hint: "Large heading at the top of the page" },
+                      { label: "Hero Subtitle", name: "subtitle", widget: "text" },
+                      { label: "Filter Section Heading", name: "filterHeading", widget: "string", hint: "Heading above the category filter buttons (e.g. 'Find Your Provider')" },
+                      { label: "CTA Title", name: "ctaTitle", widget: "string", hint: "Amber call-to-action section at the bottom" },
                       { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Phone", name: "phone", widget: "string" },
-                      { label: "Schedule URL", name: "scheduleUrl", widget: "string" }
+                      { label: "CTA Phone", name: "phone", widget: "string" },
+                      { label: "Online Scheduling URL", name: "scheduleUrl", widget: "string" },
+                      { label: "Scheduling Button Text", name: "scheduleButtonText", widget: "string", hint: "Label on the scheduling button (e.g. 'Schedule Online')" }
                     ]
                   },
                   {
                     label: "Join Our Team",
                     name: "join-our-team",
                     file: "content/pages/join-our-team.json",
+                    description: "The /join-our-team careers page. Individual job listings are edited in the Job Listings collection.",
                     fields: [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Subtitle", name: "subtitle", widget: "text" },
-                      { label: "About Title", name: "aboutTitle", widget: "string" },
-                      { label: "About Text", name: "aboutText", widget: "text" },
+                      { label: "Hero Title", name: "title", widget: "string" },
+                      { label: "Hero Subtitle", name: "subtitle", widget: "text" },
+                      { label: "About Section Title", name: "aboutTitle", widget: "string" },
                       {
-                        label: "Benefits", name: "benefits", widget: "list",
+                        label: "About Section Paragraphs", name: "aboutParagraphs", widget: "list",
+                        hint: "Each item becomes its own paragraph under the About heading.",
+                        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+                      },
+                      { label: "Why Join Us Title", name: "whyJoinTitle", widget: "string" },
+                      {
+                        label: "Why Join Us Cards", name: "benefits", widget: "list",
+                        hint: "Benefit cards shown in the Why Join Us grid. Editable, reorderable.",
                         fields: [
                           { label: "Title", name: "title", widget: "string" },
                           { label: "Description", name: "description", widget: "text" }
                         ]
                       },
-                      { label: "CTA Title", name: "ctaTitle", widget: "string" },
-                      { label: "CTA Text", name: "ctaText", widget: "text" },
-                      { label: "Careers Email", name: "careersEmail", widget: "string" }
+                      { label: "Open Positions Heading", name: "openPositionsTitle", widget: "string" },
+                      { label: "Apply Section Title", name: "applyTitle", widget: "string" },
+                      { label: "Apply Intro Text", name: "applyIntro", widget: "string", hint: "Text shown before the email link." },
+                      { label: "Apply Intro Suffix", name: "applyIntroEmailSuffix", widget: "string", hint: "Text shown after the email link (e.g. 'directly.')" },
+                      { label: "Careers Email", name: "careersEmail", widget: "string", hint: "Receives application form submissions AND is the displayed email link. Changing this changes where applications go — coordinate with whoever manages careers email." }
                     ]
                   },
                   {

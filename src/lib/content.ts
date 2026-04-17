@@ -119,3 +119,8 @@ export function getPageContent(page: string): PageContent | null {
   const pageFile = path.join(CONTENT_DIR, 'pages', `${page}.json`);
   return readJsonFile(pageFile);
 }
+
+export function getSettings(name: string): PageContent | null {
+  const settingsFile = path.join(CONTENT_DIR, 'settings', `${name}.json`);
+  return readJsonFile(settingsFile);
+}

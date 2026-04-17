@@ -126,6 +126,28 @@
   ],
   "affiliationsTitle": "Our Affiliations & Recognition",
   "affiliationsSubtitle": "Proudly affiliated with leading healthcare systems and recognized for excellence in patient care.",
+  "affiliations": [
+    {
+      "image": "/images/site/adventhealth-logo.png",
+      "alt": "AdventHealth",
+      "size": "small"
+    },
+    {
+      "image": "/images/site/commonspirit-logo.png",
+      "alt": "CommonSpirit Health",
+      "size": "small"
+    },
+    {
+      "image": "/images/site/us-news-badge.png",
+      "alt": "U.S. News and World Report",
+      "size": "large"
+    },
+    {
+      "image": "/images/site/5280-top-docs-badge.png",
+      "alt": "5280 Top Doctors - Denver 2025",
+      "size": "large"
+    }
+  ],
   "ctaTitle": "Ready to Start Your Care?",
   "ctaText": "Our team is here to help. Reach out today and take the first step toward better health."
 }

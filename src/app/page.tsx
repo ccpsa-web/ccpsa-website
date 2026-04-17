@@ -399,34 +399,19 @@ export default function HomePage() {
               {content.affiliationsSubtitle}
             </p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              <Image
-                src="/images/site/adventhealth-logo.png"
-                alt="AdventHealth"
-                width={180}
-                height={60}
-                className="h-12 md:h-16 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/images/site/commonspirit-logo.png"
-                alt="CommonSpirit Health"
-                width={180}
-                height={60}
-                className="h-12 md:h-16 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/images/site/us-news-badge.png"
-                alt="U.S. News and World Report"
-                width={120}
-                height={120}
-                className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
-              <Image
-                src="/images/site/5280-top-docs-badge.png"
-                alt="5280 Top Doctors - Denver 2025"
-                width={120}
-                height={120}
-                className="h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity"
-              />
+              {(content.affiliations || []).map((logo: any, idx: number) => {
+                const isLarge = logo.size === 'large';
+                return (
+                  <Image
+                    key={idx}
+                    src={logo.image}
+                    alt={logo.alt}
+                    width={isLarge ? 120 : 180}
+                    height={isLarge ? 120 : 60}
+                    className={`${isLarge ? 'h-16 md:h-20' : 'h-12 md:h-16'} w-auto opacity-80 hover:opacity-100 transition-opacity`}
+                  />
+                );
+              })}
             </div>
           </FadeInUp>
         </div>

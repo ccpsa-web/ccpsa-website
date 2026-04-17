@@ -1,0 +1,44 @@
+{
+  "practiceName": "CCPSA",
+  "practiceFullName": "Critical Care, Pulmonary & Sleep Associates",
+  "address": "274 Union Blvd, Suite 200",
+  "city": "Lakewood, CO 80228",
+  "phone": "(303) 951-0600",
+  "fax": "(303) 951-0605",
+  "email": "info@critcareMD.com",
+  "googleReviewUrl": "https://www.google.com/search?sca_esv=9b49c139cd80d27d&rlz=1C1GCEU_en&si=AL3DRZHrmvnFAVQPOO2Bzhf8AX9KZZ6raUI_dT7DG_z0kV2_x1grRhu6CJ5S5kJ6J5E7Mkpl1oFLivQKGPfyycWSPcWo0UobwDof5gaB7nbAAy-0wQNVnnct_U0-svn3SXdiqcNGxKm9D7mMcs-TouU5pbrHun7dluBWvy_FGgXKxSLOx_nPv1Q%3D&q=Critical+Care,+Pulmonary+and+Sleep+Associates+Reviews&sa=X&ved=2ahUKEwi4-qaflMiTAxWiH0QIHUCEDFEQ0bkNegQINhAH&biw=1536&bih=826&dpr=1.25",
+  "googleReviewImage": "/images/site/google-review-us.jpg",
+  "columns": [
+    {
+      "heading": "Our Care",
+      "links": [
+        { "label": "Critical Care", "href": "/critical-care", "external": false },
+        { "label": "Pulmonary", "href": "/pulmonary-services", "external": false },
+        { "label": "Interventional", "href": "/interventional-pulmonary", "external": false },
+        { "label": "Sleep", "href": "/sleep-medicine", "external": false },
+        { "label": "Neurocritical", "href": "/neurocritical-care", "external": false }
+      ]
+    },
+    {
+      "heading": "For Patients",
+      "links": [
+        { "label": "Patient Portal", "href": "https://mountain.mycommonspirit.org/MCH/Authentication/Login", "external": true },
+        { "label": "Patient Forms", "href": "/patient-forms", "external": false },
+        { "label": "Privacy Practices", "href": "/privacy-policy", "external": false },
+        { "label": "Clinical Research", "href": "/clinical-trials", "external": false },
+        { "label": "Find a Location", "href": "/contact", "external": false }
+      ]
+    },
+    {
+      "heading": "About",
+      "links": [
+        { "label": "Our Team", "href": "/our-team", "external": false },
+        { "label": "For Physicians", "href": "/for-physicians", "external": false },
+        { "label": "Join Our Team", "href": "/join-our-team", "external": false },
+        { "label": "Contact Us", "href": "/contact", "external": false }
+      ]
+    }
+  ],
+  "bottomBarLine1": "HIPAA Privacy Notice",
+  "bottomBarCopyrightName": "Critical Care, Pulmonary & Sleep Associates"
+}
