@@ -7,9 +7,12 @@
     "South"
   ],
   "image": "/images/providers/bowman-amelia.jpg",
-  "bio": "Dr. Amelia Bowman received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus in Aurora, CO.",
+  "bio": "Dr. Bowman, a native of Colorado, earned her medical degree and completed her residency at the University of Colorado. She then went on to complete her fellowship at the University of Utah. In her free time, Dr. Bowman enjoys skiing, running, swimming, and exploring various active pursuits with her family.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Colorado",
+  "residency": "University of Colorado",
+  "fellowship": "University of Utah"
 }

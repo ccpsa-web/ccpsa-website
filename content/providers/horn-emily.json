@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/horn-emily.jpg",
-  "bio": "Dr. Horn earned both her PharmD and MD degrees at the University of Colorado. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.",
+  "bio": "Dr. Horn earned both her Medical Degree and a Doctorate in Pharmacy at the University of Kansas in Kansas City, where she also completed her Residency in Internal Medicine. She was a Hospitalist in Denver for several years prior to completing her Fellowship in Critical Care Medicine at the University of New Mexico in Albuquerque, NM. She is board certified in Critical Care Medicine.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "University of Kansas, Kansas City",
+  "residency": "University of Kansas, Kansas City in Internal Medicine",
+  "fellowship": "University of New Mexico in Critical Care Medicine"
 }

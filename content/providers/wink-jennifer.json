@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/wink-jennifer.jpg",
-  "bio": "Dr. Jennifer Wink received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Wink grew up in Denver but then traveled all over the country for her college and medical education. She completed her undergraduate education at Harvard College, followed by medical school at Chicago Medical School. She then entered the military to help afford medical education, completing her residency at Madigan Army Medical Center in Tacoma, Washington followed by fellowship in pulmonary, critical care and sleep medicine at Walter Reed Army Medical Center in Washington DC. After service with the Army in El Paso, Texas and Bagram Air Force Base in Afghanistan, she happily returned home to Colorado with a husband and 3 kids.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "Chicago Medical School",
+  "residency": "Madigan Army Medical Center",
+  "fellowship": "Walter Reed Army Medical Center"
 }

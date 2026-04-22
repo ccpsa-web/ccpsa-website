@@ -7,9 +7,12 @@
     "West"
   ],
   "image": "/images/providers/pacheco-navarro-ana.jpg",
-  "bio": "Dr. Ana Pacheco-Navarro earned her medical degree from the Ponce Health Sciences University School of Medicine in Ponce, Puerto Rico. She completed her internal medicine residency at the University of Connecticut and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Pacheco-Navarro received her medical degree from Cornell Medical College, completed her internal medical residency at Massachusetts General Hospital, and attended pulmonary and critical care fellowship at Stanford. Her professional interests include quality improvement in the ICU and long-term outcomes after critical illness. In her free time, Dr. Pacheco-Navarro enjoys running, and reading.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Weill Cornell Medical College, New York, NY",
+  "residency": "Massachusetts General Hospital, Boston, MA",
+  "fellowship": "Stanford University School of Medicine, Stanford, CA"
 }

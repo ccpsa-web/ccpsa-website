@@ -95,7 +95,36 @@ export default function ProviderProfile({ params }: { params: { id: string } }) 
                   {provider.bio && (
                     <div className="mb-6">
                       <h3 className="text-sm font-semibold text-navy uppercase tracking-wide mb-2">About</h3>
-                      <p className="text-gray-700 leading-relaxed">{provider.bio}</p>
+                      <p className="text-gray-700 leading-relaxed whitespace-pre-line">{provider.bio}</p>
+                    </div>
+                  )}
+
+                  {/* Training & Education */}
+                  {(provider.education || provider.residency || provider.fellowship) && (
+                    <div className="mb-6">
+                      <h3 className="text-sm font-semibold text-navy uppercase tracking-wide mb-2">
+                        Training & Education
+                      </h3>
+                      <dl className="text-gray-700 leading-relaxed space-y-1">
+                        {provider.education && (
+                          <div className="flex flex-col sm:flex-row sm:gap-2">
+                            <dt className="font-semibold text-navy sm:min-w-[110px]">Education:</dt>
+                            <dd>{provider.education}</dd>
+                          </div>
+                        )}
+                        {provider.residency && (
+                          <div className="flex flex-col sm:flex-row sm:gap-2">
+                            <dt className="font-semibold text-navy sm:min-w-[110px]">Residency:</dt>
+                            <dd>{provider.residency}</dd>
+                          </div>
+                        )}
+                        {provider.fellowship && (
+                          <div className="flex flex-col sm:flex-row sm:gap-2">
+                            <dt className="font-semibold text-navy sm:min-w-[110px]">Fellowship:</dt>
+                            <dd>{provider.fellowship}</dd>
+                          </div>
+                        )}
+                      </dl>
                     </div>
                   )}
 

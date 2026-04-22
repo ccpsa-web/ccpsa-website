@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/gonzales-mia.jpg",
-  "bio": "Dr. Gonzales earned her Master of Public Health degree from the University of Michigan and her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and chief residency at the University of Colorado and went on to complete her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Gonzales received her medical degree from The University of Texas Health Science center in San Antonio, Tx. She then completed a combined residency in Emergency/Internal Medicine at ECU Health, where she also completed her Critical Care fellowship. She is board certified in Emergency, Internal, and Critical Care Medicine. She enjoys gardening, traveling with her husband, and hanging out with her dogs.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "The University of Texas Health Science Center- San Antonio",
+  "residency": "ECU Health",
+  "fellowship": "ECU Health"
 }

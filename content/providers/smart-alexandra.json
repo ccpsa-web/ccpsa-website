@@ -7,9 +7,12 @@
     "West"
   ],
   "image": "/images/providers/smart-alexandra.jpg",
-  "bio": "Dr. Smart earned her medical degree at Tulane University School of Medicine in New Orleans. She served her residency at the University of Colorado Health Sciences Center and her fellowship at National Jewish Health. She is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.",
+  "bio": "Dr. Smart received her medical degree from University of Colorado / School of Medicine in Denver. Her residency was also served there, as was her fellowship in the division of Pulmonary Sciences and Critical Care. She is board certified in Internal Medicine, Critical Care, Neuro-Critical Care and Pulmonary Medicine.  She has a special interest in Pulmonary Hypertension.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Colorado School of Medicine, Denver, CO",
+  "residency": "University of Colorado Health Sciences Center, Denver, CO",
+  "fellowship": "University of Colorado Health Sciences Center, Denver, CO"
 }

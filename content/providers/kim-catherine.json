@@ -7,9 +7,12 @@
     "West"
   ],
   "image": "/images/providers/kim-catherine.jpg",
-  "bio": "Dr. Catherine Kim received her Doctor of Osteopathic Medicine from Kansas City University in Kansas City, MO. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Kim received her medical degree from the Philadelphia College of Osteopathic Medicine. She completed her Internal Medicine residency at the University of Florida, followed by a fellowship in Pulmonary and Critical Care Medicine at Virginia Commonwealth University. In her free time, she enjoys running, baking, and traveling.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Philadelphia College of Osteopathic Medicine Georgia Campus",
+  "residency": "University of Florida",
+  "fellowship": "Virginia Commonwealth University"
 }

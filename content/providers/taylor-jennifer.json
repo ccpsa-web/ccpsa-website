@@ -7,9 +7,12 @@
     "South"
   ],
   "image": "/images/providers/taylor-jennifer.jpg",
-  "bio": "Dr. Jennifer Taylor earned her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Jennifer Taylor was born and raised in Wisconsin. She completed her undergraduate degree at Northwestern University. Making her way around Lake Michigan, she attended medical school and completed her residency in Internal Medicine and Pediatrics at the University of Michigan in Ann Arbor before moving to Denver where she completed my fellowship in Pulmonary and Critical Care at the University of Colorado. The challenge of pulmonary and critical care medicine along with the team-oriented culture are what drew her to the field and make every day rewarding. When not in the ICU or in clinic, she enjoys staying active both indoors and outdoors with running, biking, and hiking with her husband and their pups.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Michigan",
+  "residency": "University of Michigan",
+  "fellowship": "University of Colorado"
 }

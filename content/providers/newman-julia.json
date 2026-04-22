@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/newman-julia.jpg",
-  "bio": "Dr. Julia Newman earned her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Julia Newman, a proud Coloradan, attended medical school at University of Colorado. She completed her Internal Medicine Residency at Boston Medical Center. Given her passion for communication and patient-centered care, she did a Palliative Care fellowship at Beth Israel prior to her Pulmonary and Critical Care fellowship at Boston Medical Center.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "University of Colorado School of Medicine",
+  "residency": "Boston Medical Center",
+  "fellowship": "Hospice and Palliative Care Fellowship at Beth Israel Deaconess Medical Center, Pulmonary and Critical Care at Boston Medical Center"
 }

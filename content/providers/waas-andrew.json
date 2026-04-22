@@ -7,9 +7,12 @@
     "South"
   ],
   "image": "/images/providers/waas-andrew.jpg",
-  "bio": "Dr. Waas earned his medical degree at the Medical College of Georgia in Augusta, GA. His residency was served at Emory University in Atlanta and his fellowship at the University of Colorado, Denver. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.",
+  "bio": "Dr. Waas was born and raised in Lakewood, Colorado. He earned his medical degree at the University of Colorado and completed his residency at Duke University Hospital. His pulmonary and critical care fellowship was then done at the University of Colorado Hospital. Dr. Waas is married with 2 children. He enjoys jogging, skiing, and spending time with his family.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Colorado, Denver, CO",
+  "residency": "Duke University Hospital, Durham, NC",
+  "fellowship": "University of Colorado, Denver, CO"
 }
