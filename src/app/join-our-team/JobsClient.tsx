@@ -4,6 +4,33 @@ import { useState, useEffect } from 'react';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
+// BambooHR embed loader — injects the embed.js script on mount so it re-runs
+// correctly on client-side navigation into this page.
+function BambooHRJobBoard() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://ccpsa.bamboohr.com/js/embed.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      id="BambooHR"
+      data-domain="ccpsa.bamboohr.com"
+      data-version="1.0.0"
+      data-departmentid=""
+    />
+  );
+}
+
 interface Job {
   id: string;
   slug: string;
@@ -62,7 +89,7 @@ export default function JobsClient({ jobs, pageContent }: JobsClientProps) {
         { title: 'Competitive Compensation', description: 'Market-driven salaries with comprehensive benefits and relocation assistance.' },
         { title: 'Professional Growth', description: 'Opportunities in teaching, research, leadership, and clinical advancement.' },
       ];
-  const openPositionsTitle = pageContent.openPositionsTitle || 'Open Positions';
+  const openPositionsTitle = pageContent.openPositionsTitle || 'Physician Opportunities';
   const applyTitle = pageContent.applyTitle || 'Apply Now';
   const applyIntro = pageContent.applyIntro || "Upload your resume and we'll be in touch. You can also email";
   const applyIntroEmailSuffix = pageContent.applyIntroEmailSuffix || 'directly.';
@@ -185,12 +212,29 @@ export default function JobsClient({ jobs, pageContent }: JobsClientProps) {
             </div>
           </FadeInUp>
 
-          {/* Open Positions */}
+          {/* Clinical Staff Openings — powered by BambooHR */}
+          <FadeInUp className="mb-16">
+            <h2 className="text-3xl font-bold text-navy mb-4 flex items-center gap-3">
+              <span className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></span>
+              Clinical Staff Openings
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Nursing, advanced practice, administrative, and support staff positions. Applications are managed through our BambooHR applicant tracking system — click any role below to apply directly.
+            </p>
+            <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
+              <BambooHRJobBoard />
+            </div>
+          </FadeInUp>
+
+          {/* Physician Opportunities — CMS-managed */}
           <FadeInUp>
-            <h2 className="text-3xl font-bold text-navy mb-8 flex items-center gap-3">
+            <h2 className="text-3xl font-bold text-navy mb-4 flex items-center gap-3">
               <span className="h-1 w-12 bg-gradient-to-r from-blue to-navy"></span>
               {openPositionsTitle}
             </h2>
+            <p className="text-gray-600 mb-6">
+              Physician and advanced practice provider roles with our physician-led practice. Review openings below and submit your CV through the application form.
+            </p>
 
             <div className="space-y-4">
               {jobs.map((job, idx) => (
