@@ -99,34 +99,12 @@ export default function ProviderProfile({ params }: { params: { id: string } }) 
                     </div>
                   )}
 
-                  {/* Training & Education */}
-                  {(provider.education || provider.residency || provider.fellowship) && (
-                    <div className="mb-6">
-                      <h3 className="text-sm font-semibold text-navy uppercase tracking-wide mb-2">
-                        Training & Education
-                      </h3>
-                      <dl className="text-gray-700 leading-relaxed space-y-1">
-                        {provider.education && (
-                          <div className="flex flex-col sm:flex-row sm:gap-2">
-                            <dt className="font-semibold text-navy sm:min-w-[110px]">Education:</dt>
-                            <dd>{provider.education}</dd>
-                          </div>
-                        )}
-                        {provider.residency && (
-                          <div className="flex flex-col sm:flex-row sm:gap-2">
-                            <dt className="font-semibold text-navy sm:min-w-[110px]">Residency:</dt>
-                            <dd>{provider.residency}</dd>
-                          </div>
-                        )}
-                        {provider.fellowship && (
-                          <div className="flex flex-col sm:flex-row sm:gap-2">
-                            <dt className="font-semibold text-navy sm:min-w-[110px]">Fellowship:</dt>
-                            <dd>{provider.fellowship}</dd>
-                          </div>
-                        )}
-                      </dl>
-                    </div>
-                  )}
+                  {/*
+                    Structured training fields (provider.education / residency / fellowship)
+                    are maintained in JSON and editable via /admin but intentionally NOT
+                    rendered here — the bio prose already covers training history. Kept as
+                    structured data so we can surface it on the site later if we choose to.
+                  */}
 
                   {/* CTA */}
                   <div className="pt-4 border-t border-gray-100">
