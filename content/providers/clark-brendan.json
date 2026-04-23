@@ -1,0 +1,16 @@
+{
+  "name": "Brendan Clark",
+  "lastName": "Clark",
+  "credentials": "MD",
+  "title": "Attending Physician",
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ],
+  "locations": [],
+  "image": "/images/providers/clark-brendan.jpg",
+  "bio": "Dr. Clark received his medical degree from the Northwestern University Feinberg School of Medicine. Subsequently, he completed his residency in internal medicine at Massachusetts General Hospital and his fellowship in Pulmonary and Critical Care Medicine at the University of Colorado. Following fellowship, Dr. Clark completed a Masters of Science in Clinical Science, also at the University of Colorado. Dr. Clark is married with two children. When not spending time with his family, he loves to golf.",
+  "education": "Northwestern University Feinberg School of Medicine",
+  "residency": "Massachusetts General Hospital",
+  "fellowship": "University of Colorado"
+}

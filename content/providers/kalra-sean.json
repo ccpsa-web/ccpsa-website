@@ -1,0 +1,16 @@
+{
+  "name": "Sean Kalra",
+  "lastName": "Kalra",
+  "credentials": "MD, MPH",
+  "title": "Attending Physician",
+  "categories": [
+    "critical-care",
+    "outpatient-pulmonary-sleep"
+  ],
+  "locations": [],
+  "image": "/images/providers/kalra-sean.jpg",
+  "bio": "A Boulder native, Dr. Kalra earned his medical degree from the University of Colorado. He then completed residency in internal medicine at Yale New Haven Hospital, and fellowship in pulmonary and critical care medicine at the Brigham and Women's Hospital in Boston. Following fellowship he obtained a Masters of Public Health from Harvard while pursuing post-doctoral training in bioinformatics at the Channing.",
+  "education": "University of Colorado School of Medicine, Denver, CO",
+  "residency": "Yale New Haven Hospital, New Haven, CT",
+  "fellowship": "Brigham and Women's Hospital, Boston, MA"
+}
