@@ -8,9 +8,12 @@
     "North"
   ],
   "image": "/images/providers/riley-peter.jpg",
-  "bio": "Dr. Riley earned his medical degree at Creighton University School of Medicine in Omaha, NE. He completed both his residency and fellowship at the University of Colorado. He is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
+  "bio": "Dr. Riley earned his medical degree from the University of Washington in Seattle. His residency was served at the University of Colorado Health Sciences Center in Denver and his fellowship at the University of Utah Health Sciences Center in Salt Lake City. He is board certified in Internal Medicine, Pulmonary, Critical Care, Neuro-Critical Care and Sleep Medicine. Dr. Riley is bilingual, speaking both English and Spanish. Married with two children, he enjoys cycling, skiing, running and is a Leadville 100 finisher.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Washington, Seattle, WA",
+  "residency": "University of Colorado Health Sciences Center, Denver, CO",
+  "fellowship": "University of Utah Health Sciences Center, Salt Lake City, UT"
 }

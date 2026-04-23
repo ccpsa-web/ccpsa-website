@@ -7,9 +7,12 @@
     "North"
   ],
   "image": "/images/providers/mytinger-andrea.png",
-  "bio": "Dr. Andrea Mytinger earned her Doctor of Osteopathic Medicine from A.T. Still University-Kirksville College of Osteopathic Medicine. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Mytinger earned her medical degree from Western University of Health Sciences. She completed her residency at the University of New Mexico, and her fellowship at Virginia Commonwealth University. Dr. Mytinger is married with two children. She enjoys hiking, skiing, and being outdoors in her free time. Dr. Mytinger describes herself as a home fish aquarium enthusiast and crossword puzzle extraordinaire.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Western University of Health Sciences - COMP NW",
+  "residency": "University of New Mexico",
+  "fellowship": "Virginia Commonwealth University"
 }

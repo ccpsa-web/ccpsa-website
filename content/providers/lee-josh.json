@@ -7,9 +7,12 @@
     "North"
   ],
   "image": "/images/providers/lee-josh.jpg",
-  "bio": "Dr. Josh Lee earned his medical degree from the University of Colorado School of Medicine. He completed his internal medicine residency and fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Lee grew up in the Midwest. He has been fortunate to be able to train all over the United States. He earned his medical degree from Northwestern University, Feinberg School of Medicine. He completed his residency at Duke University, and his fellowship at the University of Washington. In his free time, Dr. Lee enjoys hiking, travel, and basketball (both watching and playing).",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Northwestern University - Feinberg School of Medicine",
+  "residency": "Duke University",
+  "fellowship": "University of Washington"
 }

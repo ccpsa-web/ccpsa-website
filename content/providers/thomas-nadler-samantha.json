@@ -7,9 +7,12 @@
     "Central"
   ],
   "image": "/images/providers/thomas-nadler-samantha.jpg",
-  "bio": "Dr. Samantha Thomas-Nadler received her medical degree from the University of Colorado School of Medicine. She completed her internal medicine residency at the University of Colorado and her fellowship in Pulmonary and Critical Care Medicine at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Samantha received her medical degree from American University of the Caribbean in St. Maarten. She then went to East Carolina University for Internal Medicine Residency and served as chief resident. She also did her pulmonary and critical care fellowship at ECU. She is board certified in Internal Medicine and Pulmonary Medicine.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "American University of the Caribbean",
+  "residency": "East Carolina University, Greenville, NC",
+  "fellowship": "East Carolina University, Greenville, NC"
 }

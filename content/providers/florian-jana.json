@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/florian-jana.jpg",
-  "bio": "Dr. Florian earned her medical degree at the University of Colorado School of Medicine. She completed her internal medicine residency and her fellowship in Pulmonary Sciences and Critical Care Medicine at the University of Colorado, Anschutz Medical Campus. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.",
+  "bio": "Dr. Florian earned her medical degree from Boston University School of Medicine and completed her residency and fellowship at University of California Irvine. She enjoys hiking, traveling abroad, and exploring the national parks.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "Boston University School of Medicine",
+  "residency": "University of California Irvine",
+  "fellowship": "University of California Irvine"
 }

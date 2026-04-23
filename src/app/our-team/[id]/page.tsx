@@ -95,9 +95,16 @@ export default function ProviderProfile({ params }: { params: { id: string } }) 
                   {provider.bio && (
                     <div className="mb-6">
                       <h3 className="text-sm font-semibold text-navy uppercase tracking-wide mb-2">About</h3>
-                      <p className="text-gray-700 leading-relaxed">{provider.bio}</p>
+                      <p className="text-gray-700 leading-relaxed whitespace-pre-line">{provider.bio}</p>
                     </div>
                   )}
+
+                  {/*
+                    Structured training fields (provider.education / residency / fellowship)
+                    are maintained in JSON and editable via /admin but intentionally NOT
+                    rendered here — the bio prose already covers training history. Kept as
+                    structured data so we can surface it on the site later if we choose to.
+                  */}
 
                   {/* CTA */}
                   <div className="pt-4 border-t border-gray-100">

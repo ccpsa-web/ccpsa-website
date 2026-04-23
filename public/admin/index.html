@@ -159,7 +159,10 @@
                     field: { label: "Location", name: "location", widget: "string" }
                   },
                   { label: "Photo", name: "image", widget: "image", hint: "Upload provider headshot" },
-                  { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" }
+                  { label: "Biography", name: "bio", widget: "text", hint: "Provider biography" },
+                  { label: "Education", name: "education", widget: "string", required: false, hint: "Medical school / degree-granting institution (e.g. University of Colorado Health Sciences Center, Denver, CO)" },
+                  { label: "Residency", name: "residency", widget: "string", required: false, hint: "Residency institution and location" },
+                  { label: "Fellowship", name: "fellowship", widget: "string", required: false, hint: "Fellowship institution and location (leave blank if not applicable)" }
                 ]
               },
               {

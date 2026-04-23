@@ -7,9 +7,12 @@
     "West"
   ],
   "image": "/images/providers/barnhill-serena.jpg",
-  "bio": "Dr. Serena Barnhill earned her medical degree from Tulane University School of Medicine in New Orleans, Louisiana. She completed her internal medicine residency at Tulane and her Pulmonary and Critical Care Fellowship at the University of Colorado.",
+  "bio": "Dr. Serena Barnhill grew up in rural Montana. She earned her medical degree at the University of Washington School of Medicine in Seattle, WA. She subsequently completed Internal Medicine residency, chief residency and Pulmonary and Critical Care fellowship at the University of Washington. In her free time, she enjoys spending time with her husband, children and dog.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "University of Washington School of Medicine",
+  "residency": "University of Washington School of Medicine",
+  "fellowship": "University of Washington School of Medicine"
 }

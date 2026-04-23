@@ -7,9 +7,12 @@
     "South"
   ],
   "image": "/images/providers/bailey-kolene.jpg",
-  "bio": "Dr. Kolene E. Bailey earned her medical degree at the Geisel School of Medicine at Dartmouth in Hanover, NH. She went on to complete her internship, residency, and chief year in internal medicine at Yale New Haven Hospital in New Haven, CT. She moved to Colorado to complete her fellowship training in pulmonary sciences and critical care medicine at the University of Colorado, Anschutz Medical Campus in Aurora, CO. In her spare time, she loves to exercise, bake, organize, ski and play with her three boys, two dogs, and one cat. She especially enjoys time with her wonderful husband.",
+  "bio": "Dr. Kolene E. Bailey earned her medical degree at the Geisel School of Medicine at Dartmouth in Hanover, NH.  She went on to complete her internship, residency, and chief year in internal medicine at Yale New Haven Hospital in New Haven, CT. She moved to Colorado to complete her fellowship training in pulmonary sciences and critical care medicine at the University of Colorado, Anschutz Medical Campus in Aurora, CO. In her spare time, she loves to exercise, bake, organize, ski and play with her three boys, two dogs, and one cat. She especially enjoys time with her wonderful husband.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Geisel School of Medicine at Dartmouth, Hanover, NH",
+  "residency": "Yale New Haven Hospital, New Haven, CT",
+  "fellowship": "University of Colorado Health Sciences Center, Denver, CO"
 }

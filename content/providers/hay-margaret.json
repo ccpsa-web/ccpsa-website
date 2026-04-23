@@ -7,9 +7,12 @@
     "Central"
   ],
   "image": "/images/providers/hay-margaret.jpg",
-  "bio": "Dr. Hay earned her medical degree at the University of Nebraska Medical Center in Omaha. She served her residency at the University of Colorado Health Sciences Center and her fellowship at the National Jewish Medical and Research Center. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
+  "bio": "Dr. Hay attended medical school at The Ohio States University College of Medicine in Columbus, Ohio. She completed her internal medicine residency as well at The Ohio State University. She completed fellowship in Pulmonary and Critical Care Medicine at the Medical University of South Carolina in Charleston, South Carolina. She is board certified in Internal Medicine, Pulmonary Medicine, and Critical Care Medicine.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "The Ohio State University",
+  "residency": "The Ohio State University",
+  "fellowship": "Medical University of South Carolina"
 }

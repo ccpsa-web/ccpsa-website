@@ -8,9 +8,12 @@
     "Goodland"
   ],
   "image": "/images/providers/khalifah-anthony.jpg",
-  "bio": "Dr. Khalifah earned his medical degree at the American University of Beirut, Faculty of Medicine in Beirut, Lebanon. He served his residency at Emory University in Atlanta and his fellowship at the University of Texas Health Sciences Center in San Antonio. He is board certified in Internal Medicine, Critical Care and Pulmonary Medicine.",
+  "bio": "Dr. Khalifah grew up in Kansas City. He earned his medical degree from Vanderbilt University in Nashville. He trained in internal medicine residency at Parkland Hospital / University of Texas-Southwestern in Dallas and did his pulmonary and critical care fellowship at University of Colorado Health Sciences in Denver. Dr. Khalifah is board certified in Internal Medicine, Critical Care Medicine, Pulmonology and Neurocritical Care. He still believes in the golden rule and incorporates evidence-based critical care with kindness, focused on the needs of each patient.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Vanderbilt University, Nashville, TN",
+  "residency": "University of Texas-Southwestern, Dallas, TX",
+  "fellowship": "University of Colorado Health Sciences Center, Denver, CO"
 }

@@ -7,9 +7,12 @@
     "South"
   ],
   "image": "/images/providers/reihman-anne.jpg",
-  "bio": "Dr. Anne Reihman earned her medical degree from Oregon Health & Science University School of Medicine. She completed her internal medicine residency at the University of Washington and her Pulmonary and Critical Care Fellowship at the University of Colorado. She went on to complete her Interventional Pulmonology fellowship at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Anne Reihman grew up in Indiana. She received her medical degree from Northwestern University Feinberg School of Medicine. She completed her internal medicine residency training at Duke University followed by her pulmonary and critical care fellowship and interventional pulmonary training at the University of Colorado.",
   "categories": [
     "interventional-pulmonology",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Northwestern University Feinberg School of Medicine",
+  "residency": "Duke University",
+  "fellowship": "University of Colorado"
 }

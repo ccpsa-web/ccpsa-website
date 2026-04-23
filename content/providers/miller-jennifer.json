@@ -7,9 +7,12 @@
     "Central"
   ],
   "image": "/images/providers/miller-jen.jpeg",
-  "bio": "Dr. Jennifer Miller was born in Colorado and has always considered it home. She graduated from Western University of Health Sciences for medical school and went on to complete her internal medicine residency and pulmonary/critical care fellowship at the University of Colorado.",
+  "bio": "Dr. Jennifer Miller was born in Colorado and has always considered the state to be her ultimate home. She completed her medical degree at ATSU in Arizona, residency at the University of Washington and fellowship at the University of California Davis. Outside of medicine she enjoys home remodeling projects and spending time in the mountains with her family and dog.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "ATSU - School of Osteopathic Medicine Arizona",
+  "residency": "University of Washington",
+  "fellowship": "University of California Davis"
 }

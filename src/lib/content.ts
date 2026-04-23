@@ -12,6 +12,9 @@ interface Provider {
   order: number;
   bio?: string;
   image?: string;
+  education?: string;
+  residency?: string;
+  fellowship?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }

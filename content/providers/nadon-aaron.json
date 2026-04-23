@@ -8,8 +8,11 @@
     "Central Clinic"
   ],
   "image": "/images/providers/nadon-aaron.jpg",
-  "bio": "Dr. Nadon earned his medical degree at the University of Illinois College of Medicine in Chicago. He served his residency at Northwestern University in Chicago and his fellowship at the University of Colorado Health Sciences Center. He is board certified in Internal Medicine, Critical Care, Neuro-Critical Care and Pulmonary Medicine.",
+  "bio": "Dr. Nadon received his medical degree from the University of Colorado School of Medicine. He completed his residency at Duke University Medical Center in North Carolina and his fellowship in the division of Pulmonary Sciences and Critical Care at the University of Colorado in Denver. He is board certified in Internal Medicine, Critical Care Medicine, Neuro-Critical Care Medicine and Pulmonology Medicine.  He and his wife are natives of Colorado and enjoy continuing to explore many outdoor adventures with their 2 kids.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "University of Colorado School of Medicine, Denver, CO",
+  "residency": "Duke University Medical Center, Durham, NC",
+  "fellowship": "University of Colorado Health Sciences Center, Denver, CO"
 }

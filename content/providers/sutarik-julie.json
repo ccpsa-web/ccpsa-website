@@ -5,8 +5,11 @@
   "title": "Attending Physician",
   "locations": [],
   "image": "/images/providers/sutarik-julie.jpg",
-  "bio": "Dr. Sutarik earned her medical degree at the University of Washington School of Medicine in Seattle. Her residency and fellowship were completed at the University of Colorado. She is board certified in Internal Medicine, Critical Care, and Pulmonary Medicine.",
+  "bio": "Dr. Sutarik earned her medical degree at the University of Washington School of Medicine in Seattle. Her residency and fellowship were served at the University of Colorado Health Sciences Center in Denver. She is board certified in Critical Care, Neuro-Critical Care and Pulmonology. A member of Doctors Without Borders, Dr. Sutarik enjoys traveling (think Antarctica) and photography.",
   "categories": [
     "critical-care"
-  ]
+  ],
+  "education": "University of Washington School of Medicine, Seattle, WA",
+  "residency": "University of Colorado Health Sciences Center, Denver, CO",
+  "fellowship": "University of Colorado Health Sciences Center, Denver, CO"
 }

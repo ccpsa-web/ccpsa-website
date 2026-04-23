@@ -12,5 +12,8 @@
     "West"
   ],
   "image": "/images/providers/titone-dominic.jpg",
-  "bio": "Dr. Dominic Titone received his medical degree from the Loyola University Chicago Stritch School of Medicine. He completed his internal medicine residency at the University of Colorado and his Pulmonary and Critical Care fellowship at the University of Colorado Anschutz Medical Campus."
+  "bio": "Dr. Titone earned his medical degree at Oregon Health & Science University in Portland, OR. He served his residency in Internal Medicine/Pediatrics at University of Minnesota. His fellowship was served at the University of California, San Diego.  He is board certified in Internal Medicine, Pulmonary, Critical Care and Neuro-Critical Care Medicine.",
+  "education": "Oregon Health & Science University (OHSU) School of Medicine",
+  "residency": "Internal Medicine/Pediatrics, University of Minnesota, MN",
+  "fellowship": "Pulmonary/Critical Care, University of California, San Diego, CA"
 }

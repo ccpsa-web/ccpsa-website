@@ -7,9 +7,12 @@
     "North"
   ],
   "image": "/images/providers/little-nathaniel.jpg",
-  "bio": "Dr. Nathaniel Little received his medical degree from the Virginia Commonwealth University School of Medicine in Richmond, VA. He completed his internal medicine residency and chief residency at the University of Colorado and his Pulmonary and Critical Care Fellowship at the University of Colorado Anschutz Medical Campus.",
+  "bio": "Dr. Little graduated from Loyola University Stritch School of Medicine in Chicago. He completed his residency at the Indiana University School of Medicine in Indianapolis and his fellowship at the University of Colorado Health Sciences Center in Denver. He is board certified in Pulmonology, Critical Care, and Internal Medicine. Dr. Little is married with two children and enjoys running, reading, and spending time with his family.",
   "categories": [
     "critical-care",
     "outpatient-pulmonary-sleep"
-  ]
+  ],
+  "education": "Loyola University Stritch School of Medicine, Chicago, IL",
+  "residency": "Indiana University School of Medicine, Indianapolis, IN",
+  "fellowship": "University of Colorado School of Medicine, Aurora, CO"
 }
