@@ -38,7 +38,7 @@
     },
     {
       "title": "Clinical Research",
-      "description": "Partnering with CCT Research to advance patient care through clinical trials",
+      "description": "Partnering with Avacare Research to advance patient care through clinical trials",
       "href": "/clinical-trials"
     }
   ],
@@ -86,25 +86,6 @@
       "description": "Simple technology"
     }
   ],
-  "quickAccessTitle": "Quick Access",
-  "quickAccessSubtitle": "Manage your care with just a few clicks",
-  "quickAccessCards": [
-    {
-      "title": "Patient Portal",
-      "description": "Access records, results, communicate with care team",
-      "buttonText": "Login"
-    },
-    {
-      "title": "Online Scheduling",
-      "description": "Book an appointment 24/7",
-      "buttonText": "Schedule Now"
-    },
-    {
-      "title": "Pay Your Bill",
-      "description": "Make a secure payment online",
-      "buttonText": "Pay Now"
-    }
-  ],
   "testimonialsTitle": "What Our Patients Say",
   "testimonialsSubtitle": "Trusted by patients and physicians throughout Colorado",
   "testimonials": [
@@ -149,5 +130,24 @@
     }
   ],
   "ctaTitle": "Ready to Start Your Care?",
-  "ctaText": "Our team is here to help. Reach out today and take the first step toward better health."
+  "ctaText": "Our team is here to help. Reach out today and take the first step toward better health.",
+  "quickAccessCards": [
+    {
+      "buttonText": "Login",
+      "description": "Access records, results, communicate with care team",
+      "title": "Patient Portal"
+    },
+    {
+      "buttonText": "Schedule Now",
+      "description": "Book an appointment 24/7",
+      "title": "Online Scheduling"
+    },
+    {
+      "buttonText": "Pay Now",
+      "description": "Make a secure payment online",
+      "title": "Pay Your Bill"
+    }
+  ],
+  "quickAccessSubtitle": "Manage your care with just a few clicks",
+  "quickAccessTitle": "Quick Access"
 }
