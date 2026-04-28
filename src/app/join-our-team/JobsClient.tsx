@@ -4,29 +4,39 @@ import { useState, useEffect } from 'react';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 
-// BambooHR embed loader — injects the embed.js script on mount so it re-runs
-// correctly on client-side navigation into this page.
+// BambooHR job board — renders the embed iframe directly instead of loading
+// embed.js. Avoids a known SPA timing race where the script's one-shot init
+// can fire before React commits the target div on first navigation, leaving
+// the listings blank until the user refreshes. We also listen for height
+// postMessages from the iframe so it auto-resizes to fit content.
 function BambooHRJobBoard() {
+  const [height, setHeight] = useState(700);
+
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://ccpsa.bamboohr.com/js/embed.js';
-    script.type = 'text/javascript';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
+    function handleMessage(e: MessageEvent) {
+      if (e.origin !== 'https://ccpsa.bamboohr.com') return;
+      let h: number | undefined;
+      const data = e.data as unknown;
+      if (data && typeof data === 'object') {
+        const obj = data as Record<string, unknown>;
+        if (typeof obj.height === 'number') h = obj.height;
+        else if (typeof obj.bambooHRHeight === 'number') h = obj.bambooHRHeight as number;
+        else if (typeof obj.iframeHeight === 'number') h = obj.iframeHeight as number;
+      } else if (typeof data === 'string' && /^\d+$/.test(data)) {
+        h = parseInt(data, 10);
       }
-    };
+      if (h && h > 100 && h < 20000) setHeight(h);
+    }
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
   }, []);
 
   return (
-    <div
-      id="BambooHR"
-      data-domain="ccpsa.bamboohr.com"
-      data-version="1.0.0"
-      data-departmentid=""
+    <iframe
+      src="https://ccpsa.bamboohr.com/jobs/embed2.php?version=1.0.0"
+      title="BambooHR Job Listings"
+      style={{ width: '100%', height: `${height}px`, border: 'none', display: 'block' }}
+      loading="lazy"
     />
   );
 }
