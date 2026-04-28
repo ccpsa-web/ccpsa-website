@@ -3,41 +3,79 @@
 import { useState, useEffect } from 'react';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
+import type { BambooBoard } from '@/lib/bamboohr';
 
-// BambooHR job board — renders the embed iframe directly instead of loading
-// embed.js. Avoids a known SPA timing race where the script's one-shot init
-// can fire before React commits the target div on first navigation, leaving
-// the listings blank until the user refreshes. We also listen for height
-// postMessages from the iframe so it auto-resizes to fit content.
-function BambooHRJobBoard() {
-  const [height, setHeight] = useState(700);
+// Custom-styled BambooHR job board — replaces BambooHR's iframe with server-
+// fetched listings rendered as pill buttons that match site styling. Each
+// button links straight to the BambooHR posting page in a new tab, where the
+// applicant submits through your ATS.
+function BambooHRJobBoard({ board }: { board: BambooBoard }) {
+  if (board.fetchFailed) {
+    return (
+      <div className="bg-white rounded-lg shadow-md p-6 text-center text-gray-600">
+        Job listings are temporarily unavailable. Please check back soon, or
+        email{' '}
+        <Link href="mailto:info@critcareMD.com" className="text-blue hover:text-navy font-medium">
+          info@critcareMD.com
+        </Link>{' '}
+        to inquire about open staff positions.
+      </div>
+    );
+  }
 
-  useEffect(() => {
-    function handleMessage(e: MessageEvent) {
-      if (e.origin !== 'https://ccpsa.bamboohr.com') return;
-      let h: number | undefined;
-      const data = e.data as unknown;
-      if (data && typeof data === 'object') {
-        const obj = data as Record<string, unknown>;
-        if (typeof obj.height === 'number') h = obj.height;
-        else if (typeof obj.bambooHRHeight === 'number') h = obj.bambooHRHeight as number;
-        else if (typeof obj.iframeHeight === 'number') h = obj.iframeHeight as number;
-      } else if (typeof data === 'string' && /^\d+$/.test(data)) {
-        h = parseInt(data, 10);
-      }
-      if (h && h > 100 && h < 20000) setHeight(h);
-    }
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
+  if (board.totalJobs === 0) {
+    return (
+      <div className="bg-white rounded-lg shadow-md p-8 text-center">
+        <p className="text-navy font-semibold mb-2">No open staff positions at this time.</p>
+        <p className="text-gray-600 text-sm">
+          Please check back as we will be looking for great people to join our
+          team in the future.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <iframe
-      src="https://ccpsa.bamboohr.com/jobs/embed2.php?version=1.0.0"
-      title="BambooHR Job Listings"
-      style={{ width: '100%', height: `${height}px`, border: 'none', display: 'block' }}
-      loading="lazy"
-    />
+    <div className="bg-white rounded-lg shadow-md p-6 md:p-8 space-y-6">
+      {board.departments.map((dept) => (
+        <div key={dept.id}>
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3">
+            {dept.name}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {dept.jobs.map((job) => (
+              <a
+                key={job.id}
+                href={job.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 bg-navy hover:bg-blue text-white font-medium px-5 py-3 rounded-md transition-colors duration-200"
+              >
+                <span>{job.title}</span>
+                {job.location && (
+                  <span className="text-xs text-white/70 font-normal hidden sm:inline">
+                    · {job.location}
+                  </span>
+                )}
+                <svg
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M7 17L17 7M9 7h8v8" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+      <p className="text-xs text-gray-500 italic pt-2 border-t border-gray-100">
+        Applications for staff positions are managed through BambooHR. Clicking
+        a position opens the full posting where you can apply directly.
+      </p>
+    </div>
   );
 }
 
@@ -75,11 +113,12 @@ interface PageContent {
 interface JobsClientProps {
   jobs: Job[];
   pageContent: PageContent;
+  bambooBoard: BambooBoard;
 }
 
 const DEFAULT_CAREERS_EMAIL = 'info@critcareMD.com';
 
-export default function JobsClient({ jobs, pageContent }: JobsClientProps) {
+export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClientProps) {
   const heroTitle = pageContent.title || 'Join Our Team';
   const heroSubtitle = pageContent.subtitle || 'Help us deliver exceptional critical care and pulmonary services to the Denver metro area. Explore open positions and apply today.';
   const aboutTitle = pageContent.aboutTitle || 'About CCPSA';
@@ -229,11 +268,9 @@ export default function JobsClient({ jobs, pageContent }: JobsClientProps) {
               Clinical Staff Openings
             </h2>
             <p className="text-gray-600 mb-6">
-              Nursing, advanced practice, administrative, and support staff positions. Applications are managed through our BambooHR applicant tracking system — click any role below to apply directly.
+              Nursing, advanced practice, administrative, and support staff positions. Click any role below to apply directly through our applicant tracking system.
             </p>
-            <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
-              <BambooHRJobBoard />
-            </div>
+            <BambooHRJobBoard board={bambooBoard} />
           </FadeInUp>
 
           {/* Physician Opportunities — CMS-managed */}

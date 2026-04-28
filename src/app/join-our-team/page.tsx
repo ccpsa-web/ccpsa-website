@@ -1,4 +1,5 @@
 import { getJobs, getPageContent } from '@/lib/content';
+import { getBambooBoard } from '@/lib/bamboohr';
 import JobsClient from './JobsClient';
 
 // Parse bullet-point strings into arrays
@@ -12,9 +13,10 @@ function parseList(value: unknown): string[] {
     .filter(Boolean);
 }
 
-export default function JoinOurTeam() {
+export default async function JoinOurTeam() {
   const rawJobs = getJobs();
   const pageContent = getPageContent('join-our-team') || {};
+  const bambooBoard = await getBambooBoard();
 
   // Normalize job data so the client component gets consistent arrays
   const jobs = rawJobs.map((job) => ({
@@ -26,5 +28,11 @@ export default function JoinOurTeam() {
     physicalRequirements: parseList(job.physicalRequirements),
   }));
 
-  return <JobsClient jobs={jobs} pageContent={pageContent} />;
+  return (
+    <JobsClient
+      jobs={jobs}
+      pageContent={pageContent}
+      bambooBoard={bambooBoard}
+    />
+  );
 }
