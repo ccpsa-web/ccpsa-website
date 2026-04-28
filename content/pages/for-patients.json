@@ -52,6 +52,12 @@
           "external": false
         },
         {
+          "title": "Instructional Videos",
+          "description": "Step-by-step video guides for using inhalers and nebulizers correctly.",
+          "link": "/for-patients/instructional-videos",
+          "external": false
+        },
+        {
           "title": "Notice of Privacy Practices",
           "description": "Review our HIPAA privacy practices and your patient rights.",
           "link": "/privacy-policy",

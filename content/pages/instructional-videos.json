@@ -1,0 +1,43 @@
+{
+  "heroTitle": "Instructional Videos",
+  "heroSubtitle": "Step-by-step video guides for using inhalers and nebulizers correctly. Proper technique helps your medication work as intended.",
+  "introHeading": "Inhaler & Nebulizer Teaching",
+  "introBody": "Most inhaler medications fail to reach the lungs because of incorrect technique. The short videos below walk you through each device. If you have questions or want a one-on-one teaching session, please contact your CCPSA care team.",
+  "videos": [
+    {
+      "title": "Metered Dose Inhaler with a Spacer",
+      "description": "How to use a metered dose inhaler (MDI) with a spacer or valved holding chamber.",
+      "youtubeId": "A8WT5moNJ0I"
+    },
+    {
+      "title": "Flexhaler",
+      "description": "How to use a Flexhaler dry powder inhaler (e.g., Pulmicort).",
+      "youtubeId": "kD4CdrT-l84"
+    },
+    {
+      "title": "Aerolizer",
+      "description": "How to use an Aerolizer single-dose dry powder inhaler.",
+      "youtubeId": "C71yvysiZ1I"
+    },
+    {
+      "title": "Twisthaler",
+      "description": "How to use a Twisthaler dry powder inhaler (e.g., Asmanex).",
+      "youtubeId": "E9OAWEjPmZo"
+    },
+    {
+      "title": "Nebulizer",
+      "description": "How to properly set up and use a nebulizer for at-home breathing treatments.",
+      "youtubeId": "pEKFKZiLNaA"
+    },
+    {
+      "title": "Diskus",
+      "description": "How to use a Diskus dry powder inhaler (e.g., Advair, Flovent).",
+      "youtubeId": "_Sc7j9iW9TM"
+    }
+  ],
+  "ctaHeading": "Need Help with Your Inhaler?",
+  "ctaBody": "If you're unsure your technique is correct, our clinical staff can review it with you at your next visit. Call us to schedule.",
+  "ctaScheduleLink": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+  "ctaPhone": "(303) 951-0600",
+  "ctaPhoneRaw": "3039510600"
+}
