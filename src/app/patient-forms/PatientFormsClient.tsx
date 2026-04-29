@@ -47,6 +47,7 @@ const ICON_MAP: Record<string, string> = {
   portal: '📱',
   schedule: '📅',
   payment: '💳',
+  forms: '📝',
 };
 
 export default function PatientFormsClient({ data }: { data: PatientFormsData }) {
@@ -144,7 +145,7 @@ export default function PatientFormsClient({ data }: { data: PatientFormsData })
               Online Services
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {data.onlineServices.map((service, idx) => (
                 <FadeInUp key={idx}>
                   <Link

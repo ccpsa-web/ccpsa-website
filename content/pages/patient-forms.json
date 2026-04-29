@@ -16,6 +16,7 @@
     }
   ],
   "onlineServices": [
+    { "title": "Fill Out Online", "description": "New patient paperwork — complete the Pulmonary & Sleep Packet online before your visit.", "link": "https://criticalcare.medforward.com/FillOutForm.aspx?formname=Pulmonary_and_Sleep_Packet", "icon": "forms" },
     { "title": "Patient Portal / Epic MyChart", "description": "Access your medical records, test results, view medications, and communicate with your care team.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "portal" },
     { "title": "Online Scheduling", "description": "Schedule or reschedule your appointments at your convenience, 24/7.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "schedule" },
     { "title": "Online Bill Payment", "description": "Pay your medical bills securely online using our payment portal.", "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?", "icon": "payment" }
