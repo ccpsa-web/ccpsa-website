@@ -86,6 +86,108 @@ export default function ForPatientsClient({ data }: { data: ForPatientsData }) {
         </div>
       </section>
 
+      {/* New Patients */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <FadeInUp>
+            <h2 className="text-3xl font-bold text-navy mb-8">New Patients</h2>
+
+            <div className="bg-amber/5 border border-amber/20 rounded-lg p-8 mb-10 max-w-4xl">
+              <p className="text-lg text-navy font-semibold mb-4">Please call to schedule your appointment.</p>
+              <p className="text-gray-700">Please either fill out all paperwork online, OR print out the paperwork and complete it ahead of time, OR arrive to clinic 30 minutes early to fill out paperwork.</p>
+            </div>
+
+            <h3 className="text-xl font-semibold text-navy mb-6">New Patient Paperwork</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <a
+                href="https://criticalcare.medforward.com/FillOutForm.aspx?formname=Pulmonary_and_Sleep_Packet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h4 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Fill Out Online</h4>
+                <p className="text-sm text-gray-600">Complete the Pulmonary &amp; Sleep Packet online before your visit.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">Open Form</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+              <a
+                href="/pdfs/CCPSA-New-Patient-Packet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h4 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Print Form</h4>
+                <p className="text-sm text-gray-600">Download the new patient packet PDF to print and complete by hand.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">View PDF</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </FadeInUp>
+        </div>
+      </section>
+
+      {/* Established Patients */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <FadeInUp>
+            <h2 className="text-3xl font-bold text-navy mb-8">Established Patients</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <a
+                href="https://mountain.mycommonspirit.org/MCH/Authentication/Login?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline bg-white hover:shadow-md rounded-lg p-6 shadow-sm transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Online Scheduling</h3>
+                <p className="text-sm text-gray-600">Schedule or reschedule your appointment online.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">Schedule Now</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+              <a
+                href={`tel:${data.ctaPhoneRaw}`}
+                className="group block no-underline bg-white hover:shadow-md rounded-lg p-6 shadow-sm transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Call to Schedule</h3>
+                <p className="text-sm text-gray-600">Reach our office to schedule by phone.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">{data.ctaPhone}</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+              <a
+                href="https://mountain.mycommonspirit.org/MCH/Billing/GuestPay/PayasGuest"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline bg-white hover:shadow-md rounded-lg p-6 shadow-sm transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Pay Your Bill</h3>
+                <p className="text-sm text-gray-600">Pay your medical bills securely online.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">Pay Now</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </FadeInUp>
+        </div>
+      </section>
+
       {/* Patient Resources */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">

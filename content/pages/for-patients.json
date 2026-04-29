@@ -5,8 +5,7 @@
     "Arrive 10-15 minutes early to check in",
     "Bring your insurance card and photo ID",
     "Bring a list of current medications",
-    "Bring recent medical records if available",
-    "Complete patient paperwork online if possible"
+    "Bring recent medical records if available"
   ],
   "whatToExpectHeading": "What to Expect",
   "whatToExpectBody1": "Our clinical staff will conduct a brief evaluation, take vital signs, and review your medical history. Your physician will then spend time with you to discuss your symptoms, perform an exam, and develop a personalized care plan.",
@@ -16,9 +15,9 @@
       "title": "Patient Resources",
       "resources": [
         {
-          "title": "Online Scheduling",
-          "description": "Schedule your appointment at your convenience.",
-          "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
+          "title": "Online Bill Payment",
+          "description": "Pay your medical bills securely online.",
+          "link": "https://mountain.mycommonspirit.org/MCH/Billing/GuestPay/PayasGuest",
           "external": true
         },
         {
@@ -38,18 +37,6 @@
           "description": "For attorneys, insurers, and other third-party requesters submitting records requests through MediCopy.",
           "link": "https://medicopy.net/thirdpartyrequesters",
           "external": true
-        },
-        {
-          "title": "Online Bill Payment",
-          "description": "Pay your medical bills securely online.",
-          "link": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-          "external": true
-        },
-        {
-          "title": "Patient Information & Paperwork",
-          "description": "Download and complete patient forms before your visit.",
-          "link": "/patient-forms",
-          "external": false
         },
         {
           "title": "Instructional Videos",
@@ -82,7 +69,7 @@
         },
         {
           "title": "Insurance Coverage",
-          "description": "We accept most major insurance plans. Contact us to verify your coverage.",
+          "description": "We accept most major insurance plans. Please contact your insurance company to verify coverage.",
           "link": "",
           "external": false
         }
