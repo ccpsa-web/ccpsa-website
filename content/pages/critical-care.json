@@ -3,19 +3,40 @@
   "heroTitle": "Critical Care Medicine",
   "heroSubtitle": "Comprehensive intensive care for complex medical conditions by board-certified intensivists",
   "approachHeading": "Our Approach",
-  "approachBody": "Our critical care team provides 24/7 intensive care management for patients with serious medical and surgical conditions. CCPSA intensivists are board-certified in Critical Care Medicine and provide care across multiple AdventHealth hospitals in the Denver metro area.",
+  "approachBody": "Our critical care team provides 24/7 intensive care management for patients with serious medical and surgical conditions. CCPSA intensivists are board-certified in Critical Care Medicine and provide care across multiple AdventHealth and CommonSpirit hospitals in the Denver metro area.",
   "sections": [
     {
       "heading": "Services We Provide",
       "style": "amber",
       "items": [
-        { "title": "ICU Management", "description": "Comprehensive care for medical and surgical patients requiring intensive care services." },
-        { "title": "Mechanical Ventilation", "description": "Advanced management and weaning strategies for patients requiring respiratory support." },
-        { "title": "Sepsis Management", "description": "Expert care for sepsis and multi-organ failure conditions using evidence-based protocols." },
-        { "title": "Hemodynamic Support", "description": "Monitoring and management of cardiovascular stability in critically ill patients." },
-        { "title": "Multidisciplinary Care", "description": "Coordinated care involving specialists across multiple disciplines for complex cases." },
-        { "title": "End-of-Life Care", "description": "Compassionate end-of-life care planning and family communication support." },
-        { "title": "Procedural Interventions", "description": "Tracheostomy and percutaneous gastrostomy placement and management." }
+        {
+          "title": "ICU Management",
+          "description": "Comprehensive care for medical and surgical patients requiring intensive care services."
+        },
+        {
+          "title": "Mechanical Ventilation",
+          "description": "Advanced management and weaning strategies for patients requiring respiratory support."
+        },
+        {
+          "title": "Sepsis Management",
+          "description": "Expert care for sepsis and multi-organ failure conditions using evidence-based protocols."
+        },
+        {
+          "title": "Hemodynamic Support",
+          "description": "Monitoring and management of cardiovascular stability in critically ill patients."
+        },
+        {
+          "title": "Multidisciplinary Care",
+          "description": "Coordinated care involving specialists across multiple disciplines for complex cases."
+        },
+        {
+          "title": "End-of-Life Care",
+          "description": "Compassionate end-of-life care planning and family communication support."
+        },
+        {
+          "title": "Procedural Interventions",
+          "description": "Tracheostomy and percutaneous gastrostomy placement and management."
+        }
       ]
     }
   ],
