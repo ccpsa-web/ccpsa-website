@@ -27,12 +27,12 @@
       "href": "/for-physicians"
     },
     {
-      "label": "Contact Us",
-      "href": "/contact"
-    },
-    {
       "label": "Pay my bill",
       "href": "https://mountain.mycommonspirit.org/MCH/Billing/GuestPay/PayasGuest"
+    },
+    {
+      "label": "Contact Us",
+      "href": "/contact"
     }
   ]
 }
