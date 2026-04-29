@@ -189,7 +189,7 @@ export default function Contact() {
                 >
                   Schedule Online
                 </a>
-                <p className="text-xs italic text-navy/80 mt-2">(for established patients only)</p>
+                <p className="text-[0.9rem] italic text-navy/80 mt-2">(for established patients only)</p>
               </div>
               <a
                 href="tel:3039510600"
