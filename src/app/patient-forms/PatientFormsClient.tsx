@@ -260,15 +260,18 @@ export default function PatientFormsClient({ data }: { data: PatientFormsData })
             <h2 className="text-3xl md:text-4xl font-bold mb-6">{data.ctaHeading}</h2>
             <p className="text-lg mb-8 max-w-2xl mx-auto">{data.ctaBody}</p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={data.ctaScheduleLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
-              >
-                Schedule Online
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:items-start">
+              <div className="flex flex-col items-center">
+                <a
+                  href={data.ctaScheduleLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
+                >
+                  Schedule Online
+                </a>
+                <p className="text-xs italic text-navy/80 mt-2">(for established patients only)</p>
+              </div>
               <a
                 href={`tel:${data.ctaPhoneRaw}`}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"

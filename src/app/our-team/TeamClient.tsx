@@ -239,15 +239,18 @@ export default function TeamClient({ providers, pageContent }: TeamClientProps) 
               {ctaText}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={scheduleUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
-              >
-                {scheduleButtonText}
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center sm:items-start">
+              <div className="flex flex-col items-center">
+                <a
+                  href={scheduleUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-navy hover:bg-blue text-white px-8 py-3 rounded font-semibold transition-colors duration-200"
+                >
+                  {scheduleButtonText}
+                </a>
+                <p className="text-xs italic text-navy/80 mt-2">(for established patients only)</p>
+              </div>
               <a
                 href={phoneHref}
                 className="inline-block bg-white hover:bg-light-gray text-navy px-8 py-3 rounded font-semibold transition-colors duration-200"
