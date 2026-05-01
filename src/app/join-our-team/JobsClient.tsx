@@ -462,7 +462,7 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
                 <input type="hidden" name="_subject" value="New Job Application - CCPSA Website" />
                 <input type="hidden" name="_captcha" value="true" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="/join-our-team?submitted=true" />
+                <input type="hidden" name="_next" value="https://critcaremd.com/join-our-team?submitted=true" />
 
                 {/* Resume Upload */}
                 <div className="mb-8">
