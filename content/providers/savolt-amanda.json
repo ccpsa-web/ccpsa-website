@@ -3,15 +3,17 @@
   "lastName": "Savolt",
   "credentials": "APRN, FNP-C",
   "title": "Advanced Practice Provider",
-  "locations": [
-    "West",
-    "South"
-  ],
-  "image": "/images/providers/savolt-amanda.jpg",
-  "bio": "Amanda graduated from the University of Kansas with a degree in Art History before relocating to Colorado to pursue her nursing career. She worked in a Cardiac-Surgical ICU while completing her masters degree from Bradley University. In her free time, she enjoys spending time with her husband and daughter, traveling to new places, and skiing.",
   "categories": [
     "app",
     "outpatient-pulmonary-sleep"
   ],
-  "education": "MSN-FNP Bradley University"
+  "locations": [
+    "West",
+    "South"
+  ],
+  "image": "/images/original-61B25299-1FB0-4ABC-B3CD-159A7ABC0855.jpeg",
+  "bio": "Amanda graduated from the University of Kansas with a degree in Art History before relocating to Colorado to pursue her nursing career. She worked in a Cardiac-Surgical ICU while completing her masters degree from Bradley University. In her free time, she enjoys spending time with her husband and daughter, traveling to new places, and skiing.",
+  "education": "MSN-FNP Bradley University",
+  "residency": "",
+  "fellowship": ""
 }
