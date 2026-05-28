@@ -1,21 +1,92 @@
 # CCPSA Website — Project Reference
 
-**Last updated:** April 17, 2026
+**Last updated:** May 28, 2026
 **Maintained by:** Darren Boe, MD
 
-This document is the single source of truth for the CCPSA public website at critcaremd.com. It explains what each service does, why it's there, and how the pieces fit together. Update this file whenever architecture changes.
+This document is the single source of truth for the CCPSA public website at critcaremd.com. It explains who works on it, how design and code changes flow through the system, what each service does, and where the pieces live. Read this at the start of every session. Read `DESIGN-HANDOFF.docx` (also at the repo root) for the design-collaborator deep dive.
 
 ---
 
 ## Quick Summary
 
-The CCPSA website is a Next.js static site hosted on Vercel, with content managed through Decap CMS (git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
+The CCPSA website is a Next.js static site hosted on Vercel, with content managed through Sveltia CMS (a Decap-compatible fork, git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
 
 **Live URL:** https://critcaremd.com
 **Admin/CMS URL:** https://critcaremd.com/admin/
 **Staging URL:** https://preview.critcaremd.com
 **GitHub repo:** https://github.com/ccpsa-web/ccpsa-website
 **Vercel project:** https://vercel.com/ccpsa/ccpsa-website
+
+---
+
+## Active Collaborators
+
+- **Darren Boe, MD** (`dboe@critcaremd.com`, GitHub `ccpsa-web`) — repo owner, sole admin, reviewer and merger of all PRs.
+- **Dr. Bailey** (GitHub `kbailey-CCPSA`) — design collaborator, joining May 2026 for the design overhaul. New to web development; when context warrants, explain technical concepts in plain English.
+- **Content editors** (`aschoenrock1`, `dgreco-ccpsa`, `rmiddleditch`) — use the CMS at `/admin/`. Limited touch on code.
+
+`ccpsa-web` is a **personal GitHub account**, not an organization. Collaborators all get a single flat "push access" role — no Read/Triage/Write/Maintain/Admin distinction. The "Add people" modal has no role dropdown.
+
+---
+
+## Design Workflow
+
+```
+feature branch  →  PR into main  →  Vercel preview URL  →  Darren reviews & merges  →  live on critcaremd.com
+```
+
+**Branch protection rules are in place on `main` and `staging`** requiring a PR for every change. **The plan does not enforce review approval** (a GitHub Free plan limitation on personal accounts), so the Merge button is clickable on collaborators' own PRs. **Do not self-merge on behalf of any user.** Always open the PR, post the preview URL to Darren, and stop there. He clicks Merge.
+
+For staged review before production: PRs can target `staging` → deploys to preview.critcaremd.com → follow-up PR from staging → main when ready to ship.
+
+### V0 sharing protocol (design overhaul phase)
+
+Darren and Dr. Bailey share a single paid V0 account during the design overhaul. Coordination rules:
+
+- Do not work in the same V0 chat/project simultaneously.
+- Name V0 projects descriptively so it's obvious who's working on what.
+- All real review and merging happens through GitHub, not by sharing V0 links.
+- V0 outputs React + Tailwind that matches the stack. When V0 introduces new shadcn/ui components or `"use client"` directives, sanity-check those before tagging Darren.
+
+When the design overhaul is complete, Darren will cancel the paid V0 subscription. V0-generated code committed to GitHub is permanent and unaffected by the cancellation.
+
+### Where to make design changes
+
+- **Global styles / fonts / colors:** `tailwind.config.ts` and `src/app/globals.css`
+- **Layout (header, footer, nav):** `src/components/` and `src/app/layout.tsx`
+- **Individual pages:** `src/app/{route}/page.tsx`
+- **Reusable UI components:** `src/components/`
+
+### Where NOT to make changes
+
+- **`public/admin/`** — the CMS UI. Editing it locks staff out of content editing. Never touch.
+- **`content/providers/*.json`** — provider bios. These are content, edited through the CMS, not the codebase.
+- **`next.config.mjs`** — config changes can break the static export.
+- **Helper scripts in repo root (`deploy.sh`, `preview.sh`, `golive.sh`)** — Darren's. Don't run them; use the PR workflow.
+- **Repo settings, secrets, OAuth apps, branch protection rules** — Darren manages directly on GitHub.
+
+### Operating notes
+
+- **Run `npm run build` before pushing.** Static-export builds catch many errors that `npm run dev` misses.
+- **Small, single-purpose PRs.** One feature or fix per PR — easier to review, easier to roll back.
+- **Descriptive branch names** — `design/homepage-hero`, `fix/provider-card-padding`, etc. Not `update` or `fix1`.
+- **Commit messages: imperative mood, short subject + optional body.** "Redesign homepage hero — larger CTA" is good. "Updated stuff" is not.
+- **The `é` in `Boé` is intentional** (U+00E9). Provider slugs and URLs handle it carefully. Do not sanitize accents away when adding new code that touches provider data.
+
+---
+
+## Brand Palette
+
+Use these token names when extending the Tailwind theme; don't hard-code hex values in component code.
+
+| Token | Hex | Use |
+|---|---|---|
+| `primary` (navy) | #1B4F72 | Headers, primary buttons, footer |
+| `secondary` (blue) | #2E86C1 | Links, secondary accents |
+| `accent` (amber) | #F39C12 | CTAs, highlights |
+| `light-gray` | #F2F3F4 | Section backgrounds |
+
+Type: Calibri for marketing/print materials; the website uses a web-safe stack — check `globals.css` for the current font stack.
 
 ---
 
@@ -71,10 +142,10 @@ Stores the Next.js project code at `ccpsa-web/ccpsa-website`. Every edit — whe
 
 **Why it's here:** Vercel integrates natively with GitHub for deploys. Also serves as version history and backup — every change is permanent and recoverable.
 
-### Decap CMS — **Content editing interface**
-A web-based admin panel at `/admin/` that lets non-technical staff edit page content (provider bios, locations, services, etc.) without touching code. Decap reads and writes JSON/Markdown files in the GitHub repo. Authentication is via GitHub OAuth — editors need to be collaborators on the repo.
+### Sveltia CMS — **Content editing interface**
+A web-based admin panel at `/admin/` that lets non-technical staff edit page content (provider bios, locations, services, etc.) without touching code. Sveltia (a Decap-compatible fork) reads and writes JSON/Markdown files in the GitHub repo. Authentication is via GitHub OAuth — editors need to be collaborators on the repo.
 
-**Why it's here:** Staff need to update content without developer involvement. Decap is free, self-hosted (lives in the same repo), and version-controls every edit.
+**Why it's here:** Staff need to update content without developer involvement. Sveltia is free, self-hosted (lives in the same repo), and version-controls every edit.
 
 ### Microsoft 365 — **Email**
 Handles all email at @critcaremd.com addresses. MX records at GoDaddy DNS point to `critcaremd-com.mail.protection.outlook.com`. SPF (`v=spf1 include:spf.protection.outlook.com -all`), DKIM (`selector1._domainkey`, `selector2._domainkey`), DMARC, and Autodiscover are all configured and active.
@@ -137,17 +208,17 @@ All deploys go through shell scripts in the project root. Never use raw `git add
 
 **Preview deploy** (test on preview.critcaremd.com before going live):
 ```
-cd ~/Cowork/Projects/Website/ccpsa-nextjs-project && ./preview.sh "description" file1 file2
+cd ~/Documents/Claude/Projects/Website/ccpsa-nextjs-project && ./preview.sh "description" file1 file2
 ```
 
 **Production deploy** (after preview is confirmed good):
 ```
-cd ~/Cowork/Projects/Website/ccpsa-nextjs-project && ./golive.sh
+cd ~/Documents/Claude/Projects/Website/ccpsa-nextjs-project && ./golive.sh
 ```
 
 **Direct production deploy** (skip preview — use sparingly):
 ```
-cd ~/Cowork/Projects/Website/ccpsa-nextjs-project && ./deploy.sh "description" file1 file2
+cd ~/Documents/Claude/Projects/Website/ccpsa-nextjs-project && ./deploy.sh "description" file1 file2
 ```
 
 Every script pushes to GitHub, which triggers Vercel's auto-deploy. Build and deploy typically completes in 2–3 minutes.
@@ -185,8 +256,8 @@ At GoDaddy DNS (ns11/ns12.domaincontrol.com):
 To add a new content editor:
 1. Go to https://github.com/ccpsa-web/ccpsa-website/settings/access
 2. Click "Add people"
-3. Enter their GitHub username or email
-4. Choose role — **Write** is sufficient (don't use Admin)
+3. Enter their GitHub username or email and confirm
+4. Because this is a personal GitHub account (not an organization), there is **no role selector** — all direct collaborators get push access automatically. The branch-protection rules on `main` and `staging` keep them from pushing straight to production.
 5. GitHub emails them an invite; once accepted, they can log in at `/admin/`
 
 ---
