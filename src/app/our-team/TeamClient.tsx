@@ -120,8 +120,8 @@ export default function TeamClient({ providers, pageContent }: TeamClientProps) 
                   onClick={() => setActiveCategory(cat.key)}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-medium transition-all duration-300 border-2 ${
                     activeCategory === cat.key
-                      ? 'bg-amber border-amber text-white'
-                      : 'border-navy/20 text-navy hover:border-amber hover:text-amber'
+                      ? 'bg-amber border-amber text-navy'
+                      : 'border-navy/20 text-navy hover:border-amber hover:text-amber-text'
                   }`}
                 >
                   {cat.label}

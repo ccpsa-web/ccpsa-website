@@ -270,7 +270,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {content.stats.map((stat: any, idx: number) => (
                 <div key={idx} className="bg-light-gray border-0 text-center rounded-lg p-6">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${idx === 0 ? 'bg-navy/10 text-navy' : idx === 1 ? 'bg-blue/10 text-blue-text' : 'bg-amber/10 text-amber'} mb-4`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${idx === 0 ? 'bg-navy/10 text-navy' : idx === 1 ? 'bg-blue/10 text-blue-text' : 'bg-amber/10 text-amber-text'} mb-4`}>
                     {idx === 0 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9c0-1 1-2 2-2h8c1 0 2 1 2 2v12c0 1-1 2-2 2H8c-1 0-2-1-2-2V9z"></path><path d="M9 5c0-1 .5-2 1.5-2h3c1 0 1.5 1 1.5 2"></path></svg>}
                     {idx === 1 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 8a6 6 0 1 0 12 0A6 6 0 0 0 6 8z"></path><path d="M15 11h5"></path><path d="M18 8v6"></path></svg>}
                     {idx === 2 && <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>}

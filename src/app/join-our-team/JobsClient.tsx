@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import FadeInUp from '@/components/FadeInUp';
 import Link from 'next/link';
 import type { BambooBoard } from '@/lib/bamboohr';
@@ -143,10 +144,11 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
   const applyIntro = pageContent.applyIntro || "Upload your resume and we'll be in touch. You can also email";
   const applyIntroEmailSuffix = pageContent.applyIntroEmailSuffix || 'directly.';
   const careersEmail = pageContent.careersEmail || DEFAULT_CAREERS_EMAIL;
-  const formAction = `https://formsubmit.co/${careersEmail}`;
 
+  const router = useRouter();
   const [expandedJob, setExpandedJob] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -158,13 +160,41 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    if (params.get('submitted') === 'true') {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 5000);
+    // No-JS fallback path: the API route 303-redirects here with ?error=true.
+    // (A successful no-JS submit redirects to /join-our-team/application-received.)
+    if (params.get('error') === 'true') {
+      setError('We could not submit your application right now.');
     }
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formEl = e.currentTarget;
+    setError(null);
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'fetch' },
+        body: new FormData(formEl),
+      });
+      const data = await res.json().catch(() => ({ ok: res.ok }));
+      if (res.ok && data.ok) {
+        formEl.reset();
+        setFormData({ first_name: '', last_name: '', email: '', phone: '', position: '' });
+        setFileName('');
+        // Send the applicant to a dedicated confirmation page so the
+        // submission is unmistakably acknowledged.
+        router.push('/join-our-team/application-received');
+      } else {
+        setError(data.error || 'We could not submit your application right now.');
+      }
+    } catch {
+      setError('We could not submit your application right now.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   const toggleJobDetails = (jobId: string) => {
     setExpandedJob(expandedJob === jobId ? null : jobId);
@@ -297,7 +327,7 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
                             <strong>{job.type}</strong> Position
                           </p>
                         </div>
-                        <span className="inline-block bg-amber/10 text-amber px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
+                        <span className="inline-block bg-amber/10 text-amber-text px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap h-fit">
                           Open
                         </span>
                       </div>
@@ -455,14 +485,11 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
             <div className="bg-white rounded-lg shadow-md p-8">
               <form
                 id="application-form"
-                action={formAction}
+                action="/api/apply"
                 method="POST"
                 encType="multipart/form-data"
+                onSubmit={handleSubmit}
               >
-                <input type="hidden" name="_subject" value="New Job Application - CCPSA Website" />
-                <input type="hidden" name="_captcha" value="true" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://critcaremd.com/join-our-team?submitted=true" />
 
                 {/* Resume Upload */}
                 <div className="mb-8">
@@ -500,7 +527,7 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
                       required
                     />
                     {fileName && <p className="text-sm text-navy mt-3 font-medium">Selected: {fileName}</p>}
-                    <p className="text-xs text-gray-600 mt-2">PDF, DOC, or DOCX (max 10MB)</p>
+                    <p className="text-xs text-gray-600 mt-2">PDF, DOC, or DOCX (max 3MB)</p>
                   </div>
                 </div>
 
@@ -596,7 +623,8 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2"
+                  disabled={submitting}
+                  className="w-full bg-navy hover:bg-blue text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-300 text-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <svg
                     className="h-5 w-5"
@@ -608,17 +636,26 @@ export default function JobsClient({ jobs, pageContent, bambooBoard }: JobsClien
                     <path d="M22 2L11 13"></path>
                     <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
                   </svg>
-                  Submit Application
+                  {submitting ? 'Submitting…' : 'Submit Application'}
                 </button>
               </form>
-            </div>
 
-            {/* Success Message */}
-            {submitted && (
-              <div className="mt-6 p-4 bg-sage/20 border border-sage rounded-lg text-navy text-center animate-fade-in">
-                <strong>Application submitted.</strong> Our HR team will review your resume and contact you if there is a match. Thank you for your interest in CCPSA.
-              </div>
-            )}
+              {/* Error / failure fallback — keeps the applicant on-site */}
+              {error && (
+                <div className="mt-6 p-4 bg-red-50 border border-red-300 rounded-lg text-navy">
+                  <strong className="text-red-700">{error}</strong> Please email your
+                  resume to{' '}
+                  <Link href={`mailto:${careersEmail}`} className="text-blue hover:text-navy font-medium">
+                    {careersEmail}
+                  </Link>{' '}
+                  or call{' '}
+                  <Link href="tel:3039510600" className="text-blue hover:text-navy font-medium">
+                    (303) 951-0600
+                  </Link>
+                  , and we&apos;ll make sure it reaches our HR team.
+                </div>
+              )}
+            </div>
 
             {/* Alternative Contact */}
             <div className="mt-8 bg-white rounded-lg shadow-md p-6 border-l-4 border-amber">
