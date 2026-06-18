@@ -1,14 +1,17 @@
 #!/bin/bash
-# CCPSA Website Deploy — commits and pushes specific files to main
+# CCPSA Website Deploy — commits and pushes specific files directly to main
 # Usage: ./deploy.sh "description of changes" file1 file2 ...
 
-set -e
+set -euo pipefail
 
-# Clear stale lock files
+# Fail loudly: if any command below errors, say where instead of exiting silently.
+trap 'echo ""; echo "!! deploy.sh FAILED at line $LINENO. See the git error above."; echo "   Fix the reported issue and re-run."; exit 1' ERR
+
+# Clear stale lock files (left behind by a previously interrupted git command)
 rm -f .git/HEAD.lock .git/index.lock
 
 # Require a commit message and at least one file
-if [ -z "$1" ]; then
+if [ -z "${1:-}" ]; then
   echo "Usage: ./deploy.sh \"description of changes\" file1 file2 ..."
   exit 1
 fi

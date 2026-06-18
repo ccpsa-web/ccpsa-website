@@ -223,6 +223,14 @@ cd ~/Documents/Claude/Projects/Website/ccpsa-nextjs-project && ./deploy.sh "desc
 
 Every script pushes to GitHub, which triggers Vercel's auto-deploy. Build and deploy typically completes in 2–3 minutes.
 
+### Deploy script gotchas
+
+- **Start from a clean working tree.** `preview.sh` and `golive.sh` switch branches (`git checkout main`/`staging`). Git refuses to switch branches when uncommitted changes to tracked files would be overwritten, so the deploy aborts. Commit or `git stash` anything unrelated to the deploy before running. As of June 2026 the scripts run a preflight that detects stray tracked changes and aborts with a clear message naming them.
+- **The scripts now fail loudly.** They previously used `2>/dev/null` with `set -e`, so a failed `git checkout` exited the script with *no output at all* — it looked like nothing happened. They now use `set -euo pipefail` plus an `ERR` trap that prints the failing line and the likely cause. If a deploy "does nothing," read the printed message; it will tell you what to fix.
+- **Stale `.git/index.lock`.** An interrupted git command can leave `.git/index.lock`, which makes the next git command fail with `error: could not write index`. All three scripts `rm -f` it on startup; if you hit it outside the scripts, run `rm -f .git/index.lock` manually.
+- **Don't commit build artifacts.** `tsconfig.tsbuildinfo` regenerates on every build and was previously tracked, so it showed as modified constantly and repeatedly blocked branch switches. It is now gitignored (`*.tsbuildinfo`) and untracked, along with `.DS_Store`.
+- **`staging` is normally an ancestor of `main`** (it gets fast-forwarded up to main inside `preview.sh`). If you find them diverged, that's a sign a prior deploy was interrupted partway.
+
 ---
 
 ## DNS Configuration (current correct state)

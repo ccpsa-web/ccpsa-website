@@ -3,9 +3,12 @@
 # Vercel auto-deploys main to critcaremd.com
 # Usage: ./golive.sh
 
-set -e
+set -euo pipefail
 
-# Clear stale lock files
+# Fail loudly: if any command below errors, say where instead of exiting silently.
+trap 'echo ""; echo "!! golive.sh FAILED at line $LINENO. See the git error above."; echo "   Most common cause: uncommitted changes to tracked files, or main/staging out of sync."; echo "   Fix: commit or \"git stash\" stray changes, then re-run."; exit 1' ERR
+
+# Clear stale lock files (left behind by a previously interrupted git command)
 rm -f .git/HEAD.lock .git/index.lock
 
 # Switch to main, pull latest, merge staging, push

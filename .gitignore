@@ -1,2 +1,7 @@
 node_modules/
 .next/
+
+# Build artifacts and OS cruft — never commit these. Tracking tsconfig.tsbuildinfo
+# caused recurring branch-switch failures in the deploy scripts.
+*.tsbuildinfo
+.DS_Store
