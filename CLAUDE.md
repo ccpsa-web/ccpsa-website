@@ -9,7 +9,7 @@ This document is the single source of truth for the CCPSA public website at crit
 
 ## Quick Summary
 
-The CCPSA website is a Next.js static site hosted on Vercel, with content managed through Sveltia CMS (a Decap-compatible fork, git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
+The CCPSA website is a Next.js app hosted on Vercel — server-rendered with serverless API routes (e.g. CMS OAuth at `/api/auth` and `/api/callback`, and the careers application handler at `/api/apply`); it is **not** a static export. Content is managed through Sveltia CMS (a Decap-compatible fork, git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
 
 **Live URL:** https://critcaremd.com
 **Admin/CMS URL:** https://critcaremd.com/admin/
@@ -61,13 +61,13 @@ When the design overhaul is complete, Darren will cancel the paid V0 subscriptio
 
 - **`public/admin/`** — the CMS UI. Editing it locks staff out of content editing. Never touch.
 - **`content/providers/*.json`** — provider bios. These are content, edited through the CMS, not the codebase.
-- **`next.config.mjs`** — config changes can break the static export.
+- **`next.config.mjs`** — config changes can break the build/deploy. (The app uses serverless API routes under `/api/*`, so it is NOT a static export — adding new server routes is supported.)
 - **Helper scripts in repo root (`deploy.sh`, `preview.sh`, `golive.sh`)** — Darren's. Don't run them; use the PR workflow.
 - **Repo settings, secrets, OAuth apps, branch protection rules** — Darren manages directly on GitHub.
 
 ### Operating notes
 
-- **Run `npm run build` before pushing.** Static-export builds catch many errors that `npm run dev` misses.
+- **Run `npm run build` before pushing.** Production builds catch many errors that `npm run dev` misses.
 - **Small, single-purpose PRs.** One feature or fix per PR — easier to review, easier to roll back.
 - **Descriptive branch names** — `design/homepage-hero`, `fix/provider-card-padding`, etc. Not `update` or `fix1`.
 - **Commit messages: imperative mood, short subject + optional body.** "Redesign homepage hero — larger CTA" is good. "Updated stuff" is not.
@@ -103,7 +103,7 @@ GoDaddy DNS (ns11/ns12.domaincontrol.com) returns:
         ↓
 Vercel edge receives request, terminates TLS with a Let's Encrypt cert
         ↓
-Vercel serves the statically-exported Next.js site from CDN
+Vercel serves the Next.js site — static assets from CDN, dynamic routes and /api/* via serverless functions
         ↓
 Browser renders HTML/CSS/JS — provider data, pages, etc.
 ```
