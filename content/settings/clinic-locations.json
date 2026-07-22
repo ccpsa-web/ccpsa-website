@@ -28,11 +28,20 @@
       "fax": "(303) 951-0605"
     },
     {
-      "name": "North Clinic",
+      "name": "North Clinic (Until 8/2/2026)",
       "addressStreet": "14300 Orchard Pkwy., 3rd Floor",
       "city": "Westminster",
       "state": "CO",
       "zip": "80021",
+      "phone": "(303) 951-0600",
+      "fax": "(303) 951-0605"
+    },
+    {
+      "name": "New North Clinic (effective 8/3/2026)",
+      "addressStreet": "905 W 124th Avenue, Suite 170",
+      "city": "Westminster",
+      "state": "CO",
+      "zip": "80234",
       "phone": "(303) 951-0600",
       "fax": "(303) 951-0605"
     }
