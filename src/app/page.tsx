@@ -30,7 +30,7 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight text-balance">
-                  Award-Winning <span className="text-amber">Critical Care</span>, <span className="text-blue-text">Pulmonary</span> and <span className="text-blue-text/80">Sleep Specialists</span>
+                  Award-Winning <span className="text-amber">Critical Care</span>, <span className="text-amber">Pulmonary</span> and <span className="text-amber">Sleep Specialists</span>
                 </h1>
 
                 <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty">
