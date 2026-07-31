@@ -134,6 +134,37 @@ export default function ForPatientsClient({ data }: { data: ForPatientsData }) {
         </div>
       </section>
 
+      {/* Spanish Medical Forms */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <FadeInUp>
+            <h2 className="text-3xl font-bold text-navy mb-8">Formularios médicos en español</h2>
+
+            <div className="bg-amber/5 border border-amber/20 rounded-lg p-8 mb-10 max-w-4xl">
+              <p className="text-gray-700">Descargue e imprima el paquete para pacientes nuevos en español. Complételo antes de su cita, o llegue 30 minutos antes para llenarlo en la clínica.</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <a
+                href="/pdfs/CCPSA-New-Patient-Packet-Spanish.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block no-underline bg-light-gray hover:bg-white hover:shadow-md rounded-lg p-6 transition-all duration-300 border border-gray-200 hover:border-amber"
+              >
+                <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-blue transition-colors">Paquete para pacientes nuevos</h3>
+                <p className="text-sm text-gray-600">Descargue el paquete en formato PDF para imprimir y completar a mano.</p>
+                <div className="flex items-center gap-2 text-blue mt-3 group-hover:text-navy transition-colors">
+                  <span className="text-sm font-medium">Ver PDF</span>
+                  <svg className="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </FadeInUp>
+        </div>
+      </section>
+
       {/* Established Patients */}
       <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
