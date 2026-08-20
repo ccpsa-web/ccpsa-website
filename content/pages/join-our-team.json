@@ -26,9 +26,7 @@
       "description": "Opportunities in teaching, research, leadership, and clinical advancement."
     }
   ],
-  "openPositionsTitle": "Physician and Advanced Practice Provider Openings",
-  "applyTitle": "Apply Now",
-  "applyIntro": "Upload your resume and we'll be in touch. You can also email",
-  "applyIntroEmailSuffix": "directly.",
+  "staffOpeningsTitle": "Current Openings",
+  "staffOpeningsIntro": "Clinical, advanced practice, physician, administrative, and support positions across our hospital and clinic sites. Click any role below to apply directly through our applicant tracking system.",
   "careersEmail": "info@critcareMD.com"
 }

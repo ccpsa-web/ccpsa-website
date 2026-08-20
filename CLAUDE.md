@@ -9,7 +9,7 @@ This document is the single source of truth for the CCPSA public website at crit
 
 ## Quick Summary
 
-The CCPSA website is a Next.js app hosted on Vercel — server-rendered with serverless API routes (e.g. CMS OAuth at `/api/auth` and `/api/callback`, and the careers application handler at `/api/apply`); it is **not** a static export. Content is managed through Sveltia CMS (a Decap-compatible fork, git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
+The CCPSA website is a Next.js app hosted on Vercel — server-rendered with serverless API routes (e.g. CMS OAuth at `/api/auth` and `/api/callback`); it is **not** a static export. Content is managed through Sveltia CMS (a Decap-compatible fork, git-backed), DNS and domain registration at GoDaddy, and email through Microsoft 365. The `/join-our-team` page lists openings from BambooHR only — the on-site apply form and the CMS job listings were removed on August 20, 2026. The site went live on April 12, 2026, replacing a legacy WordPress install that had been hosted on GoDaddy's cPanel service since 2017.
 
 **Live URL:** https://critcaremd.com
 **Admin/CMS URL:** https://critcaremd.com/admin/

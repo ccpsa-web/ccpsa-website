@@ -166,55 +166,6 @@
                 ]
               },
               {
-                name: "jobs",
-                label: "Job Listings",
-                label_singular: "Job Listing",
-                folder: "content/jobs",
-                create: true,
-                delete: true,
-                extension: "json",
-                format: "json",
-                slug: "{{slug}}",
-                summary: "{{fields.title}} - {{fields.location}} ({{fields.status}})",
-                fields: [
-                  { label: "Job Title", name: "title", widget: "string" },
-                  { label: "Location", name: "location", widget: "string", hint: "e.g. Parker, CO" },
-                  {
-                    label: "Employment Type", name: "type", widget: "select",
-                    options: ["Full-time", "Part-time", "Contract", "PRN"]
-                  },
-                  {
-                    label: "Status", name: "status", widget: "select",
-                    options: [
-                      { label: "Open", value: "open" },
-                      { label: "Closed", value: "closed" }
-                    ]
-                  },
-                  { label: "Summary", name: "summary", widget: "text", hint: "Brief job description shown on the card" },
-                  {
-                    label: "Essential Responsibilities", name: "responsibilities", widget: "text",
-                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
-                    required: false
-                  },
-                  {
-                    label: "Skills & Education Requirements", name: "requirements", widget: "text",
-                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
-                    required: false
-                  },
-                  {
-                    label: "Physical Requirements", name: "physicalRequirements", widget: "text",
-                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
-                    required: false
-                  },
-                  {
-                    label: "Compensation & Benefits", name: "compensation", widget: "text",
-                    hint: "Paste full text or a bulleted list. Lines starting with - or • will display as bullets on the site.",
-                    required: false
-                  },
-                  { label: "Display Order", name: "order", widget: "number", value_type: "int", hint: "Lower numbers appear first" }
-                ]
-              },
-              {
                 name: "pages",
                 label: "Page Content",
                 files: [
@@ -513,7 +464,7 @@
                     label: "Join Our Team",
                     name: "join-our-team",
                     file: "content/pages/join-our-team.json",
-                    description: "The /join-our-team careers page. Individual job listings are edited in the Job Listings collection.",
+                    description: "The /join-our-team careers page. Job postings themselves live in BambooHR and appear on the page automatically.",
                     fields: [
                       { label: "Hero Title", name: "title", widget: "string" },
                       { label: "Hero Subtitle", name: "subtitle", widget: "text" },
@@ -532,11 +483,9 @@
                           { label: "Description", name: "description", widget: "text" }
                         ]
                       },
-                      { label: "Open Positions Heading", name: "openPositionsTitle", widget: "string" },
-                      { label: "Apply Section Title", name: "applyTitle", widget: "string" },
-                      { label: "Apply Intro Text", name: "applyIntro", widget: "string", hint: "Text shown before the email link." },
-                      { label: "Apply Intro Suffix", name: "applyIntroEmailSuffix", widget: "string", hint: "Text shown after the email link (e.g. 'directly.')" },
-                      { label: "Careers Email", name: "careersEmail", widget: "string", hint: "Receives application form submissions AND is the displayed email link. Changing this changes where applications go — coordinate with whoever manages careers email." }
+                      { label: "Current Openings Heading", name: "staffOpeningsTitle", widget: "string", hint: "Heading above the live job board." },
+                      { label: "Current Openings Intro", name: "staffOpeningsIntro", widget: "text", hint: "Short paragraph shown under the heading, above the job listings." },
+                      { label: "Careers Email", name: "careersEmail", widget: "string", hint: "Displayed email link in the 'Prefer to apply another way?' box at the bottom of the page." }
                     ]
                   },
                   {
