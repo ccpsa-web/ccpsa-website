@@ -1,4 +1,7 @@
 // Server-side fetch + parser for BambooHR's public ATS embed.
+// Note: as of Oct 2026 the endpoint returns JSON
+// ({ departments: [{ id, label, positions: [{ id, name, url, location }] }] }).
+// The older HTML-fragment format is still handled as a fallback.
 // Hits the same endpoint embed.js uses internally and parses its HTML so we
 // can render listings with our own site styling instead of a cross-origin
 // iframe. Cached at the Next.js fetch layer with a 5-minute revalidation.
@@ -34,11 +37,72 @@ export async function getBambooBoard(): Promise<BambooBoard> {
     if (!res.ok) {
       return { departments: [], totalJobs: 0, fetchFailed: true };
     }
-    const html = await res.text();
-    return parseBambooHtml(html);
+    const body = await res.text();
+    // BambooHR switched embed2.php from an HTML fragment to JSON (~Oct 2026).
+    // Try JSON first; fall back to the legacy HTML parser.
+    const fromJson = parseBambooJson(body);
+    if (fromJson) return fromJson;
+    return parseBambooHtml(body);
   } catch {
     return { departments: [], totalJobs: 0, fetchFailed: true };
   }
+}
+
+interface BambooJsonPosition {
+  id?: number | string;
+  name?: string;
+  url?: string;
+  location?: string;
+}
+
+interface BambooJsonDepartment {
+  id?: number | string;
+  label?: string;
+  positions?: BambooJsonPosition[];
+}
+
+function parseBambooJson(body: string): BambooBoard | null {
+  let data: { departments?: BambooJsonDepartment[] };
+  try {
+    data = JSON.parse(body);
+  } catch {
+    return null;
+  }
+  if (!data || !Array.isArray(data.departments)) return null;
+
+  const departments: BambooDepartment[] = [];
+  let totalJobs = 0;
+
+  data.departments.forEach((dept, idx) => {
+    const rawName = decodeEntities(String(dept.label ?? '')).trim();
+    const name = !rawName || rawName.toLowerCase() === 'none' ? 'Other' : rawName;
+    const deptId = String(dept.id ?? '') || `dept-${idx}`;
+
+    const jobs: BambooJob[] = [];
+    for (const pos of dept.positions ?? []) {
+      const title = decodeEntities(String(pos.name ?? '')).trim();
+      if (!title || pos.id == null) continue;
+      const id = String(pos.id);
+      let url = String(pos.url ?? '').trim();
+      if (!url) url = `https://ccpsa.bamboohr.com/careers/${id}`;
+      else if (url.startsWith('//')) url = 'https:' + url;
+      else if (url.startsWith('/')) url = 'https://ccpsa.bamboohr.com' + url;
+      const location = decodeEntities(String(pos.location ?? ''))
+        .replace(/\s+/g, ' ')
+        .trim();
+      jobs.push({ id, title, url, location });
+      totalJobs++;
+    }
+
+    if (jobs.length > 0) {
+      // Merge departments that collapse to the same display name (e.g. "None" and blank → "Other").
+      const existing = departments.find((d) => d.name === name);
+      if (existing) existing.jobs.push(...jobs);
+      else departments.push({ id: deptId, name, jobs });
+    }
+  });
+
+  return { departments, totalJobs, fetchFailed: false };
 }
 
 function decodeEntities(s: string): string {
