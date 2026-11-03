@@ -150,7 +150,7 @@
                       { label: "Outpatient Pulmonary & Sleep", value: "outpatient-pulmonary-sleep" },
                       { label: "Advanced Practice Provider", value: "app" },
                       { label: "Allied Health", value: "allied-health" },
-                      { label: "Executive", value: "executive" }
+                      { label: "Administrative", value: "executive" }
                     ]
                   },
                   {
@@ -457,7 +457,20 @@
                       { label: "CTA Text", name: "ctaText", widget: "text" },
                       { label: "CTA Phone", name: "phone", widget: "string" },
                       { label: "Online Scheduling URL", name: "scheduleUrl", widget: "string" },
-                      { label: "Scheduling Button Text", name: "scheduleButtonText", widget: "string", hint: "Label on the scheduling button (e.g. 'Schedule Online')" }
+                      { label: "Scheduling Button Text", name: "scheduleButtonText", widget: "string", hint: "Label on the scheduling button (e.g. 'Schedule Online')" },
+                      {
+                        label: "Category Headings", name: "categoryLabels", widget: "object", required: false,
+                        hint: "Text shown on the filter buttons and section headings. Renaming here does not change which providers are in each category.",
+                        fields: [
+                          { label: "All", name: "all", widget: "string", required: false },
+                          { label: "Critical Care", name: "critical-care", widget: "string", required: false },
+                          { label: "Interventional Pulmonology", name: "interventional-pulmonology", widget: "string", required: false },
+                          { label: "Outpatient Pulmonary & Sleep", name: "outpatient-pulmonary-sleep", widget: "string", required: false },
+                          { label: "Advanced Practice Provider (APP)", name: "app", widget: "string", required: false },
+                          { label: "Allied Health", name: "allied-health", widget: "string", required: false },
+                          { label: "Administrative (formerly Executive)", name: "executive", widget: "string", required: false }
+                        ]
+                      }
                     ]
                   },
                   {

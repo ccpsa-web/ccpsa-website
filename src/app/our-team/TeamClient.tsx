@@ -27,6 +27,7 @@ interface PageContent {
   phone?: string;
   scheduleUrl?: string;
   scheduleButtonText?: string;
+  categoryLabels?: Record<string, string>;
 }
 
 interface TeamClientProps {
@@ -34,18 +35,29 @@ interface TeamClientProps {
   pageContent: PageContent;
 }
 
-const CATEGORIES = [
+// Default category labels. Keys are fixed (they match provider "categories" values);
+// display labels can be overridden in the admin portal: Page Content > Our Team > Category Headings.
+const DEFAULT_CATEGORIES = [
   { key: 'all', label: 'All' },
   { key: 'critical-care', label: 'Critical Care' },
   { key: 'interventional-pulmonology', label: 'Interventional Pulmonology' },
   { key: 'outpatient-pulmonary-sleep', label: 'Outpatient Pulmonary & Sleep' },
   { key: 'app', label: 'APP' },
   { key: 'allied-health', label: 'Allied Health' },
-  { key: 'executive', label: 'Executive' },
+  { key: 'executive', label: 'Administrative' },
 ];
 
 export default function TeamClient({ providers, pageContent }: TeamClientProps) {
   const [activeCategory, setActiveCategory] = useState('all');
+
+  const CATEGORIES = useMemo(
+    () =>
+      DEFAULT_CATEGORIES.map((c) => ({
+        ...c,
+        label: pageContent.categoryLabels?.[c.key]?.trim() || c.label,
+      })),
+    [pageContent.categoryLabels]
+  );
 
   const heroTitle = pageContent.title || 'Our Team';
   const heroSubtitle = pageContent.subtitle || 'Board-certified specialists dedicated to providing exceptional care in critical care, pulmonary medicine, sleep medicine, and interventional pulmonology.';

@@ -6,5 +6,14 @@
   "ctaText": "Ready to work with one of our experienced providers? Book your appointment online or call us today.",
   "phone": "(303) 951-0600",
   "scheduleUrl": "https://mountain.mycommonspirit.org/MCH/Authentication/Login?",
-  "scheduleButtonText": "Schedule Online"
+  "scheduleButtonText": "Schedule Online",
+  "categoryLabels": {
+    "all": "All",
+    "critical-care": "Critical Care",
+    "interventional-pulmonology": "Interventional Pulmonology",
+    "outpatient-pulmonary-sleep": "Outpatient Pulmonary & Sleep",
+    "app": "APP",
+    "allied-health": "Allied Health",
+    "executive": "Administrative"
+  }
 }
