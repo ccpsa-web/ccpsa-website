@@ -1,0 +1,15 @@
+{
+  "name": "John Berger",
+  "lastName": "Berger",
+  "credentials": "DO",
+  "title": "Attending Physician",
+  "categories": [
+    "critical-care"
+  ],
+  "locations": [],
+  "image": "/images/Berger Professional Photo (002).jpeg",
+  "bio": "Bio coming soon!",
+  "education": "",
+  "residency": "",
+  "fellowship": ""
+}
