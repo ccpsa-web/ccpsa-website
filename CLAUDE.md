@@ -1,5 +1,16 @@
 # CCPSA Website — Project Reference
 
+## Change log rule (required every session)
+
+The CCPSA Apps & Platforms project reads this repo every Monday morning to keep the App Register and change logs current. Before the final commit of any session that changes this app:
+
+1. Add an entry at the top of `CHANGELOG.md` (create it if missing): date, what changed in plain language, why, and the commit(s).
+2. Record changes made **outside the code** that GitHub would not otherwise show: hosting settings or environment variables added or changed (names only, never values), new vendors or services, users or admins added or removed, sign-in changes, backup changes, domain or renewal changes.
+3. Never write passwords, keys, tokens or PHI into the change log or commit messages.
+4. Write commit messages that say what changed and why.
+5. If a change affects data handled, hosting or vendors, who has access, authentication or backups, mark the entry **SECURITY DESK UPDATE NEEDED**.
+
+
 **Last updated:** May 28, 2026
 **Maintained by:** Darren Boe, MD
 
